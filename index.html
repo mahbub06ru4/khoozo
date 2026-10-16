@@ -98,7 +98,7 @@
      PRELOADER
      ============================================================ -->
 <div class="preloader" id="preloader" aria-hidden="true">
-  <div class="preloader-mark">Khoozo</div>
+  <div class="preloader-mark" data-i18n="brand.name">Khoozo</div>
   <div class="preloader-bar"><span></span></div>
 </div>
 
@@ -122,16 +122,16 @@
   <div class="container header-inner">
     <a href="#home" class="brand">
       <img class="brand-mark" src="assets/logo.png" alt="Khoozo logo">
-      <span class="brand-name">Khoozo<em data-i18n="brand.tagline">For Your Each Solution</em></span>
+      <span class="brand-name"><span data-i18n="brand.name">Khoozo</span><em data-i18n="brand.tagline">For Your Each Solution</em></span>
     </a>
 
     <nav class="nav" id="mainNav" aria-label="Primary navigation">
       <a href="#home" data-nav data-i18n="nav.home">Home</a>
       <a href="#about" data-nav data-i18n="nav.about">About Us</a>
-      <a href="#it" data-nav data-i18n="nav.it">Khoozo IT</a>
-      <a href="#realestate" data-nav data-i18n="nav.realestate">Khoozo Real Estate</a>
-      <a href="#visa" data-nav data-i18n="nav.visa">Khoozo Visa Solutions</a>
-      <a href="#travel" data-nav data-i18n="nav.travel">Khoozo Travel &amp; Holiday</a>
+      <a href="#it" data-nav data-i18n="navbar.it">IT</a>
+      <a href="#realestate" data-nav data-i18n="navbar.realestate">Real Estate</a>
+      <a href="#visa" data-nav data-i18n="navbar.visa">Visa Solutions</a>
+      <a href="#travel" data-nav data-i18n="navbar.travel">Travel &amp; Holiday</a>
       <a href="#contact" class="btn btn-sm btn-primary nav-contact" data-nav data-i18n="nav.contact">Contact</a>
     </nav>
 
@@ -208,7 +208,7 @@
     <div class="hero-visual reveal" aria-hidden="true">
       <div class="orbit-system">
         <div class="hub-core">
-          <span class="hub-mark">Khoozo</span>
+          <span class="hub-mark" data-i18n="brand.name">Khoozo</span>
           <span class="hub-label" data-i18n="hero.hublabel">For Your Each Solution</span>
         </div>
         <div class="orbit-ring"></div>
@@ -714,7 +714,7 @@
     <div class="footer-brand">
       <a href="#home" class="brand">
         <img class="brand-mark" src="assets/logo.png" alt="Khoozo logo">
-        <span class="brand-name">Khoozo<em data-i18n="brand.tagline">For Your Each Solution</em></span>
+        <span class="brand-name"><span data-i18n="brand.name">Khoozo</span><em data-i18n="brand.tagline">For Your Each Solution</em></span>
       </a>
       <p data-i18n="footer.tagline">Khoozo — For Your Each Solution. Four divisions, one accountable team: IT, Real Estate, Visa Solutions, and Travel &amp; Holiday.</p>
       <div class="social-row">
@@ -762,9 +762,15 @@
 
   <div class="container footer-bottom">
     <p data-i18n="footer.rights">© 2026 Khoozo. All rights reserved.</p>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang-btn="en" class="is-active">EN</button>
-      <button type="button" data-lang-btn="bn">বাং</button>
+    <div class="footer-controls">
+      <button class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang-btn="en" class="is-active">EN</button>
+        <button type="button" data-lang-btn="bn">বাং</button>
+      </div>
     </div>
     <a class="to-top" href="#home"><span data-i18n="footer.backtotop">Back to top</span> <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
   </div>

@@ -75,15 +75,19 @@ document.addEventListener("keydown", e => {
 
 /* ---------------------------------------------------------------
    5. Dark / light mode toggle (persisted in localStorage)
+   One in the header, one in the footer — both share the
+   .theme-toggle class so either can flip the theme.
    --------------------------------------------------------------- */
-const themeToggle = document.getElementById("themeToggle");
+const themeToggles = document.querySelectorAll(".theme-toggle");
 const root = document.documentElement;
 const THEME_KEY = "khoozo-theme";
 
 function applyTheme(theme) {
   root.setAttribute("data-theme", theme);
-  themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
-  themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  themeToggles.forEach(btn => {
+    btn.setAttribute("aria-pressed", String(theme === "dark"));
+    btn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  });
 }
 
 /* Light by default, regardless of OS preference — only an explicit
@@ -91,11 +95,11 @@ function applyTheme(theme) {
 const savedTheme = localStorage.getItem(THEME_KEY);
 applyTheme(savedTheme === "dark" ? "dark" : "light");
 
-themeToggle.addEventListener("click", () => {
+themeToggles.forEach(btn => btn.addEventListener("click", () => {
   const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
   applyTheme(next);
   localStorage.setItem(THEME_KEY, next);
-});
+}));
 
 /* ---------------------------------------------------------------
    6. Back-to-top button
