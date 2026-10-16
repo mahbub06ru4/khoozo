@@ -42,7 +42,7 @@
 <!-- ============ FONTS (Google Fonts — permitted external dependency) ============ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ============ FONT AWESOME (permitted external dependency) ============ -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -122,17 +122,17 @@
   <div class="container header-inner">
     <a href="#home" class="brand">
       <img class="brand-mark" src="assets/logo.png" alt="Khoozo logo">
-      <span class="brand-name">Khoozo<em>For Your Each Solution</em></span>
+      <span class="brand-name">Khoozo<em data-i18n="brand.tagline">For Your Each Solution</em></span>
     </a>
 
     <nav class="nav" id="mainNav" aria-label="Primary navigation">
-      <a href="#home" data-nav>Home</a>
-      <a href="#about" data-nav>About Us</a>
-      <a href="#it" data-nav>Khoozo IT</a>
-      <a href="#realestate" data-nav>Khoozo Real Estate</a>
-      <a href="#visa" data-nav>Khoozo Visa Solutions</a>
-      <a href="#travel" data-nav>Khoozo Travel &amp; Holiday</a>
-      <a href="#contact" class="btn btn-sm btn-primary nav-contact" data-nav>Contact</a>
+      <a href="#home" data-nav data-i18n="nav.home">Home</a>
+      <a href="#about" data-nav data-i18n="nav.about">About Us</a>
+      <a href="#it" data-nav data-i18n="nav.it">Khoozo IT</a>
+      <a href="#realestate" data-nav data-i18n="nav.realestate">Khoozo Real Estate</a>
+      <a href="#visa" data-nav data-i18n="nav.visa">Khoozo Visa Solutions</a>
+      <a href="#travel" data-nav data-i18n="nav.travel">Khoozo Travel &amp; Holiday</a>
+      <a href="#contact" class="btn btn-sm btn-primary nav-contact" data-nav data-i18n="nav.contact">Contact</a>
     </nav>
 
     <div class="header-actions">
@@ -180,27 +180,27 @@
 
   <div class="container hero-inner">
     <div class="hero-copy">
-      <p class="eyebrow reveal">Dhaka, Bangladesh · Four Divisions, One Brand</p>
+      <p class="eyebrow reveal" data-i18n="hero.eyebrow">Dhaka, Bangladesh · Four Divisions, One Brand</p>
       <h1 class="reveal">
-        Khoozo, For Your<br>
+        <span data-i18n="hero.h1">Khoozo, For Your</span><br>
         <span class="typing-text" id="typingText" data-words="IT Solutions,Real Estate,Visa Solutions,Travel &amp; Holiday">IT Solutions</span><span class="typing-cursor" aria-hidden="true">|</span>
       </h1>
-      <p class="lede reveal">Whatever you need next — a product built, a property found, a visa processed, or a holiday planned — Khoozo brings the same discipline and a single accountable team to every solution.</p>
+      <p class="lede reveal" data-i18n="hero.lede">Whatever you need next — a product built, a property found, a visa processed, or a holiday planned — Khoozo brings the same discipline and a single accountable team to every solution.</p>
       <div class="hero-actions reveal">
         <a class="btn btn-primary" href="#it">
-          Explore Our Divisions
+          <span data-i18n="hero.cta1">Explore Our Divisions</span>
           <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
         <a class="btn btn-outline" href="#contact">
-          Get In Touch
+          <span data-i18n="hero.cta2">Get In Touch</span>
           <i class="fa-solid fa-phone" aria-hidden="true"></i>
         </a>
       </div>
 
       <ul class="hero-stats reveal" aria-label="Khoozo highlights">
-        <li><strong class="counter" data-target="4">0</strong><span>Solution Divisions</span></li>
-        <li><strong class="counter" data-target="150" data-suffix="+">0+</strong><span>Projects Delivered</span></li>
-        <li><strong class="counter" data-target="98" data-suffix="%">0%</strong><span>Client Satisfaction</span></li>
+        <li><strong class="counter" data-target="4">0</strong><span data-i18n="hero.stat1">Solution Divisions</span></li>
+        <li><strong class="counter" data-target="150" data-suffix="+">0+</strong><span data-i18n="hero.stat2">Projects Delivered</span></li>
+        <li><strong class="counter" data-target="98" data-suffix="%">0%</strong><span data-i18n="hero.stat3">Client Satisfaction</span></li>
       </ul>
     </div>
 
@@ -209,25 +209,25 @@
       <div class="orbit-system">
         <div class="hub-core">
           <span class="hub-mark">Khoozo</span>
-          <span class="hub-label">For Your Each Solution</span>
+          <span class="hub-label" data-i18n="hero.hublabel">For Your Each Solution</span>
         </div>
         <div class="orbit-ring"></div>
 
         <div class="orbit-node node-it" style="--angle:0deg;">
           <i class="fa-solid fa-code"></i>
-          <span>Khoozo IT</span>
+          <span data-i18n="hero.node.it">Khoozo IT</span>
         </div>
         <div class="orbit-node node-travel" style="--angle:90deg;">
           <i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i>
-          <span>Travel &amp; Holiday</span>
+          <span data-i18n="hero.node.travel">Travel &amp; Holiday</span>
         </div>
         <div class="orbit-node node-visa" style="--angle:180deg;">
           <i class="fa-solid fa-passport"></i>
-          <span>Visa Solutions</span>
+          <span data-i18n="hero.node.visa">Visa Solutions</span>
         </div>
         <div class="orbit-node node-realestate" style="--angle:270deg;">
           <i class="fa-solid fa-building" aria-hidden="true"></i>
-          <span>Real Estate</span>
+          <span data-i18n="hero.node.realestate">Real Estate</span>
         </div>
       </div>
     </div>
@@ -244,17 +244,17 @@
 <section id="app" class="section section-tint">
   <div class="container app-grid">
     <div class="app-copy reveal">
-      <p class="eyebrow">From Khoozo IT</p>
-      <h2>Meet the Khoozo app</h2>
-      <p>Before you explore our four divisions, say hello to our own product: a neighbourhood task &amp; service marketplace app, built and run by Khoozo IT. One account to post a task, offer help, or sell in the Online Shop.</p>
+      <p class="eyebrow" data-i18n="app.eyebrow">From Khoozo IT</p>
+      <h2 data-i18n="app.h2">Meet the Khoozo app</h2>
+      <p data-i18n="app.p">Before you explore our four divisions, say hello to our own product: a neighbourhood task &amp; service marketplace app, built and run by Khoozo IT. One account to post a task, offer help, or sell in the Online Shop.</p>
 
       <div class="store-badges">
         <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.khoozo.app" target="_blank" rel="noopener" aria-label="Get Khoozo on Google Play">
           <i class="fa-brands fa-google-play" aria-hidden="true"></i>
-          <span class="store-badge-text"><small>Get it on</small><strong>Google Play</strong></span>
+          <span class="store-badge-text"><small data-i18n="app.getiton">Get it on</small><strong data-i18n="app.googleplay">Google Play</strong></span>
         </a>
       </div>
-      <p class="store-note">Launching soon on the Play Store — the link above will go live with our first public release.</p>
+      <p class="store-note" data-i18n="app.note">Launching soon on the Play Store — the link above will go live with our first public release.</p>
     </div>
 
     <div class="app-visual reveal" aria-hidden="true">
@@ -270,28 +270,28 @@
 <section id="about" class="section">
   <div class="container about-grid">
     <div class="about-copy reveal">
-      <p class="eyebrow">About Khoozo</p>
-      <h2>One brand.<br>Four solutions, run with the same discipline.</h2>
-      <p>Khoozo started as a software team and grew into four divisions — IT, Real Estate, Visa Solutions, and Travel &amp; Holiday — because the same question kept coming up: why does a software sprint get a clearer plan than a property investment or a visa application?</p>
-      <p>So every division works the same way: a documented scope, an honest timeline, and a single accountable contact from first consultation to delivery — whichever solution you came for.</p>
-      <a class="btn btn-outline" href="#contact">Talk to Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <p class="eyebrow" data-i18n="about.eyebrow">About Khoozo</p>
+      <h2><span data-i18n="about.h2">One brand. Four solutions, run with the same discipline.</span></h2>
+      <p data-i18n="about.p1">Khoozo started as a software team and grew into four divisions — IT, Real Estate, Visa Solutions, and Travel &amp; Holiday — because the same question kept coming up: why does a software sprint get a clearer plan than a property investment or a visa application?</p>
+      <p data-i18n="about.p2">So every division works the same way: a documented scope, an honest timeline, and a single accountable contact from first consultation to delivery — whichever solution you came for.</p>
+      <a class="btn btn-outline" href="#contact"><span data-i18n="about.cta">Talk to Us</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
     </div>
 
     <div class="pillar-stack">
       <article class="pillar-card reveal">
         <span class="pillar-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
-        <h3>Our Mission</h3>
-        <p>To deliver honest, tech-enabled solutions across IT, real estate, visas, and travel — replacing guesswork with clear guidance at every step.</p>
+        <h3 data-i18n="about.mission.title">Our Mission</h3>
+        <p data-i18n="about.mission.body">To deliver honest, tech-enabled solutions across IT, real estate, visas, and travel — replacing guesswork with clear guidance at every step.</p>
       </article>
       <article class="pillar-card reveal">
         <span class="pillar-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
-        <h3>Our Vision</h3>
-        <p>To be the first call for anyone building a business, a career abroad, a home, or a holiday — for your each solution.</p>
+        <h3 data-i18n="about.vision.title">Our Vision</h3>
+        <p data-i18n="about.vision.body">To be the first call for anyone building a business, a career abroad, a home, or a holiday — for your each solution.</p>
       </article>
       <article class="pillar-card reveal">
         <span class="pillar-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
-        <h3>Our Commitment</h3>
-        <p>100% transparent pricing, documented timelines, and a direct line to a real specialist — never a call centre, never a black box.</p>
+        <h3 data-i18n="about.commitment.title">Our Commitment</h3>
+        <p data-i18n="about.commitment.body">100% transparent pricing, documented timelines, and a direct line to a real specialist — never a call centre, never a black box.</p>
       </article>
     </div>
   </div>
@@ -303,27 +303,27 @@
 <section id="it" class="section section-tint">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Khoozo IT</p>
-      <h2>Software, built and shipped with engineering discipline</h2>
-      <p>From marketing sites to full platforms — the same team that runs Khoozo's other divisions builds the software behind them.</p>
+      <p class="eyebrow" data-i18n="it.eyebrow">Khoozo IT</p>
+      <h2 data-i18n="it.h2">Software, built and shipped with engineering discipline</h2>
+      <p data-i18n="it.p">From marketing sites to full platforms — the same team that runs Khoozo's other divisions builds the software behind them.</p>
     </div>
 
     <div class="service-group reveal">
       <div class="cards-grid">
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
-          <h4>Website Development</h4>
-          <p>Fast, modern, SEO-ready websites — from marketing sites to full web applications.</p>
+          <h4 data-i18n="it.card1.title">Website Development</h4>
+          <p data-i18n="it.card1.body">Fast, modern, SEO-ready websites — from marketing sites to full web applications.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></span>
-          <h4>Mobile App Development</h4>
-          <p>Cross-platform Android &amp; iOS apps built with Flutter, shipped to both app stores.</p>
+          <h4 data-i18n="it.card2.title">Mobile App Development</h4>
+          <p data-i18n="it.card2.body">Cross-platform Android &amp; iOS apps built with Flutter, shipped to both app stores.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span>
-          <h4>Custom Software</h4>
-          <p>Bespoke business systems — inventory, CRM, automation — built around your workflow.</p>
+          <h4 data-i18n="it.card3.title">Custom Software</h4>
+          <p data-i18n="it.card3.body">Bespoke business systems — inventory, CRM, automation — built around your workflow.</p>
         </article>
       </div>
     </div>
@@ -336,31 +336,31 @@
 <section id="realestate" class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Khoozo Real Estate</p>
-      <h2>Property decisions, handled with full transparency</h2>
-      <p>Land share, apartment buying, and advisory for builders — see our live portfolio further down this page.</p>
+      <p class="eyebrow" data-i18n="realestate.eyebrow">Khoozo Real Estate</p>
+      <h2 data-i18n="realestate.h2">Property decisions, handled with full transparency</h2>
+      <p data-i18n="realestate.p">Land share, apartment buying, and advisory for builders — see our live portfolio further down this page.</p>
     </div>
 
     <div class="service-group reveal">
       <div class="cards-grid">
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
-          <h4>Land Share Project</h4>
-          <p>Vetted joint land-development opportunities with transparent ownership share.</p>
+          <h4 data-i18n="realestate.card1.title">Land Share Project</h4>
+          <p data-i18n="realestate.card1.body">Vetted joint land-development opportunities with transparent ownership share.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-building-user" aria-hidden="true"></i></span>
-          <h4>Apartment Consultancy</h4>
-          <p>End-to-end apartment buying guidance — legal check, pricing, and negotiation.</p>
+          <h4 data-i18n="realestate.card2.title">Apartment Consultancy</h4>
+          <p data-i18n="realestate.card2.body">End-to-end apartment buying guidance — legal check, pricing, and negotiation.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i></span>
-          <h4>Builders Consultancy</h4>
-          <p>Advisory for builders and developers on planning, compliance and sales strategy.</p>
+          <h4 data-i18n="realestate.card3.title">Builders Consultancy</h4>
+          <p data-i18n="realestate.card3.body">Advisory for builders and developers on planning, compliance and sales strategy.</p>
         </article>
       </div>
     </div>
-    <div class="section-cta reveal"><a class="btn btn-outline" href="#realestate-portfolio">See our property portfolio <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div>
+    <div class="section-cta reveal"><a class="btn btn-outline" href="#realestate-portfolio"><span data-i18n="realestate.cta">See our property portfolio</span> <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div>
   </div>
 </section>
 
@@ -566,27 +566,27 @@
 <section id="visa" class="section section-tint">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Khoozo Visa Solutions</p>
-      <h2>Study-abroad visas, handled start to finish</h2>
-      <p>Application, documentation, and interview preparation — explained in advance, every step of the way.</p>
+      <p class="eyebrow" data-i18n="visa.eyebrow">Khoozo Visa Solutions</p>
+      <h2 data-i18n="visa.h2">Study-abroad visas, handled start to finish</h2>
+      <p data-i18n="visa.p">Application, documentation, and interview preparation — explained in advance, every step of the way.</p>
     </div>
 
     <div class="service-group reveal">
       <div class="cards-grid">
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-passport" aria-hidden="true"></i></span>
-          <h4>Student Visa</h4>
-          <p>Application, documentation and interview preparation for study-abroad visas.</p>
+          <h4 data-i18n="visa.card1.title">Student Visa</h4>
+          <p data-i18n="visa.card1.body">Application, documentation and interview preparation for study-abroad visas.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
-          <h4>University Admission</h4>
-          <p>University shortlisting, application support and scholarship guidance overseas.</p>
+          <h4 data-i18n="visa.card2.title">University Admission</h4>
+          <p data-i18n="visa.card2.body">University shortlisting, application support and scholarship guidance overseas.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span>
-          <h4>Visa Documentation</h4>
-          <p>Document checklists, embassy forms and interview coaching, reviewed by a specialist.</p>
+          <h4 data-i18n="visa.card3.title">Visa Documentation</h4>
+          <p data-i18n="visa.card3.body">Document checklists, embassy forms and interview coaching, reviewed by a specialist.</p>
         </article>
       </div>
     </div>
@@ -599,27 +599,27 @@
 <section id="travel" class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Khoozo Travel &amp; Holiday</p>
-      <h2>Trips planned end-to-end, not just booked</h2>
-      <p>Best-fare tickets and custom holiday packages, with 24/7 support before and during your trip.</p>
+      <p class="eyebrow" data-i18n="travel.eyebrow">Khoozo Travel &amp; Holiday</p>
+      <h2 data-i18n="travel.h2">Trips planned end-to-end, not just booked</h2>
+      <p data-i18n="travel.p">Best-fare tickets and custom holiday packages, with 24/7 support before and during your trip.</p>
     </div>
 
     <div class="service-group reveal">
       <div class="cards-grid">
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-ticket" aria-hidden="true"></i></span>
-          <h4>Air Ticket</h4>
-          <p>Best-fare domestic &amp; international air ticketing with 24/7 booking support.</p>
+          <h4 data-i18n="travel.card1.title">Air Ticket</h4>
+          <p data-i18n="travel.card1.body">Best-fare domestic &amp; international air ticketing with 24/7 booking support.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i></span>
-          <h4>Tour Package</h4>
-          <p>Custom holiday &amp; group tour packages — visa, hotel and itinerary handled end-to-end.</p>
+          <h4 data-i18n="travel.card2.title">Tour Package</h4>
+          <p data-i18n="travel.card2.body">Custom holiday &amp; group tour packages — visa, hotel and itinerary handled end-to-end.</p>
         </article>
         <article class="service-card">
           <span class="service-icon"><i class="fa-solid fa-hotel" aria-hidden="true"></i></span>
-          <h4>Holiday Planning</h4>
-          <p>Hotel booking, itinerary design and on-trip support for family and group holidays.</p>
+          <h4 data-i18n="travel.card3.title">Holiday Planning</h4>
+          <p data-i18n="travel.card3.body">Hotel booking, itinerary design and on-trip support for family and group holidays.</p>
         </article>
       </div>
     </div>
@@ -633,26 +633,26 @@
 <section id="contact" class="section">
   <div class="container contact-grid">
     <div class="contact-info reveal">
-      <p class="eyebrow">Get In Touch</p>
-      <h2>Let's start with a free consultation</h2>
-      <p>Tell us what you're planning — a product, a trip, a visa, or an investment — and a specialist will respond within one business day.</p>
+      <p class="eyebrow" data-i18n="contact.eyebrow">Get In Touch</p>
+      <h2 data-i18n="contact.h2">Let's start with a free consultation</h2>
+      <p data-i18n="contact.p">Tell us what you're planning — a product, a trip, a visa, or an investment — and a specialist will respond within one business day.</p>
 
       <div class="contact-cards">
         <a class="contact-card" href="tel:+8801818120900">
           <span class="cc-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
-          <span><span class="cc-label">Phone</span><strong>01818-120900</strong></span>
+          <span><span class="cc-label" data-i18n="contact.phone.label">Phone</span><strong>01818-120900</strong></span>
         </a>
         <a class="contact-card" href="mailto:mahbub06ru4@gmail.com">
           <span class="cc-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
-          <span><span class="cc-label">Email</span><strong>mahbub06ru4@gmail.com</strong></span>
+          <span><span class="cc-label" data-i18n="contact.email.label">Email</span><strong>mahbub06ru4@gmail.com</strong></span>
         </a>
         <a class="contact-card" href="https://mahbub06ru4.github.io/khoozo/" target="_blank" rel="noopener">
           <span class="cc-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
-          <span><span class="cc-label">Website</span><strong>mahbub06ru4.github.io/khoozo</strong></span>
+          <span><span class="cc-label" data-i18n="contact.website.label">Website</span><strong>mahbub06ru4.github.io/khoozo</strong></span>
         </a>
         <div class="contact-card">
           <span class="cc-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
-          <span><span class="cc-label">Office</span><strong>Dhaka, Bangladesh</strong></span>
+          <span><span class="cc-label" data-i18n="contact.office.label">Office</span><strong data-i18n="contact.office.value">Dhaka, Bangladesh</strong></span>
         </div>
       </div>
 
@@ -666,17 +666,17 @@
     <form class="contact-form reveal" id="contactForm" novalidate>
       <div class="field">
         <input type="text" id="f-name" name="name" placeholder=" " required autocomplete="name">
-        <label for="f-name">Your name</label>
+        <label for="f-name" data-i18n="contact.form.name">Your name</label>
         <span class="field-error">Please enter your name.</span>
       </div>
       <div class="field">
         <input type="email" id="f-email" name="email" placeholder=" " required autocomplete="email">
-        <label for="f-email">Email address</label>
+        <label for="f-email" data-i18n="contact.form.email">Email address</label>
         <span class="field-error">Please enter a valid email.</span>
       </div>
       <div class="field">
         <input type="tel" id="f-phone" name="phone" placeholder=" " autocomplete="tel">
-        <label for="f-phone">Phone number (optional)</label>
+        <label for="f-phone" data-i18n="contact.form.phone">Phone number (optional)</label>
       </div>
       <div class="field">
         <select id="f-service" name="service" required>
@@ -687,16 +687,16 @@
           <option>Khoozo Travel &amp; Holiday</option>
           <option>Something Else</option>
         </select>
-        <label for="f-service">I'm interested in…</label>
+        <label for="f-service" data-i18n="contact.form.service">I'm interested in…</label>
         <span class="field-error">Please choose a service.</span>
       </div>
       <div class="field">
         <textarea id="f-msg" name="message" rows="4" placeholder=" " required></textarea>
-        <label for="f-msg">Your message</label>
+        <label for="f-msg" data-i18n="contact.form.message">Your message</label>
         <span class="field-error">Please write a short message.</span>
       </div>
       <button type="submit" class="btn btn-primary btn-block">
-        Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        <span data-i18n="contact.form.submit">Send Message</span> <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
       </button>
       <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
     </form>
@@ -714,9 +714,9 @@
     <div class="footer-brand">
       <a href="#home" class="brand">
         <img class="brand-mark" src="assets/logo.png" alt="Khoozo logo">
-        <span class="brand-name">Khoozo<em>For Your Each Solution</em></span>
+        <span class="brand-name">Khoozo<em data-i18n="brand.tagline">For Your Each Solution</em></span>
       </a>
-      <p>Khoozo — For Your Each Solution. Four divisions, one accountable team: IT, Real Estate, Visa Solutions, and Travel &amp; Holiday.</p>
+      <p data-i18n="footer.tagline">Khoozo — For Your Each Solution. Four divisions, one accountable team: IT, Real Estate, Visa Solutions, and Travel &amp; Holiday.</p>
       <div class="social-row">
         <a href="https://www.facebook.com/khoozo" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
         <a href="https://www.instagram.com/KhoozoDotCom" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
@@ -728,41 +728,45 @@
     </div>
 
     <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-      <a href="team.html">Our Team</a>
+      <h4 data-i18n="footer.quicklinks">Quick Links</h4>
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#about" data-i18n="nav.about">About Us</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="team.html" data-i18n="footer.ourteam">Our Team</a>
     </div>
 
     <div class="footer-col">
-      <h4>Our Solutions</h4>
-      <a href="#it">Khoozo IT</a>
-      <a href="#realestate">Khoozo Real Estate</a>
-      <a href="#visa">Khoozo Visa Solutions</a>
-      <a href="#travel">Khoozo Travel &amp; Holiday</a>
+      <h4 data-i18n="footer.solutions">Our Solutions</h4>
+      <a href="#it" data-i18n="nav.it">Khoozo IT</a>
+      <a href="#realestate" data-i18n="nav.realestate">Khoozo Real Estate</a>
+      <a href="#visa" data-i18n="nav.visa">Khoozo Visa Solutions</a>
+      <a href="#travel" data-i18n="nav.travel">Khoozo Travel &amp; Holiday</a>
     </div>
 
     <div class="footer-col">
-      <h4>Company</h4>
-      <a href="team.html">Our Team &amp; Founder</a>
-      <a href="team.html#testimonials">Testimonials</a>
-      <a href="index.html#app">Get the App</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <h4 data-i18n="footer.company">Company</h4>
+      <a href="team.html" data-i18n="footer.ourteamfounder">Our Team &amp; Founder</a>
+      <a href="team.html#testimonials" data-i18n="footer.testimonials">Testimonials</a>
+      <a href="index.html#app" data-i18n="footer.getapp">Get the App</a>
+      <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
+      <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
     </div>
 
     <div class="footer-col">
-      <h4>Contact</h4>
+      <h4 data-i18n="footer.contact">Contact</h4>
       <a href="tel:+8801818120900">01818-120900</a>
       <a href="mailto:support.khoozo@gmail.com">support.khoozo@gmail.com</a>
-      <span>Dhaka, Bangladesh</span>
+      <span data-i18n="contact.office.value">Dhaka, Bangladesh</span>
     </div>
   </div>
 
   <div class="container footer-bottom">
-    <p>© 2026 Khoozo. All rights reserved.</p>
-    <a class="to-top" href="#home">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    <p data-i18n="footer.rights">© 2026 Khoozo. All rights reserved.</p>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="en" class="is-active">EN</button>
+      <button type="button" data-lang-btn="bn">বাং</button>
+    </div>
+    <a class="to-top" href="#home"><span data-i18n="footer.backtotop">Back to top</span> <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
   </div>
 </footer>
 
@@ -816,6 +820,7 @@
 <!-- ============================================================
      SCRIPTS
      ============================================================ -->
+<script src="js/i18n.js" defer></script>
 <script src="js/main.js" defer></script>
 <script src="js/animation.js" defer></script>
 </body>

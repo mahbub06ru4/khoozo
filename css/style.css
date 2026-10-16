@@ -81,6 +81,12 @@ body {
   overflow-x: hidden;
 }
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.16; letter-spacing: -0.01em; }
+
+/* Bangla toggle — Fraunces/Inter don't cover Bengali glyphs, so switch
+   the whole page to Hind Siliguri while lang-bn is active. */
+.lang-bn body, .lang-bn { font-family: "Hind Siliguri", var(--font-body); }
+.lang-bn h1, .lang-bn h2, .lang-bn h3, .lang-bn h4,
+.lang-bn .brand-name, .lang-bn .hub-mark { font-family: "Hind Siliguri", var(--font-display); letter-spacing: 0; }
 p { color: var(--ink-soft); }
 a { color: var(--red); text-decoration: none; }
 img, svg { max-width: 100%; display: block; }
@@ -749,6 +755,19 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
 .footer-bottom p { color: #92a4cb; font-size: 0.82rem; }
 .to-top { display: inline-flex; align-items: center; gap: 7px; color: #cdd9ef; font-weight: 600; font-size: 0.86rem; }
 .to-top:hover { color: #fff; }
+
+.lang-toggle {
+  display: inline-flex; align-items: center; gap: 2px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px; padding: 3px;
+}
+.lang-toggle button {
+  border: 0; background: transparent; color: #cdd9ef; cursor: pointer;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.8rem;
+  padding: 6px 14px; border-radius: 999px; transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+.lang-toggle button.is-active { background: linear-gradient(120deg, var(--red), var(--orange)); color: #fff; }
+.lang-toggle button:not(.is-active):hover { color: #fff; }
 
 /* ================================================================
    16. FLOATING ACTION BUTTONS & BACK-TO-TOP

@@ -79,40 +79,50 @@ counters.forEach(c => counterObserver.observe(c));
    --------------------------------------------------------------- */
 const typingEl = document.getElementById("typingText");
 if (typingEl) {
-  const words = (typingEl.dataset.words || "").split(",").map(w => w.trim()).filter(Boolean);
-  if (reduceMotion || words.length <= 1) {
-    typingEl.textContent = words[0] || typingEl.textContent;
-  } else {
-    let wordIndex = 0;
-    let charIndex = words[0].length;
-    let deleting = false;
-    const TYPE_SPEED = 65;
-    const DELETE_SPEED = 40;
-    const HOLD_MS = 1600;
+  let words = [];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+  let typingTimer = null;
+  const TYPE_SPEED = 65;
+  const DELETE_SPEED = 40;
+  const HOLD_MS = 1600;
 
-    function typeTick() {
-      const currentWord = words[wordIndex];
-      if (!deleting) {
-        charIndex++;
-        typingEl.textContent = currentWord.slice(0, charIndex);
-        if (charIndex === currentWord.length) {
-          deleting = true;
-          window.setTimeout(typeTick, HOLD_MS);
-          return;
-        }
-      } else {
-        charIndex--;
-        typingEl.textContent = currentWord.slice(0, charIndex);
-        if (charIndex === 0) {
-          deleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-        }
+  function typeTick() {
+    const currentWord = words[wordIndex];
+    if (!deleting) {
+      charIndex++;
+      typingEl.textContent = currentWord.slice(0, charIndex);
+      if (charIndex === currentWord.length) {
+        deleting = true;
+        typingTimer = window.setTimeout(typeTick, HOLD_MS);
+        return;
       }
-      window.setTimeout(typeTick, deleting ? DELETE_SPEED : TYPE_SPEED);
+    } else {
+      charIndex--;
+      typingEl.textContent = currentWord.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
     }
-    /* start after the initial word has held on screen for a moment */
-    window.setTimeout(() => { deleting = true; typeTick(); }, HOLD_MS);
+    typingTimer = window.setTimeout(typeTick, deleting ? DELETE_SPEED : TYPE_SPEED);
   }
+
+  /* (Re)reads data-words fresh — called on load, and again whenever
+     the language toggle swaps in a localized word list. */
+  function restartTyping() {
+    if (typingTimer) window.clearTimeout(typingTimer);
+    words = (typingEl.dataset.words || "").split(",").map(w => w.trim()).filter(Boolean);
+    wordIndex = 0;
+    charIndex = words[0] ? words[0].length : 0;
+    deleting = false;
+    typingEl.textContent = words[0] || typingEl.textContent;
+    if (reduceMotion || words.length <= 1) return;
+    typingTimer = window.setTimeout(() => { deleting = true; typeTick(); }, HOLD_MS);
+  }
+  window.khoozoRestartTyping = restartTyping;
+  restartTyping();
 }
 
 /* ---------------------------------------------------------------
