@@ -1,5 +1,5 @@
 /* ================================================================
-   Solution 360 Consultancy — js/animation.js
+   Khoozo — js/animation.js
    Animation-only logic: preloader, scroll reveal, counters,
    typing effect, custom cursor. No layout/state logic here —
    see main.js for nav, theme, and form handling.

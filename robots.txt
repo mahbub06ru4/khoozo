@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mahbub06ru.github.io/solution360consultancy/sitemap.xml
+Sitemap: https://mahbub06ru4.github.io/khoozo/sitemap.xml

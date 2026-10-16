@@ -1,6 +1,6 @@
-# Solution 360 Consultancy — Website
+# Khoozo — Website
 
-A premium, single-page consultancy website for **Solution 360 Consultancy**
+A premium, single-page consultancy website for **Khoozo**
 (IT & Software · Travel & Student Visa · Real Estate · Business Consultancy),
 built with pure HTML5, CSS3 and vanilla JavaScript — no frameworks, no build
 step, no backend. Designed to be hosted directly on **GitHub Pages**.
@@ -37,11 +37,11 @@ step, no backend. Designed to be hosted directly on **GitHub Pages**.
 
 ## 🚀 Deploying to GitHub Pages
 
-1. Create a new repository (e.g. `solution360consultancy` for a project site).
+1. Create a new repository (e.g. `khoozo` for a project site).
 2. Push all files in this folder to the repository root.
 3. In **Settings → Pages**, set the source branch (usually `main`) and folder
    (`/root`).
-4. Your site will be live at `https://mahbub06ru.github.io/solution360consultancy/`.
+4. Your site will be live at `https://mahbub06ru4.github.io/khoozo/`.
 
 No build step, no `npm install`, no server — just static files.
 
@@ -56,11 +56,11 @@ with real information before publishing:**
 |---|---|---|
 | Testimonials | `index.html` → `#testimonials` | Currently generic placeholder quotes labeled "Client Testimonial" — swap in real client feedback |
 | Team/company photos | `index.html` → `.chairman-avatar` | Currently an initials placeholder (`MR`) — replace with a real `<img>` if you have a photo |
-| Social links | Header, footer, Chairman section | Facebook is linked to `solution360consultancy`. Update LinkedIn and GitHub to your real profile URLs |
+| Social links | Header, footer, Chairman section | Facebook is linked to `khoozo`. Update LinkedIn and GitHub to your real profile URLs |
 | WhatsApp / Messenger links | Footer, floating action buttons | WhatsApp is linked to `+8801818120900`. Update `m.me/` with your real Messenger username |
 | Google Maps embeds | Projects section, Contact section | Currently placeholder `<div>`s — replace with a real `<iframe>` using your Google Maps "Embed a map" URL |
 | OG image | `<meta property="og:image">` in `<head>` | Points to `images/og-image.jpg`, which doesn't exist yet — add a 1200×630 social preview image |
-| Domain in meta tags | `<head>` (`canonical`, `og:url`, JSON-LD, sitemap.xml, robots.txt) | Currently `https://mahbub06ru.github.io/solution360consultancy/` — update if you use a custom domain |
+| Domain in meta tags | `<head>` (`canonical`, `og:url`, JSON-LD, sitemap.xml, robots.txt) | Currently `https://mahbub06ru4.github.io/khoozo/` — update if you use a custom domain |
 | Statistics | Hero stats, Counter section | Currently illustrative figures (150+ projects, 320+ clients, etc.) — replace with your real numbers |
 
 ---
@@ -104,5 +104,5 @@ service such as Formspree, Getform, or a custom serverless function.
 
 ---
 
-© 2026 Solution 360 Consultancy. Built with pure HTML5, CSS3 & vanilla JavaScript.
+© 2026 Khoozo. Built with pure HTML5, CSS3 & vanilla JavaScript.
 # khoozo

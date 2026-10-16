@@ -1,17 +1,17 @@
 {
-  "name": "Solution 360 Consultancy",
-  "short_name": "Solution 360",
-  "description": "Tech-driven IT, travel, student visa & real estate solutions — Dhaka, Bangladesh.",
+  "name": "Khoozo",
+  "short_name": "Khoozo",
+  "description": "Bangladesh's neighbourhood marketplace — post a task, get help nearby, or sell online.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
-  "theme_color": "#0A3D91",
+  "theme_color": "#A61C1C",
   "icons": [
     {
-      "src": "icons/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/logo.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
