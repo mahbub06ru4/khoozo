@@ -146,8 +146,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; display: flex; flex-direction: column; line-height: 1.05; }
 .brand-name em {
-  font-style: normal; font-family: var(--font-mono); font-weight: 500; font-size: 0.62rem;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange-deep);
+  font-style: normal; font-family: var(--font-mono); font-weight: 500; font-size: 0.56rem;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--orange-deep); white-space: nowrap;
 }
 
 .nav { display: flex; align-items: center; gap: 26px; }
@@ -272,6 +272,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .section-head { max-width: 640px; margin-bottom: 46px; }
 .section-head h2 { font-size: clamp(1.75rem, 3.2vw, 2.4rem); }
 .section-head p { margin-top: 12px; }
+.section-cta { margin-top: 34px; }
 
 /* ---- gradient-border hover micro-interaction ----
    Applied directly to content cards (all already position:relative). */
@@ -727,7 +728,7 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
    15. FOOTER
    ================================================================ */
 .footer { background: var(--red-deep); color: #cdd9ef; padding: 64px 0 0; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 44px; }
 .footer-brand .brand { color: #fff; margin-bottom: 14px; }
 .footer-brand .brand-name em { color: var(--orange); }
 .footer-brand p { color: #a9bade; font-size: 0.9rem; margin-bottom: 18px; }
@@ -770,9 +771,20 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
 .back-to-top {
   position: fixed; right: 22px; bottom: 22px; z-index: 55;
   width: 50px; height: 50px; border-radius: 50%; border: 0; cursor: pointer;
-  background: var(--ink); color: #fff; font-size: 1.05rem;
+  background: #1A1A1A; color: #fff; font-size: 1.05rem;
   box-shadow: var(--shadow-md);
   opacity: 0; visibility: hidden; transform: translateY(10px);
   transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
 }
 .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ================================================================
+   LEGAL PAGES (Terms / Privacy — simple readable prose)
+   ================================================================ */
+.legal { max-width: 760px; }
+.legal h2 { font-size: 1.3rem; margin: 34px 0 12px; }
+.legal h2:first-child { margin-top: 0; }
+.legal p, .legal li { color: var(--ink-soft); margin-bottom: 12px; line-height: 1.75; }
+.legal ul { padding-left: 20px; margin-bottom: 16px; }
+.legal strong { color: var(--ink); }
+.legal .updated { color: var(--ink-soft); font-size: 0.88rem; margin-bottom: 30px; }

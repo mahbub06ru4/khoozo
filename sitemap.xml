@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Khoozo is a single-page site, so there is only one
-  crawlable URL. If additional pages (e.g. a dedicated blog or careers
-  page) are added later, list each as its own <url> entry here.
+  Khoozo's crawlable pages: the main site plus the Our Team, Terms and
+  Privacy pages. Add a new <url> entry here for each additional page.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mahbub06ru4.github.io/khoozo/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mahbub06ru4.github.io/khoozo/team.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mahbub06ru4.github.io/khoozo/terms.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://mahbub06ru4.github.io/khoozo/privacy.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
