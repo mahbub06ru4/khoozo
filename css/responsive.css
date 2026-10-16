@@ -1,0 +1,98 @@
+/* ================================================================
+   Solution 360 Consultancy — css/responsive.css
+   Breakpoint overrides. Base (desktop) styles live in style.css.
+   ================================================================ */
+
+/* ================================================================
+   LARGE TABLET / SMALL DESKTOP  (<= 1080px)
+   ================================================================ */
+@media (max-width: 1080px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .cards-grid-single { grid-template-columns: 1fr; max-width: 420px; }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .quote-grid { grid-template-columns: 1fr 1fr; }
+  .counter-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+
+  .hero-inner { grid-template-columns: 1fr; text-align: center; padding-top: 64px; }
+  .hero-copy .hero-actions, .hero-copy .hero-stats { justify-content: center; }
+  .hero-visual { order: -1; margin-bottom: 12px; }
+  .hero .lede { margin-left: auto; margin-right: auto; }
+
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .project-feature { grid-template-columns: 1fr; }
+  .project-media { padding: 30px; }
+}
+
+/* ================================================================
+   TABLET  (<= 860px)
+   ================================================================ */
+@media (max-width: 860px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+  .chairman-card { grid-template-columns: 1fr; text-align: center; padding: 40px 30px; }
+  .chairman-media { margin: 0 auto; }
+  .chairman-quote { text-align: left; }
+  .social-row { justify-content: center; }
+}
+
+/* ================================================================
+   MOBILE  (<= 640px)
+   ================================================================ */
+@media (max-width: 640px) {
+  html { scroll-padding-top: 72px; }
+  .section { padding: 64px 0; }
+
+  .cards-grid, .feature-grid, .quote-grid, .project-teasers, .project-specs, .counter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-stats { grid-template-columns: 1fr 1fr; }
+
+  .hero-inner { padding: 48px 0 56px; }
+  .hero h1 { font-size: clamp(1.75rem, 8vw, 2.4rem); }
+  .hero-stats { justify-content: center; gap: 20px 30px; }
+
+  .orbit-system { width: 300px; height: 300px; --orbit-radius: 116px; transform: scale(0.9); }
+  .orbit-ring { width: 232px; height: 232px; }
+  .hub-core { width: 118px; height: 118px; }
+  .hub-mark { font-size: 1.05rem; }
+  .hub-label { font-size: 0.6rem; }
+  .orbit-node { width: 80px; margin-left: -40px; padding: 9px 6px; }
+  .orbit-node span { font-size: 0.62rem; }
+
+  .project-body { padding: 28px 22px; }
+  .project-body h3 { font-size: 1.25rem; }
+
+  .contact-form { padding: 28px 22px; }
+
+  .footer-grid { grid-template-columns: 1fr; text-align: left; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+  .fab-stack { right: 14px; bottom: 78px; }
+  .fab { width: 44px; height: 44px; font-size: 1rem; }
+  .back-to-top { right: 14px; bottom: 18px; width: 44px; height: 44px; }
+
+  /* nav collapses to a full-width dropdown panel */
+  .burger { display: flex; }
+  .nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 8px 24px 20px; display: none;
+  }
+  .nav.is-open { display: flex; }
+  .nav a { padding: 12px 0; }
+  .nav a.is-active:not(.nav-contact)::after { display: none; }
+  .nav a.is-active { color: var(--navy); }
+  .nav-contact { text-align: center; justify-content: center; margin-top: 10px; }
+}
+
+/* ================================================================
+   SMALL MOBILE  (<= 400px)
+   ================================================================ */
+@media (max-width: 400px) {
+  .brand-name { font-size: 0.92rem; }
+  .hero-stats { gap: 16px 22px; }
+  .chairman-badges li { font-size: 0.66rem; padding: 4px 10px; }
+}

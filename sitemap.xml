@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Solution 360 Consultancy is a single-page site, so there is only one
+  crawlable URL. If additional pages (e.g. a dedicated blog or careers
+  page) are added later, list each as its own <url> entry here.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mahbub06ru.github.io/solution360consultancy/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<!-- ============================================================
+     Solution 360 Consultancy — index.html
+     Static single-page site. Pure HTML5 + CSS3 + Vanilla JS.
+     No frameworks, no build step. GitHub Pages ready.
+     ============================================================ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ============ PRIMARY SEO ============ -->
+<title>Solution 360 Consultancy | IT, Travel, Student Visa &amp; Real Estate Solutions in Dhaka</title>
+<meta name="description" content="Solution 360 Consultancy is a premium Dhaka-based consultancy offering IT &amp; software development, travel &amp; air ticketing, student visa &amp; university admission, and real estate &amp; land share consultancy — under one trusted roof.">
+<meta name="keywords" content="Solution 360 Consultancy, IT consultancy Dhaka, software development Bangladesh, travel agency Dhaka, student visa consultancy, university admission consultant, real estate consultancy Dhaka, land share project Uttara, business consultancy Bangladesh">
+<meta name="author" content="Md. Mahbubur Rahman — Solution 360 Consultancy">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mahbub06ru.github.io/solution360consultancy/">
+<meta name="theme-color" content="#0A3D91">
+
+<!-- ============ OPEN GRAPH ============ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mahbub06ru.github.io/solution360consultancy/">
+<meta property="og:site_name" content="Solution 360 Consultancy">
+<meta property="og:title" content="Solution 360 Consultancy | IT, Travel, Student Visa &amp; Real Estate Solutions">
+<meta property="og:description" content="Your trusted partner for IT, Travel, Student Visa &amp; Real Estate solutions — premium consultancy services based in Dhaka, Bangladesh.">
+<meta property="og:image" content="https://mahbub06ru.github.io/solution360consultancy/images/logo.png">
+<meta property="og:locale" content="en_US">
+
+<!-- ============ TWITTER CARD ============ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solution 360 Consultancy | IT, Travel, Student Visa &amp; Real Estate Solutions">
+<meta name="twitter:description" content="Your trusted partner for IT, Travel, Student Visa &amp; Real Estate solutions — premium consultancy services based in Dhaka, Bangladesh.">
+<meta name="twitter:image" content="https://mahbub06ru.github.io/solution360consultancy/images/logo.png">
+
+<!-- ============ FAVICON & MANIFEST ============ -->
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+<link rel="apple-touch-icon" href="icons/favicon.svg">
+<link rel="manifest" href="manifest.json">
+
+<!-- ============ FONTS (Google Fonts — permitted external dependency) ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============ FONT AWESOME (permitted external dependency) ============ -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- ============ STYLES ============ -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+
+<!-- ============ STRUCTURED DATA (schema.org JSON-LD) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Solution 360 Consultancy",
+  "alternateName": "Solution 360",
+  "url": "https://mahbub06ru.github.io/solution360consultancy/",
+  "logo": "https://mahbub06ru.github.io/solution360consultancy/icons/favicon.svg",
+  "image": "https://mahbub06ru.github.io/solution360consultancy/images/logo.png",
+  "description": "Premium consultancy offering IT & software development, travel & air ticketing, student visa & university admission, and real estate consultancy in Dhaka, Bangladesh.",
+  "telephone": "+880-1818-120900",
+  "email": "mahbub06ru4@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dhaka",
+    "addressCountry": "BD"
+  },
+  "areaServed": "Bangladesh",
+  "founder": {
+    "@type": "Person",
+    "name": "Md. Mahbubur Rahman",
+    "jobTitle": "Chairman & Founder"
+  },
+  "sameAs": [
+    "https://www.facebook.com/solution360consultancy",
+    "https://www.linkedin.com/",
+    "https://github.com/"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT & Software Development" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Travel & Student Visa Consultancy" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Consultancy" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Consultancy" } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============================================================
+     PRELOADER
+     ============================================================ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-mark">S360</div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ============================================================
+     SCROLL PROGRESS BAR
+     ============================================================ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span id="scrollProgressFill"></span></div>
+
+<!-- ============================================================
+     CUSTOM CURSOR (desktop / fine-pointer only, see animation.css)
+     ============================================================ -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<a class="skip-link" href="#home">Skip to content</a>
+
+<!-- ============================================================
+     HEADER / STICKY NAVIGATION
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">S360</span>
+      <span class="brand-name">Solution 360<em>Consultancy</em></span>
+    </a>
+
+    <nav class="nav" id="mainNav" aria-label="Primary navigation">
+      <a href="#home" data-nav>Home</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#services" data-nav>Services</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#clients" data-nav>Clients</a>
+      <a href="#why" data-nav>Why Choose Us</a>
+      <a href="#chairman" data-nav>Chairman</a>
+      <a href="#testimonials" data-nav>Testimonials</a>
+      <a href="#contact" class="btn btn-sm btn-primary nav-contact" data-nav>Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+      </button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section id="home" class="hero">
+
+  <!-- ambient glass background layers -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+
+    <!-- faint decorative skyline (quiet nod to "Real Estate") -->
+    <svg class="hero-skyline" viewBox="0 0 1400 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <rect x="60"  y="90"  width="90"  height="130" rx="4"/>
+      <rect x="170" y="50"  width="110" height="170" rx="4"/>
+      <rect x="300" y="110" width="80"  height="110" rx="4"/>
+      <rect x="1180" y="70" width="100" height="150" rx="4"/>
+      <rect x="1290" y="30" width="120" height="190" rx="4"/>
+    </svg>
+
+    <!-- faint decorative flight path (quiet nod to "Travel") -->
+    <svg class="hero-flightpath" viewBox="0 0 1400 500" aria-hidden="true">
+      <path d="M120,420 C 420,60 980,60 1290,320" fill="none" stroke-dasharray="2 14"/>
+      <g class="plane-icon" style="offset-path: path('M120,420 C 420,60 980,60 1290,320');">
+        <i class="fa-solid fa-paper-plane"></i>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Tech-Driven Consultancy · Est. Dhaka, Bangladesh</p>
+      <h1 class="reveal">
+        Your Trusted Partner for<br>
+        <span class="typing-text" id="typingText" data-words="IT Solutions,Travel Services,Student Visas,Real Estate">IT Solutions</span><span class="typing-cursor" aria-hidden="true">|</span>
+      </h1>
+      <p class="lede reveal">Four specialties, one accountable partner. Solution 360 Consultancy brings software engineering discipline to travel planning, visa guidance, and property investment — so every decision you make is informed, transparent, and on schedule.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#services">
+          Explore Services
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-outline" href="#contact">
+          Contact Now
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <ul class="hero-stats reveal" aria-label="Company highlights">
+        <li><strong class="counter" data-target="8">0</strong><span>Years Combined Expertise</span></li>
+        <li><strong class="counter" data-target="150" data-suffix="+">0+</strong><span>Projects Delivered</span></li>
+        <li><strong class="counter" data-target="98" data-suffix="%">0%</strong><span>Client Satisfaction</span></li>
+      </ul>
+    </div>
+
+    <!-- ================= SIGNATURE HERO VISUAL ================= -->
+    <div class="hero-visual reveal" aria-hidden="true">
+      <div class="orbit-system">
+        <div class="hub-core">
+          <span class="hub-mark">S360</span>
+          <span class="hub-label">One Consultancy</span>
+        </div>
+        <div class="orbit-ring"></div>
+
+        <div class="orbit-node node-it" style="--angle:0deg;">
+          <i class="fa-solid fa-code"></i>
+          <span>IT &amp; Software</span>
+        </div>
+        <div class="orbit-node node-travel" style="--angle:90deg;">
+          <i class="fa-solid fa-plane-departure"></i>
+          <span>Travel</span>
+        </div>
+        <div class="orbit-node node-visa" style="--angle:180deg;">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Student Visa</span>
+        </div>
+        <div class="orbit-node node-realestate" style="--angle:270deg;">
+          <i class="fa-solid fa-building"></i>
+          <span>Real Estate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#about" aria-label="Scroll to About section">
+    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+  </a>
+</section>
+
+<!-- ============================================================
+     ABOUT SECTION
+     ============================================================ -->
+<section id="about" class="section">
+  <div class="container about-grid">
+    <div class="about-copy reveal">
+      <p class="eyebrow">About Solution 360</p>
+      <h2>Built by an engineer.<br>Run like a consultancy should be.</h2>
+      <p>Solution 360 Consultancy was founded on a simple observation: the industries people trust with life-changing decisions — where to study abroad, where to invest in property, how to build their next product — are too often run without the transparency and rigor that software teams take for granted.</p>
+      <p>We closed that gap. Every engagement — whether it's a mobile app sprint, a university application, or a land-share investment — follows the same disciplined process: clear scope, honest timelines, and a single point of accountability from first consultation to delivery.</p>
+      <a class="btn btn-outline" href="#chairman">Meet Our Chairman <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="pillar-stack">
+      <article class="pillar-card reveal">
+        <span class="pillar-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+        <h3>Our Mission</h3>
+        <p>To deliver honest, tech-enabled consultancy across IT, travel, education, and real estate — replacing guesswork with clear guidance at every step.</p>
+      </article>
+      <article class="pillar-card reveal">
+        <span class="pillar-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
+        <h3>Our Vision</h3>
+        <p>To become Bangladesh's most trusted multi-disciplinary consultancy — the first call for anyone building a business, a career abroad, or a home.</p>
+      </article>
+      <article class="pillar-card reveal">
+        <span class="pillar-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
+        <h3>Our Commitment</h3>
+        <p>100% transparent pricing, documented timelines, and a direct line to a real consultant — never a call center, never a black box.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES SECTION
+     ============================================================ -->
+<section id="services" class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">What We Offer</p>
+      <h2>Services across four specialties</h2>
+      <p>Every division is led by a dedicated consultant — supported by the same operating standard across the company.</p>
+    </div>
+
+    <!-- ---- IT & Software Development ---- -->
+    <div class="service-group reveal">
+      <h3 class="service-group-title"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> IT &amp; Software Development</h3>
+      <div class="cards-grid">
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+          <h4>Website Development</h4>
+          <p>Fast, modern, SEO-ready websites — from marketing sites to full web applications.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></span>
+          <h4>Mobile App Development</h4>
+          <p>Cross-platform Android &amp; iOS apps built with Flutter, shipped to both app stores.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span>
+          <h4>Custom Software</h4>
+          <p>Bespoke business systems — inventory, CRM, automation — built around your workflow.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- ---- Travel & Student Visa ---- -->
+    <div class="service-group reveal">
+      <h3 class="service-group-title"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i> Travel &amp; Student Visa Consultancy</h3>
+      <div class="cards-grid">
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-ticket" aria-hidden="true"></i></span>
+          <h4>Air Ticket</h4>
+          <p>Best-fare domestic &amp; international air ticketing with 24/7 booking support.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i></span>
+          <h4>Tour Package</h4>
+          <p>Custom holiday &amp; group tour packages — visa, hotel and itinerary handled end-to-end.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-passport" aria-hidden="true"></i></span>
+          <h4>Student Visa</h4>
+          <p>Application, documentation and interview preparation for study-abroad visas.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+          <h4>University Admission</h4>
+          <p>University shortlisting, application support and scholarship guidance overseas.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- ---- Real Estate ---- -->
+    <div class="service-group reveal">
+      <h3 class="service-group-title"><i class="fa-solid fa-building" aria-hidden="true"></i> Real Estate Consultancy</h3>
+      <div class="cards-grid">
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+          <h4>Land Share Project</h4>
+          <p>Vetted joint land-development opportunities with transparent ownership share.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-building-user" aria-hidden="true"></i></span>
+          <h4>Apartment Consultancy</h4>
+          <p>End-to-end apartment buying guidance — legal check, pricing, and negotiation.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i></span>
+          <h4>Builders Consultancy</h4>
+          <p>Advisory for builders and developers on planning, compliance and sales strategy.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- ---- Business ---- -->
+    <div class="service-group reveal">
+      <h3 class="service-group-title"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Business Consultancy</h3>
+      <div class="cards-grid cards-grid-single">
+        <article class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+          <h4>Business Consultancy</h4>
+          <p>Strategy, market entry and operations advisory for startups and growing SMEs.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE US
+     ============================================================ -->
+<section id="why" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why Choose Solution 360</p>
+      <h2>A consultancy built to earn trust, not just ask for it</h2>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card reveal">
+        <span class="feature-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+        <h3>Experienced Team</h3>
+        <p>Consultants with real, hands-on experience in their specific field — not generalists.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+        <h3>Trusted Service</h3>
+        <p>Every engagement is documented, tracked and delivered against a written scope.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></span>
+        <h3>Affordable</h3>
+        <p>Transparent, competitive pricing with no hidden fees at any stage.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></span>
+        <h3>Premium Support</h3>
+        <p>A dedicated consultant as your single point of contact, start to finish.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></span>
+        <h3>Professional Consultation</h3>
+        <p>Free initial consultation to scope your need before any commitment is made.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="feature-icon"><i class="fa-solid fa-magnifying-glass-dollar" aria-hidden="true"></i></span>
+        <h3>100% Transparency</h3>
+        <p>Clear costs, clear timelines, and clear answers — always in writing.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS SECTION
+     ============================================================ -->
+<section id="projects" class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Featured Project</p>
+      <h2>Our real estate portfolio</h2>
+      <p>A look at what we're building right now, what we've delivered, and projects handed over to happy owners — with full transparency on features and investment.</p>
+    </div>
+
+    <!-- Featured property card -->
+    <article class="project-feature reveal">
+      <div class="project-media" aria-hidden="true">
+        <svg viewBox="0 0 500 340" class="project-building" aria-hidden="true">
+          <defs>
+            <linearGradient id="proj-bldg-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0A3D91"/>
+              <stop offset="1" stop-color="#071F4D"/>
+            </linearGradient>
+            <pattern id="proj-win" width="34" height="38" patternUnits="userSpaceOnUse">
+              <rect width="34" height="38" fill="transparent"/>
+              <rect x="8" y="10" width="18" height="18" rx="2" fill="rgba(38,166,91,0.55)"/>
+            </pattern>
+          </defs>
+          <rect x="90" y="40" width="320" height="280" rx="10" fill="url(#proj-bldg-grad)"/>
+          <rect x="90" y="40" width="320" height="280" rx="10" fill="url(#proj-win)"/>
+        </svg>
+        <span class="project-badge">Ongoing</span>
+      </div>
+
+      <div class="project-body">
+        <h3>Premium Land Share Project</h3>
+        <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sector 17, Uttara, Dhaka</p>
+        <p class="project-desc">A joint land-development opportunity in one of Uttara's most connected sectors — planned for modern residential use with transparent share ownership and full legal documentation.</p>
+
+        <div class="project-specs">
+          <div><dt>Location</dt><dd>Sector 17, Uttara, Dhaka</dd></div>
+          <div><dt>Project Type</dt><dd>Land Share / Residential</dd></div>
+          <div><dt>Status</dt><dd>Ongoing — Booking Open</dd></div>
+          <div><dt>Investment</dt><dd>Flexible share sizes — inquire for pricing</dd></div>
+        </div>
+
+        <h4 class="project-features-title">Key Features</h4>
+        <ul class="project-features">
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Clear land title &amp; legal verification</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Flexible share-based ownership</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Prime Uttara location, close to major roads</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Dedicated project consultant throughout</li>
+        </ul>
+
+        <!-- Google Map placeholder — replace with a real embedded iframe using your Google Maps
+             embed URL for Sector 17, Uttara, Dhaka. Example:
+             <iframe src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe> -->
+        <div class="map-placeholder">
+          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+          <span>Google Map — Sector 17, Uttara, Dhaka<br><small>Embed map here</small></span>
+        </div>
+
+        <div class="project-actions">
+          <button type="button" class="btn btn-outline" data-project-open="landshare">View Details</button>
+          <a class="btn btn-primary" href="#contact">Inquire About This Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Portfolio grid -->
+    <div class="portfolio-grid">
+
+      <!-- 1. Completed -->
+      <article class="pcard reveal" data-project="greennest">
+        <div class="pcard-media" aria-hidden="true">
+          <svg viewBox="0 0 320 180" class="pcard-svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="320" height="180" fill="#071F4D"/>
+            <rect x="40" y="46" width="110" height="120" rx="6" fill="#0A3D91"/>
+            <rect x="165" y="24" width="120" height="142" rx="6" fill="#0d4aad"/>
+            <g fill="rgba(38,166,91,0.6)">
+              <rect x="54" y="60" width="16" height="16" rx="2"/><rect x="80" y="60" width="16" height="16" rx="2"/><rect x="106" y="60" width="16" height="16" rx="2"/>
+              <rect x="54" y="90" width="16" height="16" rx="2"/><rect x="80" y="90" width="16" height="16" rx="2"/><rect x="106" y="90" width="16" height="16" rx="2"/>
+              <rect x="54" y="120" width="16" height="16" rx="2"/><rect x="80" y="120" width="16" height="16" rx="2"/><rect x="106" y="120" width="16" height="16" rx="2"/>
+              <rect x="180" y="40" width="18" height="18" rx="2"/><rect x="212" y="40" width="18" height="18" rx="2"/><rect x="244" y="40" width="18" height="18" rx="2"/>
+              <rect x="180" y="74" width="18" height="18" rx="2"/><rect x="212" y="74" width="18" height="18" rx="2"/><rect x="244" y="74" width="18" height="18" rx="2"/>
+              <rect x="180" y="108" width="18" height="18" rx="2"/><rect x="212" y="108" width="18" height="18" rx="2"/><rect x="244" y="108" width="18" height="18" rx="2"/>
+            </g>
+          </svg>
+          <span class="pcard-badge b-completed">Completed</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Green Nest Residency</h3>
+          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sector 11, Uttara, Dhaka</p>
+          <p class="pcard-desc">A 10-storey residential building with 24 modern apartments, completed and fully occupied. Delivered on schedule with premium finishes throughout.</p>
+          <ul class="pcard-meta">
+            <li><span>Type</span> Residential Apartment</li>
+            <li><span>Units</span> 24 Apartments</li>
+            <li><span>Completed</span> 2023</li>
+          </ul>
+          <button type="button" class="btn btn-outline pcard-btn" data-project-open="greennest">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+      </article>
+
+      <!-- 2. Completed -->
+      <article class="pcard reveal" data-project="skyline">
+        <div class="pcard-media" aria-hidden="true">
+          <svg viewBox="0 0 320 180" class="pcard-svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="320" height="180" fill="#071F4D"/>
+            <rect x="30" y="70" width="90" height="96" rx="6" fill="#0A3D91"/>
+            <rect x="130" y="40" width="80" height="126" rx="6" fill="#0d4aad"/>
+            <rect x="220" y="86" width="80" height="80" rx="6" fill="#0A3D91"/>
+            <g fill="rgba(38,166,91,0.6)">
+              <rect x="42" y="84" width="14" height="14" rx="2"/><rect x="66" y="84" width="14" height="14" rx="2"/><rect x="90" y="84" width="14" height="14" rx="2"/>
+              <rect x="42" y="112" width="14" height="14" rx="2"/><rect x="66" y="112" width="14" height="14" rx="2"/><rect x="90" y="112" width="14" height="14" rx="2"/>
+              <rect x="144" y="54" width="16" height="16" rx="2"/><rect x="172" y="54" width="16" height="16" rx="2"/>
+              <rect x="144" y="86" width="16" height="16" rx="2"/><rect x="172" y="86" width="16" height="16" rx="2"/>
+              <rect x="144" y="118" width="16" height="16" rx="2"/><rect x="172" y="118" width="16" height="16" rx="2"/>
+              <rect x="234" y="100" width="14" height="14" rx="2"/><rect x="258" y="100" width="14" height="14" rx="2"/><rect x="282" y="100" width="14" height="14" rx="2"/>
+              <rect x="234" y="128" width="14" height="14" rx="2"/><rect x="258" y="128" width="14" height="14" rx="2"/><rect x="282" y="128" width="14" height="14" rx="2"/>
+            </g>
+          </svg>
+          <span class="pcard-badge b-completed">Completed</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Skyline Commercial Plaza</h3>
+          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mirpur DOHS, Dhaka</p>
+          <p class="pcard-desc">A mixed-use commercial complex with retail floors and office suites. Built to code with dedicated parking and 24/7 security infrastructure.</p>
+          <ul class="pcard-meta">
+            <li><span>Type</span> Commercial / Mixed-use</li>
+            <li><span>Area</span> 42,000 sq ft</li>
+            <li><span>Completed</span> 2022</li>
+          </ul>
+          <button type="button" class="btn btn-outline pcard-btn" data-project-open="skyline">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+      </article>
+
+      <!-- 3. Ongoing -->
+      <article class="pcard reveal" data-project="horizon">
+        <div class="pcard-media" aria-hidden="true">
+          <svg viewBox="0 0 320 180" class="pcard-svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="320" height="180" fill="#071F4D"/>
+            <rect x="90" y="30" width="140" height="136" rx="6" fill="#0A3D91"/>
+            <rect x="90" y="30" width="140" height="30" rx="6" fill="#0d4aad"/>
+            <g fill="rgba(38,166,91,0.55)">
+              <rect x="104" y="72" width="20" height="20" rx="2"/><rect x="136" y="72" width="20" height="20" rx="2"/><rect x="168" y="72" width="20" height="20" rx="2"/><rect x="200" y="72" width="20" height="20" rx="2"/>
+              <rect x="104" y="104" width="20" height="20" rx="2"/><rect x="136" y="104" width="20" height="20" rx="2"/><rect x="168" y="104" width="20" height="20" rx="2"/><rect x="200" y="104" width="20" height="20" rx="2"/>
+              <rect x="104" y="136" width="20" height="20" rx="2"/><rect x="136" y="136" width="20" height="20" rx="2"/><rect x="168" y="136" width="20" height="20" rx="2"/><rect x="200" y="136" width="20" height="20" rx="2"/>
+            </g>
+            <path d="M250 30 l40 -14 v14 z" fill="#26A65B"/>
+            <rect x="248" y="30" width="4" height="136" fill="#0d4aad"/>
+          </svg>
+          <span class="pcard-badge b-ongoing">Ongoing</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Horizon Heights</h3>
+          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bashundhara R/A, Dhaka</p>
+          <p class="pcard-desc">A premium 14-storey apartment tower currently under construction. Structural work in progress, with limited early-bird bookings now open.</p>
+          <ul class="pcard-meta">
+            <li><span>Type</span> Residential Apartment</li>
+            <li><span>Units</span> 36 Apartments</li>
+            <li><span>Handover</span> Est. 2026</li>
+          </ul>
+          <button type="button" class="btn btn-outline pcard-btn" data-project-open="horizon">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+      </article>
+
+      <!-- 4. Handed over -->
+      <article class="pcard reveal" data-project="serene">
+        <div class="pcard-media" aria-hidden="true">
+          <svg viewBox="0 0 320 180" class="pcard-svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="320" height="180" fill="#071F4D"/>
+            <rect x="60" y="60" width="200" height="106" rx="6" fill="#0A3D91"/>
+            <path d="M50 60 L160 18 L270 60 Z" fill="#0d4aad"/>
+            <rect x="140" y="112" width="40" height="54" rx="4" fill="#26A65B"/>
+            <g fill="rgba(38,166,91,0.6)">
+              <rect x="80" y="80" width="20" height="20" rx="2"/><rect x="112" y="80" width="20" height="20" rx="2"/>
+              <rect x="188" y="80" width="20" height="20" rx="2"/><rect x="220" y="80" width="20" height="20" rx="2"/>
+            </g>
+          </svg>
+          <span class="pcard-badge b-handover">Handed Over</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Serene Villas</h3>
+          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Purbachal New Town, Dhaka</p>
+          <p class="pcard-desc">A gated community of 8 luxury duplex villas — fully built, keys handed over, and now home to their proud owners with all documentation transferred.</p>
+          <ul class="pcard-meta">
+            <li><span>Type</span> Duplex Villas</li>
+            <li><span>Units</span> 8 Villas</li>
+            <li><span>Handed Over</span> 2024</li>
+          </ul>
+          <button type="button" class="btn btn-outline pcard-btn" data-project-open="serene">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOFTWARE CLIENTS SECTION
+     ============================================================ -->
+<section id="clients" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Software &amp; App Development</p>
+      <h2>Successful software clients worldwide</h2>
+      <p>From digital banking to smart-energy and full-stack platforms — apps we've built, shipped and maintained for clients across four continents.</p>
+    </div>
+
+    <ul class="client-stats reveal">
+      <li><strong>4</strong><span>Countries served</span></li>
+      <li><strong>20+</strong><span>Apps in production</span></li>
+      <li><strong>4</strong><span>App stores shipped</span></li>
+      <li><strong>12+</strong><span>Years of delivery</span></li>
+    </ul>
+
+    <div class="clients-grid">
+
+      <!-- USA -->
+      <article class="client-card reveal">
+        <div class="client-head">
+          <span class="flag" aria-hidden="true">🇺🇸</span>
+          <div>
+            <h3>HydroHome — Smart Energy</h3>
+            <p class="client-country">United States</p>
+          </div>
+          <span class="chip chip-energy">Energy · IoT</span>
+        </div>
+        <p class="client-desc">A residential smart-energy app letting customers track, understand and manage home electricity use — with detailed insights and optional real-time smart-device control. Live on Play Store and App Store.</p>
+        <ul class="client-tech">
+          <li>Flutter</li><li>Native Android (Kotlin)</li><li>REST APIs</li><li>MQTT / IoT</li><li>Charts &amp; Analytics</li><li>Firebase FCM</li></ul>
+        <p class="client-role"><i class="fa-solid fa-code" aria-hidden="true"></i> Flutter &amp; native Android development</p>
+      </article>
+
+      <!-- Dubai -->
+      <article class="client-card reveal">
+        <div class="client-head">
+          <span class="flag" aria-hidden="true">🇦🇪</span>
+          <div>
+            <h3>QuickBite — Food Delivery</h3>
+            <p class="client-country">Dubai, UAE</p>
+          </div>
+          <span class="chip chip-merchant">Food · Delivery</span>
+        </div>
+        <p class="client-desc">An on-demand food delivery platform spanning three apps — customer, rider and restaurant — plus an admin dashboard. Restaurant discovery with search &amp; filters, live menu &amp; cart, real-time GPS order tracking, automated rider assignment, in-app payments, promo codes, scheduled orders, ratings &amp; reviews and push notifications.</p>
+        <ul class="client-tech">
+          <li>Flutter</li><li>Google Maps SDK</li><li>Node.js / NestJS</li><li>PostgreSQL</li><li>Socket.IO</li><li>Firebase FCM</li><li>Stripe</li><li>Redis</li><li>Docker</li></ul>
+        <p class="client-role"><i class="fa-solid fa-code" aria-hidden="true"></i> Flutter apps (customer · rider · restaurant), REST + WebSocket backend &amp; live tracking</p>
+      </article>
+
+      <!-- Australia -->
+      <article class="client-card reveal">
+        <div class="client-head">
+          <span class="flag" aria-hidden="true">🇦🇺</span>
+          <div>
+            <h3>FinTrack — Finance Platform</h3>
+            <p class="client-country">Australia</p>
+          </div>
+          <span class="chip chip-backend">FinTech · Full-stack</span>
+        </div>
+        <p class="client-desc">An offline-first Flutter client backed by a live NestJS + PostgreSQL API: real sync engine, dual-write backup to Google Drive, push alerts, EN/BN localization and AES-256 encryption at rest. Shipped with full CI/CD.</p>
+        <ul class="client-tech">
+          <li>Flutter</li><li>NestJS</li><li>PostgreSQL</li><li>SQLite (offline)</li><li>Google Drive API</li><li>Firebase FCM</li><li>GitHub Actions CI/CD</li></ul>
+        <p class="client-role"><i class="fa-solid fa-code" aria-hidden="true"></i> Sole full-stack engineer — client, backend, DB, DevOps</p>
+      </article>
+
+      <!-- Bangladesh -->
+      <article class="client-card reveal">
+        <div class="client-head">
+          <span class="flag" aria-hidden="true">🇧🇩</span>
+          <div>
+            <h3>atB Jobs (v1 &amp; v2)</h3>
+            <p class="client-country">Bangladesh</p>
+          </div>
+          <span class="chip chip-jobs">Marketplace</span>
+        </div>
+        <p class="client-desc">A job-matching platform connecting candidates and recruiters — shipped across all four major app stores: Google Play, App Store, Huawei AppGallery and Amazon Appstore.</p>
+        <ul class="client-tech">
+          <li>Flutter</li><li>Laravel</li><li>MySQL</li><li>REST APIs</li><li>Firebase FCM</li><li>App Flavors</li><li>Fastlane / Bitrise</li></ul>
+        <p class="client-role"><i class="fa-solid fa-code" aria-hidden="true"></i> Full-cycle lead across 4 platforms</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAIRMAN SECTION
+     ============================================================ -->
+<section id="chairman" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Leadership</p>
+      <h2>A word from our Chairman</h2>
+    </div>
+
+    <article class="chairman-card reveal">
+      <div class="chairman-media">
+        <div class="chairman-avatar" data-initials="MR" role="img" aria-label="Portrait placeholder for Md. Mahbubur Rahman"></div>
+        <ul class="chairman-badges">
+          <li>Flutter Developer</li>
+          <li>Entrepreneur</li>
+          <li>Business Consultant</li>
+          <li>Real Estate Consultant</li>
+          <li>Travel Consultant</li>
+          <li>Visionary Leader</li>
+        </ul>
+      </div>
+
+      <div class="chairman-body">
+        <h3>Md. Mahbubur Rahman</h3>
+        <p class="chairman-title">Chairman &amp; Founder, Solution 360 Consultancy</p>
+        <p class="chairman-bio">
+          A technology enthusiast at heart and a Flutter developer by craft, Md. Mahbubur Rahman founded
+          Solution 360 Consultancy on the belief that good consultancy is really just good engineering
+          applied to people's biggest decisions. Over more than a decade building software for banking,
+          logistics and consumer platforms, he saw the same pattern outside tech: travel plans, visa
+          applications and property investments were too often handled with less rigor than a software
+          sprint. Solution 360 was built to close that gap — bringing a builder's discipline to every
+          consultation, whether it's shipping an app, booking a flight, or securing a share in Uttara's
+          next development.
+        </p>
+        <blockquote class="chairman-quote">"We don't sell services. We build outcomes — the same way we'd build a product."</blockquote>
+
+        <div class="social-row">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="Chairman on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/solution360consultancy" target="_blank" rel="noopener" aria-label="Chairman on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="Chairman on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="mailto:mahbub06ru4@gmail.com" aria-label="Email the Chairman"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     COUNTER SECTION (gradient divider band)
+     ============================================================ -->
+<section class="counter-band">
+  <div class="container counter-grid">
+    <div class="counter-item reveal">
+      <strong class="counter" data-target="150" data-suffix="+">0+</strong>
+      <span>Projects</span>
+    </div>
+    <div class="counter-item reveal">
+      <strong class="counter" data-target="320" data-suffix="+">0+</strong>
+      <span>Clients</span>
+    </div>
+    <div class="counter-item reveal">
+      <strong class="counter" data-target="900" data-suffix="+">0+</strong>
+      <span>Consultations</span>
+    </div>
+    <div class="counter-item reveal">
+      <strong class="counter" data-target="270" data-suffix="+">0+</strong>
+      <span>Success Stories</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section id="testimonials" class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Client Voices</p>
+      <h2>What our clients say</h2>
+      <!-- Sample testimonials for launch. Replace with real client quotes as they come in. -->
+    </div>
+
+    <div class="quote-grid">
+      <figure class="quote-card reveal">
+        <div class="quote-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+        <blockquote>"Our student visa was handled with more care and clarity than we expected. Every document, every step, explained in advance."</blockquote>
+        <figcaption><strong>Client Testimonial</strong><span>Student Visa Client</span></figcaption>
+      </figure>
+      <figure class="quote-card reveal">
+        <div class="quote-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+        <blockquote>"They delivered our company's booking platform on schedule and stayed on to support the launch. Rare to find that follow-through."</blockquote>
+        <figcaption><strong>Client Testimonial</strong><span>Software Development Client</span></figcaption>
+      </figure>
+      <figure class="quote-card reveal">
+        <div class="quote-stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+        <blockquote>"Transparent from day one about the land share terms. No pressure, just clear answers whenever we asked."</blockquote>
+        <figcaption><strong>Client Testimonial</strong><span>Real Estate Client</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section id="contact" class="section">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Let's start with a free consultation</h2>
+      <p>Tell us what you're planning — a product, a trip, a visa, or an investment — and a specialist will respond within one business day.</p>
+
+      <div class="contact-cards">
+        <a class="contact-card" href="tel:+8801818120900">
+          <span class="cc-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <span><span class="cc-label">Phone</span><strong>01818-120900</strong></span>
+        </a>
+        <a class="contact-card" href="mailto:mahbub06ru4@gmail.com">
+          <span class="cc-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+          <span><span class="cc-label">Email</span><strong>mahbub06ru4@gmail.com</strong></span>
+        </a>
+        <a class="contact-card" href="https://mahbub06ru.github.io/solution360consultancy/" target="_blank" rel="noopener">
+          <span class="cc-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+          <span><span class="cc-label">Website</span><strong>mahbub06ru.github.io/solution360consultancy</strong></span>
+        </a>
+        <div class="contact-card">
+          <span class="cc-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+          <span><span class="cc-label">Office</span><strong>Dhaka, Bangladesh</strong></span>
+        </div>
+      </div>
+
+      <!-- Google Map placeholder — replace with a real embedded iframe for the office address. -->
+      <div class="map-placeholder map-placeholder-sm">
+        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+        <span>Google Map — Office Location, Dhaka<br><small>Embed map here</small></span>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm" novalidate>
+      <div class="field">
+        <input type="text" id="f-name" name="name" placeholder=" " required autocomplete="name">
+        <label for="f-name">Your name</label>
+        <span class="field-error">Please enter your name.</span>
+      </div>
+      <div class="field">
+        <input type="email" id="f-email" name="email" placeholder=" " required autocomplete="email">
+        <label for="f-email">Email address</label>
+        <span class="field-error">Please enter a valid email.</span>
+      </div>
+      <div class="field">
+        <input type="tel" id="f-phone" name="phone" placeholder=" " autocomplete="tel">
+        <label for="f-phone">Phone number (optional)</label>
+      </div>
+      <div class="field">
+        <select id="f-service" name="service" required>
+          <option value="" selected disabled hidden></option>
+          <option>IT &amp; Software Development</option>
+          <option>Travel &amp; Air Ticket</option>
+          <option>Student Visa &amp; Admission</option>
+          <option>Real Estate Consultancy</option>
+          <option>Business Consultancy</option>
+        </select>
+        <label for="f-service">I'm interested in…</label>
+        <span class="field-error">Please choose a service.</span>
+      </div>
+      <div class="field">
+        <textarea id="f-msg" name="message" rows="4" placeholder=" " required></textarea>
+        <label for="f-msg">Your message</label>
+        <span class="field-error">Please write a short message.</span>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">
+        Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+      </button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="brand">
+        <span class="brand-mark">S360</span>
+        <span class="brand-name">Solution 360<em>Consultancy</em></span>
+      </a>
+      <p>Tech-driven IT, travel, student visa &amp; real estate solutions — under one trusted roof in Dhaka, Bangladesh.</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/solution360consultancy" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://wa.me/8801818120900" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#chairman">Chairman</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">IT &amp; Software Development</a>
+      <a href="#services">Travel &amp; Student Visa</a>
+      <a href="#services">Real Estate Consultancy</a>
+      <a href="#services">Business Consultancy</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+8801818120900">01818-120900</a>
+      <a href="mailto:mahbub06ru4@gmail.com">mahbub06ru4@gmail.com</a>
+      <span>Dhaka, Bangladesh</span>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 Solution 360 Consultancy. All rights reserved.</p>
+    <a class="to-top" href="#home">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING ACTION BUTTONS
+     ============================================================ -->
+<div class="fab-stack">
+  <a class="fab fab-whatsapp" href="https://wa.me/8801818120900" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  </a>
+  <a class="fab fab-messenger" href="https://m.me/" target="_blank" rel="noopener" aria-label="Chat on Messenger">
+    <i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
+  </a>
+  <a class="fab fab-call" href="tel:+8801818120900" aria-label="Call us">
+    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+  </a>
+  <a class="fab fab-email" href="mailto:mahbub06ru4@gmail.com" aria-label="Email us">
+    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+  </a>
+</div>
+
+<!-- ============================================================
+     PROJECT DETAILS MODAL (common popup for all projects)
+     ============================================================ -->
+<div class="pmodal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle" aria-hidden="true">
+  <div class="pmodal-overlay" data-modal-close></div>
+  <div class="pmodal-dialog" role="document">
+    <button type="button" class="pmodal-close" data-modal-close aria-label="Close details">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <div class="pmodal-media">
+      <div class="pmodal-image" id="pmImage" aria-hidden="true"></div>
+      <span class="pcard-badge" id="pmBadge"></span>
+    </div>
+    <div class="pmodal-body">
+      <h3 id="pmTitle"></h3>
+      <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span id="pmLocation"></span></p>
+      <p class="pmodal-desc" id="pmDesc"></p>
+      <div class="project-specs" id="pmSpecs"></div>
+      <h4 class="project-features-title">Key Features</h4>
+      <ul class="project-features" id="pmFeatures"></ul>
+      <a class="btn btn-primary" href="#contact" id="pmInquire" data-modal-close>Inquire About This Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="js/main.js" defer></script>
+<script src="js/animation.js" defer></script>
+</body>
+</html>
