@@ -394,6 +394,41 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 [data-theme="dark"] .it-tag { color: var(--orange); }
 .it-tag-mobile { background: var(--red-soft); color: var(--red); }
 [data-theme="dark"] .it-tag-mobile { color: var(--orange); }
+.it-project-btn { margin-top: 16px; width: 100%; justify-content: center; }
+
+/* IT project details modal: screenshot slider */
+.itm-dialog { grid-template-columns: 0.72fr 1.28fr; }
+.itm-slider {
+  position: relative; background: #0d1117; display: flex; align-items: center; justify-content: center;
+  overflow: hidden; min-height: 420px;
+}
+.itm-track {
+  display: flex; height: 100%; width: 100%; transition: transform .35s var(--ease);
+}
+.itm-slide {
+  flex: 0 0 100%; display: flex; align-items: center; justify-content: center; height: 100%; padding: 22px;
+}
+.itm-slide img { max-width: 100%; max-height: 420px; border-radius: 14px; box-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+.itm-empty { color: #aab2c5; text-align: center; padding: 0 30px; font-size: 0.92rem; }
+.itm-empty i { font-size: 1.8rem; display: block; margin-bottom: 10px; opacity: 0.7; }
+.itm-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 38px; height: 38px; border-radius: 50%; border: none; background: rgba(255,255,255,0.92);
+  color: var(--red); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);
+}
+.itm-prev { left: 14px; }
+.itm-next { right: 14px; }
+.itm-nav[hidden] { display: none; }
+.itm-dots { position: absolute; bottom: 14px; left: 0; right: 0; display: flex; justify-content: center; gap: 7px; z-index: 3; }
+.itm-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.4); border: none; padding: 0; }
+.itm-dot.is-active { background: var(--orange); width: 18px; border-radius: 4px; }
+.itm-dialog .pmodal-body .service-icon { margin-bottom: 14px; }
+
+@media (max-width: 860px) {
+  .itm-dialog { grid-template-columns: 1fr; }
+  .itm-slider { min-height: 260px; }
+  .itm-slide img { max-height: 240px; }
+}
 
 /* ================================================================
    9. WHY CHOOSE US

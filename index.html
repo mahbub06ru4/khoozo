@@ -340,6 +340,7 @@
             <span class="it-tag">PostgreSQL</span>
             <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
           </div>
+          <button type="button" class="btn btn-outline it-project-btn" data-it-open="khoozo">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </article>
         <article class="service-card it-project-card">
           <span class="service-icon"><i class="fa-solid fa-mosque" aria-hidden="true"></i></span>
@@ -350,6 +351,7 @@
             <span class="it-tag">PostgreSQL</span>
             <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
           </div>
+          <button type="button" class="btn btn-outline it-project-btn" data-it-open="dorkari">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </article>
         <article class="service-card it-project-card">
           <span class="service-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
@@ -360,6 +362,7 @@
             <span class="it-tag">PostgreSQL</span>
             <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
           </div>
+          <button type="button" class="btn btn-outline it-project-btn" data-it-open="office">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </article>
         <article class="service-card it-project-card">
           <span class="service-icon"><i class="fa-solid fa-city" aria-hidden="true"></i></span>
@@ -370,6 +373,7 @@
             <span class="it-tag">PostgreSQL</span>
             <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
           </div>
+          <button type="button" class="btn btn-outline it-project-btn" data-it-open="realestate-saas">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </article>
         <article class="service-card it-project-card">
           <span class="service-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></span>
@@ -380,6 +384,7 @@
             <span class="it-tag">PostgreSQL</span>
             <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
           </div>
+          <button type="button" class="btn btn-outline it-project-btn" data-it-open="travel-saas">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </article>
         <article class="service-card it-project-card">
           <span class="service-icon"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></span>
@@ -390,6 +395,7 @@
             <span class="it-tag">PostgreSQL</span>
             <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
           </div>
+          <button type="button" class="btn btn-outline it-project-btn" data-it-open="fintrack">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
         </article>
       </div>
     </div>
@@ -822,6 +828,32 @@
       <h4 class="project-features-title">Key Features</h4>
       <ul class="project-features" id="pmFeatures"></ul>
       <a class="btn btn-primary" href="#contact" id="pmInquire" data-modal-close>Inquire About This Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     IT PROJECT DETAILS MODAL (screenshots slider + tech stack)
+     ============================================================ -->
+<div class="pmodal it-pmodal" id="itModal" role="dialog" aria-modal="true" aria-labelledby="itmTitle" aria-hidden="true">
+  <div class="pmodal-overlay" data-it-modal-close></div>
+  <div class="pmodal-dialog itm-dialog" role="document">
+    <button type="button" class="pmodal-close" data-it-modal-close aria-label="Close details">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <div class="itm-slider">
+      <div class="itm-track" id="itmTrack"></div>
+      <button type="button" class="itm-nav itm-prev" id="itmPrev" aria-label="Previous screenshot"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+      <button type="button" class="itm-nav itm-next" id="itmNext" aria-label="Next screenshot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+      <div class="itm-dots" id="itmDots"></div>
+    </div>
+    <div class="pmodal-body">
+      <span class="service-icon" id="itmIcon"></span>
+      <h3 id="itmTitle"></h3>
+      <p class="pmodal-desc" id="itmDesc"></p>
+      <h4 class="project-features-title">Technology Used</h4>
+      <div class="it-project-tags" id="itmTags"></div>
+      <a class="btn btn-primary" href="#contact" data-it-modal-close>Discuss a Similar Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </div>

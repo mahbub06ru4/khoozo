@@ -269,3 +269,135 @@ if (modal) {
     if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
   });
 }
+
+/* ---------------------------------------------------------------
+   9. IT project details modal (screenshots slider + tech stack)
+   --------------------------------------------------------------- */
+const IT_PROJECTS = {
+  khoozo: {
+    icon: "fa-solid fa-magnifying-glass-location",
+    title: "Khoozo App",
+    desc: "A location-based marketplace where users post tasks and service requests, receive competing offers, and hire with confidence — built as a web app, an admin panel, and a Flutter mobile app, with English & Bangla and light/dark themes.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"],
+    images: [
+      ["assets/it/khoozo-app/01-home.png", "Khoozo home — post or search a task"],
+      ["assets/it/khoozo-app/02-explore.png", "Explore tasks by category"],
+      ["assets/it/khoozo-app/03-post-detail.png", "Task post detail"],
+      ["assets/it/khoozo-app/04-create-post.png", "Create a post with bidding duration"],
+      ["assets/it/khoozo-app/05-offers.png", "Offers received on a post"],
+      ["assets/it/khoozo-app/06-dark-account.png", "Dark mode — account"]
+    ]
+  },
+  dorkari: {
+    icon: "fa-solid fa-mosque",
+    title: "Dorkari App",
+    desc: "A daily-essentials companion app covering local news, live weather, public holidays, religious events, Ramadan routine, and Quran — all in one place.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"],
+    images: []
+  },
+  office: {
+    icon: "fa-solid fa-building",
+    title: "Office Management Software",
+    desc: "An all-in-one office management system — HR, attendance, payroll, task tracking, and internal approvals — with a companion mobile app for on-the-go teams.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"],
+    images: []
+  },
+  "realestate-saas": {
+    icon: "fa-solid fa-city",
+    title: "Real Estate SaaS",
+    desc: "A multi-tenant SaaS platform for real estate agencies — property listings, lead management, bookings, and investor reporting, with a mobile app for agents and buyers.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"],
+    images: []
+  },
+  "travel-saas": {
+    icon: "fa-solid fa-plane",
+    title: "Travel Agency SaaS",
+    desc: "A SaaS platform for travel agencies to manage packages, bookings, itineraries, and payments, paired with a mobile app for customers to book and track trips.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"],
+    images: []
+  },
+  fintrack: {
+    icon: "fa-solid fa-sack-dollar",
+    title: "Fintrack",
+    desc: "A personal income & expense management app — budgets, monthly and yearly summaries, and spending insights, available on mobile and web.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"],
+    images: [
+      ["assets/it/fintrack/01-dashboard.jpeg", "Fintrack dashboard"],
+      ["assets/it/fintrack/02-monthly.jpeg", "Monthly summary"],
+      ["assets/it/fintrack/03-yearly.jpeg", "Yearly summary"],
+      ["assets/it/fintrack/04-budgets.jpeg", "Budgets"]
+    ]
+  }
+};
+
+const itModal = document.getElementById("itModal");
+if (itModal) {
+  const itmTrack = document.getElementById("itmTrack");
+  const itmDots = document.getElementById("itmDots");
+  const itmPrev = document.getElementById("itmPrev");
+  const itmNext = document.getElementById("itmNext");
+  const itmIcon = document.getElementById("itmIcon");
+  const itmTitle = document.getElementById("itmTitle");
+  const itmDesc = document.getElementById("itmDesc");
+  const itmTags = document.getElementById("itmTags");
+  let itSlideCount = 0;
+  let itIndex = 0;
+  let itLastFocus = null;
+
+  function goToSlide(i) {
+    itIndex = (i + itSlideCount) % itSlideCount;
+    itmTrack.style.transform = `translateX(-${itIndex * 100}%)`;
+    itmDots.querySelectorAll(".itm-dot").forEach((d, di) => d.classList.toggle("is-active", di === itIndex));
+  }
+
+  function openItModal(id) {
+    const p = IT_PROJECTS[id];
+    if (!p) return;
+
+    itmIcon.innerHTML = `<i class="${p.icon}" aria-hidden="true"></i>`;
+    itmTitle.textContent = p.title;
+    itmDesc.textContent = p.desc;
+    itmTags.innerHTML = p.tech.map(t => `<span class="it-tag${t.includes("Flutter") ? " it-tag-mobile" : ""}">${t}</span>`).join("");
+
+    itSlideCount = p.images.length;
+    if (itSlideCount) {
+      itmTrack.innerHTML = p.images.map(([src, alt]) => `<div class="itm-slide"><img src="${src}" alt="${alt}" loading="lazy"></div>`).join("");
+      itmDots.innerHTML = p.images.map((_, i) => `<button type="button" class="itm-dot" aria-label="Go to screenshot ${i + 1}"></button>`).join("");
+      itmDots.querySelectorAll(".itm-dot").forEach((d, di) => d.addEventListener("click", () => goToSlide(di)));
+      itmPrev.hidden = itmNext.hidden = itSlideCount < 2;
+      goToSlide(0);
+    } else {
+      itIndex = 0;
+      itmTrack.style.transform = "translateX(0)";
+      itmTrack.innerHTML = `<div class="itm-slide"><p class="itm-empty"><i class="fa-solid fa-image" aria-hidden="true"></i>Screenshots coming soon</p></div>`;
+      itmDots.innerHTML = "";
+      itmPrev.hidden = itmNext.hidden = true;
+    }
+
+    itLastFocus = document.activeElement;
+    itModal.classList.add("is-open");
+    itModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    itModal.querySelector(".pmodal-close").focus();
+  }
+
+  function closeItModal() {
+    itModal.classList.remove("is-open");
+    itModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (itLastFocus) itLastFocus.focus();
+  }
+
+  document.querySelectorAll("[data-it-open]").forEach(btn => {
+    btn.addEventListener("click", () => openItModal(btn.getAttribute("data-it-open")));
+  });
+  itModal.querySelectorAll("[data-it-modal-close]").forEach(el => el.addEventListener("click", closeItModal));
+  itmPrev.addEventListener("click", () => goToSlide(itIndex - 1));
+  itmNext.addEventListener("click", () => goToSlide(itIndex + 1));
+  document.addEventListener("keydown", e => {
+    if (!itModal.classList.contains("is-open")) return;
+    if (e.key === "Escape") closeItModal();
+    if (e.key === "ArrowLeft" && itSlideCount > 1) goToSlide(itIndex - 1);
+    if (e.key === "ArrowRight" && itSlideCount > 1) goToSlide(itIndex + 1);
+  });
+}
