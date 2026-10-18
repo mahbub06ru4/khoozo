@@ -55,7 +55,7 @@
   a, button, input, textarea, select, .fab, .back-to-top { cursor: none; }
 
   .cursor-dot, .cursor-ring {
-    position: fixed; top: 0; left: 0; z-index: 250; pointer-events: none;
+    position: fixed; top: 0; left: 0; z-index: 1300; pointer-events: none;
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
