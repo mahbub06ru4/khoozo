@@ -47,6 +47,22 @@ No build step, no `npm install`, no server — just static files.
 
 ---
 
+## 🖼 Adding IT project screenshots
+
+Each IT project's "View Details" popup shows a screenshot slider, generated
+from whatever files sit in `assets/it/<project-id>/`. Project ids: `khoozo`,
+`dorkari`, `office`, `realestate-saas`, `travel-saas`, `fintrack`.
+
+1. Drop screenshots (`.png`/`.jpg`/`.jpeg`/`.webp`) into the matching
+   `assets/it/<project-id>/` folder — any filenames work, they sort naturally.
+2. Rebuild the manifest: `node scripts/build-it-gallery.js`
+3. Commit `assets/it/gallery.json` along with the new images, and push.
+
+No HTML/JS editing needed — `js/main.js` loads `assets/it/gallery.json` at
+runtime, so the slider picks up whatever the script finds.
+
+---
+
 ## ✏️ Things to customize before launch
 
 These are placeholder values used to complete the design — **replace them

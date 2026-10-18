@@ -1,0 +1,50 @@
+{
+  "dorkari": [],
+  "fintrack": [
+    {
+      "src": "assets/it/fintrack/01-dashboard.jpeg",
+      "alt": "Fintrack — Dashboard"
+    },
+    {
+      "src": "assets/it/fintrack/02-monthly.jpeg",
+      "alt": "Fintrack — Monthly"
+    },
+    {
+      "src": "assets/it/fintrack/03-yearly.jpeg",
+      "alt": "Fintrack — Yearly"
+    },
+    {
+      "src": "assets/it/fintrack/04-budgets.jpeg",
+      "alt": "Fintrack — Budgets"
+    }
+  ],
+  "khoozo": [
+    {
+      "src": "assets/it/khoozo/01-home.png",
+      "alt": "Khoozo — Home"
+    },
+    {
+      "src": "assets/it/khoozo/02-explore.png",
+      "alt": "Khoozo — Explore"
+    },
+    {
+      "src": "assets/it/khoozo/03-post-detail.png",
+      "alt": "Khoozo — Post Detail"
+    },
+    {
+      "src": "assets/it/khoozo/04-create-post.png",
+      "alt": "Khoozo — Create Post"
+    },
+    {
+      "src": "assets/it/khoozo/05-offers.png",
+      "alt": "Khoozo — Offers"
+    },
+    {
+      "src": "assets/it/khoozo/06-dark-account.png",
+      "alt": "Khoozo — Dark Account"
+    }
+  ],
+  "office": [],
+  "realestate-saas": [],
+  "travel-saas": []
+}
