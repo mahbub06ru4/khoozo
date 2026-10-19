@@ -352,6 +352,60 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   transform: rotate(5deg);
 }
 
+/* App screenshot slider (homepage) — slides stack in one grid cell and cross-fade */
+.app-showcase { display: flex; flex-direction: column; align-items: center; }
+.app-slides { display: grid; width: 100%; max-width: 340px; }
+.app-slide {
+  grid-area: 1 / 1; margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .45s ease, transform .45s ease, visibility .45s;
+}
+.app-slide.is-active { opacity: 1; visibility: visible; transform: none; }
+.app-slide img {
+  width: 100%; max-width: min(250px, 24vh); min-width: 170px; aspect-ratio: 720 / 1650; object-fit: cover; object-position: top;
+  border-radius: 30px; border: 7px solid #1A1A1A; background: #1A1A1A; box-shadow: var(--shadow-lg);
+}
+.app-slide figcaption { margin-top: 14px; display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 92px; }
+.app-slide figcaption strong { font-family: var(--font-display); font-size: 1.12rem; color: var(--ink); }
+.app-slide figcaption span { font-size: 0.88rem; color: var(--ink-soft); max-width: 300px; }
+.app-role {
+  font-style: normal; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 999px; margin-bottom: 4px;
+}
+.app-role-req { background: var(--red-soft); color: var(--red); }
+.app-role-pro { background: var(--orange-soft); color: var(--orange-deep); }
+.app-role-all { background: var(--tint); color: var(--ink-soft); border: 1px solid var(--border); }
+[data-theme="dark"] .app-role-req, [data-theme="dark"] .app-role-pro { color: var(--orange); }
+.app-slider-controls { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
+.app-slider-btn {
+  width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface);
+  color: var(--red); display: grid; place-items: center; box-shadow: var(--shadow-sm); flex-shrink: 0;
+}
+[data-theme="dark"] .app-slider-btn { color: var(--orange); }
+.app-slider-dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 220px; }
+.app-slider-dot { width: 7px; height: 7px; padding: 0; border: none; border-radius: 50%; background: var(--border); transition: width .2s ease, background .2s ease; }
+.app-slider-dot.is-active { width: 18px; border-radius: 4px; background: var(--orange); }
+
+/* App features (homepage) */
+.app-features-block { margin-top: 64px; }
+.app-features-heading { text-align: center; font-size: clamp(1.3rem, 2.4vw, 1.6rem); margin-bottom: 26px; }
+.app-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.app-feature-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 22px;
+}
+.app-feature-card h4 { font-size: 1.05rem; margin-bottom: 14px; }
+.app-feature-card .project-features { margin-bottom: 0; }
+.app-feature-card .project-features li { align-items: flex-start; font-size: 0.88rem; }
+.app-feature-card .project-features i { margin-top: 5px; }
+.app-highlights { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+.app-highlights li {
+  display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border); font-size: 0.86rem; font-weight: 600; color: var(--ink);
+}
+.app-highlights i { color: var(--orange-deep); }
+[data-theme="dark"] .app-highlights i { color: var(--orange); }
+.app-tech { justify-content: center; margin-top: 18px; }
+
 /* ================================================================
    8. SERVICES
    ================================================================ */

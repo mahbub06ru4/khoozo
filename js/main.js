@@ -411,3 +411,58 @@ if (itModal) {
     if (e.key === "ArrowRight" && itSlideCount > 1) goToSlide(itIndex + 1);
   });
 }
+
+/* ---------------------------------------------------------------
+   10. Homepage app screenshot slider
+   --------------------------------------------------------------- */
+const appShowcase = document.getElementById("appShowcase");
+if (appShowcase) {
+  const slides = [...appShowcase.querySelectorAll(".app-slide")];
+  const dotsWrap = document.getElementById("appDots");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const AUTOPLAY_MS = 4500;
+  let current = 0;
+  let timer = null;
+
+  dotsWrap.innerHTML = slides.map((_, i) => `<button type="button" class="app-slider-dot" aria-label="Show screenshot ${i + 1}"></button>`).join("");
+  const dots = [...dotsWrap.children];
+
+  function show(i) {
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, si) => {
+      s.classList.toggle("is-active", si === current);
+      s.setAttribute("aria-hidden", si === current ? "false" : "true");
+    });
+    dots.forEach((d, di) => d.classList.toggle("is-active", di === current));
+  }
+
+  function stop() { clearInterval(timer); timer = null; }
+  function start() {
+    if (reduceMotion || timer) return;
+    timer = setInterval(() => show(current + 1), AUTOPLAY_MS);
+  }
+  function restart() { stop(); start(); }
+
+  document.getElementById("appPrev").addEventListener("click", () => { show(current - 1); restart(); });
+  document.getElementById("appNext").addEventListener("click", () => { show(current + 1); restart(); });
+  dots.forEach((d, di) => d.addEventListener("click", () => { show(di); restart(); }));
+
+  appShowcase.addEventListener("mouseenter", stop);
+  appShowcase.addEventListener("mouseleave", start);
+  appShowcase.addEventListener("focusin", stop);
+  appShowcase.addEventListener("focusout", start);
+  document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+
+  let touchX = null;
+  appShowcase.addEventListener("touchstart", e => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
+  appShowcase.addEventListener("touchend", e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+    touchX = null;
+    start();
+  });
+
+  show(0);
+  start();
+}
