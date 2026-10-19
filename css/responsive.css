@@ -19,7 +19,6 @@
   .hero .lede { margin-left: auto; margin-right: auto; }
 
   .about-grid, .contact-grid, .app-grid { grid-template-columns: 1fr; gap: 40px; }
-  .app-visual { order: -1; }
 
   .project-feature { grid-template-columns: 1fr; }
   .project-media { padding: 30px; }

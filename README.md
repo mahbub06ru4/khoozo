@@ -56,9 +56,9 @@ from whatever files sit in `assets/it/<project-id>/`. Project ids: `khoozo`,
 1. Drop screenshots (`.png`/`.jpg`/`.jpeg`/`.webp`) into the matching
    `assets/it/<project-id>/` folder — any filenames work, they sort naturally.
 2. Rebuild the manifest: `node scripts/build-it-gallery.js`
-3. Commit `assets/it/gallery.json` along with the new images, and push.
+3. Commit `assets/it/gallery.js` along with the new images, and push.
 
-No HTML/JS editing needed — `js/main.js` loads `assets/it/gallery.json` at
+No HTML/JS editing needed — `js/main.js` reads `assets/it/gallery.js` at
 runtime, so the slider picks up whatever the script finds.
 
 ---

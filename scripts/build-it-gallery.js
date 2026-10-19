@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * Scans assets/it/<project-id>/ for screenshots and writes assets/it/gallery.json,
+ * Scans assets/it/<project-id>/ for screenshots and writes assets/it/gallery.js,
  * which js/main.js loads at runtime to populate each IT project's "View Details"
  * screenshot slider.
  *
@@ -10,14 +10,15 @@
  *
  *   node scripts/build-it-gallery.js
  *
- * and commit the updated assets/it/gallery.json along with the images.
+ * and commit the updated assets/it/gallery.js along with the images.
  */
 const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 const IT_DIR = path.join(ROOT, "assets", "it");
-const OUT_FILE = path.join(IT_DIR, "gallery.json");
+// A plain script (not JSON + fetch) so it also works when index.html is opened from disk.
+const OUT_FILE = path.join(IT_DIR, "gallery.js");
 const IMAGE_EXT = new Set([".png", ".jpg", ".jpeg", ".webp"]);
 
 function titleCase(id) {
@@ -55,7 +56,7 @@ for (const entry of fs.readdirSync(IT_DIR, { withFileTypes: true })) {
   }));
 }
 
-fs.writeFileSync(OUT_FILE, JSON.stringify(gallery, null, 2) + "\n");
+fs.writeFileSync(OUT_FILE, `window.IT_GALLERY = ${JSON.stringify(gallery, null, 2)};\n`);
 
 for (const [id, images] of Object.entries(gallery)) {
   console.log(`${id}: ${images.length} screenshot${images.length === 1 ? "" : "s"}`);

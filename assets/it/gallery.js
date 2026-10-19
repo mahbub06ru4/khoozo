@@ -1,4 +1,4 @@
-{
+window.IT_GALLERY = {
   "dorkari": [],
   "fintrack": [
     {
@@ -129,4 +129,4 @@
   "office": [],
   "realestate-saas": [],
   "travel-saas": []
-}
+};
