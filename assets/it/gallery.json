@@ -44,6 +44,88 @@
       "alt": "Khoozo — Dark Account"
     }
   ],
+  "khoozo-ota": [
+    {
+      "src": "assets/it/khoozo-ota/01-home-flight-search.png",
+      "alt": "Khoozo Ota — Home Flight Search"
+    },
+    {
+      "src": "assets/it/khoozo-ota/02-home-hotel-search.png",
+      "alt": "Khoozo Ota — Home Hotel Search"
+    },
+    {
+      "src": "assets/it/khoozo-ota/03-home-holiday-search.png",
+      "alt": "Khoozo Ota — Home Holiday Search"
+    },
+    {
+      "src": "assets/it/khoozo-ota/04-home-visa-search.png",
+      "alt": "Khoozo Ota — Home Visa Search"
+    },
+    {
+      "src": "assets/it/khoozo-ota/05-international-flight-results.png",
+      "alt": "Khoozo Ota — International Flight Results"
+    },
+    {
+      "src": "assets/it/khoozo-ota/06-flight-details-fare-summary.png",
+      "alt": "Khoozo Ota — Flight Details Fare Summary"
+    },
+    {
+      "src": "assets/it/khoozo-ota/07-checkout-traveller-details.png",
+      "alt": "Khoozo Ota — Checkout Traveller Details"
+    },
+    {
+      "src": "assets/it/khoozo-ota/08-payment-gateway-card.png",
+      "alt": "Khoozo Ota — Payment Gateway Card"
+    },
+    {
+      "src": "assets/it/khoozo-ota/09-e-ticket-booking-confirmed.png",
+      "alt": "Khoozo Ota — E Ticket Booking Confirmed"
+    },
+    {
+      "src": "assets/it/khoozo-ota/10-hotel-results-coxs-bazar.png",
+      "alt": "Khoozo Ota — Hotel Results Coxs Bazar"
+    },
+    {
+      "src": "assets/it/khoozo-ota/11-hotel-checkout.png",
+      "alt": "Khoozo Ota — Hotel Checkout"
+    },
+    {
+      "src": "assets/it/khoozo-ota/12-holiday-packages.png",
+      "alt": "Khoozo Ota — Holiday Packages"
+    },
+    {
+      "src": "assets/it/khoozo-ota/13-package-dubai-itinerary-customise.png",
+      "alt": "Khoozo Ota — Package Dubai Itinerary Customise"
+    },
+    {
+      "src": "assets/it/khoozo-ota/14-build-your-own-holiday.png",
+      "alt": "Khoozo Ota — Build Your Own Holiday"
+    },
+    {
+      "src": "assets/it/khoozo-ota/15-holiday-booking-confirmed.png",
+      "alt": "Khoozo Ota — Holiday Booking Confirmed"
+    },
+    {
+      "src": "assets/it/khoozo-ota/16-visa-services-and-study-abroad.png",
+      "alt": "Khoozo Ota — Visa Services And Study Abroad"
+    },
+    {
+      "src": "assets/it/khoozo-ota/17-uae-tourist-visa.png",
+      "alt": "Khoozo Ota — Uae Tourist Visa"
+    },
+    {
+      "src": "assets/it/khoozo-ota/18-uk-student-visa-requirements.png",
+      "alt": "Khoozo Ota — Uk Student Visa Requirements"
+    },
+    {
+      "src": "assets/it/khoozo-ota/19-canada-study-permit-application.png",
+      "alt": "Khoozo Ota — Canada Study Permit Application"
+    },
+    {
+      "src": "assets/it/khoozo-ota/20-my-bookings.png",
+      "alt": "Khoozo Ota — My Bookings"
+    }
+  ],
   "office": [],
   "realestate-saas": [],
   "travel-saas": []

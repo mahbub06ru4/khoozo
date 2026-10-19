@@ -278,6 +278,22 @@ if (modal) {
    assets/it/<project-id>/ folder — drop screenshots in, rerun the
    script, and they show up here with no code changes. */
 const IT_PROJECTS = {
+  "khoozo-ota": {
+    icon: "fa-solid fa-plane-departure",
+    title: "Khoozo Travel (OTA)",
+    desc: "A complete online travel agency platform — search, compare and book flights, hotels and holiday packages, apply for tourist and student visas, and pay securely, all from one web app and companion mobile app.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"],
+    web: true,
+    features: [
+      "Air ticketing — one-way, round-trip & multi-city search, fare summary and instant e-tickets",
+      "Hotel booking — destination search, room selection and checkout",
+      "Holiday packages — curated itineraries, customisation and build-your-own trips",
+      "Visa services — requirements and processing for 23+ countries",
+      "Student visa assistance — UK, US, Canada, Australia and more (CAS, I-20, SOP)",
+      "Secure payments — cards, bKash, Nagad, Rocket and more",
+      "My bookings — manage all flights, hotels, packages and visas in one account"
+    ]
+  },
   khoozo: {
     icon: "fa-solid fa-magnifying-glass-location",
     title: "Khoozo App",
@@ -328,6 +344,8 @@ if (itModal) {
   const itmTitle = document.getElementById("itmTitle");
   const itmDesc = document.getElementById("itmDesc");
   const itmTags = document.getElementById("itmTags");
+  const itmFeatures = document.getElementById("itmFeatures");
+  const itmFeaturesTitle = document.getElementById("itmFeaturesTitle");
   let itSlideCount = 0;
   let itIndex = 0;
   let itLastFocus = null;
@@ -346,6 +364,10 @@ if (itModal) {
     itmTitle.textContent = p.title;
     itmDesc.textContent = p.desc;
     itmTags.innerHTML = p.tech.map(t => `<span class="it-tag${t.includes("Flutter") ? " it-tag-mobile" : ""}">${t}</span>`).join("");
+
+    itmFeatures.innerHTML = (p.features || []).map(f => `<li><i class="fa-solid fa-check" aria-hidden="true"></i> ${f}</li>`).join("");
+    itmFeaturesTitle.hidden = !p.features;
+    itModal.querySelector(".itm-dialog").classList.toggle("itm-web", !!p.web);
 
     const images = IT_GALLERY[id] || [];
     itSlideCount = images.length;
