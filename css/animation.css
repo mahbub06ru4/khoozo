@@ -124,16 +124,6 @@
 }
 
 /* ================================================================
-   6. APP SLIDER MOTION
-   ================================================================ */
-.hero-slider-blob-1 { animation: blobFloat 7s ease-in-out infinite; }
-.hero-slider-blob-2 { animation: blobFloat 7s ease-in-out infinite -3.5s; }
-@keyframes blobFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
-}
-
-/* ================================================================
    7. TYPING EFFECT CURSOR BLINK
    ================================================================ */
 .typing-cursor { animation: blinkCursor 1s step-end infinite; }
@@ -158,13 +148,12 @@
   html { scroll-behavior: auto; }
   .reveal { transition: none; animation: none; opacity: 1; transform: none; }
   .hero .reveal { animation: none; opacity: 1; }
-  .floating-shape, .plane-icon, .scroll-cue i,
-  .hero-slider-blob-1, .hero-slider-blob-2, .typing-cursor,
+  .floating-shape, .plane-icon, .scroll-cue i, .typing-cursor,
   .preloader-mark, .preloader-bar span, .fab {
     animation: none !important;
   }
   .btn, .service-card, .feature-card, .pillar-card, .quote-card, .theme-toggle, .fab, .back-to-top,
-  .app-slide, .hero-slider-track img {
+  .app-slide {
     transition: none !important;
   }
 }

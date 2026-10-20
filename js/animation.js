@@ -126,64 +126,7 @@ if (typingEl) {
 }
 
 /* ---------------------------------------------------------------
-   5. Hero app journey slider
-   --------------------------------------------------------------- */
-const appSlider = document.getElementById("appSlider");
-if (appSlider) {
-  const slides = Array.from(document.querySelectorAll("#appSliderTrack img"));
-  const dots = Array.from(document.querySelectorAll("#appSliderDots button"));
-  const captionEl = document.getElementById("appSliderCaption");
-  const badges = {
-    poster: document.querySelector(".hero-badge-poster"),
-    admin: document.querySelector(".hero-badge-admin"),
-    bidder: document.querySelector(".hero-badge-bidder")
-  };
-  const SCREENS = [
-    { captionKey: "hero.slider.caption1", caption: "Home", role: "poster" },
-    { captionKey: "hero.slider.caption2", caption: "Create a Task", role: "poster" },
-    { captionKey: "hero.slider.caption3", caption: "Admin Review", role: "admin" },
-    { captionKey: "hero.slider.caption4", caption: "Live Marketplace", role: "bidder" },
-    { captionKey: "hero.slider.caption5", caption: "Review Offers", role: "poster" },
-    { captionKey: "hero.slider.caption6", caption: "My Dashboard", role: "bidder" }
-  ];
-  const AUTOPLAY_MS = 3200;
-  let active = 0;
-  let timer = null;
-
-  function showSlide(i) {
-    active = (i + slides.length) % slides.length;
-    const screen = SCREENS[active];
-    slides.forEach((img, di) => img.classList.toggle("is-active", di === active));
-    dots.forEach((dot, di) => {
-      dot.classList.toggle("is-active", di === active);
-      dot.setAttribute("aria-selected", di === active ? "true" : "false");
-    });
-    Object.entries(badges).forEach(([role, el]) => {
-      if (el) el.classList.toggle("is-active", role === screen.role);
-    });
-    const lang = window.khoozoCurrentLang || "en";
-    const dict = typeof KHOOZO_I18N_DICT !== "undefined" ? KHOOZO_I18N_DICT[lang] : null;
-    captionEl.textContent = (dict && dict[screen.captionKey]) || screen.caption;
-  }
-  window.khoozoRefreshAppSlider = () => showSlide(active);
-
-  function startAutoplay() {
-    if (reduceMotion) return;
-    stopAutoplay();
-    timer = window.setInterval(() => showSlide(active + 1), AUTOPLAY_MS);
-  }
-  function stopAutoplay() { if (timer) window.clearInterval(timer); }
-
-  dots.forEach((dot, i) => dot.addEventListener("click", () => { showSlide(i); startAutoplay(); }));
-  appSlider.addEventListener("mouseenter", stopAutoplay);
-  appSlider.addEventListener("mouseleave", startAutoplay);
-
-  showSlide(0);
-  startAutoplay();
-}
-
-/* ---------------------------------------------------------------
-   6. Custom cursor (fine-pointer devices only; see animation.css)
+   5. Custom cursor (fine-pointer devices only; see animation.css)
    --------------------------------------------------------------- */
 if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !reduceMotion) {
   const cursorDot = document.getElementById("cursorDot");

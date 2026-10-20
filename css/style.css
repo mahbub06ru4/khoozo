@@ -234,50 +234,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--ink-soft); font-size: 1.1rem; z-index: 1;
 }
 
-/* ---- signature hero visual: app journey slider ---- */
+/* ---- signature hero visual: static photo collage (IT / Real Estate / Travel) ---- */
 .hero-visual { position: relative; display: grid; place-items: center; z-index: 1; }
 
-.hero-slider { position: relative; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 320px; }
-
-.hero-slider-blob {
-  position: absolute; border-radius: 50%; z-index: 0; pointer-events: none;
-  background: linear-gradient(120deg, var(--red), var(--orange));
+.hero-photo-collage { position: relative; width: 100%; max-width: 380px; aspect-ratio: 1 / 1; }
+.hero-photo {
+  position: absolute; margin: 0; overflow: hidden; border-radius: 20px;
+  border: 5px solid var(--surface); box-shadow: var(--shadow-lg); background: var(--tint);
 }
-.hero-slider-blob-1 { width: 260px; height: 260px; top: -70px; right: -60px; opacity: 0.12; }
-.hero-slider-blob-2 { width: 200px; height: 200px; bottom: -50px; left: -60px; opacity: 0.1; }
-
-.hero-slider-phone {
-  position: relative; z-index: 1; width: 230px; aspect-ratio: 230 / 480;
-  border-radius: 28px; padding: 8px; background: var(--ink); box-shadow: var(--shadow-lg);
-}
-.hero-slider-track { position: relative; width: 100%; height: 100%; border-radius: 20px; overflow: hidden; background: var(--surface); }
-.hero-slider-track img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top;
-  opacity: 0; transition: opacity 0.5s var(--ease);
-}
-.hero-slider-track img.is-active { opacity: 1; }
-
-.hero-slider-caption {
-  position: relative; z-index: 1; margin-top: 18px; font-weight: 700; font-size: 0.95rem; color: var(--ink);
-}
-
-.hero-slider-dots { position: relative; z-index: 1; display: flex; gap: 7px; margin-top: 10px; }
-.hero-slider-dots button {
-  width: 7px; height: 7px; border-radius: 50%; padding: 0; border: none; cursor: pointer;
-  background: var(--border); transition: background 0.2s var(--ease), transform 0.2s var(--ease);
-}
-.hero-slider-dots button.is-active { background: linear-gradient(120deg, var(--red), var(--orange)); transform: scale(1.3); }
-
-.hero-slider-badges { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
-.hero-badge {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.02em; padding: 6px 14px; border-radius: 999px;
-  color: var(--ink-soft); background: var(--tint); border: 1px solid var(--border);
-  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
-}
-.hero-badge.is-active { color: #fff; border-color: transparent; }
-.hero-badge-poster.is-active { background: linear-gradient(120deg, var(--red), var(--red-deep)); }
-.hero-badge-admin.is-active { background: linear-gradient(120deg, var(--orange), var(--orange-deep)); }
-.hero-badge-bidder.is-active { background: var(--ink); }
+.hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-photo-main { top: 0; left: 10%; width: 72%; height: 86%; z-index: 1; }
+.hero-photo-it { top: -4%; right: 0; width: 42%; height: 42%; z-index: 2; }
+.hero-photo-travel { bottom: -4%; left: -6%; width: 46%; height: 34%; z-index: 2; }
 
 /* ================================================================
    6. SHARED SECTION LAYOUT

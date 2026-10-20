@@ -55,7 +55,7 @@
   .hero h1 { font-size: clamp(1.75rem, 8vw, 2.4rem); }
   .hero-stats { justify-content: center; gap: 20px 30px; }
 
-  .hero-slider-phone { width: 200px; }
+  .hero-photo-collage { max-width: 300px; }
 
   .project-body { padding: 28px 22px; }
   .project-body h3 { font-size: 1.25rem; }

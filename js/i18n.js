@@ -29,15 +29,6 @@ const KHOOZO_I18N_DICT = {
     "hero.stat1": "Solution Divisions",
     "hero.stat2": "Projects Delivered",
     "hero.stat3": "Client Satisfaction",
-    "hero.slider.caption1": "Home",
-    "hero.slider.caption2": "Create a Task",
-    "hero.slider.caption3": "Admin Review",
-    "hero.slider.caption4": "Live Marketplace",
-    "hero.slider.caption5": "Review Offers",
-    "hero.slider.caption6": "My Dashboard",
-    "hero.slider.poster": "Task Poster",
-    "hero.slider.admin": "Admin",
-    "hero.slider.bidder": "Bidder",
 
     "app.getiton": "Get it on",
     "app.googleplay": "Google Play",
@@ -344,15 +335,6 @@ const KHOOZO_I18N_DICT = {
     "hero.stat1": "সমাধান বিভাগ",
     "hero.stat2": "সম্পন্ন প্রজেক্ট",
     "hero.stat3": "ক্লায়েন্ট সন্তুষ্টি",
-    "hero.slider.caption1": "হোম",
-    "hero.slider.caption2": "টাস্ক তৈরি করুন",
-    "hero.slider.caption3": "অ্যাডমিন রিভিউ",
-    "hero.slider.caption4": "লাইভ মার্কেটপ্লেস",
-    "hero.slider.caption5": "অফার পর্যালোচনা",
-    "hero.slider.caption6": "আমার ড্যাশবোর্ড",
-    "hero.slider.poster": "টাস্ক পোস্টার",
-    "hero.slider.admin": "অ্যাডমিন",
-    "hero.slider.bidder": "বিডার",
 
     "app.getiton": "পাওয়া যাচ্ছে",
     "app.googleplay": "গুগল প্লে",
@@ -666,9 +648,6 @@ const KHOOZO_I18N_DICT = {
       typingEl.textContent = words.split(",")[0];
       if (window.khoozoRestartTyping) window.khoozoRestartTyping();
     }
-
-    window.khoozoCurrentLang = lang;
-    if (window.khoozoRefreshAppSlider) window.khoozoRefreshAppSlider();
 
     document.documentElement.setAttribute("lang", lang === "bn" ? "bn" : "en");
     document.documentElement.classList.toggle("lang-bn", lang === "bn");
