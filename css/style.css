@@ -252,6 +252,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
    ================================================================ */
 .section { padding: 96px 0; }
 .section-tint { background: var(--tint); }
+#app { background: linear-gradient(135deg, var(--red-soft), var(--orange-soft)); }
 .section-head { max-width: 640px; margin-bottom: 46px; }
 .section-head h2 { font-size: clamp(1.75rem, 3.2vw, 2.4rem); }
 .section-head p { margin-top: 12px; }
