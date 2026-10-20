@@ -190,7 +190,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* ================================================================
    5. HERO
    ================================================================ */
-.hero { position: relative; overflow: hidden; padding-top: 8px; background: linear-gradient(135deg, var(--red-soft), var(--orange-soft)); }
+.hero { position: relative; overflow: hidden; padding-top: 8px; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 
 .floating-shape {
