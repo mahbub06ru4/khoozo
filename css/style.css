@@ -327,16 +327,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* ================================================================
    7b. GET THE APP
    ================================================================ */
-.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.app-copy h2 { margin-bottom: 16px; font-size: clamp(1.6rem, 3vw, 2.15rem); }
-.app-copy > p { margin-bottom: 8px; }
-
-.app-features { display: grid; gap: 12px; margin: 22px 0 28px; }
-.app-features li { display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--ink); }
-.app-features i { color: var(--orange-deep); font-size: 0.85rem; }
-[data-theme="dark"] .app-features i { color: var(--orange); }
-
-.store-badges { display: flex; gap: 14px; flex-wrap: wrap; }
+.app-download { display: flex; justify-content: center; margin-bottom: 40px; }
 .store-badge {
   display: inline-flex; align-items: center; gap: 10px;
   background: #1A1A1A; color: #fff; padding: 11px 20px; border-radius: 12px;
@@ -349,35 +340,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .store-badge small { font-size: 0.65rem; font-weight: 400; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.04em; }
 .store-badge strong { font-size: 1rem; font-family: var(--font-display); }
 
-.app-visual { position: relative; display: flex; justify-content: center; align-items: flex-end; min-height: 320px; }
-.app-phone {
-  width: 100%; max-width: 230px; border-radius: 26px; display: block;
-  box-shadow: var(--shadow-lg); border: 6px solid var(--surface);
-}
-.app-phone-2 {
-  position: absolute; right: 2%; bottom: -18px; width: 54%; max-width: 160px;
-  border-radius: 20px; box-shadow: var(--shadow-md); border: 5px solid var(--surface);
-  transform: rotate(5deg);
-}
-
-/* App screenshot slider (homepage) — the whole slide (screenshot + caption)
-   slides in from the direction of travel and the outgoing slide exits the
-   other way; see the --pos custom property set by js/main.js. */
-.app-showcase { display: flex; flex-direction: column; align-items: center; overflow: hidden; }
-.app-slides { display: grid; width: 100%; max-width: 340px; }
+/* App screenshot showcase (homepage) — each slide is a full-width photo
+   (left) + details panel (right); the whole slide slides in from the
+   direction of travel and the outgoing slide exits the other way; see
+   the --pos custom property set by js/main.js. */
+.app-showcase { overflow: hidden; }
+.app-slides { display: grid; width: 100%; }
 .app-slide {
-  grid-area: 1 / 1; margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
+  grid-area: 1 / 1; margin: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 56px;
   opacity: 0; visibility: hidden; transform: translateX(calc(var(--pos, 0) * 48px));
   transition: opacity .5s var(--ease), transform .5s var(--ease), visibility .5s;
 }
 .app-slide.is-active { opacity: 1; visibility: visible; }
+.app-slide-media { display: flex; justify-content: center; }
 .app-slide img {
-  width: 100%; max-width: min(250px, 24vh); min-width: 170px; aspect-ratio: 720 / 1650; object-fit: cover; object-position: top;
+  width: 100%; max-width: 320px; aspect-ratio: 720 / 1650; object-fit: cover; object-position: top;
   border-radius: 30px; border: 7px solid #1A1A1A; background: #1A1A1A; box-shadow: var(--shadow-lg);
 }
-.app-slide figcaption { margin-top: 14px; display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 92px; }
-.app-slide figcaption strong { font-family: var(--font-display); font-size: 1.12rem; color: var(--ink); }
-.app-slide figcaption span { font-size: 0.88rem; color: var(--ink-soft); max-width: 300px; }
+.app-slide figcaption { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; text-align: left; }
+.app-slide figcaption strong { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); }
+.app-slide figcaption span { font-size: 1rem; color: var(--ink-soft); max-width: 420px; }
 .app-role {
   font-style: normal; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   padding: 3px 10px; border-radius: 999px; margin-bottom: 4px;
@@ -386,7 +368,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .app-role-pro { background: var(--orange-soft); color: var(--orange-deep); }
 .app-role-all { background: var(--tint); color: var(--ink-soft); border: 1px solid var(--border); }
 [data-theme="dark"] .app-role-req, [data-theme="dark"] .app-role-pro { color: var(--orange); }
-.app-slider-controls { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
+.app-slider-controls { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; }
 .app-slider-btn {
   width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface);
   color: var(--red); display: grid; place-items: center; box-shadow: var(--shadow-sm); flex-shrink: 0;

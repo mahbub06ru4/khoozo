@@ -18,7 +18,10 @@
   .hero-visual { order: -1; margin-bottom: 12px; }
   .hero .lede { margin-left: auto; margin-right: auto; }
 
-  .about-grid, .contact-grid, .app-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .app-slide { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+  .app-slide-media, .app-slide figcaption { justify-content: center; align-items: center; text-align: center; }
+  .app-slide figcaption span { max-width: 420px; }
 
   .project-feature { grid-template-columns: 1fr; }
   .project-media { padding: 30px; }

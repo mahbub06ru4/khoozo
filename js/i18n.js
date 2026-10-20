@@ -39,9 +39,6 @@ const KHOOZO_I18N_DICT = {
     "hero.slider.admin": "Admin",
     "hero.slider.bidder": "Bidder",
 
-    "app.eyebrow": "From Khoozo IT",
-    "app.h2": "Meet the Khoozo app",
-    "app.p": "Before you explore our three divisions, say hello to our own product: a neighbourhood task & service marketplace app, built and run by Khoozo IT. One account to post a task, offer help, or sell in the Online Shop.",
     "app.getiton": "Get it on",
     "app.googleplay": "Google Play",
     "app.role.req": "Requester",
@@ -357,9 +354,6 @@ const KHOOZO_I18N_DICT = {
     "hero.slider.admin": "অ্যাডমিন",
     "hero.slider.bidder": "বিডার",
 
-    "app.eyebrow": "খুঁজো আইটি থেকে",
-    "app.h2": "খুঁজো অ্যাপের সাথে পরিচিত হোন",
-    "app.p": "আমাদের তিনটি বিভাগ দেখার আগে, আমাদের নিজস্ব প্রোডাক্টের সাথে পরিচিত হোন — খুঁজো আইটি দ্বারা তৈরি ও পরিচালিত একটি প্রতিবেশী-ভিত্তিক টাস্ক ও সার্ভিস মার্কেটপ্লেস অ্যাপ। একটি অ্যাকাউন্ট দিয়ে টাস্ক পোস্ট করুন, সাহায্য অফার করুন, অথবা অনলাইন শপে বিক্রি করুন।",
     "app.getiton": "পাওয়া যাচ্ছে",
     "app.googleplay": "গুগল প্লে",
     "app.role.req": "অনুরোধকারী",
