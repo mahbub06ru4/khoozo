@@ -257,7 +257,66 @@ window.IT_GALLERY = {
       "alt": "Multivendor E-commerce — Mobile Web Login"
     }
   ],
-  "office": [],
-  "realestate-saas": [],
-  "travel-saas": []
+  "office": [
+    {
+      "src": "assets/it/office/01-dashboard.jpg",
+      "alt": "Office Management — Dashboard"
+    },
+    {
+      "src": "assets/it/office/02-employees.jpg",
+      "alt": "Office Management — Employees"
+    },
+    {
+      "src": "assets/it/office/03-attendance.jpg",
+      "alt": "Office Management — Attendance"
+    },
+    {
+      "src": "assets/it/office/04-leave-requests.jpg",
+      "alt": "Office Management — Leave Requests"
+    },
+    {
+      "src": "assets/it/office/05-tasks.jpg",
+      "alt": "Office Management — Tasks"
+    },
+    {
+      "src": "assets/it/office/06-crm-leads.jpg",
+      "alt": "Office Management — CRM Leads"
+    },
+    {
+      "src": "assets/it/office/07-invoices.jpg",
+      "alt": "Office Management — Invoices"
+    },
+    {
+      "src": "assets/it/office/08-finance-reports.jpg",
+      "alt": "Office Management — Finance Reports"
+    },
+    {
+      "src": "assets/it/office/09-organization-branches.jpg",
+      "alt": "Office Management — Organization Branches"
+    },
+    {
+      "src": "assets/it/office/10-reports-catalog.jpg",
+      "alt": "Office Management — Reports Catalog"
+    }
+  ],
+  "realestate-saas": [
+    {
+      "src": "assets/it/realestate-saas/01-projects.jpg",
+      "alt": "Real Estate SaaS — Projects"
+    },
+    {
+      "src": "assets/it/realestate-saas/02-bookings.jpg",
+      "alt": "Real Estate SaaS — Bookings"
+    }
+  ],
+  "travel-saas": [
+    {
+      "src": "assets/it/travel-saas/01-visa-applications.jpg",
+      "alt": "Travel Agency SaaS — Visa Applications"
+    },
+    {
+      "src": "assets/it/travel-saas/02-dashboard-charts.jpg",
+      "alt": "Travel Agency SaaS — Dashboard Charts"
+    }
+  ]
 };
