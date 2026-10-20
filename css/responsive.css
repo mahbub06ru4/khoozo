@@ -12,6 +12,7 @@
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .quote-grid { grid-template-columns: 1fr 1fr; }
   .counter-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+  .app-cycle { grid-template-columns: repeat(2, 1fr); }
 
   .hero-inner { grid-template-columns: 1fr; text-align: center; padding-top: 64px; }
   .hero-copy .hero-actions, .hero-copy .hero-stats { justify-content: center; }
@@ -45,7 +46,7 @@
   html { scroll-padding-top: 72px; }
   .section { padding: 64px 0; }
 
-  .cards-grid, .feature-grid, .quote-grid, .project-teasers, .project-specs, .counter-grid {
+  .cards-grid, .feature-grid, .quote-grid, .project-teasers, .project-specs, .counter-grid, .app-cycle {
     grid-template-columns: 1fr;
   }
 
