@@ -134,9 +134,9 @@ if (appSlider) {
   const dots = Array.from(document.querySelectorAll("#appSliderDots button"));
   const captionEl = document.getElementById("appSliderCaption");
   const badges = {
-    poster: document.querySelector(".app-badge-poster"),
-    admin: document.querySelector(".app-badge-admin"),
-    bidder: document.querySelector(".app-badge-bidder")
+    poster: document.querySelector(".hero-badge-poster"),
+    admin: document.querySelector(".hero-badge-admin"),
+    bidder: document.querySelector(".hero-badge-bidder")
   };
   const SCREENS = [
     { captionKey: "hero.slider.caption1", caption: "Home", role: "poster" },

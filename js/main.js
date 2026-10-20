@@ -433,24 +433,42 @@ if (appShowcase) {
   dotsWrap.innerHTML = slides.map((_, i) => `<button type="button" class="app-slider-dot" aria-label="Show screenshot ${i + 1}"></button>`).join("");
   const dots = [...dotsWrap.children];
 
-  function show(i) {
-    current = (i + slides.length) % slides.length;
-    slides.forEach((s, si) => {
-      s.classList.toggle("is-active", si === current);
-      s.setAttribute("aria-hidden", si === current ? "false" : "true");
-    });
+  function show(i, dir) {
+    const newCurrent = (i + slides.length) % slides.length;
+    if (newCurrent === current) return;
+    const direction = dir || (newCurrent > current ? 1 : -1);
+    const oldSlide = slides[current];
+    const newSlide = slides[newCurrent];
+
+    /* Position the incoming slide off to the entry side with no transition,
+       force a reflow, then animate it to centre — a reliable "FLIP" so the
+       slide direction is always correct regardless of this slide's history. */
+    newSlide.style.transition = "none";
+    newSlide.style.setProperty("--pos", direction > 0 ? 1 : -1);
+    void newSlide.offsetWidth;
+    newSlide.style.transition = "";
+
+    oldSlide.classList.remove("is-active");
+    oldSlide.setAttribute("aria-hidden", "true");
+    oldSlide.style.setProperty("--pos", direction > 0 ? -1 : 1);
+
+    newSlide.classList.add("is-active");
+    newSlide.setAttribute("aria-hidden", "false");
+    newSlide.style.setProperty("--pos", 0);
+
+    current = newCurrent;
     dots.forEach((d, di) => d.classList.toggle("is-active", di === current));
   }
 
   function stop() { clearInterval(timer); timer = null; }
   function start() {
     if (reduceMotion || timer) return;
-    timer = setInterval(() => show(current + 1), AUTOPLAY_MS);
+    timer = setInterval(() => show(current + 1, 1), AUTOPLAY_MS);
   }
   function restart() { stop(); start(); }
 
-  document.getElementById("appPrev").addEventListener("click", () => { show(current - 1); restart(); });
-  document.getElementById("appNext").addEventListener("click", () => { show(current + 1); restart(); });
+  document.getElementById("appPrev").addEventListener("click", () => { show(current - 1, -1); restart(); });
+  document.getElementById("appNext").addEventListener("click", () => { show(current + 1, 1); restart(); });
   dots.forEach((d, di) => d.addEventListener("click", () => { show(di); restart(); }));
 
   appShowcase.addEventListener("mouseenter", stop);
@@ -464,7 +482,7 @@ if (appShowcase) {
   appShowcase.addEventListener("touchend", e => {
     if (touchX === null) return;
     const dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
     touchX = null;
     start();
   });
