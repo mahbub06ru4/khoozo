@@ -294,7 +294,7 @@ const KHOOZO_I18N_DICT = {
     "terms.s8.h2": "8. Changes to These Terms",
     "terms.s8.p": "We may update these Terms as Khoozo evolves. Continued use of our website, app or services after a change means you accept the update.",
     "terms.s9.h2": "9. Contact",
-    "terms.s9.p": "Questions about these Terms? Email <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> or call <a href=\"tel:+8801818120900\">01818-120900</a>.",
+    "terms.s9.p": "Questions about these Terms? Email <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> or call <a href=\"tel:+8801818120900\">+88 01818-120900</a>.",
 
     "privacy.h1": "Privacy Policy",
     "privacy.s1.h2": "1. Overview",
@@ -320,7 +320,7 @@ const KHOOZO_I18N_DICT = {
     "privacy.s8.h2": "8. Changes to This Policy",
     "privacy.s8.p": "We may update this Privacy Policy as Khoozo evolves. Continued use of our website, app or services after a change means you accept the update.",
     "privacy.s9.h2": "9. Contact",
-    "privacy.s9.p": "Questions about this policy or your data? Email <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> or call <a href=\"tel:+8801818120900\">01818-120900</a>.",
+    "privacy.s9.p": "Questions about this policy or your data? Email <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> or call <a href=\"tel:+8801818120900\">+88 01818-120900</a>.",
   },
   bn: {
     "nav.home": "হোম",
@@ -608,7 +608,7 @@ const KHOOZO_I18N_DICT = {
     "terms.s8.h2": "৮. এই শর্তাবলীর পরিবর্তন",
     "terms.s8.p": "খুঁজো বিকশিত হওয়ার সাথে সাথে আমরা এই শর্তাবলী আপডেট করতে পারি। পরিবর্তনের পর আমাদের ওয়েবসাইট, অ্যাপ বা সেবা ব্যবহার চালিয়ে যাওয়ার অর্থ আপনি সেই আপডেট মেনে নিয়েছেন।",
     "terms.s9.h2": "৯. যোগাযোগ",
-    "terms.s9.p": "এই শর্তাবলী সম্পর্কে প্রশ্ন আছে? ইমেইল করুন <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> অথবা কল করুন <a href=\"tel:+8801818120900\">০১৮১৮-১২০৯০০</a>।",
+    "terms.s9.p": "এই শর্তাবলী সম্পর্কে প্রশ্ন আছে? ইমেইল করুন <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> অথবা কল করুন <a href=\"tel:+8801818120900\">+৮৮ ০১৮১৮-১২০৯০০</a>।",
 
     "privacy.h1": "গোপনীয়তা নীতি",
     "privacy.s1.h2": "১. সারসংক্ষেপ",
@@ -634,7 +634,7 @@ const KHOOZO_I18N_DICT = {
     "privacy.s8.h2": "৮. এই নীতির পরিবর্তন",
     "privacy.s8.p": "খুঁজো বিকশিত হওয়ার সাথে সাথে আমরা এই গোপনীয়তা নীতি আপডেট করতে পারি। পরিবর্তনের পর আমাদের ওয়েবসাইট, অ্যাপ বা সেবা ব্যবহার চালিয়ে যাওয়ার অর্থ আপনি সেই আপডেট মেনে নিয়েছেন।",
     "privacy.s9.h2": "৯. যোগাযোগ",
-    "privacy.s9.p": "এই নীতি বা আপনার তথ্য নিয়ে প্রশ্ন আছে? ইমেইল করুন <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> অথবা কল করুন <a href=\"tel:+8801818120900\">০১৮১৮-১২০৯০০</a>।",
+    "privacy.s9.p": "এই নীতি বা আপনার তথ্য নিয়ে প্রশ্ন আছে? ইমেইল করুন <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> অথবা কল করুন <a href=\"tel:+8801818120900\">+৮৮ ০১৮১৮-১২০৯০০</a>।",
   }
 };
 
