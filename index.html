@@ -380,26 +380,38 @@
       </ul>
     </div>
 
-    <!-- ================= SIGNATURE HERO VISUAL ================= -->
-    <div class="hero-visual reveal" aria-hidden="true">
-      <div class="orbit-system">
-        <div class="hub-core">
-          <span class="hub-mark" data-i18n="brand.name">Khoozo</span>
-          <span class="hub-label" data-i18n="hero.hublabel">For Your Each Solution</span>
-        </div>
-        <div class="orbit-ring"></div>
+    <!-- ================= SIGNATURE HERO VISUAL: APP JOURNEY SLIDER ================= -->
+    <div class="hero-visual reveal">
+      <div class="app-slider" id="appSlider" aria-roledescription="carousel" aria-label="Khoozo app walkthrough">
+        <div class="app-slider-blob app-slider-blob-1" aria-hidden="true"></div>
+        <div class="app-slider-blob app-slider-blob-2" aria-hidden="true"></div>
 
-        <div class="orbit-node node-it" style="--angle:0deg;">
-          <i class="fa-solid fa-code"></i>
-          <span data-i18n="hero.node.it">Khoozo IT</span>
+        <div class="app-slider-phone">
+          <div class="app-slider-track" id="appSliderTrack">
+            <img src="assets/app/hero-slider/01-home.jpg" alt="Khoozo app — Home" class="is-active">
+            <img src="assets/app/hero-slider/02-create-task.jpg" alt="Khoozo app — Create a Task">
+            <img src="assets/app/hero-slider/03-admin-review.jpg" alt="Khoozo app — Admin Review">
+            <img src="assets/app/hero-slider/04-marketplace.jpg" alt="Khoozo app — Live Marketplace">
+            <img src="assets/app/hero-slider/05-review-offers.jpg" alt="Khoozo app — Review Offers">
+            <img src="assets/app/hero-slider/06-dashboard.jpg" alt="Khoozo app — My Dashboard">
+          </div>
         </div>
-        <div class="orbit-node node-travel" style="--angle:120deg;">
-          <i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i>
-          <span data-i18n="hero.node.travel">Travel</span>
+
+        <p class="app-slider-caption" id="appSliderCaption">Home</p>
+
+        <div class="app-slider-dots" id="appSliderDots" role="tablist" aria-label="Walkthrough screens">
+          <button type="button" class="is-active" role="tab" aria-selected="true" aria-label="Go to screen 1"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Go to screen 2"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Go to screen 3"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Go to screen 4"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Go to screen 5"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Go to screen 6"></button>
         </div>
-        <div class="orbit-node node-realestate" style="--angle:240deg;">
-          <i class="fa-solid fa-building" aria-hidden="true"></i>
-          <span data-i18n="hero.node.realestate">Real Estate</span>
+
+        <div class="app-slider-badges">
+          <span class="app-badge app-badge-poster is-active" data-i18n="hero.slider.poster">Task Poster</span>
+          <span class="app-badge app-badge-admin" data-i18n="hero.slider.admin">Admin</span>
+          <span class="app-badge app-badge-bidder" data-i18n="hero.slider.bidder">Bidder</span>
         </div>
       </div>
     </div>

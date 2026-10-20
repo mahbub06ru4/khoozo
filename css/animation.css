@@ -124,24 +124,13 @@
 }
 
 /* ================================================================
-   6. ORBIT SYSTEM MOTION
+   6. APP SLIDER MOTION
    ================================================================ */
-.orbit-ring { animation: spinRing 46s linear infinite; }
-@keyframes spinRing { to { transform: translate(-50%, -50%) rotate(360deg); } }
-
-.hub-core { animation: hubFloat 5s ease-in-out infinite; }
-@keyframes hubFloat {
-  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-  50%      { transform: translate(-50%, -50%) translateY(-8px); }
-}
-
-.orbit-node { animation: nodePulse 4.5s ease-in-out infinite; }
-.orbit-node.node-travel { animation-delay: -1.1s; }
-.orbit-node.node-visa { animation-delay: -2.2s; }
-.orbit-node.node-realestate { animation-delay: -3.3s; }
-@keyframes nodePulse {
-  0%, 100% { box-shadow: var(--shadow-sm); }
-  50%      { box-shadow: var(--shadow-md); }
+.app-slider-blob-1 { animation: blobFloat 7s ease-in-out infinite; }
+.app-slider-blob-2 { animation: blobFloat 7s ease-in-out infinite -3.5s; }
+@keyframes blobFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
 }
 
 /* ================================================================
@@ -170,7 +159,7 @@
   .reveal { transition: none; animation: none; opacity: 1; transform: none; }
   .hero .reveal { animation: none; opacity: 1; }
   .floating-shape, .plane-icon, .scroll-cue i,
-  .orbit-ring, .hub-core, .orbit-node, .typing-cursor,
+  .app-slider-blob-1, .app-slider-blob-2, .typing-cursor,
   .preloader-mark, .preloader-bar span, .fab {
     animation: none !important;
   }

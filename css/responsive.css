@@ -52,13 +52,7 @@
   .hero h1 { font-size: clamp(1.75rem, 8vw, 2.4rem); }
   .hero-stats { justify-content: center; gap: 20px 30px; }
 
-  .orbit-system { width: 300px; height: 300px; --orbit-radius: 116px; transform: scale(0.9); }
-  .orbit-ring { width: 232px; height: 232px; }
-  .hub-core { width: 118px; height: 118px; }
-  .hub-mark { font-size: 1.05rem; }
-  .hub-label { font-size: 0.6rem; }
-  .orbit-node { width: 80px; margin-left: -40px; padding: 9px 6px; }
-  .orbit-node span { font-size: 0.62rem; }
+  .app-slider-phone { width: 200px; }
 
   .project-body { padding: 28px 22px; }
   .project-body h3 { font-size: 1.25rem; }
