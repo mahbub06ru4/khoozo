@@ -1,5 +1,50 @@
 window.IT_GALLERY = {
-  "dorkari": [],
+  "dorkari": [
+    {
+      "src": "assets/it/dorkari/01-home.jpeg",
+      "alt": "Dorkari — Home"
+    },
+    {
+      "src": "assets/it/dorkari/02-holiday-calendar.jpeg",
+      "alt": "Dorkari — Holiday Calendar"
+    },
+    {
+      "src": "assets/it/dorkari/03-news.jpeg",
+      "alt": "Dorkari — News"
+    },
+    {
+      "src": "assets/it/dorkari/04-weather.jpeg",
+      "alt": "Dorkari — Weather"
+    },
+    {
+      "src": "assets/it/dorkari/05-ramadan-calendar.jpeg",
+      "alt": "Dorkari — Ramadan Calendar"
+    },
+    {
+      "src": "assets/it/dorkari/06-prayer-times.jpeg",
+      "alt": "Dorkari — Prayer Times"
+    },
+    {
+      "src": "assets/it/dorkari/07-quran-list.jpeg",
+      "alt": "Dorkari — Quran Surah List"
+    },
+    {
+      "src": "assets/it/dorkari/08-quran-reading.jpeg",
+      "alt": "Dorkari — Quran Reading"
+    },
+    {
+      "src": "assets/it/dorkari/09-home-dark.jpeg",
+      "alt": "Dorkari — Home (Dark Mode)"
+    },
+    {
+      "src": "assets/it/dorkari/10-quran-list-dark.jpeg",
+      "alt": "Dorkari — Quran Surah List (Dark Mode)"
+    },
+    {
+      "src": "assets/it/dorkari/11-settings.jpeg",
+      "alt": "Dorkari — Settings"
+    }
+  ],
   "fintrack": [
     {
       "src": "assets/it/fintrack/01-dashboard.jpeg",
@@ -124,6 +169,92 @@ window.IT_GALLERY = {
     {
       "src": "assets/it/khoozo-ota/20-my-bookings.png",
       "alt": "Khoozo Ota — My Bookings"
+    }
+  ],
+  "multivendor-ecommerce": [
+    {
+      "src": "assets/it/ecommerce/v2/web-d01-home.png",
+      "alt": "Multivendor E-commerce — Web Home"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-d02-catalog.png",
+      "alt": "Multivendor E-commerce — Web Catalog"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-d03-product.png",
+      "alt": "Multivendor E-commerce — Web Product"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-d04-category.png",
+      "alt": "Multivendor E-commerce — Web Category"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-d05-login.png",
+      "alt": "Multivendor E-commerce — Web Login"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-d06-register.png",
+      "alt": "Multivendor E-commerce — Web Register"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-d07-store.png",
+      "alt": "Multivendor E-commerce — Web Vendor Store"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-01-home.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Home"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-02-home-shelves.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Home Shelves"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-03-categories.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Categories"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-04-categories-fashion.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Fashion Category"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-05-product.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Product"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-06-product-details.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Product Details"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-07-cart.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Cart"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/app-08-account.jpg",
+      "alt": "Multivendor E-commerce — Mobile App Account"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/admin-01-login.png",
+      "alt": "Multivendor E-commerce — Admin Panel Login"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-m01-home.jpg",
+      "alt": "Multivendor E-commerce — Mobile Web Home"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-m02-home-shelves.jpg",
+      "alt": "Multivendor E-commerce — Mobile Web Home Shelves"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-m03-catalog.jpg",
+      "alt": "Multivendor E-commerce — Mobile Web Catalog"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-m04-product.jpg",
+      "alt": "Multivendor E-commerce — Mobile Web Product"
+    },
+    {
+      "src": "assets/it/ecommerce/v2/web-m05-login.png",
+      "alt": "Multivendor E-commerce — Mobile Web Login"
     }
   ],
   "office": [],
