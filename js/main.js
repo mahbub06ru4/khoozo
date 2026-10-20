@@ -277,63 +277,72 @@ if (modal) {
    scripts/build-it-gallery.js from whatever images sit in each
    assets/it/<project-id>/ folder — drop screenshots in, rerun the
    script, and they show up here with no code changes. */
+/* Title/description/feature text is looked up from KHOOZO_I18N_DICT at
+   render time (see t() below), so the modal re-renders in the current
+   language; titleKey/descKey double as the English fallback text. */
+function t(key, fallback) {
+  const lang = window.khoozoCurrentLang || "en";
+  const dict = typeof KHOOZO_I18N_DICT !== "undefined" ? KHOOZO_I18N_DICT[lang] : null;
+  return (dict && dict[key]) || fallback;
+}
+
 const IT_PROJECTS = {
   "khoozo-ota": {
     icon: "fa-solid fa-plane-departure",
-    title: "Khoozo Travel (OTA)",
-    desc: "A complete online travel agency platform — search, compare and book flights, hotels and holiday packages, apply for tourist and student visas, and pay securely, all from one web app and companion mobile app.",
+    titleKey: "it.proj.khoozo-ota.title",
+    descKey: "it.proj.khoozo-ota.modal.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"],
     web: true,
-    features: [
-      "Air ticketing — one-way, round-trip & multi-city search, fare summary and instant e-tickets",
-      "Hotel booking — destination search, room selection and checkout",
-      "Holiday packages — curated itineraries, customisation and build-your-own trips",
-      "Visa services — requirements and processing for 23+ countries",
-      "Student visa assistance — UK, US, Canada, Australia and more (CAS, I-20, SOP)",
-      "Secure payments — cards, bKash, Nagad, Rocket and more",
-      "My bookings — manage all flights, hotels, packages and visas in one account"
+    featureKeys: [
+      "it.proj.khoozo-ota.f1",
+      "it.proj.khoozo-ota.f2",
+      "it.proj.khoozo-ota.f3",
+      "it.proj.khoozo-ota.f4",
+      "it.proj.khoozo-ota.f5",
+      "it.proj.khoozo-ota.f6",
+      "it.proj.khoozo-ota.f7"
     ]
   },
   khoozo: {
     icon: "fa-solid fa-magnifying-glass-location",
-    title: "Khoozo App",
-    desc: "A location-based marketplace where users post tasks and service requests, receive competing offers, and hire with confidence — built as a web app, an admin panel, and a Flutter mobile app, with English & Bangla and light/dark themes.",
+    titleKey: "it.proj.khoozo.title",
+    descKey: "it.proj.khoozo.modal.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   },
   dorkari: {
     icon: "fa-solid fa-mosque",
-    title: "Dorkari App",
-    desc: "A daily-essentials companion app covering local news, live weather, public holidays, religious events, Ramadan routine, and Quran — all in one place.",
+    titleKey: "it.proj.dorkari.title",
+    descKey: "it.proj.dorkari.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   },
   office: {
     icon: "fa-solid fa-building",
-    title: "Office Management Software",
-    desc: "An all-in-one office management system — HR, attendance, payroll, task tracking, and internal approvals — with a companion mobile app for on-the-go teams.",
+    titleKey: "it.proj.office.title",
+    descKey: "it.proj.office.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   },
   "realestate-saas": {
     icon: "fa-solid fa-city",
-    title: "Real Estate SaaS",
-    desc: "A multi-tenant SaaS platform for real estate agencies — property listings, lead management, bookings, and investor reporting, with a mobile app for agents and buyers.",
+    titleKey: "it.proj.realestate-saas.title",
+    descKey: "it.proj.realestate-saas.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   },
   "travel-saas": {
     icon: "fa-solid fa-plane",
-    title: "Travel Agency SaaS",
-    desc: "A SaaS platform for travel agencies to manage packages, bookings, itineraries, and payments, paired with a mobile app for customers to book and track trips.",
+    titleKey: "it.proj.travel-saas.title",
+    descKey: "it.proj.travel-saas.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   },
   fintrack: {
     icon: "fa-solid fa-sack-dollar",
-    title: "Fintrack",
-    desc: "A personal income & expense management app — budgets, monthly and yearly summaries, and spending insights, available on mobile and web.",
+    titleKey: "it.proj.fintrack.title",
+    descKey: "it.proj.fintrack.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   },
   "multivendor-ecommerce": {
     icon: "fa-solid fa-cart-shopping",
-    title: "Multivendor E-commerce Platform",
-    desc: "A multivendor e-commerce website with a seller onboarding flow, admin panel, and companion mobile app. Full details coming soon.",
+    titleKey: "it.proj.multivendor-ecommerce.title",
+    descKey: "it.proj.multivendor-ecommerce.desc",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   }
 };
@@ -354,6 +363,7 @@ if (itModal) {
   let itSlideCount = 0;
   let itIndex = 0;
   let itLastFocus = null;
+  let itCurrentId = null;
 
   function goToSlide(i) {
     itIndex = (i + itSlideCount) % itSlideCount;
@@ -361,34 +371,44 @@ if (itModal) {
     itmDots.querySelectorAll(".itm-dot").forEach((d, di) => d.classList.toggle("is-active", di === itIndex));
   }
 
-  function openItModal(id) {
+  function renderItModal(id) {
     const p = IT_PROJECTS[id];
     if (!p) return;
 
     itmIcon.innerHTML = `<i class="${p.icon}" aria-hidden="true"></i>`;
-    itmTitle.textContent = p.title;
-    itmDesc.textContent = p.desc;
-    itmTags.innerHTML = p.tech.map(t => `<span class="it-tag${t.includes("Flutter") ? " it-tag-mobile" : ""}">${t}</span>`).join("");
+    itmTitle.textContent = t(p.titleKey, p.titleKey);
+    itmDesc.textContent = t(p.descKey, p.descKey);
+    itmTags.innerHTML = p.tech.map(tag => `<span class="it-tag${tag.includes("Flutter") ? " it-tag-mobile" : ""}">${tag}</span>`).join("");
 
-    itmFeatures.innerHTML = (p.features || []).map(f => `<li><i class="fa-solid fa-check" aria-hidden="true"></i> ${f}</li>`).join("");
-    itmFeaturesTitle.hidden = !p.features;
+    itmFeatures.innerHTML = (p.featureKeys || []).map(k => `<li><i class="fa-solid fa-check" aria-hidden="true"></i> ${t(k, k)}</li>`).join("");
+    itmFeaturesTitle.hidden = !p.featureKeys;
     itModal.querySelector(".itm-dialog").classList.toggle("itm-web", !!p.web);
 
     const images = IT_GALLERY[id] || [];
+    const prevSlideCount = itSlideCount;
     itSlideCount = images.length;
     if (itSlideCount) {
       itmTrack.innerHTML = images.map(({ src, alt }) => `<div class="itm-slide"><img src="${src}" alt="${alt}" loading="lazy"></div>`).join("");
       itmDots.innerHTML = images.map((_, i) => `<button type="button" class="itm-dot" aria-label="Go to screenshot ${i + 1}"></button>`).join("");
       itmDots.querySelectorAll(".itm-dot").forEach((d, di) => d.addEventListener("click", () => goToSlide(di)));
       itmPrev.hidden = itmNext.hidden = itSlideCount < 2;
-      goToSlide(0);
+      goToSlide(prevSlideCount === itSlideCount ? itIndex : 0);
     } else {
       itIndex = 0;
       itmTrack.style.transform = "translateX(0)";
-      itmTrack.innerHTML = `<div class="itm-slide"><p class="itm-empty"><i class="fa-solid fa-image" aria-hidden="true"></i>Screenshots coming soon</p></div>`;
+      itmTrack.innerHTML = `<div class="itm-slide"><p class="itm-empty"><i class="fa-solid fa-image" aria-hidden="true"></i>${t("it.modal.comingsoon", "Screenshots coming soon")}</p></div>`;
       itmDots.innerHTML = "";
       itmPrev.hidden = itmNext.hidden = true;
     }
+  }
+  window.khoozoRefreshItModal = () => {
+    if (itCurrentId && itModal.classList.contains("is-open")) renderItModal(itCurrentId);
+  };
+
+  function openItModal(id) {
+    if (!IT_PROJECTS[id]) return;
+    itCurrentId = id;
+    renderItModal(id);
 
     itLastFocus = document.activeElement;
     itModal.classList.add("is-open");
