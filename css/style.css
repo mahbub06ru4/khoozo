@@ -729,6 +729,11 @@ body.modal-open { overflow: hidden; }
   font-family: var(--font-display); font-size: 1.15rem; color: #fff;
   border-left: 3px solid var(--orange); padding-left: 18px; margin-bottom: 24px;
 }
+.chairman-credit { color: #cdd9ef; font-size: 0.92rem; margin-bottom: 22px; }
+.chairman-credit strong { color: #fff; }
+.chairman-actions { margin-bottom: 22px; }
+.chairman-card .btn-primary { background: #fff; color: var(--red-deep); box-shadow: 0 10px 26px rgba(0,0,0,0.25); }
+.chairman-card .btn-primary:hover { background: var(--orange); color: #fff; }
 .chairman-card .social-row a {
   display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
   background: rgba(255,255,255,0.1); color: #fff;

@@ -262,6 +262,8 @@ const KHOOZO_I18N_DICT = {
     "chairman.title": "Chairman & Founder, Khoozo",
     "chairman.bio": "A technology enthusiast at heart and a Flutter developer by craft, Md. Mahbubur Rahman founded Khoozo on the belief that good consultancy is really just good engineering applied to people's biggest decisions. Over more than a decade building software for banking, logistics and consumer platforms, he saw the same pattern outside tech: travel plans, visa applications and property investments were too often handled with less rigor than a software sprint. Khoozo was built to close that gap — bringing a builder's discipline to every consultation, whether it's shipping an app, booking a flight, or securing a share in Uttara's next development.",
     "chairman.quote": "\"We don't sell services. We build outcomes — the same way we'd build a product.\"",
+    "chairman.credit": "Personally built banking-grade FinTech apps for <strong>City Bank</strong> — including the Blinks e-Wallet and MAS Merchant platform — before founding Khoozo.",
+    "chairman.hire": "Hire Me",
 
     "counter.projects": "Projects",
     "counter.clients": "Clients",
@@ -588,6 +590,8 @@ const KHOOZO_I18N_DICT = {
     "chairman.title": "চেয়ারম্যান ও প্রতিষ্ঠাতা, খুঁজো",
     "chairman.bio": "মনেপ্রাণে একজন প্রযুক্তি উৎসাহী এবং পেশায় একজন Flutter ডেভেলপার, মো. মাহবুবুর রহমান খুঁজো প্রতিষ্ঠা করেন এই বিশ্বাস থেকে যে ভালো কনসালটেন্সি আসলে মানুষের সবচেয়ে বড় সিদ্ধান্তগুলোতে ভালো ইঞ্জিনিয়ারিং প্রয়োগ করা। ব্যাংকিং, লজিস্টিকস এবং কনজ্যুমার প্ল্যাটফর্মের জন্য এক দশকেরও বেশি সময় সফটওয়্যার তৈরি করার পর, তিনি প্রযুক্তির বাইরেও একই প্যাটার্ন লক্ষ্য করেন: ভ্রমণ পরিকল্পনা, ভিসা আবেদন এবং সম্পত্তি বিনিয়োগ প্রায়ই একটি সফটওয়্যার প্রজেক্টের চেয়ে কম নিষ্ঠার সাথে পরিচালিত হতো। খুঁজো তৈরি করা হয়েছিল সেই ফাঁক পূরণ করতে — একটি অ্যাপ শিপ করা, একটি ফ্লাইট বুক করা, বা উত্তরায় একটি শেয়ার সুরক্ষিত করা, প্রতিটি পরামর্শেই একজন নির্মাতার নিষ্ঠা নিয়ে আসা।",
     "chairman.quote": "\"আমরা সেবা বিক্রি করি না। আমরা ফলাফল তৈরি করি — ঠিক যেভাবে আমরা একটি প্রোডাক্ট তৈরি করতাম।\"",
+    "chairman.credit": "খুঁজো প্রতিষ্ঠার আগে <strong>সিটি ব্যাংক</strong>-এর জন্য ব্যাংকিং-গ্রেড ফিনটেক অ্যাপ তৈরি করেছেন ব্যক্তিগতভাবে — যার মধ্যে রয়েছে ব্লিংকস ই-ওয়ালেট এবং MAS মার্চেন্ট প্ল্যাটফর্ম।",
+    "chairman.hire": "হায়ার মি",
 
     "counter.projects": "প্রজেক্ট",
     "counter.clients": "ক্লায়েন্ট",
