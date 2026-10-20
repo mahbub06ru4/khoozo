@@ -329,6 +329,12 @@ const IT_PROJECTS = {
     title: "Fintrack",
     desc: "A personal income & expense management app — budgets, monthly and yearly summaries, and spending insights, available on mobile and web.",
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
+  },
+  "multivendor-ecommerce": {
+    icon: "fa-solid fa-cart-shopping",
+    title: "Multivendor E-commerce Platform",
+    desc: "A multivendor e-commerce website with a seller onboarding flow, admin panel, and companion mobile app. Full details coming soon.",
+    tech: ["NestJS", "PostgreSQL", "Flutter App"]
   }
 };
 const IT_GALLERY = window.IT_GALLERY || {};

@@ -418,6 +418,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 [data-theme="dark"] .service-group-title { color: var(--orange); }
 .service-group-title i { font-size: 1rem; }
 
+.service-banner {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 22px; border-radius: 14px; margin-bottom: 40px;
+  background: linear-gradient(120deg, var(--red-soft), var(--orange-soft));
+  border: 1px solid var(--border);
+}
+.service-banner i {
+  flex: none; width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: 50%; font-size: 1.05rem; color: #fff;
+  background: linear-gradient(120deg, var(--red), var(--orange));
+}
+.service-banner p { margin: 0; font-weight: 600; color: var(--ink); font-size: 1.02rem; }
+
 .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .cards-grid-single { grid-template-columns: repeat(4, 1fr); }
 .cards-grid-single .service-card { grid-column: span 1; }
