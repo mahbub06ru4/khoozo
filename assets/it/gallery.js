@@ -1,4 +1,58 @@
 window.IT_GALLERY = {
+  "dokanbondhu": [
+    {
+      "src": "assets/it/dokanbondhu/01-web-money-truth-dashboard.jpg",
+      "alt": "Dokanbondhu — Web Money Truth Dashboard"
+    },
+    {
+      "src": "assets/it/dokanbondhu/02-web-pos.jpg",
+      "alt": "Dokanbondhu — Web Pos"
+    },
+    {
+      "src": "assets/it/dokanbondhu/03-desktop-pos-two-pane.jpg",
+      "alt": "Dokanbondhu — Desktop Pos Two Pane"
+    },
+    {
+      "src": "assets/it/dokanbondhu/04-mobile-home-profit.jpg",
+      "alt": "Dokanbondhu — Mobile Home Profit"
+    },
+    {
+      "src": "assets/it/dokanbondhu/05-mobile-sales-profit-charts.jpg",
+      "alt": "Dokanbondhu — Mobile Sales Profit Charts"
+    },
+    {
+      "src": "assets/it/dokanbondhu/06-mobile-sell-cart.jpg",
+      "alt": "Dokanbondhu — Mobile Sell Cart"
+    },
+    {
+      "src": "assets/it/dokanbondhu/07-mobile-pay-sheet.jpg",
+      "alt": "Dokanbondhu — Mobile Pay Sheet"
+    },
+    {
+      "src": "assets/it/dokanbondhu/08-mobile-vat-offer-boxes-sizes.jpg",
+      "alt": "Dokanbondhu — Mobile Vat Offer Boxes Sizes"
+    },
+    {
+      "src": "assets/it/dokanbondhu/09-mobile-purchases-and-dues.jpg",
+      "alt": "Dokanbondhu — Mobile Purchases And Dues"
+    },
+    {
+      "src": "assets/it/dokanbondhu/10-web-profit-report.jpg",
+      "alt": "Dokanbondhu — Web Profit Report"
+    },
+    {
+      "src": "assets/it/dokanbondhu/11-desktop-reports.jpg",
+      "alt": "Dokanbondhu — Desktop Reports"
+    },
+    {
+      "src": "assets/it/dokanbondhu/12-web-vat-and-scale-settings.jpg",
+      "alt": "Dokanbondhu — Web Vat And Scale Settings"
+    },
+    {
+      "src": "assets/it/dokanbondhu/13-desktop-dark-theme.jpg",
+      "alt": "Dokanbondhu — Desktop Dark Theme"
+    }
+  ],
   "dorkari": [
     {
       "src": "assets/it/dorkari/01-home.jpeg",
@@ -26,7 +80,7 @@ window.IT_GALLERY = {
     },
     {
       "src": "assets/it/dorkari/07-quran-list.jpeg",
-      "alt": "Dorkari — Quran Surah List"
+      "alt": "Dorkari — Quran List"
     },
     {
       "src": "assets/it/dorkari/08-quran-reading.jpeg",
@@ -34,17 +88,18 @@ window.IT_GALLERY = {
     },
     {
       "src": "assets/it/dorkari/09-home-dark.jpeg",
-      "alt": "Dorkari — Home (Dark Mode)"
+      "alt": "Dorkari — Home Dark"
     },
     {
       "src": "assets/it/dorkari/10-quran-list-dark.jpeg",
-      "alt": "Dorkari — Quran Surah List (Dark Mode)"
+      "alt": "Dorkari — Quran List Dark"
     },
     {
       "src": "assets/it/dorkari/11-settings.jpeg",
       "alt": "Dorkari — Settings"
     }
   ],
+  "ecommerce": [],
   "fintrack": [
     {
       "src": "assets/it/fintrack/01-dashboard.jpeg",
@@ -171,152 +226,66 @@ window.IT_GALLERY = {
       "alt": "Khoozo Ota — My Bookings"
     }
   ],
-  "multivendor-ecommerce": [
-    {
-      "src": "assets/it/ecommerce/v2/web-d01-home.png",
-      "alt": "Multivendor E-commerce — Web Home"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-d02-catalog.png",
-      "alt": "Multivendor E-commerce — Web Catalog"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-d03-product.png",
-      "alt": "Multivendor E-commerce — Web Product"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-d04-category.png",
-      "alt": "Multivendor E-commerce — Web Category"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-d05-login.png",
-      "alt": "Multivendor E-commerce — Web Login"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-d06-register.png",
-      "alt": "Multivendor E-commerce — Web Register"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-d07-store.png",
-      "alt": "Multivendor E-commerce — Web Vendor Store"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-01-home.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Home"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-02-home-shelves.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Home Shelves"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-03-categories.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Categories"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-04-categories-fashion.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Fashion Category"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-05-product.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Product"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-06-product-details.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Product Details"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-07-cart.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Cart"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/app-08-account.jpg",
-      "alt": "Multivendor E-commerce — Mobile App Account"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/admin-01-login.png",
-      "alt": "Multivendor E-commerce — Admin Panel Login"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-m01-home.jpg",
-      "alt": "Multivendor E-commerce — Mobile Web Home"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-m02-home-shelves.jpg",
-      "alt": "Multivendor E-commerce — Mobile Web Home Shelves"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-m03-catalog.jpg",
-      "alt": "Multivendor E-commerce — Mobile Web Catalog"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-m04-product.jpg",
-      "alt": "Multivendor E-commerce — Mobile Web Product"
-    },
-    {
-      "src": "assets/it/ecommerce/v2/web-m05-login.png",
-      "alt": "Multivendor E-commerce — Mobile Web Login"
-    }
-  ],
   "office": [
     {
       "src": "assets/it/office/01-dashboard.jpg",
-      "alt": "Office Management — Dashboard"
+      "alt": "Office — Dashboard"
     },
     {
       "src": "assets/it/office/02-employees.jpg",
-      "alt": "Office Management — Employees"
+      "alt": "Office — Employees"
     },
     {
       "src": "assets/it/office/03-attendance.jpg",
-      "alt": "Office Management — Attendance"
+      "alt": "Office — Attendance"
     },
     {
       "src": "assets/it/office/04-leave-requests.jpg",
-      "alt": "Office Management — Leave Requests"
+      "alt": "Office — Leave Requests"
     },
     {
       "src": "assets/it/office/05-tasks.jpg",
-      "alt": "Office Management — Tasks"
+      "alt": "Office — Tasks"
     },
     {
       "src": "assets/it/office/06-crm-leads.jpg",
-      "alt": "Office Management — CRM Leads"
+      "alt": "Office — Crm Leads"
     },
     {
       "src": "assets/it/office/07-invoices.jpg",
-      "alt": "Office Management — Invoices"
+      "alt": "Office — Invoices"
     },
     {
       "src": "assets/it/office/08-finance-reports.jpg",
-      "alt": "Office Management — Finance Reports"
+      "alt": "Office — Finance Reports"
     },
     {
       "src": "assets/it/office/09-organization-branches.jpg",
-      "alt": "Office Management — Organization Branches"
+      "alt": "Office — Organization Branches"
     },
     {
       "src": "assets/it/office/10-reports-catalog.jpg",
-      "alt": "Office Management — Reports Catalog"
+      "alt": "Office — Reports Catalog"
     }
   ],
   "realestate-saas": [
     {
       "src": "assets/it/realestate-saas/01-projects.jpg",
-      "alt": "Real Estate SaaS — Projects"
+      "alt": "Realestate Saas — Projects"
     },
     {
       "src": "assets/it/realestate-saas/02-bookings.jpg",
-      "alt": "Real Estate SaaS — Bookings"
+      "alt": "Realestate Saas — Bookings"
     }
   ],
   "travel-saas": [
     {
       "src": "assets/it/travel-saas/01-visa-applications.jpg",
-      "alt": "Travel Agency SaaS — Visa Applications"
+      "alt": "Travel Saas — Visa Applications"
     },
     {
       "src": "assets/it/travel-saas/02-dashboard-charts.jpg",
-      "alt": "Travel Agency SaaS — Dashboard Charts"
+      "alt": "Travel Saas — Dashboard Charts"
     }
   ]
 };

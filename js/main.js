@@ -287,6 +287,22 @@ function t(key, fallback) {
 }
 
 const IT_PROJECTS = {
+  dokanbondhu: {
+    icon: "fa-solid fa-cash-register",
+    titleKey: "it.proj.dokanbondhu.title",
+    descKey: "it.proj.dokanbondhu.modal.desc",
+    tech: ["Laravel 13", "Livewire", "MySQL", "Flutter App", "SQLite (offline)"],
+    featureKeys: [
+      "it.proj.dokanbondhu.f1",
+      "it.proj.dokanbondhu.f2",
+      "it.proj.dokanbondhu.f3",
+      "it.proj.dokanbondhu.f4",
+      "it.proj.dokanbondhu.f5",
+      "it.proj.dokanbondhu.f6",
+      "it.proj.dokanbondhu.f7",
+      "it.proj.dokanbondhu.f8"
+    ]
+  },
   "khoozo-ota": {
     icon: "fa-solid fa-plane-departure",
     titleKey: "it.proj.khoozo-ota.title",
