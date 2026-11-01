@@ -9,6 +9,12 @@
 
 const KHOOZO_I18N_DICT = {
   en: {
+    "navbar.training": "Training",
+    "footer.training": "Khoozo Training",
+    "it.training.eyebrow": "New · Khoozo Training",
+    "it.training.h": "Career courses: Flutter, Web, Visa & Air Ticketing",
+    "it.training.p": "Learn app & web development, visa processing, or GDS ticketing with Sabre, Amadeus and Galileo. Up to 70% off — pay with bKash, Nagad or card.",
+    "it.training.cta": "View courses",
     "brand.name": "Khoozo",
     "nav.home": "Home",
     "nav.about": "About Us",
@@ -348,6 +354,12 @@ const KHOOZO_I18N_DICT = {
     "privacy.s9.p": "Questions about this policy or your data? Email <a href=\"mailto:support.khoozo@gmail.com\">support.khoozo@gmail.com</a> or call <a href=\"tel:+8801818120900\">+88 01818-120900</a>.",
   },
   bn: {
+    "navbar.training": "ট্রেনিং",
+    "footer.training": "খুঁজো ট্রেনিং",
+    "it.training.eyebrow": "নতুন · খুঁজো ট্রেনিং",
+    "it.training.h": "ক্যারিয়ার কোর্স: ফ্লাটার, ওয়েব, ভিসা ও এয়ার টিকেটিং",
+    "it.training.p": "অ্যাপ ও ওয়েব ডেভেলপমেন্ট, ভিসা প্রসেসিং অথবা সাবরে, অ্যামাডিউস ও গ্যালিলিও দিয়ে টিকেটিং শিখুন। সর্বোচ্চ ৭০% ছাড় — বিকাশ, নগদ বা কার্ডে পেমেন্ট।",
+    "it.training.cta": "কোর্স দেখুন",
     "nav.home": "হোম",
     "nav.about": "আমাদের সম্পর্কে",
     "nav.it": "খুঁজো আইটি",
