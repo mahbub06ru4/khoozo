@@ -13,7 +13,7 @@
   backdrop-filter: blur(6px);
 }
 .dt-hero-photo img.tr-hero-bg { opacity: .38; }
-.dt-hero p .fa-location-dot { color: #ffc46b; margin-right: 6px; }
+.dt-hero p .fa-location-dot { color: #FCA5A5; margin-right: 6px; }
 .tr-meta .dt-status { color: #fff; text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; }
 .dt-body { padding-top: 48px; }
 /* Grid items default to min-width:auto; without this the slider track

@@ -187,6 +187,7 @@ if (appShowcase) {
 
   dotsWrap.innerHTML = slides.map((_, i) => `<button type="button" class="app-slider-dot" aria-label="Show screenshot ${i + 1}"></button>`).join("");
   const dots = [...dotsWrap.children];
+  dots[0].classList.add("is-active"); /* show(0) below is a no-op for the starting slide */
 
   function show(i, dir) {
     const newCurrent = (i + slides.length) % slides.length;

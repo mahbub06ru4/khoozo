@@ -79,7 +79,7 @@
   transition: border-color .2s, box-shadow .2s;
 }
 .dp-plan:hover { border-color: var(--orange); }
-.dp-plan.is-active { border-color: var(--red); box-shadow: 0 8px 22px rgba(166,28,28,.12); }
+.dp-plan.is-active { border-color: var(--red); box-shadow: 0 8px 22px rgba(158,27,27,.12); }
 .dp-plan .radio { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border); display: grid; place-items: center; }
 .dp-plan.is-active .radio { border-color: var(--red); }
 .dp-plan.is-active .radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red); }

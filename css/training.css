@@ -6,14 +6,15 @@
 /* ---------- hero ---------- */
 .tr-hero {
   position: relative; overflow: hidden; color: #fff;
-  padding: 88px 0 72px; background: linear-gradient(135deg, var(--red-deep), var(--red) 55%, var(--orange));
+  padding: 88px 0 72px;
+  background: radial-gradient(circle at 88% 15%, rgba(158, 27, 27, 0.55), transparent 42%), linear-gradient(135deg, #0F172A, #1E293B);
 }
 .tr-hero img.tr-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.22; }
-.tr-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(36,20,20,.85), rgba(36,20,20,.35) 70%, transparent); }
+.tr-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,23,42,.85), rgba(15,23,42,.35) 70%, transparent); }
 .tr-hero .container { position: relative; z-index: 1; }
-.tr-hero .eyebrow { color: #ffd9a8; }
+.tr-hero .eyebrow { color: #FCA5A5; }
 .tr-hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); max-width: 22ch; color: #fff; }
-.tr-hero h1 em { font-style: normal; color: #ffc46b; }
+.tr-hero h1 em { font-style: normal; color: #FCA5A5; }
 .tr-hero p { color: rgba(255,255,255,.85); max-width: 56ch; margin-top: 14px; font-size: 1.05rem; }
 .tr-back { display: flex; width: fit-content; align-items: center; gap: 8px; color: rgba(255,255,255,.9); font-weight: 600; font-size: .92rem; margin-bottom: 18px; }
 .tr-back:hover { color: #fff; }
@@ -96,7 +97,7 @@
   width: 100%; padding: 13px 16px; border-radius: 12px; border: 1.5px solid var(--border);
   background: var(--surface); color: var(--ink); font: inherit; font-size: 1rem; transition: border-color .15s, box-shadow .15s;
 }
-.pay-input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 4px rgba(166,28,28,.12); }
+.pay-input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 4px rgba(158,27,27,.12); }
 .pay-input.is-error { border-color: #dc2626; }
 .pay-err { display: block; color: #dc2626; font-size: .8rem; font-weight: 600; margin-top: 5px; }
 .pay-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
