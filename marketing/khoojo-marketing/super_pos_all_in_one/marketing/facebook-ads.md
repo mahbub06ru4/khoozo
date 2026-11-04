@@ -16,6 +16,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 
 ## Post 1 — Main post: "Your whole shop in your phone" (Feed, carousel of 4–6 screenshots)
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | খাতা নয়, মোবাইলেই পুরো দোকান | Run your entire shop from your phone |
@@ -122,6 +124,8 @@ Today's sales, expenses and net profit, with cash and credit kept separate — a
 
 ## Post 2 — Short A/B version (Reels / Stories / short feed)
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | বাকির খাতা এখন মোবাইলে | Your dues ledger, now on your phone |
@@ -173,6 +177,8 @@ Today's sales, expenses and net profit, with cash and credit kept separate — a
 ---
 
 ## Post 3 — Pharmacy-focused (target pharmacy owners)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|
@@ -231,6 +237,8 @@ DokanBondhu 360 — a POS set up for pharmacies:
 ---
 
 ## Post 4 — Restaurant-focused
+
+**Banner:** `banners/post-4-bn.jpg` (বাংলা) · `banners/post-4-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

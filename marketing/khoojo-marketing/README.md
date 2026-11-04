@@ -8,6 +8,7 @@ Every product has one file, `facebook-ads.md`. Each post in it has:
 - **CTA button** to choose in Ads Manager
 - **Primary text** in Bangla and English, inside a grey box. Copy the whole box: hashtags are already at the end
 - **Targeting suggestions** at the bottom of the file
+- **Banner images** in a `banners/` folder next to the file: `post-<n>-bn.jpg` and `post-<n>-en.jpg` (1080×1080 JPG, ready to upload). Each post's heading names its banner.
 
 ## Products
 
@@ -26,7 +27,7 @@ Every product has one file, `facebook-ads.md`. Each post in it has:
 | Air Ticketing course + GDS Simulator | [digital_products/air_ticketing/facebook-ads.md](digital_products/air_ticketing/facebook-ads.md) | Course · Simulator app · Short |
 | Visa Processing course | [digital_products/visa_processing/facebook-ads.md](digital_products/visa_processing/facebook-ads.md) | Main · Own visa desk · Short |
 
-Product screenshots for carousels are kept outside the repo, in `E:/githubio/khoozo_reference_materials/` (`marketing_screenshots/` and `docs_portfolio/`). Only the posts and the finished ad images (`ad-*.png`, `creatives/`) are kept here, to keep the website repo light.
+Product screenshots for carousels are kept outside the repo, in `E:/githubio/khoozo_reference_materials/` (`marketing_screenshots/` and `docs_portfolio/`). To change a banner's text or colours, edit `E:/githubio/khoozo_reference_materials/banner_builder/banners_data.py` and run `python build.py` there (or `python build.py dokan-2` for one post). It needs Chrome and an internet connection for fonts. Only the posts and the finished ad images (`ad-*.png`, `creatives/`) are kept here, to keep the website repo light.
 
 ## Before every boost
 

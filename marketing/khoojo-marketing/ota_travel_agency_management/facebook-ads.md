@@ -15,6 +15,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 
 ## Post 1 — Main post: "Flights, hotels, holidays, visas — one place"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | ফ্লাইট, হোটেল, হলিডে — সব এক জায়গায় | Flights, hotels & holidays in one place |
@@ -83,6 +85,8 @@ Document requirements and processing support for 23+ countries.
 
 ## Post 2 — Build-your-own holiday
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | নিজের ট্যুর নিজেই বানান | Build your own holiday |
@@ -130,6 +134,8 @@ Family trip, honeymoon or a getaway with friends — your budget, your plan. �
 ---
 
 ## Post 3 — Student visa assistance (study abroad)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|
@@ -188,6 +194,8 @@ Khoozo student-visa assistance:
 ---
 
 ## Post 4 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-4-bn.jpg` (বাংলা) · `banners/post-4-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

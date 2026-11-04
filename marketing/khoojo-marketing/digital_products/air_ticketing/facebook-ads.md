@@ -19,6 +19,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com/t
 
 ## Post 1 — Course: "Become a job-ready air ticketing professional"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | এয়ার টিকেটিং কোর্স — ৭০% ছাড়ে ৳৪,৫০০ | Air Ticketing course — 70% off, ৳4,500 |
@@ -92,6 +94,8 @@ The first interview question is always: "Can you use a GDS?" 🤔
 
 ## Post 2 — GDS Simulator app: "Practise GDS on your phone"
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | মোবাইলেই GDS প্র্যাকটিস | Practise GDS on your phone |
@@ -157,6 +161,8 @@ Sabre, Amadeus and Travelport/Galileo are trademarks of their respective owners.
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

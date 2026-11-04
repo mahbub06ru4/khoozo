@@ -15,6 +15,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com/t
 
 ## Post 1 — Main post: "Learn a skill every travel agency needs"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | ভিসা প্রসেসিং কোর্স — মাত্র ৳৩,০০০ | Visa Processing course — only ৳3,000 |
@@ -91,6 +93,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com/t
 
 ## Post 2 — Start-your-own-visa-desk angle
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | নিজের ভিসা কনসালটেন্সি শুরু করুন | Start your own visa consultancy |
@@ -140,6 +144,8 @@ In this course you'll learn:
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

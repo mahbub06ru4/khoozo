@@ -13,6 +13,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 
 ## Post 1 — Main post: "Your whole business in one place"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | পুরো ব্যবসা এক প্ল্যাটফর্মে — BizOps 360 | Your whole business on one platform |
@@ -82,6 +84,8 @@ More control, less hassle — a more organised, more profitable business. 📈
 ---
 
 ## Post 2 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

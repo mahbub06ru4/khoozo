@@ -16,6 +16,8 @@ Web demo: https://mahbub06ru4.github.io/flutter_expin/
 
 ## Post 1 — Main post: "Where does your money go?"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | মাস শেষে টাকা কোথায় যায়, এবার জানুন | Finally see where your money goes |
@@ -86,6 +88,8 @@ Now track it in one tap! 📱✨
 
 ## Post 2 — Budget & goals angle (run around salary day, 25th–5th)
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | এই মাসের বাজেট আজই ঠিক করুন | Set this month's budget today |
@@ -131,6 +135,8 @@ Free • In Bangla • Works offline
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

@@ -16,6 +16,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 
 ## Post 1 — For customers: "Post a task, get offers"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | কাজ পোস্ট করুন, কাছের অফার নিন | Post a task, get offers nearby |
@@ -76,6 +78,8 @@ How it works:
 
 ## Post 2 — For service providers: "Get more work nearby"
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | আপনার এলাকার কাজ, আপনার ফোনে | Jobs near you, right on your phone |
@@ -123,6 +127,8 @@ On Khoozo, people near you post jobs every day. 📍
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

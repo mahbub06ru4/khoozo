@@ -15,6 +15,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 
 ## Post 1 — Main post: "Run your office from one dashboard"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | হাজিরা থেকে বেতন — সব এক সফটওয়্যারে | Attendance to payroll — one system |
@@ -85,6 +87,8 @@ Less paperwork, more time — and an office that runs by the rules. 💼
 
 ## Post 2 — Payroll angle (run in the last week of the month)
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | বেতনের হিসাব এখন কয়েক মিনিটে | Payroll in minutes, not days |
@@ -130,6 +134,8 @@ Start from this month. 💼
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

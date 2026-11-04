@@ -15,6 +15,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 
 ## Post 1 — Main post: "Run your travel agency from one system"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | ট্রাভেল এজেন্সি চালান এক সফটওয়্যারে | Run your travel agency in one system |
@@ -81,6 +83,8 @@ No lost files, no stuck payments — a professionally run agency. 💼
 
 ## Post 2 — Visa desk angle
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | প্রতিটি ভিসা ফাইল, প্রতিটি ধাপ — ট্র্যাকে | Every visa file, every step — tracked |
@@ -124,6 +128,8 @@ Answer client calls instantly — better service, more referrals. 🤝
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

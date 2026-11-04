@@ -14,6 +14,8 @@ A free, ad-free daily-essentials app: prayer times with Sehri/Iftar countdown, p
 
 ## Post 1 — Main post: "Everything you need daily, in one app" · image `fb_square_1080x1080.png`
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | দরকারি সব তথ্য, এক অ্যাপে | Daily essentials in one app |
@@ -68,6 +70,8 @@ Answers to your everyday questions — now in one app: Dorkari! 💚
 
 ## Post 2 — Quran & recitation · image `fb_square_1080x1080.png` or `fb_story_1080x1920.png`
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | কুরআন পড়ুন নিজের ভাষায় | Read the Quran in your language |
@@ -116,6 +120,8 @@ Completely free and ad-free — in the Dorkari app.
 
 ## Post 3 — Ramadan season (start 2–3 weeks before Ramadan) · image `fb_feed_1080x1350.png`
 
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | সেহরি-ইফতারের কাউন্টডাউন ফোনেই | Sehri & Iftar countdown on your phone |
@@ -160,6 +166,8 @@ Install before Ramadan starts — free and ad-free.
 
 ## Post 4 — Holidays & trip planning (before long holidays / Eid) · image `fb_square_1080x1080.png`
 
+**Banner:** `banners/post-4-bn.jpg` (বাংলা) · `banners/post-4-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | লম্বা ছুটি আসছে? আগেই প্ল্যান করুন | Long weekend ahead? Plan early |
@@ -201,6 +209,8 @@ Install before the holiday — it's free 👇
 ---
 
 ## Post 5 — Short version (Reels / Stories) · image `fb_story_1080x1920.png`
+
+**Banner:** `banners/post-5-bn.jpg` (বাংলা) · `banners/post-5-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

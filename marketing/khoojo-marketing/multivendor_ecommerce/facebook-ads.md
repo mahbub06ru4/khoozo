@@ -16,6 +16,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900
 
 ## Post 1 — For shoppers: "Many shops, one cart"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | অনেক দোকান, এক কার্ট, এক চেকআউট | Many shops, one cart, one checkout |
@@ -67,6 +69,8 @@ On Marketplace 360, add products from many sellers to one cart and check out onc
 ---
 
 ## Post 2 — Seller recruitment: "Open your online shop"
+
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|
@@ -121,6 +125,8 @@ Reach more buyers on one platform. 📈
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|

@@ -15,6 +15,8 @@ Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 
 ## Post 1 — Main post: "Every lead, unit and installment in one place"
 
+**Banner:** `banners/post-1-bn.jpg` (বাংলা) · `banners/post-1-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | লিড থেকে কিস্তি — সব এক সফটওয়্যারে | From lead to last installment |
@@ -83,6 +85,8 @@ No lost leads, no missed installments — more sales. 📈
 
 ## Post 2 — Installment collection angle
 
+**Banner:** `banners/post-2-bn.jpg` (বাংলা) · `banners/post-2-en.jpg` (English)
+
 | | বাংলা | English |
 |---|---|---|
 | **Headline (title)** | বকেয়া কিস্তি আর মিস নয় | Never miss an installment again |
@@ -124,6 +128,8 @@ Keep cash flow under control and your projects on schedule. 🏗️
 ---
 
 ## Post 3 — Short version (Reels / Stories)
+
+**Banner:** `banners/post-3-bn.jpg` (বাংলা) · `banners/post-3-en.jpg` (English)
 
 | | বাংলা | English |
 |---|---|---|
