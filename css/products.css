@@ -1,0 +1,102 @@
+/* ================================================================
+   Khoozo — css/products.css
+   Digital products: homepage cards (index.html#products), the product
+   page (product.html) and the product summary on pay.html.
+   Each product sets its own colours with --dp1 / --dp2.
+   ================================================================ */
+
+/* ---------- product cards ---------- */
+.dp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 24px; }
+.dp-card {
+  display: flex; flex-direction: column; overflow: hidden; color: inherit; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.dp-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--dp2); }
+.dp-card-head {
+  position: relative; padding: 22px 22px 20px; color: #fff; overflow: hidden;
+  background: radial-gradient(circle at 90% 0%, rgba(255,255,255,.22), transparent 45%), linear-gradient(135deg, var(--dp1), var(--dp2));
+}
+.dp-card-head::after {
+  content: ""; position: absolute; right: -40px; bottom: -60px; width: 160px; height: 160px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.18);
+}
+.dp-card-icon {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; font-size: 1.35rem;
+  background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3);
+}
+.dp-card-off {
+  position: absolute; top: 18px; right: 18px; background: #fff; color: var(--dp1); font-size: .72rem; font-weight: 800;
+  padding: 4px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em;
+}
+.dp-card-head h3 { color: #fff; font-size: 1.3rem; margin-top: 16px; position: relative; z-index: 1; }
+.dp-card-body { display: flex; flex-direction: column; flex: 1; padding: 18px 22px 22px; }
+.dp-card-body > p { color: var(--ink-soft); font-size: .92rem; }
+.dp-card-facts { list-style: none; display: grid; gap: 7px; margin: 14px 0 18px; font-size: .86rem; font-weight: 600; color: var(--ink); }
+.dp-card-facts i { width: 18px; color: var(--dp2); margin-right: 8px; }
+.dp-card-foot { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; padding-top: 14px; border-top: 1px solid var(--border); }
+.dp-card-foot small { display: block; font-size: .74rem; color: var(--ink-soft); font-weight: 600; }
+.dp-card-foot b { font-family: var(--font-display); font-size: 1.6rem; color: var(--ink); line-height: 1.1; }
+.dp-card-foot s { margin-left: 6px; font-size: .82rem; color: var(--ink-soft); }
+.dp-card-foot .tr-link, .dp-card .tr-link { font-weight: 700; color: var(--red); display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; white-space: nowrap; }
+
+/* ---------- product page ---------- */
+.dp-hero { background: radial-gradient(circle at 85% 10%, rgba(255,255,255,.18), transparent 40%), linear-gradient(135deg, var(--dp1), var(--dp2)); }
+.dp-hero::after { background: linear-gradient(90deg, rgba(0,0,0,.25), transparent 70%); }
+.dp-hero-head { display: flex; align-items: center; gap: 18px; }
+.dp-hero-head .eyebrow { margin-bottom: 4px; }
+.dp-hero-icon {
+  flex-shrink: 0; width: 70px; height: 70px; border-radius: 22px; display: grid; place-items: center; font-size: 1.8rem;
+  background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(6px);
+}
+.dp-layout > * { min-width: 0; }
+.dp-sub { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 1rem; margin: 6px 0 14px; color: var(--ink); }
+.dp-sub i { color: var(--red); }
+.dp-sub + .tr-checks { margin-bottom: 24px; }
+.dp-app {
+  display: flex; gap: 16px; align-items: center; padding: 18px; border-radius: var(--radius); color: #fff;
+  background: linear-gradient(135deg, var(--dp1), var(--dp2));
+}
+.dp-app-icon { flex-shrink: 0; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-size: 1.4rem; background: rgba(255,255,255,.18); }
+.dp-app b { display: block; font-size: 1.02rem; }
+.dp-app p { color: rgba(255,255,255,.85); font-size: .9rem; margin-top: 2px; }
+.dp-muted { color: var(--ink-soft); margin-bottom: 16px; }
+.dp-course { display: grid; gap: 14px; padding: 18px; border: 1.5px dashed var(--border); border-radius: var(--radius); }
+.dp-course b { color: var(--ink); }
+.dp-course .tr-chip i { color: var(--red); margin-right: 4px; }
+.dp-steps { list-style: none; display: grid; gap: 14px; }
+.dp-steps li { display: flex; gap: 14px; align-items: flex-start; color: var(--ink); }
+.dp-steps span {
+  flex-shrink: 0; width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; font-weight: 800; color: #fff;
+  background: linear-gradient(135deg, var(--red), var(--orange));
+}
+
+.dp-buy-h { font-family: var(--font-body); font-size: 1rem; margin-bottom: 12px; }
+.dp-plans { display: grid; gap: 10px; margin-bottom: 18px; }
+.dp-plan {
+  position: relative; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; cursor: pointer;
+  padding: 14px; border-radius: var(--radius); border: 2px solid var(--border); background: var(--surface); color: var(--ink); font: inherit;
+  transition: border-color .2s, box-shadow .2s;
+}
+.dp-plan:hover { border-color: var(--orange); }
+.dp-plan.is-active { border-color: var(--red); box-shadow: 0 8px 22px rgba(166,28,28,.12); }
+.dp-plan .radio { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border); display: grid; place-items: center; }
+.dp-plan.is-active .radio { border-color: var(--red); }
+.dp-plan.is-active .radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+.dp-plan-text { flex: 1; min-width: 0; }
+.dp-plan-text b { display: block; font-size: .95rem; }
+.dp-plan-text small { display: block; font-size: .78rem; color: var(--ink-soft); margin-top: 2px; }
+.dp-best { display: inline-block; margin-top: 6px; font-style: normal; font-size: .7rem; font-weight: 800; color: #fff; background: #15803d; padding: 2px 8px; border-radius: 6px; }
+.dp-plan-price { flex-shrink: 0; text-align: right; white-space: nowrap; }
+.dp-plan-price b { display: block; font-size: 1.1rem; }
+.dp-plan-price s { font-size: .76rem; color: var(--ink-soft); }
+.dp-more-h { font-size: 1.6rem; margin-bottom: 24px; }
+
+/* ---------- checkout summary (pay.html) ---------- */
+.pay-summary-media.is-product { background: linear-gradient(135deg, var(--dp1), var(--dp2)); display: flex; align-items: center; padding: 0 18px; }
+.pay-summary-media.is-product::after { background: linear-gradient(0deg, rgba(0,0,0,.45), transparent); }
+.pay-summary-media.is-product > i {
+  position: relative; z-index: 1; width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 36px;
+  background: rgba(255,255,255,.2); color: #fff; font-size: 1.35rem;
+}
+.pay-summary-plan { display: block; font-size: .78rem; font-weight: 600; opacity: .85; margin-top: 2px; }

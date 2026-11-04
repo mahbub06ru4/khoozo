@@ -51,6 +51,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/products.css">
 
 <!-- ============ STRUCTURED DATA (schema.org JSON-LD) ============ -->
 <script type="application/ld+json">
@@ -131,6 +132,7 @@
       <a href="#realestate" data-nav data-i18n="navbar.realestate">Real Estate</a>
       <a href="#travel" data-nav data-i18n="navbar.travel">Travel</a>
       <a href="training.html" data-i18n="navbar.training">Training</a>
+      <a href="#products" data-nav data-i18n="navbar.products">Digital Products</a>
       <a href="#contact" class="btn btn-sm btn-primary nav-contact" data-nav data-i18n="nav.contact">Contact</a>
     </nav>
 
@@ -575,6 +577,20 @@
 </section>
 
 <!-- ============================================================
+     KHOOZO DIGITAL PRODUCTS (cards rendered by js/products.js)
+     ============================================================ -->
+<section id="products" class="section section-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="dp.eyebrow">Khoozo Digital Products</p>
+      <h2 data-i18n="dp.h">Learn at your own pace — guides, apps and courses</h2>
+      <p data-i18n="dp.p">Download practical PDF guides and a mobile practice app, or take the combo with a live course. Pay with bKash or card.</p>
+    </div>
+    <div class="dp-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
      KHOOZO REAL ESTATE
      ============================================================ -->
 <section id="realestate" class="section">
@@ -965,6 +981,7 @@
      ============================================================ -->
 <script src="js/i18n.js" defer></script>
 <script src="assets/it/gallery.js" defer></script>
+<script src="js/products.js" defer></script>
 <script src="js/main.js" defer></script>
 <script src="js/animation.js" defer></script>
 </body>

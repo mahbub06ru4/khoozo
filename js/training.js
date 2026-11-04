@@ -298,6 +298,12 @@ const KHOOZO_TRAINING_I18N = {
     "pay.err.trx": "Enter the TrxID from your SMS (8–12 letters/digits)",
     "res.submitted": "Payment submitted", "res.submitted.p": "We'll verify your TrxID and confirm your seat on WhatsApp, usually within 1 hour.",
     "res.wa": "Open WhatsApp again", "res.status": "Status", "res.status.review": "Awaiting verification",
+    "pay.h1.product": "Complete your purchase", "pay.price": "Price", "pay.discount.product": "Discount",
+    "pay.agree.product": "I agree to the terms and refund policy.", "pay.back.product": "Back to product details",
+    "res.product": "Product", "res.paid.product": "Your order for {course} is confirmed.",
+    "res.note.product": "Download links for your PDFs and app will be sent to <b>{email}</b> and WhatsApp.",
+    "res.submitted.product": "We'll verify your TrxID and send your download links on WhatsApp, usually within 1 hour.",
+    "res.more.product": "More digital products", "res.details.product": "Product details",
   },
   bn: {
     "navbar.training": "ট্রেনিং",
@@ -341,6 +347,12 @@ const KHOOZO_TRAINING_I18N = {
     "pay.err.trx": "SMS-এর TrxID দিন (৮–১২ অক্ষর/সংখ্যা)",
     "res.submitted": "পেমেন্ট জমা হয়েছে", "res.submitted.p": "আমরা আপনার TrxID যাচাই করে হোয়াটসঅ্যাপে সিট কনফার্ম করব, সাধারণত ১ ঘণ্টার মধ্যে।",
     "res.wa": "আবার হোয়াটসঅ্যাপ খুলুন", "res.status": "অবস্থা", "res.status.review": "যাচাইয়ের অপেক্ষায়",
+    "pay.h1.product": "ক্রয় সম্পন্ন করুন", "pay.price": "মূল্য", "pay.discount.product": "ছাড়",
+    "pay.agree.product": "আমি শর্তাবলি ও রিফান্ড নীতিতে সম্মত।", "pay.back.product": "পণ্যের বিস্তারিতে ফিরুন",
+    "res.product": "পণ্য", "res.paid.product": "{course} — আপনার অর্ডার নিশ্চিত হয়েছে।",
+    "res.note.product": "PDF ও অ্যাপের ডাউনলোড লিংক <b>{email}</b> ঠিকানায় ও হোয়াটসঅ্যাপে পাঠানো হবে।",
+    "res.submitted.product": "আমরা আপনার TrxID যাচাই করে হোয়াটসঅ্যাপে ডাউনলোড লিংক পাঠাব, সাধারণত ১ ঘণ্টার মধ্যে।",
+    "res.more.product": "আরও ডিজিটাল পণ্য", "res.details.product": "পণ্যের বিস্তারিত",
   },
 };
 
@@ -374,6 +386,39 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   const copy = (c) => c[lang()];
   const offPct = (c) => Math.round((1 - c.price / c.originalPrice) * 100);
   const methodName = (m) => (METHOD_LABEL[m] ? METHOD_LABEL[m][lang()] : m);
+
+  /* What is being bought: a course (pay.html?course=<id>) or a digital
+     product package from js/products.js (pay.html?product=<id>&plan=pack|combo). */
+  const PLAN_LABEL = {
+    pack: { en: "Digital pack", bn: "ডিজিটাল প্যাক" },
+    combo: { en: "Combo with live course", bn: "লাইভ কোর্সসহ কম্বো" },
+  };
+  function itemFor(courseId, productId, planId) {
+    if (productId) {
+      const p = typeof KHOOZO_PRODUCTS !== "undefined" ? KHOOZO_PRODUCTS.find((x) => x.id === productId) : null;
+      if (!p) return null;
+      const plan = planId === "combo" ? "combo" : "pack";
+      return {
+        kind: "product", id: p.id, plan, icon: p.icon, colors: p.colors,
+        price: p[plan].price, originalPrice: p[plan].originalPrice,
+        title: (l) => `${p[l].title} — ${PLAN_LABEL[plan][l]}`, name: (l) => p[l].title, planName: (l) => PLAN_LABEL[plan][l],
+        back: `product.html?id=${p.id}&plan=${plan}`, retry: `pay.html?product=${p.id}&plan=${plan}`, list: "index.html#products",
+        methods: ["manual", "bkash", "card"], wallets: ["bKash"], merchant: "Khoozo Digital",
+      };
+    }
+    const c = course(courseId);
+    if (!c) return null;
+    return {
+      kind: "course", id: c.id, image: c.image, price: c.price, originalPrice: c.originalPrice,
+      title: (l) => c[l].title,
+      back: `course.html?id=${c.id}`, retry: `pay.html?course=${c.id}`, list: "training.html",
+      methods: ["manual", "bkash", "nagad", "card"], wallets: null, merchant: "Khoozo Training",
+    };
+  }
+  const itemFromParams = () => itemFor(params.get("course"), params.get("product"), params.get("plan"));
+  const itemFromOrder = (o) => itemFor(o.courseId, o.productId, o.plan);
+  /* Product checkouts use their own wording where the course text says "course" or "enrol". */
+  const tk = (it, key, vars) => (it && it.kind === "product" && KHOOZO_TRAINING_I18N.en[key + ".product"] ? t(key + ".product", vars) : t(key, vars));
 
   function readOrders() {
     try { return JSON.parse(localStorage.getItem(ORDERS_KEY) || "{}"); } catch (e) { return {}; }
@@ -495,22 +540,23 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     wallet: KHOOZO_PAY.manual.wallets[0].id, sender: "", trx: "", copied: false,
   };
 
-  function manualPanel(c) {
+  function manualPanel(it) {
     const s = payState;
-    const w = KHOOZO_PAY.manual.wallets.find((x) => x.id === s.wallet) || KHOOZO_PAY.manual.wallets[0];
+    const wallets = KHOOZO_PAY.manual.wallets.filter((x) => !it.wallets || it.wallets.includes(x.id));
+    const w = wallets.find((x) => x.id === s.wallet) || wallets[0];
     const err = (f) => (s.errors[f] ? `<span class="pay-err">${t(s.errors[f])}</span>` : "");
     return `
       <div class="pay-manual" style="--w:${w.color}">
         <p class="pay-manual-h"><i class="fa-solid fa-circle-info"></i> ${t("pay.manual.how")}</p>
         <div class="pay-wallets" role="radiogroup">
-          ${KHOOZO_PAY.manual.wallets.map((x) => `<button type="button" class="pay-wallet${x.id === s.wallet ? " is-active" : ""}" data-wallet="${x.id}" style="--w:${x.color}">${x.id}</button>`).join("")}
+          ${wallets.map((x) => `<button type="button" class="pay-wallet${x.id === s.wallet ? " is-active" : ""}" data-wallet="${x.id}" style="--w:${x.color}">${x.id}</button>`).join("")}
         </div>
         <div class="pay-number">
           <div><small>${esc(w.id)} ${esc(w.type)} · Send Money</small><b>${digits(w.number)}</b></div>
           <button type="button" class="btn btn-outline btn-sm" data-copy="${w.number}"><i class="fa-regular ${s.copied ? "fa-circle-check" : "fa-copy"}"></i> ${t(s.copied ? "pay.manual.copied" : "pay.manual.copy")}</button>
         </div>
         <ol class="pay-steps">
-          <li>${t("pay.manual.s1", { wallet: esc(w.id), amount: `<b>${taka(c.price)}</b>` })}</li>
+          <li>${t("pay.manual.s1", { wallet: esc(w.id), amount: `<b>${taka(it.price)}</b>` })}</li>
           <li>${t("pay.manual.s2")}</li>
           <li>${t("pay.manual.s3")}</li>
         </ol>
@@ -526,20 +572,22 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   function renderPay() {
     const root = document.getElementById("payRoot");
     if (!root) return;
-    const c = course(params.get("course"));
-    if (!c) {
+    const it = itemFromParams();
+    if (!it) {
       root.innerHTML = `<div style="text-align:center;padding:60px 0"><h1>${t("tr.notfound")}</h1><p style="margin:12px 0 24px"><a class="btn btn-primary" href="training.html">${t("tr.back")}</a></p></div>`;
       return;
     }
-    const k = copy(c);
+    if (it.kind === "product") document.title = "Payment | Khoozo Digital Products";
     const s = payState;
+    if (!it.methods.includes(s.method)) s.method = it.methods[0];
+    if (it.wallets && !it.wallets.includes(s.wallet)) s.wallet = it.wallets[0];
     const err = (f) => (s.errors[f] ? `<span class="pay-err">${t(s.errors[f])}</span>` : "");
     const field = (f, type, ac) => `
       <label class="field"><span>${t("pay." + f)}</span>
         <input class="pay-input${s.errors[f] ? " is-error" : ""}" data-field="${f}" type="${type}" autocomplete="${ac}" placeholder="${t("pay." + f + ".ph")}" value="${esc(s[f])}">
         ${err(f)}
       </label>`;
-    const methods = ["manual", "bkash", "nagad", "card"].map((m) => `
+    const methods = it.methods.map((m) => `
       <button type="button" class="pay-method${s.method === m ? " is-active" : ""}" data-method="${m}" role="radio" aria-checked="${s.method === m}">
         <span class="radio"></span><b>${m === "manual" ? '<i class="fa-brands fa-whatsapp"></i> Send Money' : m === "card" ? "Card" : METHOD_LABEL[m].en}</b><small>${t("pay." + m + ".sub")}</small>
       </button>`).join("");
@@ -547,7 +595,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
     root.innerHTML = `
     <p class="eyebrow">${t("pay.eyebrow")}</p>
-    <h1 style="font-size:clamp(1.8rem,3.6vw,2.5rem);margin-bottom:28px">${t("pay.h1")}</h1>
+    <h1 style="font-size:clamp(1.8rem,3.6vw,2.5rem);margin-bottom:28px">${tk(it, "pay.h1")}</h1>
     <form id="payForm" class="pay-layout pay-form" novalidate>
       <div>
         <div class="tr-panel">
@@ -558,22 +606,24 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <div class="tr-panel">
           <h2>${t("pay.s2")}</h2>
           <div class="pay-methods" role="radiogroup">${methods}</div>
-          ${isManual ? manualPanel(c) : `<p class="tr-note" style="margin-top:14px">${t("pay.redirect")}</p>`}
+          ${isManual ? manualPanel(it) : `<p class="tr-note" style="margin-top:14px">${t("pay.redirect")}</p>`}
         </div>
       </div>
       <aside class="tr-panel tr-buy">
-        <div class="pay-summary-media"><img src="${c.image}" alt=""><strong>${esc(k.title)}</strong></div>
+        ${it.kind === "product"
+          ? `<div class="pay-summary-media is-product" style="--dp1:${it.colors[0]};--dp2:${it.colors[1]}"><i class="${it.icon}"></i><strong>${esc(it.name(lang()))}<span class="pay-summary-plan">${esc(it.planName(lang()))}</span></strong></div>`
+          : `<div class="pay-summary-media"><img src="${it.image}" alt=""><strong>${esc(it.title(lang()))}</strong></div>`}
         <div class="pay-lines">
-          <div class="pay-line"><span>${t("pay.fee")}</span><span style="text-decoration:line-through">${taka(c.originalPrice)}</span></div>
-          <div class="pay-line discount"><span>${t("pay.discount")}</span><span>– ${taka(c.originalPrice - c.price)}</span></div>
-          <div class="pay-total"><span style="font-weight:700">${t("pay.total")}</span><b>${taka(c.price)}</b></div>
-          <label class="pay-agree"><input type="checkbox" data-field="agree"${s.agree ? " checked" : ""}><span>${t("pay.agree")}${err("agree")}</span></label>
+          <div class="pay-line"><span>${it.kind === "product" ? t("pay.price") : t("pay.fee")}</span><span style="text-decoration:line-through">${taka(it.originalPrice)}</span></div>
+          <div class="pay-line discount"><span>${tk(it, "pay.discount")}</span><span>– ${taka(it.originalPrice - it.price)}</span></div>
+          <div class="pay-total"><span style="font-weight:700">${t("pay.total")}</span><b>${taka(it.price)}</b></div>
+          <label class="pay-agree"><input type="checkbox" data-field="agree"${s.agree ? " checked" : ""}><span>${tk(it, "pay.agree")}${err("agree")}</span></label>
           ${s.serverError ? `<p class="pay-err">${esc(s.serverError)}</p>` : ""}
           <button type="submit" class="btn pay-btn" data-method="${s.method}"${s.busy ? " disabled" : ""}>
-            <i class="${s.busy ? "fa-solid fa-spinner fa-spin" : isManual ? "fa-brands fa-whatsapp" : "fa-solid fa-lock"}"></i> ${isManual ? t("pay.manual.btn") : t("pay.payBtn", { amount: taka(c.price), method: methodName(s.method) })}
+            <i class="${s.busy ? "fa-solid fa-spinner fa-spin" : isManual ? "fa-brands fa-whatsapp" : "fa-solid fa-lock"}"></i> ${isManual ? t("pay.manual.btn") : t("pay.payBtn", { amount: taka(it.price), method: methodName(s.method) })}
           </button>
           <p class="tr-secure"><i class="fa-solid fa-shield-halved"></i> ${t("pay.secure")}</p>
-          <p style="text-align:center;margin-top:8px"><a class="tr-link" style="font-size:.85rem" href="course.html?id=${c.id}">${t("pay.back")}</a></p>
+          <p style="text-align:center;margin-top:8px"><a class="tr-link" style="font-size:.85rem" href="${it.back}">${tk(it, "pay.back")}</a></p>
         </div>
       </aside>
     </form>`;
@@ -610,11 +660,11 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     );
     document.getElementById("payForm").addEventListener("submit", (e) => {
       e.preventDefault();
-      submitPay(c);
+      submitPay(it);
     });
   }
 
-  async function submitPay(c) {
+  async function submitPay(it) {
     const s = payState;
     const errors = {};
     const phone = s.phone.replace(/[\s-]/g, "");
@@ -638,12 +688,12 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
     const customer = { name: s.name.trim(), email: s.email.trim().toLowerCase(), phone: phone.replace(/^\+?88/, "") };
 
+    const what = it.kind === "product" ? { productId: it.id, plan: it.plan } : { courseId: it.id };
     if (s.method === "manual") {
-      const k = c.en;
       const order = {
         ref: randomId("KZT-", 8),
-        courseId: c.id,
-        amount: c.price,
+        ...what,
+        amount: it.price,
         method: "manual",
         wallet: s.wallet,
         payer: s.sender.replace(/[\s-]/g, ""),
@@ -656,11 +706,11 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       order.updatedAt = order.createdAt;
       saveOrder(order);
       const msg = [
-        "Hello Khoozo, I want to confirm my course payment.",
+        `Hello Khoozo, I want to confirm my ${it.kind === "product" ? "digital product" : "course"} payment.`,
         "",
-        `*Course:* ${k.title}`,
+        `*${it.kind === "product" ? "Product" : "Course"}:* ${it.title("en")}`,
         `*Invoice:* ${order.ref}`,
-        `*Amount:* ${c.price} BDT`,
+        `*Amount:* ${it.price} BDT`,
         `*Paid with:* ${s.wallet} (Send Money)`,
         `*Sender number:* ${order.payer}`,
         `*Transaction ID:* ${trx}`,
@@ -684,7 +734,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         const res = await fetch(`${KHOOZO_PAY.apiBase}/api/payments/create`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ courseSlug: c.id, method: s.method, ...customer }),
+          body: JSON.stringify({ ...(it.kind === "product" ? { productId: it.id, plan: it.plan } : { courseSlug: it.id }), method: s.method, ...customer }),
         });
         const json = await res.json();
         if (!res.ok || !json.redirectURL) throw new Error(json.error || "Could not start payment");
@@ -699,8 +749,8 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
     const order = {
       ref: randomId("KZT-", 8),
-      courseId: c.id,
-      amount: c.price,
+      ...what,
+      amount: it.price,
       method: s.method,
       customer,
       status: "pending",
@@ -730,14 +780,14 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       return;
     }
     if (order.status !== "pending") return location.replace(`pay-result.html?ref=${encodeURIComponent(order.ref)}`);
-    const c = course(order.courseId);
+    const it = itemFromOrder(order);
     const g = gwState;
     const amount = "৳" + Number(order.amount).toLocaleString("en-IN", { minimumFractionDigits: 2 });
 
     const head = `
       <div class="gw-head"><span class="gw-brand">${cfg.brand}</span><span class="gw-sandbox">Sandbox</span>
         <button type="button" data-gw="cancel" aria-label="Cancel"><i class="fa-solid fa-xmark"></i></button></div>
-      <div class="gw-merchant"><img src="assets/logo.png" alt=""><div class="who"><b>Khoozo Training</b><small>Invoice: ${esc(order.ref)}</small></div><div class="amt" style="color:var(--gw)">${amount}</div></div>`;
+      <div class="gw-merchant"><img src="assets/logo.png" alt=""><div class="who"><b>${it ? it.merchant : "Khoozo"}</b><small>Invoice: ${esc(order.ref)}</small></div><div class="amt" style="color:var(--gw)">${amount}</div></div>`;
 
     let main;
     if (g.busy) {
@@ -774,7 +824,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         </form>`;
     }
 
-    root.innerHTML = `<div class="gw" data-method="${method}">${head}${main}<div class="gw-foot"><i class="fa-solid fa-lock"></i> ${esc(c ? c.en.title : "")} · secured connection</div></div>`;
+    root.innerHTML = `<div class="gw" data-method="${method}">${head}${main}<div class="gw-foot"><i class="fa-solid fa-lock"></i> ${esc(it ? it.title("en") : "")} · secured connection</div></div>`;
 
     root.querySelectorAll('[data-gw="cancel"]').forEach((b) => b.addEventListener("click", () => finish(order, "cancelled", { reason: "Cancelled by customer" })));
     const inEl = document.getElementById("gwIn");
@@ -867,22 +917,23 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       root.innerHTML = `<div class="tr-panel res is-failed"><div class="res-head"><i class="fa-solid fa-circle-xmark"></i><h1>${t("res.missing")}</h1></div><div class="res-body"><div class="res-actions"><a class="btn btn-primary" href="training.html">${t("res.more")}</a></div></div></div>`;
       return;
     }
-    const c = course(order.courseId);
-    const k = c ? copy(c) : { title: order.courseId };
+    const it = itemFromOrder(order);
+    if (it && it.kind === "product") document.title = "Payment status | Khoozo Digital Products";
+    const title0 = it ? it.title(lang()) : order.courseId || order.productId;
     const paid = order.status === "paid";
     const submitted = order.status === "submitted";
     const cls = paid ? "is-paid" : submitted ? "is-submitted" : order.status === "cancelled" ? "is-cancelled" : "is-failed";
     const icon = paid ? "fa-circle-check" : submitted ? "fa-hourglass-half" : "fa-circle-xmark";
     const title = paid ? t("res.paid") : submitted ? t("res.submitted") : order.status === "cancelled" ? t("res.cancelled") : t("res.failed");
     const sub = paid
-      ? t("res.paid.p", { course: esc(k.title) })
-      : submitted ? t("res.submitted.p") : order.status === "cancelled" ? t("res.cancelled.p") : esc(order.reason || "");
+      ? (it && it.kind === "product" ? t("res.paid.product", { course: esc(title0) }) : t("res.paid.p", { course: esc(title0) }))
+      : submitted ? (it && it.kind === "product" ? t("res.submitted.product") : t("res.submitted.p")) : order.status === "cancelled" ? t("res.cancelled.p") : esc(order.reason || "");
     const via = order.method === "manual" ? `${order.wallet} · ${methodName("manual")}` : methodName(order.method);
     let wa = "";
     try { wa = sessionStorage.getItem("khoozo-wa-" + order.ref) || ""; } catch (e) { /* ignore */ }
     const rows = [
       [t("res.invoice"), order.ref],
-      [t("res.course"), k.title],
+      [it && it.kind === "product" ? t("res.product") : t("res.course"), title0],
       [t("res.via"), via + (order.payer ? " · " + order.payer : "")],
       order.trxID ? [t("res.trx"), order.trxID] : null,
       submitted ? [t("res.status"), t("res.status.review")] : null,
@@ -896,13 +947,14 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       <div class="res-body">
         <div class="res-amount"><span style="font-weight:600;color:var(--ink-soft)">${paid ? t("res.amountPaid") : t("res.amount")}</span><b>${taka(order.amount)}</b></div>
         <dl class="res-rows">${rows.map(([a, b]) => `<div><dt>${a}</dt><dd>${esc(b)}</dd></div>`).join("")}</dl>
-        ${paid ? `<p class="res-note">${t("res.note", { email: esc(order.customer.email) })}</p>` : ""}
+        ${paid ? `<p class="res-note">${tk(it, "res.note", { email: esc(order.customer.email) })}</p>` : ""}
         <div class="res-actions">
           ${submitted
             ? `${wa ? `<a class="btn res-wa" href="${esc(wa)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> ${t("res.wa")}</a>` : ""}<button type="button" class="btn btn-outline" onclick="window.print()"><i class="fa-solid fa-print"></i> ${t("res.print")}</button>`
             : paid
-            ? `<button type="button" class="btn btn-outline" onclick="window.print()"><i class="fa-solid fa-print"></i> ${t("res.print")}</button><a class="btn btn-primary" href="training.html">${t("res.more")}</a>`
-            : `<a class="btn btn-outline" href="course.html?id=${order.courseId}">${t("res.details")}</a><a class="btn btn-primary" href="pay.html?course=${order.courseId}"><i class="fa-solid fa-rotate-right"></i> ${t("res.retry")}</a>`}
+            ? `<button type="button" class="btn btn-outline" onclick="window.print()"><i class="fa-solid fa-print"></i> ${t("res.print")}</button><a class="btn btn-primary" href="${it ? it.list : "training.html"}">${tk(it, "res.more")}</a>`
+            : it ? `<a class="btn btn-outline" href="${it.back}">${tk(it, "res.details")}</a><a class="btn btn-primary" href="${it.retry}"><i class="fa-solid fa-rotate-right"></i> ${t("res.retry")}</a>`
+            : `<a class="btn btn-primary" href="training.html">${t("res.more")}</a>`}
         </div>
       </div>
     </div>`;
