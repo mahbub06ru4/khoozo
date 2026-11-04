@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<title>Dorkari Facebook ad creatives</title>
+<!--
+  Four Facebook ad layouts, chosen with the URL hash (#v=square|feed|story|link)
+  and rendered to PNG by build_creatives.py. HTML rather than Pillow so Bangla
+  is shaped correctly. Fonts are system fonts (Windows first, macOS fallbacks);
+  the Quran line uses the Amiri Quran font bundled in assets/fonts.
+  Sample times in the Sehri/Iftar mock are illustrative and marked "*নমুনা".
+-->
+<style>
+  @font-face { font-family: 'AmiriQuran'; src: url('../../../assets/fonts/AmiriQuran-Regular.ttf'); }
+  :root { --g1: #0b5a43; --g2: #0f6e51; --g3: #2f8f70; --gold: #f2b84b; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    position: relative; overflow: hidden; color: #fff;
+    font-family: 'Nirmala UI', 'Bangla Sangam MN', 'Kohinoor Bangla', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(155deg, var(--g1) 0%, var(--g2) 48%, var(--g3) 100%);
+  }
+  .v { display: none; position: absolute; inset: 0; }
+  body.square .v.square, body.feed .v.feed, body.story .v.story, body.link .v.link { display: block; }
+  body.square { width: 1080px; height: 1080px; }
+  body.feed { width: 1080px; height: 1350px; }
+  body.story { width: 1080px; height: 1920px; }
+  body.link { width: 1200px; height: 628px; }
+
+  .glow { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.07); }
+  .gold { color: var(--gold); }
+  .brand { display: flex; align-items: center; gap: 22px; }
+  .brand img { width: 120px; height: 120px; filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35)); }
+  .brand b { font-size: 64px; font-weight: 800; letter-spacing: 0.5px; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 16px; background: var(--gold); color: #3b2500;
+    font-weight: 800; border-radius: 999px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+  }
+  .tag {
+    display: inline-block; background: rgba(255, 255, 255, 0.16); border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px; font-weight: 700;
+  }
+  .tile {
+    background: rgba(255, 255, 255, 0.14); border: 2px solid rgba(255, 255, 255, 0.26);
+    border-radius: 28px; text-align: center; font-weight: 700;
+  }
+  .tile i { display: block; font-style: normal; }
+
+  /* ---------- square 1080x1080 ---------- */
+  .square .g1 { width: 700px; height: 700px; right: -250px; top: -250px; }
+  .square .g2 { width: 520px; height: 520px; left: -220px; bottom: -200px; }
+  .square .brand { position: absolute; left: 64px; top: 56px; }
+  .square h1 { position: absolute; left: 64px; right: 64px; top: 210px; margin: 0; font-size: 100px; line-height: 1.18; font-weight: 800; text-wrap: balance; }
+  .square .grid { position: absolute; left: 64px; right: 64px; top: 500px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .square .tile { padding: 16px 8px 14px; font-size: 32px; }
+  .square .tile i { font-size: 54px; margin-bottom: 4px; }
+  .square .foot { position: absolute; left: 64px; right: 64px; bottom: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .square .cta { font-size: 46px; padding: 22px 44px; }
+  .square .free { font-size: 32px; line-height: 1.35; font-weight: 700; text-align: right; }
+
+  /* ---------- feed 1080x1350 (4:5) ---------- */
+  .feed .g1 { width: 760px; height: 760px; left: -300px; top: -280px; }
+  .feed .g2 { width: 600px; height: 600px; right: -240px; bottom: -220px; }
+  .feed .brand { position: absolute; left: 64px; top: 56px; }
+  .feed h1 { position: absolute; left: 64px; right: 64px; top: 210px; margin: 0; font-size: 88px; line-height: 1.2; font-weight: 800; text-wrap: balance; }
+  .feed .card {
+    position: absolute; left: 64px; right: 64px; top: 560px; background: #fff; color: #1b1f23; border-radius: 36px;
+    padding: 34px 34px 28px; box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35); border: 3px solid rgba(242, 184, 75, 0.7);
+  }
+  .feed .card .ttl { font-size: 38px; font-weight: 800; color: #b9750c; margin-bottom: 20px; }
+  .feed .row { display: flex; gap: 22px; }
+  .feed .box { flex: 1; border: 3px solid #e3e6ea; border-radius: 26px; padding: 22px 24px; }
+  .feed .box.on { background: #fdf0d3; border-color: #f2b84b; }
+  .feed .box small { display: block; font-size: 30px; color: #5b6470; font-weight: 700; }
+  .feed .box strong { display: block; font-size: 76px; line-height: 1.15; font-weight: 800; }
+  .feed .box em { display: block; font-style: normal; font-size: 32px; font-weight: 800; color: #b9750c; margin-top: 4px; }
+  .feed .note { font-size: 24px; color: #7a828d; margin-top: 16px; }
+  .feed .chips { position: absolute; left: 64px; right: 64px; top: 1000px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .feed .tag { font-size: 32px; padding: 12px 26px; }
+  .feed .foot { position: absolute; left: 64px; right: 64px; bottom: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .feed .cta { font-size: 50px; padding: 26px 48px; }
+  .feed .free { font-size: 32px; font-weight: 700; text-align: right; line-height: 1.35; }
+
+  /* ---------- story 1080x1920 (keep key text out of the top 250 / bottom 340 px) ---------- */
+  .story .g1 { width: 900px; height: 900px; right: -380px; top: 180px; }
+  .story .g2 { width: 700px; height: 700px; left: -300px; bottom: 120px; }
+  .story .brand { position: absolute; left: 0; right: 0; top: 270px; justify-content: center; }
+  .story h1 { position: absolute; left: 70px; right: 70px; top: 470px; margin: 0; text-align: center; font-size: 96px; line-height: 1.2; font-weight: 800; text-wrap: balance; }
+  .story .ayah {
+    position: absolute; left: 70px; right: 70px; top: 880px; background: #fff; color: #1b1f23; border-radius: 40px;
+    padding: 40px 36px; box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
+  }
+  .story .ayah .ar { font-family: 'AmiriQuran', serif; font-size: 72px; line-height: 2.2; margin-bottom: 18px; text-align: center; direction: rtl; color: #0f6e51; }
+  .story .ayah .bn { font-size: 36px; line-height: 1.5; text-align: center; margin-top: 8px; font-weight: 600; }
+  .story .ayah .en { font-size: 30px; text-align: center; color: #5b6470; margin-top: 6px; }
+  .story .chips { position: absolute; left: 40px; right: 40px; top: 1340px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .story .tag { font-size: 34px; padding: 14px 28px; }
+  .story .cta { position: absolute; left: 50%; top: 1480px; transform: translateX(-50%); font-size: 56px; padding: 30px 60px; white-space: nowrap; }
+
+  /* ---------- link ad 1200x628 ---------- */
+  .link .g1 { width: 620px; height: 620px; right: -200px; top: -230px; }
+  .link .brand { position: absolute; left: 56px; top: 44px; }
+  .link .brand img { width: 96px; height: 96px; }
+  .link .brand b { font-size: 52px; }
+  .link h1 { position: absolute; left: 56px; width: 700px; top: 160px; margin: 0; font-size: 56px; line-height: 1.25; font-weight: 800; text-wrap: balance; }
+  .link .chips { position: absolute; left: 56px; width: 720px; top: 405px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .link .tag { font-size: 25px; padding: 8px 20px; }
+  .link .cta { position: absolute; left: 56px; bottom: 40px; font-size: 38px; padding: 16px 38px; }
+  .link .grid { position: absolute; right: 56px; top: 90px; width: 330px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .link .tile { padding: 20px 6px 14px; font-size: 28px; }
+  .link .tile i { font-size: 56px; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- SQUARE -->
+<div class="v square">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="brand"><img src="../../../assets/icon/icon_legacy.png" alt=""><b>দরকারি</b></div>
+  <h1>দরকারি সব তথ্য, <span class="gold">এক অ্যাপে!</span></h1>
+  <div class="grid">
+    <div class="tile"><i>🕌</i>নামাজের সময়</div>
+    <div class="tile"><i>📅</i>সরকারি ছুটি</div>
+    <div class="tile"><i>🌦️</i>আবহাওয়া</div>
+    <div class="tile"><i>📖</i>কুরআন</div>
+    <div class="tile"><i>📰</i>খবর ও লাইভ টিভি</div>
+    <div class="tile"><i>💱</i>টাকার রেট</div>
+  </div>
+  <div class="foot">
+    <div class="cta">⬇️ ফ্রি ইনস্টল করুন</div>
+    <div class="free">১০০% ফ্রি<br>কোনো বিজ্ঞাপন নেই</div>
+  </div>
+</div>
+
+<!-- FEED 4:5 -->
+<div class="v feed">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="brand"><img src="../../../assets/icon/icon_legacy.png" alt=""><b>দরকারি</b></div>
+  <h1>সেহরি-ইফতারের <span class="gold">কাউন্টডাউন</span> আপনার ফোনেই</h1>
+  <div class="card">
+    <div class="ttl">🌙 সেহরি ও ইফতার · ঢাকা</div>
+    <div class="row">
+      <div class="box"><small>সেহরির শেষ সময়</small><strong>৪:২৫</strong><em>শেষ হয়েছে</em></div>
+      <div class="box on"><small>ইফতার</small><strong>৫:৪৬</strong><em>৭ ঘ ৪ মি বাকি</em></div>
+    </div>
+    <div class="note">*নমুনা সময়। অ্যাপে আপনার এলাকার সময় দেখানো হয়।</div>
+  </div>
+  <div class="chips">
+    <span class="tag">🔔 নামাজের রিমাইন্ডার</span>
+    <span class="tag">📅 রমজান ক্যালেন্ডার</span>
+    <span class="tag">📍 আপনার এলাকা অনুযায়ী</span>
+  </div>
+  <div class="foot">
+    <div class="cta">⬇️ ফ্রি ইনস্টল করুন</div>
+    <div class="free">১০০% ফ্রি<br>কোনো বিজ্ঞাপন নেই</div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="v story">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="brand"><img src="../../../assets/icon/icon_legacy.png" alt=""><b>দরকারি</b></div>
+  <h1>আরবি, বাংলা ও ইংরেজিতে <span class="gold">কুরআন</span> — সাথে তিলাওয়াত</h1>
+  <div class="ayah">
+    <div class="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <div class="bn">পরম করুণাময় অসীম দয়ালু আল্লাহর নামে</div>
+    <div class="en">In the name of Allah, the Entirely Merciful, the Especially Merciful</div>
+  </div>
+  <div class="chips">
+    <span class="tag">১১৪টি সূরা</span>
+    <span class="tag">🎧 ৬ জন ক্বারী</span>
+    <span class="tag">🔖 বুকমার্ক</span>
+  </div>
+  <div class="cta">⬇️ ফ্রি ইনস্টল করুন</div>
+</div>
+
+<!-- LINK AD -->
+<div class="v link">
+  <div class="glow g1"></div>
+  <div class="brand"><img src="../../../assets/icon/icon_legacy.png" alt=""><b>দরকারি</b></div>
+  <h1>ছুটি, নামাজ, কুরআন, খবর ও আবহাওয়া — <span class="gold">সব এক অ্যাপে</span></h1>
+  <div class="chips">
+    <span class="tag">১০০% ফ্রি</span>
+    <span class="tag">কোনো বিজ্ঞাপন নেই</span>
+    <span class="tag">বাংলা ও ইংরেজি</span>
+  </div>
+  <div class="cta">⬇️ ফ্রি ইনস্টল করুন</div>
+  <div class="grid">
+    <div class="tile"><i>🕌</i>নামাজ</div>
+    <div class="tile"><i>📅</i>ছুটি</div>
+    <div class="tile"><i>📖</i>কুরআন</div>
+    <div class="tile"><i>🌦️</i>আবহাওয়া</div>
+  </div>
+</div>
+
+<script>
+  var v = (location.hash.match(/v=(\w+)/) || [])[1] || 'square';
+  document.body.className = v;
+</script>
+</body>
+</html>

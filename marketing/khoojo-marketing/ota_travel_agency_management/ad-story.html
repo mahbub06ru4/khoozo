@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<title>Khoozo ad — story</title>
+<link rel="stylesheet" href="ad.css" />
+<style>
+  .ad { width: 1080px; height: 1920px; background: linear-gradient(160deg, #b10c14, #d4141c 45%, #ff6a00); }
+  .hero { position: absolute; top: 0; left: 0; right: 0; height: 820px; overflow: hidden; border-bottom-left-radius: 80px; border-bottom-right-radius: 80px; }
+  .hero .shade { background: linear-gradient(180deg, rgb(0 0 0 / .5) 0%, rgb(0 0 0 / 0) 35%, rgb(143 10 16 / .55) 100%); }
+  .top { position: absolute; top: 70px; left: 64px; right: 64px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .badge { width: 230px; height: 230px; }
+  .badge span { font-size: 32px; }
+  .badge strong { font-size: 92px; }
+  .heroText { position: absolute; left: 64px; right: 64px; bottom: 60px; }
+  .headline { font-size: 96px; }
+  .body { position: absolute; top: 860px; left: 64px; right: 64px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 32px; }
+  .tile { position: relative; height: 230px; border-radius: 36px; overflow: hidden; box-shadow: 0 16px 40px rgb(0 0 0 / .3); }
+  .tile .shade { background: linear-gradient(0deg, rgb(0 0 0 / .8), rgb(0 0 0 / 0) 70%); }
+  .tile p { position: absolute; left: 26px; bottom: 20px; right: 20px; }
+  .tile b { display: block; font-size: 40px; font-weight: 700; line-height: 1.1; }
+  .tile small { font-size: 26px; font-weight: 600; color: var(--amber); }
+  .points { list-style: none; font-size: 32px; font-weight: 600; margin-bottom: 30px; }
+  .points li { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+  .points li::before { content: ""; width: 30px; height: 30px; border-radius: 50%; background: var(--amber) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238f0a10' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/20px no-repeat; flex-shrink: 0; }
+  .cta { font-size: 46px; padding: 22px 56px; width: 100%; justify-content: center; }
+  .foot { margin-top: 26px; display: flex; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="hero">
+    <img class="bg" src="../public/images/destinations/dubai.jpg" alt="" />
+    <div class="shade"></div>
+    <div class="top">
+      <div class="brand">
+        <img src="../public/logo.png" alt="" />
+        <div><b>Khoozo</b><small>TRAVEL</small></div>
+      </div>
+      <div class="badge"><div><span>সর্বোচ্চ</span><strong>১৫%</strong><span>ছাড়</span></div></div>
+    </div>
+    <div class="heroText">
+      <h1 class="headline">খুঁজে খুঁজে ক্লান্ত?<br /><em>Khoozo আছে না!</em></h1>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="grid">
+      <div class="tile"><img class="bg" src="../public/images/destinations/coxs-bazar.jpg" alt="" /><div class="shade"></div><p><b>কক্সবাজার ফ্লাইট</b><small>৩,৯৯৯ টাকা থেকে</small></p></div>
+      <div class="tile"><img class="bg" src="../public/images/destinations/maldives.jpg" alt="" /><div class="shade"></div><p><b>মালদ্বীপ প্যাকেজ</b><small>৩ রাত / ৪ দিন</small></p></div>
+      <div class="tile"><img class="bg" src="../public/images/hotels/hotel-4.jpg" alt="" /><div class="shade"></div><p><b>হোটেল বুকিং</b><small>দেশে ও বিদেশে</small></p></div>
+      <div class="tile"><img class="bg" src="../public/images/study/gb.jpg" alt="" /><div class="shade"></div><p><b>স্টুডেন্ট ভিসা</b><small>UK · USA · কানাডা</small></p></div>
+    </div>
+
+    <ul class="points">
+      <li>লুকানো চার্জ ছাড়া স্বচ্ছ দাম</li>
+      <li>নিজের মতো হলিডে প্যাকেজ বানান</li>
+      <li>বিকাশ, নগদ ও কার্ডে নিরাপদ পেমেন্ট</li>
+      <li>২৪/৭ কাস্টমার সাপোর্ট</li>
+    </ul>
+
+    <span class="cta">এখনই বুক করুন <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    <div class="foot pay"><span class="bk">bKash</span><span class="ng">Nagad</span><span class="rk">Rocket</span><span class="vs">VISA</span><span class="mc">Mastercard</span></div>
+  </div>
+</div>
+</body>
+</html>
