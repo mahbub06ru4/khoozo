@@ -129,6 +129,22 @@ const KHOOZO_I18N_DICT = {
     "it.modal.features": "Key Features",
     "it.modal.cta": "Discuss a Similar Project",
     "it.modal.comingsoon": "Screenshots coming soon",
+    "dt.back.it": "Back to IT projects",
+    "dt.back.re": "Back to real estate",
+    "dt.screens": "Screenshots",
+    "dt.overview": "Overview",
+    "dt.cta.title": "Interested in this project?",
+    "dt.cta.text.it": "Get a free demo, or talk to us about a similar solution for your business.",
+    "dt.cta.text.re": "Talk to our project consultant about availability, pricing and site visits.",
+    "dt.whatsapp": "Chat on WhatsApp",
+    "dt.call": "Call",
+    "dt.inquire": "Send an inquiry",
+    "dt.share": "Share this page",
+    "dt.copied": "Link copied!",
+    "dt.more.it": "More IT projects",
+    "dt.more.re": "More real estate projects",
+    "dt.notfound": "Project not found",
+    "dt.home": "Back to home",
     "it.proj.dokanbondhu.title": "DokanBondhu 360 — Retail & Pharmacy POS",
     "it.proj.dokanbondhu.card.desc": "Retail & pharmacy POS for Bangladesh — web dashboard, web POS, and an offline-first app for Android and Windows: stock, purchases, dues, VAT, profit reports, Bangla & English.",
     "it.proj.dokanbondhu.modal.desc": "A Bangladesh-first point of sale and shop management system for pharmacies, groceries, super shops, clothing, cosmetics and stationery stores — a web dashboard and web POS, plus a Flutter app for Android and Windows that runs a whole shop free and offline for months, with optional server sync and Google Drive backup. Bangla & English, light & dark.",
@@ -474,6 +490,22 @@ const KHOOZO_I18N_DICT = {
     "it.modal.features": "প্রধান বৈশিষ্ট্য",
     "it.modal.cta": "একই ধরনের প্রজেক্ট নিয়ে কথা বলুন",
     "it.modal.comingsoon": "স্ক্রিনশট শীঘ্রই আসছে",
+    "dt.back.it": "আইটি প্রজেক্টে ফিরে যান",
+    "dt.back.re": "রিয়েল এস্টেটে ফিরে যান",
+    "dt.screens": "স্ক্রিনশট",
+    "dt.overview": "সংক্ষিপ্ত বিবরণ",
+    "dt.cta.title": "এই প্রজেক্টে আগ্রহী?",
+    "dt.cta.text.it": "ফ্রি ডেমো নিন, অথবা আপনার ব্যবসার জন্য একই ধরনের সমাধান নিয়ে আমাদের সাথে কথা বলুন।",
+    "dt.cta.text.re": "প্রাপ্যতা, মূল্য ও সাইট ভিজিট নিয়ে আমাদের প্রজেক্ট কনসালট্যান্টের সাথে কথা বলুন।",
+    "dt.whatsapp": "হোয়াটসঅ্যাপে কথা বলুন",
+    "dt.call": "কল করুন",
+    "dt.inquire": "জিজ্ঞাসা পাঠান",
+    "dt.share": "পেজটি শেয়ার করুন",
+    "dt.copied": "লিংক কপি হয়েছে!",
+    "dt.more.it": "আরও আইটি প্রজেক্ট",
+    "dt.more.re": "আরও রিয়েল এস্টেট প্রজেক্ট",
+    "dt.notfound": "প্রজেক্টটি পাওয়া যায়নি",
+    "dt.home": "হোমে ফিরে যান",
     "it.proj.dokanbondhu.title": "দোকানবন্ধু ৩৬০ — রিটেইল ও ফার্মেসি পিওএস",
     "it.proj.dokanbondhu.card.desc": "বাংলাদেশের রিটেইল ও ফার্মেসির জন্য পিওএস — ওয়েব ড্যাশবোর্ড, ওয়েব পিওএস, এবং অ্যান্ড্রয়েড ও উইন্ডোজের অফলাইন অ্যাপ: স্টক, ক্রয়, বাকি, ভ্যাট, লাভের রিপোর্ট, বাংলা ও ইংরেজি।",
     "it.proj.dokanbondhu.modal.desc": "ফার্মেসি, মুদি, সুপার শপ, পোশাক, কসমেটিকস ও স্টেশনারি দোকানের জন্য বাংলাদেশ-কেন্দ্রিক পিওএস ও দোকান ব্যবস্থাপনা — ওয়েব ড্যাশবোর্ড ও ওয়েব পিওএস, সাথে অ্যান্ড্রয়েড ও উইন্ডোজের ফ্লাটার অ্যাপ যা সার্ভার ছাড়াই বিনামূল্যে মাসের পর মাস পুরো দোকান চালায়; চাইলে সার্ভারে সিঙ্ক ও গুগল ড্রাইভে ব্যাকআপ। বাংলা ও ইংরেজি, লাইট ও ডার্ক।",
@@ -728,7 +760,7 @@ const KHOOZO_I18N_DICT = {
     }
 
     window.khoozoCurrentLang = lang;
-    if (window.khoozoRefreshItModal) window.khoozoRefreshItModal();
+    if (window.khoozoOnLangChange) window.khoozoOnLangChange();
 
     document.documentElement.setAttribute("lang", lang === "bn" ? "bn" : "en");
     document.documentElement.classList.toggle("lang-bn", lang === "bn");
