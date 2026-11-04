@@ -9,9 +9,6 @@ Ready-to-post Bangla + English ads for the launch: four creatives, five post tex
 | Story / Reels image (1080×1920) | `creatives/fb_story_1080x1920.png` |
 | Link-ad banner (1200×628) | `creatives/fb_link_1200x628.png` |
 | Post texts, headlines, descriptions, hashtags, first comment, reply templates (Bangla + English) | `facebook-ads.md` |
-| Creative sources and renderer | `tools/ad_creatives.html`, `tools/build_creatives.py` |
-
-Re-render the images after editing `tools/ad_creatives.html`: `python marketing/facebook/tools/build_creatives.py` (needs Pillow and Chrome or Edge; use `python3` on a Mac).
 
 ## Before you spend anything
 

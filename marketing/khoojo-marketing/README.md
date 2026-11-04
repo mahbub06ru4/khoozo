@@ -26,9 +26,7 @@ Every product has one file, `facebook-ads.md`. Each post in it has:
 | Air Ticketing course + GDS Simulator | [digital_products/air_ticketing/facebook-ads.md](digital_products/air_ticketing/facebook-ads.md) | Course · Simulator app · Short |
 | Visa Processing course | [digital_products/visa_processing/facebook-ads.md](digital_products/visa_processing/facebook-ads.md) | Main · Own visa desk · Short |
 
-The older Bangla-only drafts are kept in `_archive_old_drafts/` for reference.
-
-Product screenshots for carousels are kept outside the repo, in `E:/githubio/khoozo_reference_materials/` (`marketing_screenshots/` and `docs_portfolio/`). The ready-made ad images (`ad-*.png`, `creatives/`) stay here.
+Product screenshots for carousels are kept outside the repo, in `E:/githubio/khoozo_reference_materials/` (`marketing_screenshots/` and `docs_portfolio/`). Only the posts and the finished ad images (`ad-*.png`, `creatives/`) are kept here, to keep the website repo light.
 
 ## Before every boost
 
