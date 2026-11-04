@@ -99,7 +99,60 @@ window.IT_GALLERY = {
       "alt": "Dorkari — Settings"
     }
   ],
-  "ecommerce": [],
+  "ecommerce": [
+    {
+      "src": "assets/it/ecommerce/01-website-home.jpg",
+      "alt": "Ecommerce — Website Home"
+    },
+    {
+      "src": "assets/it/ecommerce/02-website-catalog.jpg",
+      "alt": "Ecommerce — Website Catalog"
+    },
+    {
+      "src": "assets/it/ecommerce/03-website-product.jpg",
+      "alt": "Ecommerce — Website Product"
+    },
+    {
+      "src": "assets/it/ecommerce/04-website-seller-store.jpg",
+      "alt": "Ecommerce — Website Seller Store"
+    },
+    {
+      "src": "assets/it/ecommerce/05-website-checkout.jpg",
+      "alt": "Ecommerce — Website Checkout"
+    },
+    {
+      "src": "assets/it/ecommerce/06-website-my-orders.jpg",
+      "alt": "Ecommerce — Website My Orders"
+    },
+    {
+      "src": "assets/it/ecommerce/07-app-home-bangla.jpg",
+      "alt": "Ecommerce — App Home Bangla"
+    },
+    {
+      "src": "assets/it/ecommerce/08-app-home-shelves.jpg",
+      "alt": "Ecommerce — App Home Shelves"
+    },
+    {
+      "src": "assets/it/ecommerce/09-app-product.jpg",
+      "alt": "Ecommerce — App Product"
+    },
+    {
+      "src": "assets/it/ecommerce/10-app-cart-bangla.jpg",
+      "alt": "Ecommerce — App Cart Bangla"
+    },
+    {
+      "src": "assets/it/ecommerce/11-seller-earnings-payouts.jpg",
+      "alt": "Ecommerce — Seller Earnings Payouts"
+    },
+    {
+      "src": "assets/it/ecommerce/12-seller-product-review.jpg",
+      "alt": "Ecommerce — Seller Product Review"
+    },
+    {
+      "src": "assets/it/ecommerce/13-admin-vendor-documents.jpg",
+      "alt": "Ecommerce — Admin Vendor Documents"
+    }
+  ],
   "fintrack": [
     {
       "src": "assets/it/fintrack/01-dashboard.jpeg",
