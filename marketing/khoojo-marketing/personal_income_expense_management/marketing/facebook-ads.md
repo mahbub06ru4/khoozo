@@ -8,7 +8,7 @@ Personal income & expense app: budgets and goals, monthly & yearly summaries, ch
 - Keep the "100% free" line only if the app is free.
 - Don't use savings claims like "save 20% every month" — they can't be proven and Meta may reject them.
 - Meta policy: never write "Are you in debt?" or similar wording that implies the viewer's financial situation.
-- Creatives: `../screenshots/flutter-01-dashboard.jpeg`, `../screenshots/flutter-02-monthly.jpeg`, `../screenshots/flutter-03-yearly.jpeg`, `../screenshots/flutter-04-budgets.jpeg` (carousel of 4).
+- Creatives (in `E:/githubio/khoozo_reference_materials/marketing_screenshots/personal_income_expense_management/screenshots/`): `flutter-01-dashboard.jpeg`, `flutter-02-monthly.jpeg`, `flutter-03-yearly.jpeg`, `flutter-04-budgets.jpeg` (carousel of 4).
 
 Web demo: https://mahbub06ru4.github.io/flutter_expin/
 

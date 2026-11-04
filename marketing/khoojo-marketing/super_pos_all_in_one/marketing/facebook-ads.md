@@ -8,7 +8,7 @@ Retail & pharmacy POS for Bangladesh: web dashboard, web POS, and an offline-fir
 - Check that the prices below still match the live `plans` table. Remove the package lines if you are not ready to publish prices.
 - Don't mention SMS reminders until an SMS provider is connected (WhatsApp reminders are fine).
 - "Computer" = the web version and the Windows app. Remove "Windows" if that build isn't released yet.
-- Screenshots: `../screenshots/mobile/01-home.png`, `../screenshots/mobile/04-sell-cart.png`, `../screenshots/web/02-dashboard.png`, `../screenshots/mobile/15-reports.png`, `../screenshots/web/40-restaurant-floor.png`, `../screenshots/mobile/18-receipt.png`.
+- Screenshots (in `E:/githubio/khoozo_reference_materials/marketing_screenshots/super_pos_all_in_one/screenshots/`): `mobile/01-home.png`, `mobile/04-sell-cart.png`, `web/02-dashboard.png`, `mobile/15-reports.png`, `web/40-restaurant-floor.png`, `mobile/18-receipt.png`.
 
 Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 

@@ -28,6 +28,8 @@ Every product has one file, `facebook-ads.md`. Each post in it has:
 
 The older Bangla-only drafts are kept in `_archive_old_drafts/` for reference.
 
+Product screenshots for carousels are kept outside the repo, in `E:/githubio/khoozo_reference_materials/` (`marketing_screenshots/` and `docs_portfolio/`). The ready-made ad images (`ad-*.png`, `creatives/`) stay here.
+
 ## Before every boost
 
 1. Read the **Before boosting** list at the top of the file. Fill in any `[PLACEHOLDER]` (links).

@@ -7,7 +7,7 @@ Online travel agency: flights, hotels, holiday packages, visa services and stude
 **Before boosting**
 - No fares are printed in these posts on purpose. If you add a fare or discount, it must be live on the site at that exact price.
 - Never promise a visa approval. "We help with documents and filing" is fine; "guaranteed visa" is not (Meta policy and plain honesty).
-- Creatives: `ad-square-1080.png` (feed), `ad-story-1080x1920.png` (Story/Reels), plus screenshots from `docs_portfolio/khoozo_ota/` (flight results, holiday builder, e-ticket).
+- Creatives: `ad-square-1080.png` (feed), `ad-story-1080x1920.png` (Story/Reels), plus screenshots from `E:/githubio/khoozo_reference_materials/docs_portfolio/khoozo_ota/` (flight results, holiday builder, e-ticket).
 
 Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com
 

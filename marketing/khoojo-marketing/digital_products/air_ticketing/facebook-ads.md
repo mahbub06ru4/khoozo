@@ -11,7 +11,7 @@ Two products in one folder:
 - "Job placement support" means help, not a guaranteed job. Never write "চাকরি নিশ্চিত / guaranteed job".
 - Replace `[APP_LINK]` with the simulator's download link.
 - Trademark line (keep it on the simulator post): Sabre, Amadeus and Travelport/Galileo are trademarks of their owners; this is an independent training product.
-- Screenshots for the simulator: `../screenshots/tutorial_1_home.png`, `sabre_4_family_pnr.png`, `tutorial_6_tutor_feedback.png`, `sabre_5_fare_quote.png`, `amadeus_6_exchange.png`, `galileo_6_refund.png`.
+- Screenshots for the simulator (in `E:/githubio/khoozo_reference_materials/marketing_screenshots/digital_products/screenshots/`): `tutorial_1_home.png`, `sabre_4_family_pnr.png`, `tutorial_6_tutor_feedback.png`, `sabre_5_fare_quote.png`, `amadeus_6_exchange.png`, `galileo_6_refund.png`.
 
 Contact used in all posts: 📞 / WhatsApp 01818-120900 · 🌐 www.khoozo.com/training.html
 

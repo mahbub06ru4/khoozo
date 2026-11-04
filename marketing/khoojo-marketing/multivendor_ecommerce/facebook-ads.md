@@ -8,7 +8,7 @@ Multivendor e-commerce website with seller onboarding, vendor earnings & payouts
 - The site lists this project as "full details coming soon". Boost only after the store is live.
 - Cash on delivery, nationwide delivery, easy returns and bKash/Nagad/card payments are claimed in these posts. Keep a line only if it is true on launch day.
 - Never print a discount or "flash deal" that isn't running at that moment.
-- Screenshots (in `../super_pos_all_in_one/screenshots/`): `01-customer-home.jpg`, `02-customer-catalog.jpg`, `04-customer-cart.jpg`, `05-customer-checkout.jpg` for shoppers; `07-vendor-earnings-payout.jpg`, `09-vendor-product-submit-review.jpg` for sellers. Ready image: `fb-post-bn.jpg`.
+- Screenshots (in `E:/githubio/khoozo_reference_materials/marketing_screenshots/super_pos_all_in_one/screenshots/`): `01-customer-home.jpg`, `02-customer-catalog.jpg`, `04-customer-cart.jpg`, `05-customer-checkout.jpg` for shoppers; `07-vendor-earnings-payout.jpg`, `09-vendor-product-submit-review.jpg` for sellers. Ready image: `../super_pos_all_in_one/creatives/fb-post-bn.jpg`.
 
 Contact used in all posts: 📞 / WhatsApp 01818-120900
 
