@@ -149,6 +149,7 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.best": "Best value", "dp.save": "Save {amount}",
     "dp.buy": "Buy now", "dp.paywith": "Pay with bKash or card", "dp.onetime": "One-time payment · lifetime access to the files",
     "dp.more": "More digital products", "dp.notfound": "Product not found",
+    "cart.addtocart": "Add to Cart", "cart.qty": "Qty",
   },
   bn: {
     "navbar.products": "ডিজিটাল পণ্য",
@@ -171,6 +172,7 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.best": "সেরা ভ্যালু", "dp.save": "{amount} সাশ্রয়",
     "dp.buy": "এখনই কিনুন", "dp.paywith": "বিকাশ বা কার্ডে পেমেন্ট", "dp.onetime": "এককালীন পেমেন্ট · ফাইলগুলো আজীবন আপনার",
     "dp.more": "আরও ডিজিটাল পণ্য", "dp.notfound": "পণ্যটি পাওয়া যায়নি",
+    "cart.addtocart": "কার্টে যোগ করুন", "cart.qty": "পরিমাণ",
   },
 };
 
@@ -213,7 +215,10 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
           </ul>
           <div class="dp-card-foot">
             <div><small>${t("dp.from")}</small><b>${taka(p.pack.price)}</b><s>${taka(p.pack.originalPrice)}</s></div>
-            <span class="tr-link">${t("dp.view")} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            <div class="dp-card-actions">
+              <button type="button" class="dp-add-btn" data-add-to-cart="${p.id}" data-cart-plan="pack" title="${t("cart.addtocart")}" aria-label="${t("cart.addtocart")}"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button>
+              <span class="tr-link">${t("dp.view")} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
           </div>
         </div>
       </a>`;
@@ -222,7 +227,9 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   /* ---------------- index.html#products ---------------- */
   function renderGrid() {
     const grid = document.getElementById("productGrid");
-    if (grid) grid.innerHTML = KHOOZO_PRODUCTS.map(card).join("");
+    if (!grid) return;
+    grid.innerHTML = KHOOZO_PRODUCTS.map(card).join("");
+    if (window.KhoozoCart) window.KhoozoCart.wireAddButtons(grid);
   }
 
   /* ---------------- product.html ---------------- */
@@ -318,9 +325,20 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
               <span class="tr-off">${digits(offPct(chosen))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>
             </div>
             <p class="tr-note">${t("dp.onetime")}</p>
-            <a class="btn btn-primary btn-block" href="pay.html?product=${p.id}&plan=${plan}"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> ${t("dp.buy")}</a>
+            <div class="dp-qty">
+              <span>${t("cart.qty")}</span>
+              <div class="dp-qty-stepper">
+                <button type="button" data-qty="dec" aria-label="Decrease quantity">−</button>
+                <span id="dpQty">${digits(1)}</span>
+                <button type="button" data-qty="inc" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            <div class="dp-buy-actions">
+              <a class="btn btn-primary" href="pay.html?product=${p.id}&plan=${plan}"><i class="fa-solid fa-bolt" aria-hidden="true"></i> ${t("dp.buy")}</a>
+              <button type="button" class="btn btn-outline" data-add-to-cart="${p.id}" data-cart-plan="${plan}" data-qty-input="dpQty"><span class="add-label"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> ${t("cart.addtocart")}</span></button>
+            </div>
             <p class="tr-secure"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ${t("dp.paywith")}</p>
-            <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span><span style="color:#1a1f71">VISA</span><span style="color:#eb001b">Mastercard</span></div>
+            <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span><span style="color:#ec1c24">Nagad</span><span style="color:#1a1f71">VISA</span><span style="color:#eb001b">Mastercard</span></div>
           </div>
         </aside>
       </div>
@@ -342,6 +360,15 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         renderProduct();
       }),
     );
+
+    const qtyEl = root.querySelector("#dpQty");
+    if (qtyEl) {
+      let qty = 1;
+      const setQty = (n) => { qty = Math.max(1, n); qtyEl.textContent = digits(qty); };
+      root.querySelector('[data-qty="inc"]').addEventListener("click", () => setQty(qty + 1));
+      root.querySelector('[data-qty="dec"]').addEventListener("click", () => setQty(qty - 1));
+    }
+    if (window.KhoozoCart) window.KhoozoCart.wireAddButtons(root);
   }
 
   function renderAll() {

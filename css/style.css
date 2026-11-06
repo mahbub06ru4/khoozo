@@ -186,6 +186,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 [data-theme="dark"] .theme-toggle .fa-moon { display: none; }
 [data-theme="dark"] .theme-toggle .fa-sun { display: block; color: #ffce54; }
 
+.cart-toggle {
+  position: relative; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--tint); border: 1px solid var(--border); color: var(--ink);
+  transition: background 0.16s var(--ease), transform 0.16s var(--ease);
+}
+.cart-toggle:hover { transform: translateY(-2px); }
+.cart-badge {
+  position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 4px;
+  display: grid; place-items: center; border-radius: 999px; font-family: var(--font-mono);
+  font-size: 0.68rem; font-weight: 700; color: #fff; background: linear-gradient(120deg, var(--red), var(--orange));
+  box-shadow: 0 0 0 2px var(--surface);
+}
+.cart-badge.is-hidden { display: none; }
+
 .burger {
   display: none; flex-direction: column; gap: 5px;
   background: var(--tint); border: 1px solid var(--border); border-radius: 10px;

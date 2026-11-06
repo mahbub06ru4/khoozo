@@ -300,10 +300,12 @@ const KHOOZO_TRAINING_I18N = {
     "res.wa": "Open WhatsApp again", "res.status": "Status", "res.status.review": "Awaiting verification",
     "pay.h1.product": "Complete your purchase", "pay.price": "Price", "pay.discount.product": "Discount",
     "pay.agree.product": "I agree to the terms and refund policy.", "pay.back.product": "Back to product details",
+    "pay.back.cart": "Back to cart",
     "res.product": "Product", "res.paid.product": "Your order for {course} is confirmed.",
     "res.note.product": "Download links for your PDFs and app will be sent to <b>{email}</b> and WhatsApp.",
     "res.submitted.product": "We'll verify your TrxID and send your download links on WhatsApp, usually within 1 hour.",
     "res.more.product": "More digital products", "res.details.product": "Product details",
+    "res.details.cart": "Back to cart",
   },
   bn: {
     "navbar.training": "ট্রেনিং",
@@ -349,10 +351,12 @@ const KHOOZO_TRAINING_I18N = {
     "res.wa": "আবার হোয়াটসঅ্যাপ খুলুন", "res.status": "অবস্থা", "res.status.review": "যাচাইয়ের অপেক্ষায়",
     "pay.h1.product": "ক্রয় সম্পন্ন করুন", "pay.price": "মূল্য", "pay.discount.product": "ছাড়",
     "pay.agree.product": "আমি শর্তাবলি ও রিফান্ড নীতিতে সম্মত।", "pay.back.product": "পণ্যের বিস্তারিতে ফিরুন",
+    "pay.back.cart": "কার্টে ফিরুন",
     "res.product": "পণ্য", "res.paid.product": "{course} — আপনার অর্ডার নিশ্চিত হয়েছে।",
     "res.note.product": "PDF ও অ্যাপের ডাউনলোড লিংক <b>{email}</b> ঠিকানায় ও হোয়াটসঅ্যাপে পাঠানো হবে।",
     "res.submitted.product": "আমরা আপনার TrxID যাচাই করে হোয়াটসঅ্যাপে ডাউনলোড লিংক পাঠাব, সাধারণত ১ ঘণ্টার মধ্যে।",
     "res.more.product": "আরও ডিজিটাল পণ্য", "res.details.product": "পণ্যের বিস্তারিত",
+    "res.details.cart": "কার্টে ফিরুন",
   },
 };
 
@@ -393,6 +397,29 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     pack: { en: "Digital pack", bn: "ডিজিটাল প্যাক" },
     combo: { en: "Combo with live course", bn: "লাইভ কোর্সসহ কম্বো" },
   };
+  /* Cart checkout (pay.html?cart=1) — aggregates everything in
+     localStorage via js/cart.js into one multi-item "it". */
+  function itemForCart() {
+    if (!window.KhoozoCart) return null;
+    const items = window.KhoozoCart.enrich(window.KhoozoCart.readCart());
+    if (!items.length) return null;
+    const price = items.reduce((s, x) => s + x.lineTotal, 0);
+    const originalPrice = items.reduce((s, x) => s + x.unitOriginal * x.qty, 0);
+    const summary = (l) =>
+      items.length === 1
+        ? `${items[0].product[l].title}${items[0].qty > 1 ? ` × ${items[0].qty}` : ""}`
+        : l === "bn"
+        ? `${items.length}টি পণ্য`
+        : `${items.length} items`;
+    return {
+      kind: "cart", id: "cart", items, price, originalPrice,
+      title: summary, name: summary, planName: () => "",
+      icon: "fa-solid fa-cart-shopping", colors: ["#7f1d1d", "#9E1B1B"],
+      back: "cart.html", retry: "pay.html?cart=1", list: "index.html#products",
+      methods: ["manual", "bkash", "card"], wallets: ["bKash"], merchant: "Khoozo Digital",
+    };
+  }
+
   function itemFor(courseId, productId, planId) {
     if (productId) {
       const p = typeof KHOOZO_PRODUCTS !== "undefined" ? KHOOZO_PRODUCTS.find((x) => x.id === productId) : null;
@@ -415,10 +442,39 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       methods: ["manual", "bkash", "nagad", "card"], wallets: null, merchant: "Khoozo Training",
     };
   }
-  const itemFromParams = () => itemFor(params.get("course"), params.get("product"), params.get("plan"));
-  const itemFromOrder = (o) => itemFor(o.courseId, o.productId, o.plan);
-  /* Product checkouts use their own wording where the course text says "course" or "enrol". */
-  const tk = (it, key, vars) => (it && it.kind === "product" && KHOOZO_TRAINING_I18N.en[key + ".product"] ? t(key + ".product", vars) : t(key, vars));
+  const itemFromParams = () => (params.get("cart") === "1" ? itemForCart() : itemFor(params.get("course"), params.get("product"), params.get("plan")));
+  function itemFromOrder(o) {
+    if (o.items) {
+      const items = o.items
+        .map((row) => {
+          const p = typeof KHOOZO_PRODUCTS !== "undefined" ? KHOOZO_PRODUCTS.find((x) => x.id === row.id) : null;
+          if (!p) return null;
+          const plan = row.plan === "combo" ? "combo" : "pack";
+          return { id: p.id, plan, qty: row.qty, unitPrice: p[plan].price, lineTotal: p[plan].price * row.qty, product: p };
+        })
+        .filter(Boolean);
+      const summary = (l) =>
+        items.length === 1
+          ? `${items[0].product[l].title}${items[0].qty > 1 ? ` × ${items[0].qty}` : ""}`
+          : l === "bn"
+          ? `${items.length}টি পণ্য`
+          : `${items.length} items`;
+      return {
+        kind: "cart", id: "cart", items,
+        title: summary, name: summary, planName: () => "",
+        icon: "fa-solid fa-cart-shopping", colors: ["#7f1d1d", "#9E1B1B"],
+        back: "cart.html", retry: "pay.html?cart=1", list: "index.html#products",
+      };
+    }
+    return itemFor(o.courseId, o.productId, o.plan);
+  }
+  /* Product and cart checkouts use their own wording where the course text says "course" or "enrol". */
+  const tk = (it, key, vars) => {
+    if (!it) return t(key, vars);
+    if (it.kind === "cart" && KHOOZO_TRAINING_I18N.en[key + ".cart"]) return t(key + ".cart", vars);
+    if ((it.kind === "cart" || it.kind === "product") && KHOOZO_TRAINING_I18N.en[key + ".product"]) return t(key + ".product", vars);
+    return t(key, vars);
+  };
 
   function readOrders() {
     try { return JSON.parse(localStorage.getItem(ORDERS_KEY) || "{}"); } catch (e) { return {}; }
@@ -610,11 +666,22 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         </div>
       </div>
       <aside class="tr-panel tr-buy">
-        ${it.kind === "product"
+        ${it.kind === "cart"
+          ? `<div class="pay-cart-items">${it.items
+              .map(
+                (ci) => `
+              <div class="pay-cart-item">
+                <span class="pay-cart-icon" style="--dp1:${ci.product.colors[0]};--dp2:${ci.product.colors[1]}"><i class="${ci.product.icon}"></i></span>
+                <div class="pay-cart-info"><b>${esc(ci.product[lang()].title)}</b><small>${esc(PLAN_LABEL[ci.plan][lang()])} × ${digits(ci.qty)}</small></div>
+                <span class="pay-cart-price">${taka(ci.lineTotal)}</span>
+              </div>`,
+              )
+              .join("")}</div>`
+          : it.kind === "product"
           ? `<div class="pay-summary-media is-product" style="--dp1:${it.colors[0]};--dp2:${it.colors[1]}"><i class="${it.icon}"></i><strong>${esc(it.name(lang()))}<span class="pay-summary-plan">${esc(it.planName(lang()))}</span></strong></div>`
           : `<div class="pay-summary-media"><img src="${it.image}" alt=""><strong>${esc(it.title(lang()))}</strong></div>`}
         <div class="pay-lines">
-          <div class="pay-line"><span>${it.kind === "product" ? t("pay.price") : t("pay.fee")}</span><span style="text-decoration:line-through">${taka(it.originalPrice)}</span></div>
+          <div class="pay-line"><span>${it.kind === "product" || it.kind === "cart" ? t("pay.price") : t("pay.fee")}</span><span style="text-decoration:line-through">${taka(it.originalPrice)}</span></div>
           <div class="pay-line discount"><span>${tk(it, "pay.discount")}</span><span>– ${taka(it.originalPrice - it.price)}</span></div>
           <div class="pay-total"><span style="font-weight:700">${t("pay.total")}</span><b>${taka(it.price)}</b></div>
           <label class="pay-agree"><input type="checkbox" data-field="agree"${s.agree ? " checked" : ""}><span>${tk(it, "pay.agree")}${err("agree")}</span></label>
@@ -688,7 +755,9 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
     const customer = { name: s.name.trim(), email: s.email.trim().toLowerCase(), phone: phone.replace(/^\+?88/, "") };
 
-    const what = it.kind === "product" ? { productId: it.id, plan: it.plan } : { courseId: it.id };
+    const what = it.kind === "cart" ? { items: it.items.map((ci) => ({ id: ci.id, plan: ci.plan, qty: ci.qty })) } : it.kind === "product" ? { productId: it.id, plan: it.plan } : { courseId: it.id };
+    const kindLabel = it.kind === "cart" ? "digital product" : it.kind === "product" ? "digital product" : "course";
+    const itemLines = it.kind === "cart" ? it.items.map((ci) => `• ${ci.product.en.title} (${PLAN_LABEL[ci.plan].en}) × ${ci.qty} — ${ci.lineTotal} BDT`).join("\n") : `*${it.kind === "product" ? "Product" : "Course"}:* ${it.title("en")}`;
     if (s.method === "manual") {
       const order = {
         ref: randomId("KZT-", 8),
@@ -705,10 +774,11 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       };
       order.updatedAt = order.createdAt;
       saveOrder(order);
+      if (it.kind === "cart" && window.KhoozoCart) window.KhoozoCart.clearCart();
       const msg = [
-        `Hello Khoozo, I want to confirm my ${it.kind === "product" ? "digital product" : "course"} payment.`,
+        `Hello Khoozo, I want to confirm my ${kindLabel} payment.`,
         "",
-        `*${it.kind === "product" ? "Product" : "Course"}:* ${it.title("en")}`,
+        itemLines,
         `*Invoice:* ${order.ref}`,
         `*Amount:* ${it.price} BDT`,
         `*Paid with:* ${s.wallet} (Send Money)`,
@@ -758,6 +828,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       createdAt: new Date().toISOString(),
     };
     saveOrder(order);
+    if (it.kind === "cart" && window.KhoozoCart) window.KhoozoCart.clearCart();
     setTimeout(() => location.assign(`pay-gateway.html?method=${order.method}&ref=${encodeURIComponent(order.ref)}`), 500);
   }
 
@@ -918,7 +989,8 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       return;
     }
     const it = itemFromOrder(order);
-    if (it && it.kind === "product") document.title = "Payment status | Khoozo Digital Products";
+    const isGoods = it && (it.kind === "product" || it.kind === "cart");
+    if (isGoods) document.title = "Payment status | Khoozo Digital Products";
     const title0 = it ? it.title(lang()) : order.courseId || order.productId;
     const paid = order.status === "paid";
     const submitted = order.status === "submitted";
@@ -926,14 +998,17 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     const icon = paid ? "fa-circle-check" : submitted ? "fa-hourglass-half" : "fa-circle-xmark";
     const title = paid ? t("res.paid") : submitted ? t("res.submitted") : order.status === "cancelled" ? t("res.cancelled") : t("res.failed");
     const sub = paid
-      ? (it && it.kind === "product" ? t("res.paid.product", { course: esc(title0) }) : t("res.paid.p", { course: esc(title0) }))
-      : submitted ? (it && it.kind === "product" ? t("res.submitted.product") : t("res.submitted.p")) : order.status === "cancelled" ? t("res.cancelled.p") : esc(order.reason || "");
+      ? (isGoods ? t("res.paid.product", { course: esc(title0) }) : t("res.paid.p", { course: esc(title0) }))
+      : submitted ? (isGoods ? t("res.submitted.product") : t("res.submitted.p")) : order.status === "cancelled" ? t("res.cancelled.p") : esc(order.reason || "");
     const via = order.method === "manual" ? `${order.wallet} · ${methodName("manual")}` : methodName(order.method);
     let wa = "";
     try { wa = sessionStorage.getItem("khoozo-wa-" + order.ref) || ""; } catch (e) { /* ignore */ }
+    const itemsRow = it && it.kind === "cart"
+      ? [t("res.product"), it.items.map((ci) => `${esc(ci.product[lang()].title)} × ${digits(ci.qty)}`).join(", ")]
+      : [isGoods ? t("res.product") : t("res.course"), title0];
     const rows = [
       [t("res.invoice"), order.ref],
-      [it && it.kind === "product" ? t("res.product") : t("res.course"), title0],
+      itemsRow,
       [t("res.via"), via + (order.payer ? " · " + order.payer : "")],
       order.trxID ? [t("res.trx"), order.trxID] : null,
       submitted ? [t("res.status"), t("res.status.review")] : null,

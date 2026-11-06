@@ -37,6 +37,7 @@
   .chairman-media { margin: 0 auto; }
   .chairman-quote { text-align: left; }
   .social-row { justify-content: center; }
+
 }
 
 /* ================================================================
@@ -49,6 +50,7 @@
   .cards-grid, .feature-grid, .quote-grid, .project-teasers, .project-specs, .counter-grid, .app-cycle {
     grid-template-columns: 1fr;
   }
+
 
   .client-stats { grid-template-columns: 1fr 1fr; }
 

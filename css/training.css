@@ -125,6 +125,16 @@
 .pay-summary-media img { width: 100%; height: 100%; object-fit: cover; }
 .pay-summary-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.75), transparent); }
 .pay-summary-media strong { position: absolute; left: 18px; right: 18px; bottom: 14px; z-index: 1; color: #fff; font-size: 1.1rem; }
+.pay-cart-items { display: grid; gap: 10px; padding: 20px 24px 0; }
+.pay-cart-item { display: flex; align-items: center; gap: 12px; }
+.pay-cart-icon {
+  flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-size: .95rem;
+  background: linear-gradient(135deg, var(--dp1), var(--dp2));
+}
+.pay-cart-info { flex: 1; min-width: 0; }
+.pay-cart-info b { display: block; font-size: .88rem; color: var(--ink); }
+.pay-cart-info small { font-size: .76rem; color: var(--ink-soft); }
+.pay-cart-price { flex-shrink: 0; font-weight: 700; font-size: .88rem; color: var(--ink); }
 .pay-lines { padding: 20px 24px 24px; }
 .pay-line { display: flex; justify-content: space-between; font-size: .95rem; margin-bottom: 10px; color: var(--ink); }
 .pay-line.discount { color: #15803d; }
