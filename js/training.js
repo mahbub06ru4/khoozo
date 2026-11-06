@@ -12,7 +12,7 @@
 "use strict";
 
 const KHOOZO_PAY = {
-  apiBase: "", // e.g. "https://api.khoozo.com" → POST {apiBase}/api/payments/create
+  apiBase: "", // e.g. "https://api.khoozo.com" → POST {apiBase}/api/v1/shop/orders (khoozo_laravel)
   // Manual "Send Money" + WhatsApp confirmation — works on a static site with no backend.
   manual: {
     whatsapp: "8801818120900", // country code, no "+" or spaces
@@ -755,7 +755,12 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
     const customer = { name: s.name.trim(), email: s.email.trim().toLowerCase(), phone: phone.replace(/^\+?88/, "") };
 
-    const what = it.kind === "cart" ? { items: it.items.map((ci) => ({ id: ci.id, plan: ci.plan, qty: ci.qty })) } : it.kind === "product" ? { productId: it.id, plan: it.plan } : { courseId: it.id };
+    const what =
+      it.kind === "cart"
+        ? { items: it.items.map((ci) => ({ id: ci.id, plan: ci.plan, qty: ci.qty })) }
+        : it.kind === "product"
+        ? { items: [{ id: it.id, plan: it.plan, qty: 1 }] }
+        : { courseId: it.id };
     const kindLabel = it.kind === "cart" ? "digital product" : it.kind === "product" ? "digital product" : "course";
     const itemLines = it.kind === "cart" ? it.items.map((ci) => `• ${ci.product.en.title} (${PLAN_LABEL[ci.plan].en}) × ${ci.qty} — ${ci.lineTotal} BDT`).join("\n") : `*${it.kind === "product" ? "Product" : "Course"}:* ${it.title("en")}`;
     if (s.method === "manual") {
@@ -801,10 +806,10 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
     if (KHOOZO_PAY.apiBase) {
       try {
-        const res = await fetch(`${KHOOZO_PAY.apiBase}/api/payments/create`, {
+        const res = await fetch(`${KHOOZO_PAY.apiBase}/api/v1/shop/orders`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...(it.kind === "product" ? { productId: it.id, plan: it.plan } : { courseSlug: it.id }), method: s.method, ...customer }),
+          body: JSON.stringify({ ...what, method: s.method, customer }),
         });
         const json = await res.json();
         if (!res.ok || !json.redirectURL) throw new Error(json.error || "Could not start payment");
