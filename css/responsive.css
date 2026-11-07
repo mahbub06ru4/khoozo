@@ -109,3 +109,15 @@
 @media (max-width: 1024px) {
   .site-header .header-inner { padding-left: 16px; padding-right: 16px; }
 }
+
+/* Keep page content clear of the floating contact buttons on the right
+   (they were covering "View details" and other right-aligned card links). */
+@media (min-width: 641px) and (max-width: 1340px) {
+  section > .container { padding-right: 88px; }
+}
+@media (max-width: 640px) {
+  /* Cards are full width here: put the cart button and "View details" on their
+     own row under the price, starting from the left. */
+  .dp-card-foot { flex-wrap: wrap; align-items: center; }
+  .dp-card-actions { width: 100%; justify-content: flex-start; }
+}
