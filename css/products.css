@@ -172,3 +172,11 @@
   .cart-line-remove { grid-column: 4 / 5; grid-row: 1 / 2; }
   .dp-buy-actions { grid-template-columns: 1fr; }
 }
+
+.dp-card-head { position: relative; }
+.dp-fav { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--ink); cursor: pointer; }
+.dp-fav.is-on { color: var(--red); }
+.dp-card-head .dp-fav { position: absolute; top: 12px; right: 12px; z-index: 2; }
+.dp-fav-inline { flex: 0 0 auto; width: 44px; height: 44px; }
+.dp-card-head .dp-card-off { right: 58px; }
+@media (max-width: 480px) { .header-actions .lang-toggle { display: none; } }

@@ -463,7 +463,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         kind: "cart", id: "cart", items,
         title: summary, name: summary, planName: () => "",
         icon: "fa-solid fa-cart-shopping", colors: ["#7f1d1d", "#9E1B1B"],
-        back: "cart.html", retry: "pay.html?cart=1", list: "index.html#products",
+        back: "cart.html", retry: "pay.html?cart=1", list: "index.html#products", merchant: "Khoozo Digital",
       };
     }
     return itemFor(o.courseId, o.productId, o.plan);
@@ -635,6 +635,12 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     }
     if (it.kind === "product") document.title = "Payment | Khoozo Digital Products";
     const s = payState;
+    const authUser = window.KhoozoAuth && window.KhoozoAuth.isLoggedIn() ? window.KhoozoAuth.currentUser() : null;
+    if (authUser && !s.prefilled) {
+      s.prefilled = true;
+      s.name = s.name || authUser.fullName || authUser.displayName || "";
+      if (!s.phone && authUser.mobileNumber) s.phone = "0" + authUser.mobileNumber.slice(-10);
+    }
     if (!it.methods.includes(s.method)) s.method = it.methods[0];
     if (it.wallets && !it.wallets.includes(s.wallet)) s.wallet = it.wallets[0];
     const err = (f) => (s.errors[f] ? `<span class="pay-err">${t(s.errors[f])}</span>` : "");

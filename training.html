@@ -45,6 +45,13 @@
         <i class="fa-solid fa-moon" aria-hidden="true"></i>
         <i class="fa-solid fa-sun" aria-hidden="true"></i>
       </button>
+      <a class="cart-toggle fav-toggle" href="favorites.html" aria-label="Favorites">
+        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        <span class="fav-badge is-hidden">0</span>
+      </a>
+      <a class="cart-toggle account-toggle" href="login.html" aria-label="Log in">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+      </a>
       <a class="cart-toggle" href="cart.html" aria-label="View cart">
         <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
         <span class="cart-badge is-hidden">0</span>
@@ -164,6 +171,7 @@
 </button>
 
 <script src="js/i18n.js" defer></script>
+<script src="js/auth.js" defer></script>
 <script src="js/training.js" defer></script>
 <script>
   // Theme: light by default, only an explicit saved choice switches to dark.

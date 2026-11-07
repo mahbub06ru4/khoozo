@@ -876,3 +876,22 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
   .training-promo img { height: 180px; min-height: 0; }
   .training-promo-body { padding: 22px; }
 }
+
+.account-toggle.is-signed-in { color: #fff; background: linear-gradient(120deg, var(--red), var(--orange)); border-color: transparent; }
+.auth-card { max-width: 440px; margin: 0 auto; padding: 32px 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+.auth-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; margin-bottom: 24px; background: var(--tint); border-radius: 12px; }
+.auth-tabs button { padding: 10px; border: 0; border-radius: 9px; background: none; color: var(--ink); font: inherit; font-weight: 600; cursor: pointer; }
+.auth-tabs button.is-active { background: var(--surface); color: var(--red); }
+.auth-title { font-size: 1.6rem; margin-bottom: 6px; overflow-wrap: anywhere; }
+.auth-sub { margin-bottom: 20px; }
+.auth-card .field { display: block; margin-bottom: 14px; }
+.auth-error { min-height: 1.3em; margin-bottom: 10px; color: var(--red); font-size: 0.88rem; }
+.auth-submit, .auth-logout { width: 100%; justify-content: center; }
+.auth-account { text-align: center; }
+.auth-avatar { display: inline-grid; place-items: center; width: 64px; height: 64px; margin-bottom: 12px; border-radius: 50%; color: #fff; background: linear-gradient(120deg, var(--red), var(--orange)); font-size: 1.5rem; }
+.auth-notice:empty { display: none; }
+.auth-notice { margin-bottom: 12px; font-size: 0.9rem; }
+.auth-mobile { margin-bottom: 8px; font-family: var(--font-mono); }
+.auth-logout { margin-top: 10px; background: none; border: 1px solid var(--border); color: var(--ink); cursor: pointer; }
+.fav-badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 4px; display: grid; place-items: center; border-radius: 999px; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; color: #fff; background: linear-gradient(120deg, var(--red), var(--orange)); box-shadow: 0 0 0 2px var(--surface); }
+.fav-badge.is-hidden { display: none; }

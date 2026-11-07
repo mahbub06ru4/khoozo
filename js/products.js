@@ -197,12 +197,60 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   const grad = (p) => `--dp1:${p.colors[0]};--dp2:${p.colors[1]}`;
   const offPct = (o) => Math.round((1 - o.price / o.originalPrice) * 100);
 
+  const FAV_KEY = "khoozo_favorites";
+  function readFavs() {
+    try { return JSON.parse(localStorage.getItem(FAV_KEY) || "[]"); } catch (e) { return []; }
+  }
+  function favLabel() { return lang() === "bn" ? "পছন্দের তালিকা" : "Favorites"; }
+  function favBtn(id, extra) {
+    const on = readFavs().includes(id);
+    return `<button type="button" class="dp-fav${on ? " is-on" : ""} ${extra || ""}" data-fav="${id}" aria-pressed="${on}" aria-label="${favLabel()}" title="${favLabel()}"><i class="fa-${on ? "solid" : "regular"} fa-heart" aria-hidden="true"></i></button>`;
+  }
+  function renderFavBadges() {
+    const n = readFavs().length;
+    document.querySelectorAll(".fav-badge").forEach((b) => {
+      b.textContent = digits(n);
+      b.classList.toggle("is-hidden", n === 0);
+    });
+  }
+  // Capture phase: the card's heart sits inside an <a> that would otherwise navigate.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest && e.target.closest("[data-fav]");
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const id = btn.getAttribute("data-fav");
+    const favs = readFavs();
+    const next = favs.includes(id) ? favs.filter((x) => x !== id) : [...favs, id];
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(next)); } catch (err) { /* storage blocked */ }
+    const on = next.includes(id);
+    document.querySelectorAll(`[data-fav="${id}"]`).forEach((b) => {
+      b.classList.toggle("is-on", on);
+      b.setAttribute("aria-pressed", String(on));
+      b.querySelector("i").className = `fa-${on ? "solid" : "regular"} fa-heart`;
+    });
+    renderFavBadges();
+    renderFavorites();
+  }, true);
+
+  function renderFavorites() {
+    const root = document.getElementById("favRoot");
+    if (!root) return;
+    const items = KHOOZO_PRODUCTS.filter((p) => readFavs().includes(p.id));
+    const bn = lang() === "bn";
+    root.innerHTML = `<h1 class="cart-h1">${favLabel()}</h1>` + (items.length
+      ? `<div class="dp-grid">${items.map(card).join("")}</div>`
+      : `<div class="cart-empty"><p>${bn ? "এখনও কোনো পণ্য পছন্দের তালিকায় নেই।" : "You have no favorites yet."}</p><a class="btn btn-primary" href="index.html#products">${bn ? "ডিজিটাল পণ্য দেখুন" : "Browse digital products"}</a></div>`);
+    if (window.KhoozoCart) window.KhoozoCart.wireAddButtons(root);
+  }
+
   function card(p) {
     const k = p[lang()];
     return `
       <a class="dp-card" href="product.html?id=${p.id}" style="${grad(p)}">
         <div class="dp-card-head">
           <span class="dp-card-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
+          ${favBtn(p.id)}
           <span class="dp-card-off">${digits(offPct(p.pack))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>
           <h3>${esc(k.title)}</h3>
         </div>
@@ -226,6 +274,8 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
   /* ---------------- index.html#products ---------------- */
   function renderGrid() {
+    renderFavBadges();
+    renderFavorites();
     const grid = document.getElementById("productGrid");
     if (!grid) return;
     grid.innerHTML = KHOOZO_PRODUCTS.map(card).join("");
@@ -336,6 +386,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
             <div class="dp-buy-actions">
               <a class="btn btn-primary" href="pay.html?product=${p.id}&plan=${plan}"><i class="fa-solid fa-bolt" aria-hidden="true"></i> ${t("dp.buy")}</a>
               <button type="button" class="btn btn-outline" data-add-to-cart="${p.id}" data-cart-plan="${plan}" data-qty-input="dpQty"><span class="add-label"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> ${t("cart.addtocart")}</span></button>
+              ${favBtn(p.id, "dp-fav-inline")}
             </div>
             <p class="tr-secure"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ${t("dp.paywith")}</p>
             <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span><span style="color:#ec1c24">Nagad</span><span style="color:#1a1f71">VISA</span><span style="color:#eb001b">Mastercard</span></div>
