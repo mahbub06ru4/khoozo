@@ -1,7 +1,7 @@
 /* ================================================================
    Khoozo — js/main.js
    Core UI logic: navigation, theme, scroll progress, contact form.
-   Scroll-reveal, counters, typing effect and cursor live in animation.js.
+   Scroll-reveal, counters, typing effect live in animation.js.
    Vanilla JS only — no dependencies.
    ================================================================ */
 "use strict";
@@ -131,14 +131,14 @@ function validateField(field) {
   return ok;
 }
 
-form.querySelectorAll(".field").forEach(field => {
+form?.querySelectorAll(".field").forEach(field => {
   const control = field.querySelector("input, textarea, select");
   control.addEventListener("blur", () => validateField(field));
   control.addEventListener("input", () => field.classList.remove("has-error"));
   control.addEventListener("change", () => field.classList.remove("has-error"));
 });
 
-form.addEventListener("submit", e => {
+form?.addEventListener("submit", e => {
   e.preventDefault();
   const fields = Array.from(form.querySelectorAll(".field"));
   const allValid = fields.map(validateField).every(Boolean);

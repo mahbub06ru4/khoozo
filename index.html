@@ -107,12 +107,6 @@
      ============================================================ -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span id="scrollProgressFill"></span></div>
 
-<!-- ============================================================
-     CUSTOM CURSOR (desktop / fine-pointer only, see animation.css)
-     ============================================================ -->
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
 <a class="skip-link" href="#home">Skip to content</a>
 
 <!-- ============================================================
@@ -128,11 +122,16 @@
     <nav class="nav" id="mainNav" aria-label="Primary navigation">
       <a href="#home" data-nav data-i18n="nav.home">Home</a>
       <a href="#about" data-nav data-i18n="nav.about">About Us</a>
-      <a href="#it" data-nav data-i18n="navbar.it">IT</a>
-      <a href="#realestate" data-nav data-i18n="navbar.realestate">Real Estate</a>
-      <a href="#travel" data-nav data-i18n="navbar.travel">Travel</a>
-      <a href="training.html" data-i18n="navbar.training">Training</a>
-      <a href="#products" data-nav data-i18n="navbar.products">Digital Products</a>
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" aria-expanded="false" aria-controls="megaMenu"><span data-i18n="navbar.services">Our Services</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="mega-menu" id="megaMenu">
+          <a class="mega-item" href="it.html"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i><span><b data-i18n="navmega.it.title">IT &amp; Software Development</b><small data-i18n="navmega.it">Apps, websites and software</small></span></a>
+          <a class="mega-item" href="realestate.html"><i class="fa-solid fa-building" aria-hidden="true"></i><span><b data-i18n="navbar.realestate">Real Estate</b><small data-i18n="navmega.realestate">Land share and property projects</small></span></a>
+          <a class="mega-item" href="travel.html"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i><span><b data-i18n="navbar.travel">Travel</b><small data-i18n="navmega.travel">Visas, air tickets and holidays</small></span></a>
+          <a class="mega-item" href="training.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span><b data-i18n="navmega.training.title">IT &amp; Freelancing Training</b><small data-i18n="navmega.training">Hands-on IT and career courses</small></span></a>
+        </div>
+      </div>
+      <a href="#products" data-nav data-nav-shop data-i18n="navbar.shop">Shop</a>
       <a href="#contact" class="btn btn-sm btn-primary nav-contact" data-nav data-i18n="nav.contact">Contact</a>
     </nav>
 
@@ -141,20 +140,16 @@
         <button type="button" data-lang-btn="en" class="is-active">EN</button>
         <button type="button" data-lang-btn="bn">বাং</button>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
-        <i class="fa-solid fa-moon" aria-hidden="true"></i>
-        <i class="fa-solid fa-sun" aria-hidden="true"></i>
-      </button>
       <a class="cart-toggle fav-toggle" href="favorites.html" aria-label="Favorites">
         <i class="fa-solid fa-heart" aria-hidden="true"></i>
         <span class="fav-badge is-hidden">0</span>
       </a>
-      <a class="cart-toggle account-toggle" href="login.html" aria-label="Log in">
-        <i class="fa-solid fa-user" aria-hidden="true"></i>
-      </a>
       <a class="cart-toggle" href="cart.html" aria-label="View cart">
         <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
         <span class="cart-badge is-hidden">0</span>
+      </a>
+      <a class="cart-toggle account-toggle" href="login.html" aria-label="Log in">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
       </a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
@@ -363,7 +358,7 @@
       </h1>
       <p class="lede reveal" data-i18n="hero.lede">Whatever you need next — a product built, a property found, a visa processed, or a holiday planned — Khoozo brings the same discipline and a single accountable team to every solution.</p>
       <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="#it">
+        <a class="btn btn-primary" href="it.html">
           <span data-i18n="hero.cta1">Explore Our Divisions</span>
           <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
@@ -435,154 +430,39 @@
 </section>
 
 <!-- ============================================================
-     SERVICES SECTION
+     OUR SERVICES (each card opens that service's own page)
      ============================================================ -->
-<section id="it" class="section section-tint">
+<section id="services" class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-i18n="it.eyebrow">Khoozo IT</p>
-      <h2 data-i18n="it.h2">Software, built and shipped with engineering discipline</h2>
-      <p data-i18n="it.p">From marketing sites to full platforms — the same team that runs Khoozo's other divisions builds the software behind them.</p>
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="navbar.services">Our Services</p>
+      <h2 data-i18n="services.h2">One team for everything you need</h2>
     </div>
-
-    <div class="service-banner reveal">
-      <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
-      <p data-i18n="it.banner">We build any kind of customised software for your any need.</p>
-    </div>
-
-    <div class="service-group reveal">
-      <div class="cards-grid">
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.card1.title">Website Development</h4>
-          <p data-i18n="it.card1.body">Fast, modern, SEO-ready websites — from marketing sites to full web applications.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.card2.title">Mobile App Development</h4>
-          <p data-i18n="it.card2.body">Cross-platform Android &amp; iOS apps built with Flutter, shipped to both app stores.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.card3.title">Custom Software</h4>
-          <p data-i18n="it.card3.body">Bespoke business systems — inventory, CRM, automation — built around your workflow.</p>
-        </article>
-      </div>
-    </div>
-
-    <a class="training-promo reveal" href="training.html">
-      <img src="assets/training/flutter.jpg" alt="" loading="lazy">
-      <div class="training-promo-body">
-        <p class="eyebrow" data-i18n="it.training.eyebrow">New · Khoozo Training</p>
-        <h3 data-i18n="it.training.h">Career courses: Flutter, Web, Visa &amp; Air Ticketing</h3>
-        <p data-i18n="it.training.p">Learn app &amp; web development, visa processing, or GDS ticketing with Sabre, Amadeus and Galileo. Up to 70% off — pay with bKash, Nagad or card.</p>
-        <span class="btn btn-primary btn-sm"><span data-i18n="it.training.cta">View courses</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-      </div>
-    </a>
-
-    <div class="service-group reveal" style="margin-top: 36px;">
-      <h3 class="service-group-title"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> <span data-i18n="it.projects.h">Our IT Projects</span></h3>
-      <div class="it-project-grid">
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-cash-register" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.dokanbondhu.title">DokanBondhu 360</h4>
-          <p data-i18n="it.proj.dokanbondhu.card.desc">Retail &amp; pharmacy POS for Bangladesh — web dashboard, web POS, and an offline-first app for Android and Windows: stock, purchases, dues, VAT, profit reports, Bangla &amp; English.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">Laravel</span>
-            <span class="it-tag">MySQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=dokanbondhu"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.khoozo-ota.title">Khoozo Travel (OTA)</h4>
-          <p data-i18n="it.proj.khoozo-ota.card.desc">A full online travel agency — air ticketing, hotel booking, holiday packages, visa services, and student visa assistance, with secure payments and e-tickets.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=khoozo-ota"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-magnifying-glass-location" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.khoozo.title">Khoozo App</h4>
-          <p data-i18n="it.proj.khoozo.card.desc">A location-based marketplace where users post tasks and service requests, receive competing offers, and hire with confidence — web, admin panel, and mobile app.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=khoozo"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-mosque" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.dorkari.title">Dorkari App</h4>
-          <p data-i18n="it.proj.dorkari.desc">A daily-essentials companion app covering local news, live weather, public holidays, religious events, Ramadan routine, and Quran — all in one place.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=dorkari"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.office.title">Office Management Software</h4>
-          <p data-i18n="it.proj.office.desc">An all-in-one office management system — HR, attendance, payroll, task tracking, and internal approvals — with a companion mobile app for on-the-go teams.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=office"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-city" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.realestate-saas.title">Real Estate SaaS</h4>
-          <p data-i18n="it.proj.realestate-saas.desc">A multi-tenant SaaS platform for real estate agencies — property listings, lead management, bookings, and investor reporting, with a mobile app for agents and buyers.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=realestate-saas"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-plane" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.travel-saas.title">Travel Agency SaaS</h4>
-          <p data-i18n="it.proj.travel-saas.desc">A SaaS platform for travel agencies to manage packages, bookings, itineraries, and payments, paired with a mobile app for customers to book and track trips.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=travel-saas"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.fintrack.title">Fintrack</h4>
-          <p data-i18n="it.proj.fintrack.desc">A personal income &amp; expense management app — budgets, monthly and yearly summaries, and spending insights, available on mobile and web.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=fintrack"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-        <article class="service-card it-project-card">
-          <span class="service-icon"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></span>
-          <h4 data-i18n="it.proj.multivendor-ecommerce.title">Multivendor E-commerce Platform</h4>
-          <p data-i18n="it.proj.multivendor-ecommerce.desc">A multivendor e-commerce website with a seller onboarding flow, admin panel, and companion mobile app. Full details coming soon.</p>
-          <div class="it-project-tags">
-            <span class="it-tag">NestJS</span>
-            <span class="it-tag">PostgreSQL</span>
-            <span class="it-tag it-tag-mobile"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>&nbsp;Flutter App</span>
-          </div>
-          <a class="btn btn-outline it-project-btn" href="project.html?id=multivendor-ecommerce"><span data-i18n="it.viewdetails">View Details</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </article>
-      </div>
+    <div class="cards-grid">
+      <a class="service-card service-link" href="it.html">
+        <span class="service-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span>
+        <h4 data-i18n="navmega.it.title">IT &amp; Software Development</h4>
+        <p data-i18n="navmega.it">Apps, websites and software</p>
+        <span class="service-more"><span data-i18n="services.more">Learn more</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="service-card service-link" href="realestate.html">
+        <span class="service-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
+        <h4 data-i18n="navbar.realestate">Real Estate</h4>
+        <p data-i18n="navmega.realestate">Land share and property projects</p>
+        <span class="service-more"><span data-i18n="services.more">Learn more</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="service-card service-link" href="travel.html">
+        <span class="service-icon"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i></span>
+        <h4 data-i18n="navbar.travel">Travel</h4>
+        <p data-i18n="navmega.travel">Visas, air tickets and holidays</p>
+        <span class="service-more"><span data-i18n="services.more">Learn more</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="service-card service-link" href="training.html">
+        <span class="service-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+        <h4 data-i18n="navmega.training.title">IT &amp; Freelancing Training</h4>
+        <p data-i18n="navmega.training">Hands-on IT and career courses</p>
+        <span class="service-more"><span data-i18n="services.more">Learn more</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
     </div>
   </div>
 </section>
@@ -602,224 +482,23 @@
 </section>
 
 <!-- ============================================================
-     KHOOZO REAL ESTATE
+     CUSTOMER REVIEWS
      ============================================================ -->
-<section id="realestate" class="section">
+<section id="reviews" class="section" hidden>
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-i18n="realestate.eyebrow">Khoozo Real Estate</p>
-      <h2 data-i18n="realestate.h2">Property decisions, handled with full transparency</h2>
-      <p data-i18n="realestate.p">Land share, apartment buying, and advisory for builders — see our live portfolio further down this page.</p>
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="testimonials.eyebrow">Client Voices</p>
+      <h2 data-i18n="testimonials.h2">What our clients say</h2>
     </div>
-
-    <div class="service-group reveal">
-      <div class="cards-grid">
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
-          <h4 data-i18n="realestate.card1.title">Land Share Project</h4>
-          <p data-i18n="realestate.card1.body">Vetted joint land-development opportunities with transparent ownership share.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-building-user" aria-hidden="true"></i></span>
-          <h4 data-i18n="realestate.card2.title">Apartment Consultancy</h4>
-          <p data-i18n="realestate.card2.body">End-to-end apartment buying guidance — legal check, pricing, and negotiation.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i></span>
-          <h4 data-i18n="realestate.card3.title">Builders Consultancy</h4>
-          <p data-i18n="realestate.card3.body">Advisory for builders and developers on planning, compliance and sales strategy.</p>
-        </article>
+    <div class="review-slider" id="reviewSlider">
+      <button type="button" class="review-arrow" data-review-prev aria-label="Previous review"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+      <div class="review-track" tabindex="0">
       </div>
-    </div>
-    <div class="section-cta reveal"><a class="btn btn-outline" href="#realestate-portfolio"><span data-i18n="realestate.cta">See our property portfolio</span> <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     PROJECTS SECTION
-     ============================================================ -->
-<section id="realestate-portfolio" class="section section-tint">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Khoozo Real Estate Portfolio</p>
-      <h2>Our real estate portfolio</h2>
-      <p>A look at what we're building right now, what we've delivered, and projects handed over to happy owners — with full transparency on features and investment.</p>
-    </div>
-
-    <!-- Featured property card -->
-    <article class="project-feature reveal">
-      <div class="project-media">
-        <img src="assets/realestate/landshare-project.jpg" alt="Premium Land Share Project — Sector 17, Uttara, Dhaka" class="project-photo" loading="lazy">
-        <span class="project-badge">Ongoing</span>
-      </div>
-
-      <div class="project-body">
-        <h3>Premium Land Share Project</h3>
-        <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sector 17, Uttara, Dhaka</p>
-        <p class="project-desc">A joint land-development opportunity in one of Uttara's most connected sectors — planned for modern residential use with transparent share ownership and full legal documentation.</p>
-
-        <div class="project-specs">
-          <div><dt>Location</dt><dd>Sector 17, Uttara, Dhaka</dd></div>
-          <div><dt>Project Type</dt><dd>Land Share / Residential</dd></div>
-          <div><dt>Status</dt><dd>Ongoing — Booking Open</dd></div>
-          <div><dt>Investment</dt><dd>Flexible share sizes — inquire for pricing</dd></div>
-        </div>
-
-        <h4 class="project-features-title">Key Features</h4>
-        <ul class="project-features">
-          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Clear land title &amp; legal verification</li>
-          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Flexible share-based ownership</li>
-          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Prime Uttara location, close to major roads</li>
-          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Dedicated project consultant throughout</li>
-        </ul>
-
-        <!-- Google Map placeholder — replace with a real embedded iframe using your Google Maps
-             embed URL for Sector 17, Uttara, Dhaka. Example:
-             <iframe src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe> -->
-        <div class="map-placeholder">
-          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-          <span>Google Map — Sector 17, Uttara, Dhaka<br><small>Embed map here</small></span>
-        </div>
-
-        <div class="project-actions">
-          <a class="btn btn-outline" href="property.html?id=landshare">View Details</a>
-          <a class="btn btn-primary" href="#contact">Inquire About This Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Portfolio grid -->
-    <div class="portfolio-grid">
-
-      <!-- 1. Completed -->
-      <article class="pcard reveal" data-project="greennest">
-        <div class="pcard-media">
-          <img src="assets/realestate/greennest-residency.jpg" alt="Green Nest Residency — Sector 11, Uttara, Dhaka" class="pcard-photo" loading="lazy">
-          <span class="pcard-badge b-completed">Completed</span>
-        </div>
-        <div class="pcard-body">
-          <h3>Green Nest Residency</h3>
-          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sector 11, Uttara, Dhaka</p>
-          <p class="pcard-desc">A 10-storey residential building with 24 modern apartments, completed and fully occupied. Delivered on schedule with premium finishes throughout.</p>
-          <ul class="pcard-meta">
-            <li><span>Type</span> Residential Apartment</li>
-            <li><span>Units</span> 24 Apartments</li>
-            <li><span>Completed</span> 2023</li>
-          </ul>
-          <a class="btn btn-outline pcard-btn" href="property.html?id=greennest">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-
-      <!-- 2. Completed -->
-      <article class="pcard reveal" data-project="skyline">
-        <div class="pcard-media">
-          <img src="assets/realestate/skyline-plaza.jpg" alt="Skyline Commercial Plaza — Mirpur DOHS, Dhaka" class="pcard-photo" loading="lazy">
-          <span class="pcard-badge b-completed">Completed</span>
-        </div>
-        <div class="pcard-body">
-          <h3>Skyline Commercial Plaza</h3>
-          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mirpur DOHS, Dhaka</p>
-          <p class="pcard-desc">A mixed-use commercial complex with retail floors and office suites. Built to code with dedicated parking and 24/7 security infrastructure.</p>
-          <ul class="pcard-meta">
-            <li><span>Type</span> Commercial / Mixed-use</li>
-            <li><span>Area</span> 42,000 sq ft</li>
-            <li><span>Completed</span> 2022</li>
-          </ul>
-          <a class="btn btn-outline pcard-btn" href="property.html?id=skyline">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-
-      <!-- 3. Ongoing -->
-      <article class="pcard reveal" data-project="horizon">
-        <div class="pcard-media">
-          <img src="assets/realestate/horizon-heights.jpg" alt="Horizon Heights — Bashundhara R/A, Dhaka" class="pcard-photo" loading="lazy">
-          <span class="pcard-badge b-ongoing">Ongoing</span>
-        </div>
-        <div class="pcard-body">
-          <h3>Horizon Heights</h3>
-          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bashundhara R/A, Dhaka</p>
-          <p class="pcard-desc">A premium 14-storey apartment tower currently under construction. Structural work in progress, with limited early-bird bookings now open.</p>
-          <ul class="pcard-meta">
-            <li><span>Type</span> Residential Apartment</li>
-            <li><span>Units</span> 36 Apartments</li>
-            <li><span>Handover</span> Est. 2026</li>
-          </ul>
-          <a class="btn btn-outline pcard-btn" href="property.html?id=horizon">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-
-      <!-- 4. Handed over -->
-      <article class="pcard reveal" data-project="serene">
-        <div class="pcard-media">
-          <img src="assets/realestate/serene-villas.jpg" alt="Serene Villas — Purbachal New Town, Dhaka" class="pcard-photo" loading="lazy">
-          <span class="pcard-badge b-handover">Handed Over</span>
-        </div>
-        <div class="pcard-body">
-          <h3>Serene Villas</h3>
-          <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Purbachal New Town, Dhaka</p>
-          <p class="pcard-desc">A gated community of 8 luxury duplex villas — fully built, keys handed over, and now home to their proud owners with all documentation transferred.</p>
-          <ul class="pcard-meta">
-            <li><span>Type</span> Duplex Villas</li>
-            <li><span>Units</span> 8 Villas</li>
-            <li><span>Handed Over</span> 2024</li>
-          </ul>
-          <a class="btn btn-outline pcard-btn" href="property.html?id=serene">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-
+      <button type="button" class="review-arrow" data-review-next aria-label="Next review"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+      <div class="review-dots"></div>
     </div>
   </div>
 </section>
-
-<!-- ============================================================
-     KHOOZO TRAVEL (VISA SOLUTIONS + TRAVEL & HOLIDAY)
-     ============================================================ -->
-<section id="travel" class="section section-tint">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-i18n="travel.eyebrow">Khoozo Travel</p>
-      <h2 data-i18n="travel.h2">Visas, tickets and holidays, handled end-to-end</h2>
-      <p data-i18n="travel.p">Study-abroad visas, best-fare tickets and custom holiday packages, with 24/7 support before and during your trip.</p>
-    </div>
-
-    <div class="service-group reveal">
-      <div class="cards-grid">
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-passport" aria-hidden="true"></i></span>
-          <h4 data-i18n="visa.card1.title">Student Visa</h4>
-          <p data-i18n="visa.card1.body">Application, documentation and interview preparation for study-abroad visas.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
-          <h4 data-i18n="visa.card2.title">University Admission</h4>
-          <p data-i18n="visa.card2.body">University shortlisting, application support and scholarship guidance overseas.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span>
-          <h4 data-i18n="visa.card3.title">Visa Documentation</h4>
-          <p data-i18n="visa.card3.body">Document checklists, embassy forms and interview coaching, reviewed by a specialist.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-ticket" aria-hidden="true"></i></span>
-          <h4 data-i18n="travel.card1.title">Air Ticket</h4>
-          <p data-i18n="travel.card1.body">Best-fare domestic &amp; international air ticketing with 24/7 booking support.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i></span>
-          <h4 data-i18n="travel.card2.title">Tour Package</h4>
-          <p data-i18n="travel.card2.body">Custom holiday &amp; group tour packages — visa, hotel and itinerary handled end-to-end.</p>
-        </article>
-        <article class="service-card">
-          <span class="service-icon"><i class="fa-solid fa-hotel" aria-hidden="true"></i></span>
-          <h4 data-i18n="travel.card3.title">Holiday Planning</h4>
-          <p data-i18n="travel.card3.body">Hotel booking, itinerary design and on-trip support for family and group holidays.</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!-- ============================================================
      CONTACT SECTION
@@ -926,9 +605,9 @@
 
     <div class="footer-col">
       <h4 data-i18n="footer.solutions">Our Solutions</h4>
-      <a href="#it" data-i18n="nav.it">Khoozo IT</a>
-      <a href="#realestate" data-i18n="nav.realestate">Khoozo Real Estate</a>
-      <a href="#travel" data-i18n="nav.travel">Khoozo Travel</a>
+      <a href="it.html" data-i18n="nav.it">Khoozo IT</a>
+      <a href="realestate.html" data-i18n="nav.realestate">Khoozo Real Estate</a>
+      <a href="travel.html" data-i18n="nav.travel">Khoozo Travel</a>
       <a href="training.html" data-i18n="footer.training">Khoozo Training</a>
     </div>
 
@@ -991,11 +670,13 @@
      SCRIPTS
      ============================================================ -->
 <script src="js/i18n.js" defer></script>
-<script src="assets/it/gallery.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/favorites.js" defer></script>
 <script src="js/products.js" defer></script>
 <script src="js/cart.js" defer></script>
 <script src="js/main.js" defer></script>
 <script src="js/animation.js" defer></script>
 <script src="js/auth.js" defer></script>
+<script src="js/catalog.js" defer></script>
 </body>
 </html>

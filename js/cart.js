@@ -30,7 +30,8 @@ const KHOOZO_CART_I18N = {
     "cart.addtocart": "Add to Cart",
     "cart.plan.pack": "Digital pack",
     "cart.plan.combo": "Combo with live course",
-    "cart.note": "One-time payment per item · lifetime access to the files",
+    "cart.plan.course": "Training course",
+    "cart.note": "One-time payment per item",
   },
   bn: {
     "cart.title": "আপনার কার্ট",
@@ -44,7 +45,8 @@ const KHOOZO_CART_I18N = {
     "cart.addtocart": "কার্টে যোগ করুন",
     "cart.plan.pack": "ডিজিটাল প্যাক",
     "cart.plan.combo": "লাইভ কোর্সসহ কম্বো",
-    "cart.note": "প্রতিটি পণ্যের জন্য এককালীন পেমেন্ট · ফাইলগুলো আজীবন আপনার",
+    "cart.plan.course": "ট্রেনিং কোর্স",
+    "cart.note": "প্রতিটি পণ্যের জন্য এককালীন পেমেন্ট",
   },
 };
 if (typeof KHOOZO_I18N_DICT !== "undefined") {
@@ -100,6 +102,12 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   function enrich(cart) {
     return cart
       .map((it) => {
+        if (it.plan === "course") {
+          const c = typeof KHOOZO_COURSES !== "undefined" ? KHOOZO_COURSES.find((x) => x.id === it.id) : null;
+          if (!c) return null;
+          const product = { ...c, icon: "fa-solid fa-graduation-cap", colors: ["#7f1d1d", "#9E1B1B"] };
+          return { id: c.id, plan: "course", qty: it.qty, unitPrice: c.price, unitOriginal: c.originalPrice, lineTotal: c.price * it.qty, product };
+        }
         const p = typeof KHOOZO_PRODUCTS !== "undefined" ? KHOOZO_PRODUCTS.find((x) => x.id === it.id) : null;
         if (!p) return null;
         const plan = it.plan === "combo" ? "combo" : "pack";
@@ -164,7 +172,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         </div>`;
       return;
     }
-    const planLabel = (plan) => t(plan === "combo" ? "cart.plan.combo" : "cart.plan.pack");
+    const planLabel = (plan) => t("cart.plan." + plan);
     const subtotal = items.reduce((s, it) => s + it.lineTotal, 0);
 
     root.innerHTML = `
@@ -177,7 +185,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
             <div class="cart-line" data-id="${it.id}" data-plan="${it.plan}">
               <span class="cart-line-icon" style="--dp1:${it.product.colors[0]};--dp2:${it.product.colors[1]}"><i class="${it.product.icon}" aria-hidden="true"></i></span>
               <div class="cart-line-info">
-                <a href="product.html?id=${it.id}">${esc(it.product[lang()].title)}</a>
+                <a href="${it.plan === "course" ? "course" : "product"}.html?id=${it.id}">${esc(it.product[lang()].title)}</a>
                 <span class="cart-line-plan">${planLabel(it.plan)}</span>
                 <span class="cart-line-unit">${taka(it.unitPrice)} × ${digits(it.qty)}</span>
               </div>

@@ -305,6 +305,7 @@ const KHOOZO_TRAINING_I18N = {
     "res.note.product": "Download links for your PDFs and app will be sent to <b>{email}</b> and WhatsApp.",
     "res.submitted.product": "We'll verify your TrxID and send your download links on WhatsApp, usually within 1 hour.",
     "res.more.product": "More digital products", "res.details.product": "Product details",
+    "res.note.mixed": "Your receipt, class details and any download links will be sent to <b>{email}</b> and WhatsApp.",
     "res.details.cart": "Back to cart",
   },
   bn: {
@@ -356,6 +357,7 @@ const KHOOZO_TRAINING_I18N = {
     "res.note.product": "PDF ও অ্যাপের ডাউনলোড লিংক <b>{email}</b> ঠিকানায় ও হোয়াটসঅ্যাপে পাঠানো হবে।",
     "res.submitted.product": "আমরা আপনার TrxID যাচাই করে হোয়াটসঅ্যাপে ডাউনলোড লিংক পাঠাব, সাধারণত ১ ঘণ্টার মধ্যে।",
     "res.more.product": "আরও ডিজিটাল পণ্য", "res.details.product": "পণ্যের বিস্তারিত",
+    "res.note.mixed": "রসিদ, ক্লাসের তথ্য ও ডাউনলোড লিংক <b>{email}</b> ঠিকানায় ও হোয়াটসঅ্যাপে পাঠানো হবে।",
     "res.details.cart": "কার্টে ফিরুন",
   },
 };
@@ -396,6 +398,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   const PLAN_LABEL = {
     pack: { en: "Digital pack", bn: "ডিজিটাল প্যাক" },
     combo: { en: "Combo with live course", bn: "লাইভ কোর্সসহ কম্বো" },
+    course: { en: "Training course", bn: "ট্রেনিং কোর্স" },
   };
   /* Cart checkout (pay.html?cart=1) — aggregates everything in
      localStorage via js/cart.js into one multi-item "it". */
@@ -508,13 +511,17 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <div class="tr-card-body">
           <p>${esc(k.tagline)}</p>
           <div class="tr-facts">
-            <span><i class="fa-regular fa-clock"></i>${digits(c.weeks)} ${t("tr.weeks")} · ${digits(c.hours)} ${t("tr.hours")}</span>
-            <span><i class="fa-regular fa-calendar"></i>${t("tr.starts")} ${date(c.start, { day: "numeric", month: "short" })}</span>
-            <span><i class="fa-solid fa-laptop"></i>${esc(k.mode)}</span>
+            ${c.weeks ? `<span><i class="fa-regular fa-clock"></i>${digits(c.weeks)} ${t("tr.weeks")} · ${digits(c.hours)} ${t("tr.hours")}</span>` : ""}
+            ${c.start ? `<span><i class="fa-regular fa-calendar"></i>${t("tr.starts")} ${date(c.start, { day: "numeric", month: "short" })}</span>` : ""}
+            ${k.mode ? `<span><i class="fa-solid fa-laptop"></i>${esc(k.mode)}</span>` : ""}
           </div>
           <div class="tr-price-row">
             <div><span class="tr-price-old">${taka(c.originalPrice)}</span><span class="tr-price">${taka(c.price)}</span></div>
             <span class="tr-link">${t("tr.details")} <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="tr-card-actions">
+            ${window.KhoozoFav ? window.KhoozoFav.button("course:" + c.id) : ""}
+            <button type="button" class="btn btn-sm btn-outline" data-add-to-cart="${c.id}" data-cart-plan="course"><span class="add-label"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> ${lang() === "bn" ? "কার্টে যোগ করুন" : "Add to Cart"}</span></button>
           </div>
         </div>
       </a>`;
@@ -541,11 +548,11 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <h1>${esc(k.title)}</h1>
         <p>${esc(k.tagline)}</p>
         <div class="tr-meta">
-          <span><i class="fa-solid fa-signal"></i>${esc(k.level)}</span>
-          <span><i class="fa-regular fa-clock"></i>${digits(c.weeks)} ${t("tr.weeks")} · ${digits(c.hours)} ${t("tr.hours")}</span>
-          <span><i class="fa-solid fa-laptop"></i>${esc(k.mode)}</span>
-          <span><i class="fa-regular fa-calendar"></i>${t("tr.starts")} ${date(c.start)}</span>
-          <span><i class="fa-solid fa-users"></i>${digits(c.seats)} ${t("tr.seats")}</span>
+          ${k.level ? `<span><i class="fa-solid fa-signal"></i>${esc(k.level)}</span>` : ""}
+          ${c.weeks ? `<span><i class="fa-regular fa-clock"></i>${digits(c.weeks)} ${t("tr.weeks")} · ${digits(c.hours)} ${t("tr.hours")}</span>` : ""}
+          ${k.mode ? `<span><i class="fa-solid fa-laptop"></i>${esc(k.mode)}</span>` : ""}
+          ${c.start ? `<span><i class="fa-regular fa-calendar"></i>${t("tr.starts")} ${date(c.start)}</span>` : ""}
+          ${c.seats ? `<span><i class="fa-solid fa-users"></i>${digits(c.seats)} ${t("tr.seats")}</span>` : ""}
         </div>
       </div>
     </section>
@@ -578,6 +585,10 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
             </div>
             <p class="tr-note">${t("tr.onetime")}</p>
             <a class="btn btn-primary btn-block" href="pay.html?course=${c.id}"><i class="fa-solid fa-cart-shopping"></i> ${t("tr.buy")}</a>
+            <div class="tr-buy-secondary">
+              <button type="button" class="btn btn-outline" data-add-to-cart="${c.id}" data-cart-plan="course"><span class="add-label"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> ${lang() === "bn" ? "কার্টে যোগ করুন" : "Add to Cart"}</span></button>
+              ${window.KhoozoFav ? window.KhoozoFav.button("course:" + c.id, "dp-fav-inline") : ""}
+            </div>
             <p class="tr-secure"><i class="fa-solid fa-shield-halved"></i> ${t("tr.paywith")}</p>
             <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span><span style="color:#ec1c24">Nagad</span><span style="color:#1a1f71">VISA</span><span style="color:#eb001b">Mastercard</span></div>
           </div>
@@ -1033,7 +1044,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       <div class="res-body">
         <div class="res-amount"><span style="font-weight:600;color:var(--ink-soft)">${paid ? t("res.amountPaid") : t("res.amount")}</span><b>${taka(order.amount)}</b></div>
         <dl class="res-rows">${rows.map(([a, b]) => `<div><dt>${a}</dt><dd>${esc(b)}</dd></div>`).join("")}</dl>
-        ${paid ? `<p class="res-note">${tk(it, "res.note", { email: esc(order.customer.email) })}</p>` : ""}
+        ${paid ? `<p class="res-note">${it.kind === "cart" && it.items.some((ci) => ci.plan === "course") ? t("res.note.mixed", { email: esc(order.customer.email) }) : tk(it, "res.note", { email: esc(order.customer.email) })}</p>` : ""}
         <div class="res-actions">
           ${submitted
             ? `${wa ? `<a class="btn res-wa" href="${esc(wa)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> ${t("res.wa")}</a>` : ""}<button type="button" class="btn btn-outline" onclick="window.print()"><i class="fa-solid fa-print"></i> ${t("res.print")}</button>`

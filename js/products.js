@@ -197,52 +197,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   const grad = (p) => `--dp1:${p.colors[0]};--dp2:${p.colors[1]}`;
   const offPct = (o) => Math.round((1 - o.price / o.originalPrice) * 100);
 
-  const FAV_KEY = "khoozo_favorites";
-  function readFavs() {
-    try { return JSON.parse(localStorage.getItem(FAV_KEY) || "[]"); } catch (e) { return []; }
-  }
-  function favLabel() { return lang() === "bn" ? "পছন্দের তালিকা" : "Favorites"; }
-  function favBtn(id, extra) {
-    const on = readFavs().includes(id);
-    return `<button type="button" class="dp-fav${on ? " is-on" : ""} ${extra || ""}" data-fav="${id}" aria-pressed="${on}" aria-label="${favLabel()}" title="${favLabel()}"><i class="fa-${on ? "solid" : "regular"} fa-heart" aria-hidden="true"></i></button>`;
-  }
-  function renderFavBadges() {
-    const n = readFavs().length;
-    document.querySelectorAll(".fav-badge").forEach((b) => {
-      b.textContent = digits(n);
-      b.classList.toggle("is-hidden", n === 0);
-    });
-  }
-  // Capture phase: the card's heart sits inside an <a> that would otherwise navigate.
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest && e.target.closest("[data-fav]");
-    if (!btn) return;
-    e.preventDefault();
-    e.stopPropagation();
-    const id = btn.getAttribute("data-fav");
-    const favs = readFavs();
-    const next = favs.includes(id) ? favs.filter((x) => x !== id) : [...favs, id];
-    try { localStorage.setItem(FAV_KEY, JSON.stringify(next)); } catch (err) { /* storage blocked */ }
-    const on = next.includes(id);
-    document.querySelectorAll(`[data-fav="${id}"]`).forEach((b) => {
-      b.classList.toggle("is-on", on);
-      b.setAttribute("aria-pressed", String(on));
-      b.querySelector("i").className = `fa-${on ? "solid" : "regular"} fa-heart`;
-    });
-    renderFavBadges();
-    renderFavorites();
-  }, true);
-
-  function renderFavorites() {
-    const root = document.getElementById("favRoot");
-    if (!root) return;
-    const items = KHOOZO_PRODUCTS.filter((p) => readFavs().includes(p.id));
-    const bn = lang() === "bn";
-    root.innerHTML = `<h1 class="cart-h1">${favLabel()}</h1>` + (items.length
-      ? `<div class="dp-grid">${items.map(card).join("")}</div>`
-      : `<div class="cart-empty"><p>${bn ? "এখনও কোনো পণ্য পছন্দের তালিকায় নেই।" : "You have no favorites yet."}</p><a class="btn btn-primary" href="index.html#products">${bn ? "ডিজিটাল পণ্য দেখুন" : "Browse digital products"}</a></div>`);
-    if (window.KhoozoCart) window.KhoozoCart.wireAddButtons(root);
-  }
+  const favBtn = (id, extra) => (window.KhoozoFav ? window.KhoozoFav.button(id, extra) : "");
 
   function card(p) {
     const k = p[lang()];
@@ -257,9 +212,9 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <div class="dp-card-body">
           <p>${esc(k.tagline)}</p>
           <ul class="dp-card-facts">
-            <li><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>${t("dp.pdfs", { n: digits(k.pdfs.length) })}</li>
-            <li><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</li>
-            <li><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</li>
+            ${k.pdfs.length ? `<li><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>${t("dp.pdfs", { n: digits(k.pdfs.length) })}</li>` : ""}
+            ${k.app.length ? `<li><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</li>` : ""}
+            ${k.course ? `<li><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</li>` : ""}
           </ul>
           <div class="dp-card-foot">
             <div><small>${t("dp.from")}</small><b>${taka(p.pack.price)}</b><s>${taka(p.pack.originalPrice)}</s></div>
@@ -274,8 +229,6 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 
   /* ---------------- index.html#products ---------------- */
   function renderGrid() {
-    renderFavBadges();
-    renderFavorites();
     const grid = document.getElementById("productGrid");
     if (!grid) return;
     grid.innerHTML = KHOOZO_PRODUCTS.map(card).join("");
@@ -297,7 +250,8 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     const k = p[lang()];
     const course = typeof KHOOZO_COURSES !== "undefined" && p.courseId ? KHOOZO_COURSES.find((c) => c.id === p.courseId) : null;
     // Combo saving against buying the pack and the course separately; only shown when the course is also sold on its own.
-    const save = course ? p.pack.price + course.price - p.combo.price : 0;
+    const save = course && p.combo ? p.pack.price + course.price - p.combo.price : 0;
+    if (!p.combo) plan = "pack";
     document.title = `${k.title} | Khoozo Digital Products`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", k.tagline);
@@ -320,15 +274,16 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         </div>
         <p>${esc(k.desc)}</p>
         <div class="tr-meta">
-          <span><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>${t("dp.pdfs", { n: digits(k.pdfs.length) })}</span>
-          <span><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</span>
-          <span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</span>
+          ${k.pdfs.length ? `<span><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>${t("dp.pdfs", { n: digits(k.pdfs.length) })}</span>` : ""}
+          ${k.app.length ? `<span><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</span>` : ""}
+          ${k.course ? `<span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</span>` : ""}
         </div>
       </div>
     </section>
     <section class="section" style="padding-top:48px">
       <div class="container tr-layout dp-layout">
         <div>
+${k.pdfs.length || k.app.length ? `
           <div class="tr-panel">
             <h2>${t("dp.inside")}</h2>
             <h3 class="dp-sub"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> ${t("dp.pdfs.h")}</h3>
@@ -336,10 +291,11 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
             <h3 class="dp-sub"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> ${t("dp.app.h")}</h3>
             <div class="dp-app" style="${grad(p)}">
               <span class="dp-app-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
-              <div><b>${esc(k.app[0])}</b><p>${esc(k.app[1])}</p></div>
+              <div><b>${esc(k.app[0] || "")}</b><p>${esc(k.app[1] || "")}</p></div>
             </div>
           </div>
-          <div class="tr-panel">
+` : ""}
+          <div class="tr-panel${k.course ? "" : " is-hidden"}">
             <h2>${t("dp.course.h")}</h2>
             <p class="dp-muted">${t("dp.course.p")}</p>
             <div class="dp-course">
@@ -367,7 +323,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
             <h3 class="dp-buy-h">${t("dp.plan")}</h3>
             <div class="dp-plans" role="radiogroup">
               ${option("pack", t("dp.pack"), t("dp.pack.sub"), p.pack)}
-              ${option("combo", t("dp.combo"), t("dp.combo.sub"), p.combo, `<em class="dp-best">${t("dp.best")}${save > 0 ? " · " + t("dp.save", { amount: taka(save) }) : ""}</em>`)}
+              ${p.combo ? option("combo", t("dp.combo"), t("dp.combo.sub"), p.combo, `<em class="dp-best">${t("dp.best")}${save > 0 ? " · " + t("dp.save", { amount: taka(save) }) : ""}</em>`) : ""}
             </div>
             <div class="tr-buy-price">
               <span class="tr-price">${taka(chosen.price)}</span>

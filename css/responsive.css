@@ -72,6 +72,18 @@
   .fab { width: 44px; height: 44px; font-size: 1rem; }
   .back-to-top { right: 14px; bottom: 18px; width: 44px; height: 44px; }
 
+}
+
+/* ================================================================
+   SMALL MOBILE  (<= 400px)
+   ================================================================ */
+@media (max-width: 400px) {
+  .brand-name { font-size: 0.92rem; }
+  .hero-stats { gap: 16px 22px; }
+  .chairman-badges li { font-size: 0.66rem; padding: 4px 10px; }
+}
+
+@media (max-width: 1024px) {
   /* nav collapses to a full-width dropdown panel */
   .burger { display: flex; }
   .nav {
@@ -88,11 +100,12 @@
   .nav-contact { text-align: center; justify-content: center; margin-top: 10px; }
 }
 
-/* ================================================================
-   SMALL MOBILE  (<= 400px)
-   ================================================================ */
-@media (max-width: 400px) {
-  .brand-name { font-size: 0.92rem; }
-  .hero-stats { gap: 16px 22px; }
-  .chairman-badges li { font-size: 0.66rem; padding: 4px 10px; }
+@media (max-width: 480px) {
+  .header-actions { gap: 6px; }
+  .header-actions > .theme-toggle, .header-actions > .lang-toggle { display: none; }
+  .header-actions .cart-toggle, .burger { width: 36px; height: 36px; }
+}
+
+@media (max-width: 1024px) {
+  .site-header .header-inner { padding-left: 16px; padding-right: 16px; }
 }

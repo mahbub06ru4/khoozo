@@ -133,7 +133,7 @@
   /* ---------------- project.html ---------------- */
   function renderIt() {
     const p = KHOOZO_IT_PROJECTS[id];
-    if (!p) return notFound("index.html#it");
+    if (!p) return notFound("it.html");
     const title = t(p.titleKey, p.titleKey);
     const desc = t(p.descKey, p.descKey);
     const images = GALLERY[p.gallery || id] || [];
@@ -143,13 +143,14 @@
     root.innerHTML = `
     <section class="tr-hero dt-hero">
       <div class="container">
-        <a class="tr-back" href="index.html#it"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> ${t("dt.back.it", "Back to IT projects")}</a>
+        <a class="tr-back" href="it.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> ${t("dt.back.it", "Back to IT projects")}</a>
         <div class="dt-hero-head">
           <span class="dt-hero-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
           <div>
             <p class="eyebrow">Khoozo IT</p>
             <h1>${esc(title)}</h1>
           </div>
+          ${window.KhoozoFav ? window.KhoozoFav.button("project:" + id, "dp-fav-inline") : ""}
         </div>
         <p>${esc(desc)}</p>
         <div class="tr-meta">${p.tech.map(x => `<span><i class="fa-solid ${x.includes("Flutter") ? "fa-mobile-screen-button" : "fa-code"}" aria-hidden="true"></i>${esc(x)}</span>`).join("")}</div>
@@ -195,7 +196,7 @@
   /* ---------------- property.html ---------------- */
   function renderProperty() {
     const p = KHOOZO_PROPERTIES[id];
-    if (!p) return notFound("index.html#realestate-portfolio");
+    if (!p) return notFound("realestate.html#realestate-portfolio");
     setMeta(p.title, p.desc, p.image);
 
     const others = Object.keys(KHOOZO_PROPERTIES).filter(k => k !== id);
@@ -203,7 +204,7 @@
     <section class="tr-hero dt-hero dt-hero-photo">
       <img class="tr-hero-bg" src="${esc(p.image)}" alt="">
       <div class="container">
-        <a class="tr-back" href="index.html#realestate-portfolio"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> ${t("dt.back.re", "Back to real estate")}</a>
+        <a class="tr-back" href="realestate.html#realestate-portfolio"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> ${t("dt.back.re", "Back to real estate")}</a>
         <p class="eyebrow">Khoozo Real Estate</p>
         <h1>${esc(p.title)}</h1>
         <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> ${esc(p.location)}</p>

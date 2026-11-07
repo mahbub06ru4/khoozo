@@ -1,7 +1,7 @@
 /* ================================================================
    Khoozo — js/animation.js
    Animation-only logic: preloader, scroll reveal, counters,
-   typing effect, custom cursor. No layout/state logic here —
+   typing effect. No layout/state logic here —
    see main.js for nav, theme, and form handling.
    ================================================================ */
 "use strict";
@@ -123,35 +123,4 @@ if (typingEl) {
   }
   window.khoozoRestartTyping = restartTyping;
   restartTyping();
-}
-
-/* ---------------------------------------------------------------
-   5. Custom cursor (fine-pointer devices only; see animation.css)
-   --------------------------------------------------------------- */
-if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !reduceMotion) {
-  const cursorDot = document.getElementById("cursorDot");
-  const cursorRing = document.getElementById("cursorRing");
-  let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
-
-  window.addEventListener("mousemove", e => {
-    dotX = e.clientX; dotY = e.clientY;
-  });
-
-  function renderCursor() {
-    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-    /* ring eases toward the pointer for a soft trailing feel */
-    ringX += (dotX - ringX) * 0.18;
-    ringY += (dotY - ringY) * 0.18;
-    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(renderCursor);
-  }
-  requestAnimationFrame(renderCursor);
-
-  const interactiveSelector = "a, button, input, textarea, select, .fab, .back-to-top";
-  document.addEventListener("mouseover", e => {
-    if (e.target.closest(interactiveSelector)) cursorRing.classList.add("is-active");
-  });
-  document.addEventListener("mouseout", e => {
-    if (e.target.closest(interactiveSelector)) cursorRing.classList.remove("is-active");
-  });
 }
