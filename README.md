@@ -1,9 +1,8 @@
 # Khoozo — Website
 
-A premium, single-page consultancy website for **Khoozo**
-(IT & Software · Travel & Student Visa · Real Estate · Business Consultancy),
-built with pure HTML5, CSS3 and vanilla JavaScript — no frameworks, no build
-step, no backend. Designed to be hosted directly on **GitHub Pages**.
+The company website and storefront for **Khoozo** (IT & Software, Real Estate, Travel, Training and a Shop), built with HTML, CSS and vanilla JavaScript. There's no framework or build step, so the files deploy as a static site.
+
+Login, items, reviews and order checkout come from the shared **[khoozo_laravel](https://github.com/mahbub06ru4/khoozo_laravel)** API at `https://api.khoozo.com`.
 
 ---
 
@@ -11,45 +10,85 @@ step, no backend. Designed to be hosted directly on **GitHub Pages**.
 
 ```
 /
-├── index.html          Main single-page site
-├── 404.html             Branded "page not found" fallback
-├── manifest.json        Web app manifest (PWA metadata)
-├── robots.txt            Search-engine crawl rules
-├── sitemap.xml           Sitemap for search engines
-├── README.md             This file
-│
-├── css/
-│   ├── style.css         Design tokens, typography, all component styles, dark mode
-│   ├── responsive.css    Tablet & mobile breakpoint overrides
-│   └── animation.css     Keyframes, scroll reveal, cursor, preloader, reduced-motion
+├── index.html             Home: hero, about, services, shop, reviews, contact
+├── it.html                IT & Software Development
+├── realestate.html        Real Estate
+├── travel.html            Travel
+├── training.html          IT & Freelancing Training
+├── course.html            Course details
+├── product.html           Digital product details
+├── project.html           IT project details
+├── property.html          Property details
+├── cart.html              Cart
+├── favorites.html         Favorites, saved on this device
+├── pay.html               Checkout
+├── pay-gateway.html       Sandbox payment screen
+├── pay-result.html        Payment result
+├── login.html             Google sign-in and account page
+├── admin.html             Website admin, unlinked for normal users
+├── team.html, terms.html, privacy.html, 404.html
 │
 ├── js/
-│   ├── main.js           Nav, scrollspy, theme toggle, back-to-top, contact form
-│   └── animation.js      Preloader, scroll reveal, counters, typing effect, cursor
+│   ├── i18n.js            English and Bangla text
+│   ├── nav.js             Services menu and Home review slider
+│   ├── auth.js            Google sign-in and account page
+│   ├── catalog.js         Loads items from the API over the built-in lists
+│   ├── admin.js           Website admin page
+│   ├── products.js, training.js, projects-data.js   Built-in items and their pages
+│   ├── cart.js, favorites.js, detail.js
+│   └── main.js, animation.js
 │
-├── images/               (empty — add real photography here)
-├── icons/
-│   └── favicon.svg       Brand monogram favicon (SVG, scalable)
-└── assets/               (empty — add any additional media here)
+├── css/                   style, responsive, animation, products, training
+└── assets/                Images and project screenshots
 ```
 
 ---
 
-## 🚀 Deploying to GitHub Pages
+## 🔌 How it connects to the backend
 
-1. Create a new repository (e.g. `khoozo` for a project site).
-2. Push all files in this folder to the repository root.
-3. In **Settings → Pages**, set the source branch (usually `main`) and folder
-   (`/root`).
-4. Your site will be live at `https://mahbub06ru4.github.io/khoozo/`.
+| Feature | Where the data lives | If the API is unreachable |
+|---|---|---|
+| Items (Training, IT, Digital, Real Estate) | `catalog_items` | Shows the last-loaded or built-in items |
+| Home reviews | `customer_reviews` | Review section stays hidden |
+| Login | `users`, through `POST /auth/google` | Sign-in shows an error |
+| Cart and favorites | This browser's localStorage | Keeps working |
+| Checkout | See below | See below |
 
-No build step, no `npm install`, no server — just static files.
+- **Local testing:** run the API on port 3200, or add `?apiPort=3210` to a page once to use another port for that tab.
+- **Another API domain:** change `https://api.khoozo.com` in `js/auth.js`, `js/catalog.js` and `js/nav.js`.
+
+### Sign-in
+
+Everyone signs in with Google, using the Web client ID at the top of `js/auth.js`. It isn't a secret. Each site address must be listed under **Authorized JavaScript origins** in Google Cloud.
+
+The backend's `ADMIN_EMAILS` and `MANAGER_EMAILS` settings decide who's staff. Admins see **Manage website** on their account page. Managers and normal users don't, and the API refuses them.
+
+### Managing content
+
+Sign in as an admin and open `admin.html`:
+
+- **Items:** choose a category, then enter the text, price, category details and images.
+- **Reviews:** add real customer reviews, with their permission.
+
+Changes appear on the next page load. Items can also be managed in the Admin App, which covers the main fields, price and images.
+
+### ⚠️ Checkout before launch
+
+`KHOOZO_PAY.apiBase` in `js/training.js` is empty, so checkout runs in **sandbox mode**: the card and bKash screens are simulated and show a fake success, and orders aren't saved. Set it to `https://api.khoozo.com` before taking real orders. Gateway payments also need SSLCommerz credentials on the backend.
+
+---
+
+## 🚀 Deploying
+
+The site is static, and `CNAME` points to `www.khoozo.com`. Push to the hosted branch; there's no build step. Full backend setup is in the [deploy guide](https://github.com/mahbub06ru4/khoozo_laravel/blob/main/docs/DEPLOY_DIGITALOCEAN.md).
 
 ---
 
 ## 🖼 Adding IT project screenshots
 
-Each IT project's "View Details" popup shows a screenshot slider, generated
+**New screenshots:** upload them in `admin.html`. This older method only updates the built-in fallback.
+
+Each IT project's page shows a screenshot slider, generated
 from whatever files sit in `assets/it/<project-id>/`. Project ids: `khoozo`,
 `dorkari`, `office`, `realestate-saas`, `travel-saas`, `fintrack`.
 
@@ -70,7 +109,7 @@ with real information before publishing:**
 
 | Item | Location | Notes |
 |---|---|---|
-| Testimonials | `index.html` → `#testimonials` | Currently generic placeholder quotes labeled "Client Testimonial" — swap in real client feedback |
+| `team.html` testimonials | `team.html` → `#testimonials` | Still sample quotes. Replace them with real ones before launch. Home reviews come from `admin.html` |
 | Team/company photos | `index.html` → `.chairman-avatar` | Currently an initials placeholder (`MR`) — replace with a real `<img>` if you have a photo |
 | Social links | Header, footer, Chairman section | Facebook is linked to `khoozo`. Update LinkedIn and GitHub to your real profile URLs |
 | WhatsApp / Messenger links | Footer, floating action buttons | WhatsApp is linked to `+8801818120900`. Update `m.me/` with your real Messenger username |
@@ -103,15 +142,13 @@ editing the relevant variable once.
 - Skip-to-content link, visible focus rings, and semantic landmarks throughout
 - All decorative SVGs/icons marked `aria-hidden="true"`; interactive icons have `aria-label`s
 - Full `prefers-reduced-motion` support — disables the orbit animation, floating shapes, plane path, preloader animation, and scroll-reveal transitions for users who've requested reduced motion
-- Custom cursor only activates on fine-pointer (mouse/trackpad) devices — automatically disabled on touch
 - No external dependencies besides Google Fonts and Font Awesome (both CDN-hosted, both optional to swap for self-hosted versions if you want a fully offline-capable build)
 
 ---
 
 ## 📬 Contact form behavior
 
-This is a fully static site with **no backend and no database**, as
-specified. The contact form validates input in the browser, then opens the
+The contact form doesn't use the backend. It validates input in the browser, then opens the
 visitor's email client with a pre-filled message via a `mailto:` link.
 
 The current recipient is `mahbub06ru4@gmail.com`. If you'd prefer true in-page submission (no email client popup), swap the
@@ -120,5 +157,5 @@ service such as Formspree, Getform, or a custom serverless function.
 
 ---
 
-© 2026 Khoozo. Built with pure HTML5, CSS3 & vanilla JavaScript.
+© 2026 Khoozo. 
 # khoozo
