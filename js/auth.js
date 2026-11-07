@@ -2,7 +2,7 @@
    and JWTs as the apps. The API decides staff roles from the Google email. */
 (function () {
   // Web client ID from Firebase > Authentication > Google. It's public, not a secret.
-  const GOOGLE_CLIENT_ID = "";
+  const GOOGLE_CLIENT_ID = "627526309361-8s2qgnalsmodgmrspc1eje6qrq7m87mi.apps.googleusercontent.com";
 
   const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
   const localPort = isLocal ? new URLSearchParams(location.search).get("apiPort") || sessionStorage.getItem("khoozo_api_port") || "3200" : "";
