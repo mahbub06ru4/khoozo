@@ -6,6 +6,95 @@
   const CATEGORIES = [["COURSE", "Training"], ["IT_PROJECT", "IT Products"], ["PRODUCT", "Digital Products"], ["PROPERTY", "Real Estate Products"]];
   const SOURCES = [["FACEBOOK", "Facebook"], ["WHATSAPP", "WhatsApp"], ["GOOGLE", "Google"], ["OTHER", "Other"]];
   const SOLD = ["COURSE", "PRODUCT"];
+  const STATUSES = [["", "None"], ["Ongoing", "Ongoing"], ["Completed", "Completed"], ["Handed Over", "Handed Over"]];
+  const STATUS_CLASS = { Ongoing: "b-ongoing", Completed: "b-completed", "Handed Over": "b-handover" };
+  const both = (path, label, kind, hint) => [
+    { path: "en." + path, label: label + " (English)", kind, hint },
+    { path: "bn." + path, label: label + " (Bangla)", kind, hint },
+  ];
+  const ONE_PER_LINE = "One per line";
+  // Category-specific fields, saved into the item's details.
+  const DETAILS = {
+    COURSE: [
+      { path: "weeks", label: "Duration (weeks)", kind: "number" },
+      { path: "hours", label: "Total hours", kind: "number" },
+      { path: "seats", label: "Seats", kind: "number" },
+      { path: "start", label: "Start date", kind: "date" },
+      ...both("track", "Track, e.g. Mobile", "text"),
+      ...both("level", "Level", "text"),
+      ...both("mode", "Class mode", "text"),
+      ...both("outcomes", "What students will learn", "lines", ONE_PER_LINE),
+      ...both("modules", "Curriculum", "modules", "One module per line: Module title | topic; topic; topic"),
+      ...both("includes", "This course includes", "lines", ONE_PER_LINE),
+      { path: "tools", label: "Tools used", kind: "lines", hint: ONE_PER_LINE },
+    ],
+    PRODUCT: [
+      ...both("pdfs", "PDF guides included", "lines", ONE_PER_LINE),
+      ...both("app", "Mobile app", "lines", "First line: app name. Second line: what it does"),
+      ...both("audience", "Who it's for", "lines", ONE_PER_LINE),
+      ...both("course", "Live course name", "text"),
+      ...both("courseMode", "Live course mode", "text"),
+      { path: "course.weeks", label: "Live course weeks", kind: "number" },
+      { path: "course.hours", label: "Live course hours", kind: "number" },
+      { path: "courseId", label: "Linked training course ID", kind: "text", hint: "Optional, e.g. flutter" },
+    ],
+    IT_PROJECT: [
+      { path: "tech", label: "Technologies", kind: "lines", hint: ONE_PER_LINE },
+      { path: "features_en", label: "Key features (English)", kind: "lines", hint: ONE_PER_LINE },
+      { path: "features_bn", label: "Key features (Bangla)", kind: "lines", hint: ONE_PER_LINE },
+    ],
+    PROPERTY: [
+      { path: "location", label: "Location", kind: "text" },
+      { path: "badge", label: "Status", kind: "select", options: STATUSES },
+      { path: "specs", label: "Specifications", kind: "pairs", hint: "One per line: Label: value" },
+      { path: "features", label: "Key features", kind: "lines", hint: ONE_PER_LINE },
+    ],
+  };
+  const getPath = (obj, path) => path.split(".").reduce((o, k) => (o == null ? undefined : o[k]), obj);
+  function setPath(obj, path, value) {
+    const keys = path.split(".");
+    const last = keys.pop();
+    const parent = keys.reduce((o, k) => (o[k] = o[k] && typeof o[k] === "object" ? o[k] : {}), obj);
+    if (value === null) delete parent[last];
+    else parent[last] = value;
+  }
+  const lines = (text) => text.split("\n").map((l) => l.trim()).filter(Boolean);
+  function toInput(field, value) {
+    if (value == null) return "";
+    if (field.kind === "lines") return value.join("\n");
+    if (field.kind === "pairs") return value.map(([k, v]) => `${k}: ${v}`).join("\n");
+    if (field.kind === "modules") return value.map((m) => `${m.t} | ${(m.x || []).join("; ")}`).join("\n");
+    return value;
+  }
+  function fromInput(field, raw) {
+    const text = raw.trim();
+    if (!text) return ["lines", "pairs", "modules"].includes(field.kind) ? [] : null;
+    if (field.kind === "number") return Number(text);
+    if (field.kind === "lines") return lines(text);
+    if (field.kind === "pairs") return lines(text).map((l) => { const i = l.indexOf(":"); return i < 0 ? [l, ""] : [l.slice(0, i).trim(), l.slice(i + 1).trim()]; });
+    if (field.kind === "modules") return lines(text).map((l) => { const [t, x = ""] = l.split("|"); return { t: t.trim(), x: x.split(";").map((v) => v.trim()).filter(Boolean) }; });
+    return text;
+  }
+  function detailFields(type, details) {
+    return `<h3 class="admin-section">More details</h3>` + DETAILS[type].map((f) => {
+      const name = "d:" + f.path;
+      const value = toInput(f, getPath(details || {}, f.path));
+      const hint = f.hint ? `<small>${esc(f.hint)}</small>` : "";
+      if (f.kind === "select") return select(name, f.label, f.options, value);
+      if (["lines", "pairs", "modules"].includes(f.kind)) return `<label class="field"><span>${esc(f.label)}</span><textarea class="pay-input" name="${esc(name)}" rows="4">${esc(value)}</textarea>${hint}</label>`;
+      return `<label class="field"><span>${esc(f.label)}</span><input class="pay-input" name="${esc(name)}" type="${f.kind === "number" ? "number" : f.kind === "date" ? "date" : "text"}" ${f.kind === "number" ? 'min="0"' : ""} value="${esc(value)}">${hint}</label>`;
+    }).join("");
+  }
+  // Merges over existing details so fields without an input, like colors, are kept.
+  function readDetails(form, type, existing) {
+    const details = JSON.parse(JSON.stringify(existing || {}));
+    DETAILS[type].forEach((f) => setPath(details, f.path, fromInput(f, form.elements["d:" + f.path].value)));
+    if (type === "PROPERTY") {
+      if (details.badge) details.badgeClass = STATUS_CLASS[details.badge];
+      else delete details.badgeClass;
+    }
+    return details;
+  }
   const state = { tab: "items", filter: "", items: [], reviews: [], editing: null, error: "", notice: "", busy: false };
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -67,6 +156,7 @@
   function itemForm(it) {
     const type = it.type || "COURSE";
     const sold = SOLD.includes(type);
+    const priceLabel = sold ? "Price (৳)" : "Price (৳, optional)";
     return `<form class="auth-card admin-form" id="itemForm" novalidate>
       <h2>${it.id ? "Edit item" : "Add item"}</h2>
       ${select("type", "Category", CATEGORIES, type, it.id ? "disabled" : "")}
@@ -76,9 +166,12 @@
       ${area("summaryBn", "Short summary (Bangla)", it.summaryBn, 2)}
       ${area("descriptionEn", "Description (English)", it.descriptionEn, 4)}
       ${area("descriptionBn", "Description (Bangla)", it.descriptionBn, 4)}
-      ${sold ? field("price", "Price (৳)", it.price, 'type="number" min="0" required') + field("originalPrice", "Original price (৳)", it.originalPrice, 'type="number" min="0"') : ""}
+      ${field("price", priceLabel, it.price, `type="number" min="0" ${sold ? "required" : ""}`)}
+      ${field("originalPrice", "Original price before discount (৳)", it.originalPrice, 'type="number" min="0"')}
       ${type === "PRODUCT" ? field("comboPrice", "Combo price (৳)", it.comboPrice, 'type="number" min="0"') + field("comboOriginalPrice", "Combo original price (৳)", it.comboOriginalPrice, 'type="number" min="0"') : ""}
-      <div class="field"><span>Images</span>
+      ${detailFields(type, it.details)}
+      <h3 class="admin-section">Images</h3>
+      <div class="field">
         <div class="admin-images">${(it.images || []).map((im) => `<div class="admin-thumb">${isImage(im.url) ? `<img src="${esc(im.url)}" alt="">` : ""}<button type="button" data-remove-image="${esc(im.id)}" aria-label="Remove image">×</button></div>`).join("")}</div>
         <input type="file" name="images" accept="image/jpeg,image/png,image/webp" multiple>
         <small>Up to 10 at a time. Large images are resized automatically.</small>
@@ -112,7 +205,7 @@
 
   function values(form) {
     const body = {};
-    new FormData(form).forEach((v, k) => { if (typeof v === "string") body[k] = v.trim() === "" ? null : v.trim(); });
+    new FormData(form).forEach((v, k) => { if (typeof v === "string" && !k.startsWith("d:")) body[k] = v.trim() === "" ? null : v.trim(); });
     ["price", "originalPrice", "comboPrice", "comboOriginalPrice", "rating"].forEach((k) => { if (body[k] != null) body[k] = Number(body[k]); });
     body.isPublished = form.elements.isPublished.checked;
     return body;
@@ -120,6 +213,7 @@
 
   const saveItem = attempt(async (form, editing) => {
     const body = values(form);
+    body.details = readDetails(form, editing.id ? editing.type : body.type, editing.details);
     if (editing.id) delete body.type;
     const saved = await Auth.api(editing.id ? `/admin/catalog/${editing.id}` : "/admin/catalog", { method: editing.id ? "PATCH" : "POST", body: JSON.stringify(body) });
     state.editing = { ...editing, ...saved };
@@ -233,7 +327,8 @@
     const itemF = root.querySelector("#itemForm");
     if (itemF) {
       itemF.elements.type.addEventListener("change", () => {
-        state.editing = { ...state.editing, ...values(itemF), type: itemF.elements.type.value };
+        // Details differ per category, so a new category starts with its own blank fields.
+        state.editing = { ...state.editing, ...values(itemF), type: itemF.elements.type.value, details: null };
         render();
       });
       itemF.addEventListener("submit", (ev) => { ev.preventDefault(); if (itemF.reportValidity()) saveItem(itemF, state.editing); });

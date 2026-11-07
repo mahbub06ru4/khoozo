@@ -113,6 +113,12 @@
     if (typeof KHOOZO_PROPERTIES !== "undefined") fill(KHOOZO_PROPERTIES, of("PROPERTY").map((r) => [r.slug, toProperty(r)]));
   }
 
+  function priceHtml(r) {
+    if (r.price == null) return "";
+    const num = (n) => "৳" + Number(n).toLocaleString("en-IN");
+    return `<p class="catalog-price"><b>${num(r.price)}</b>${r.originalPrice > r.price ? ` <s>${num(r.originalPrice)}</s>` : ""}</p>`;
+  }
+
   function renderItGrid() {
     const grid = document.querySelector(".it-project-grid");
     if (!grid) return;
@@ -125,6 +131,7 @@
           <span class="service-icon"><i class="${esc(r.icon || "fa-solid fa-laptop-code")}" aria-hidden="true"></i></span>
           <h4>${esc((bn && r.titleBn) || r.titleEn)}</h4>
           <p>${esc((bn && r.summaryBn) || r.summaryEn)}</p>
+          ${priceHtml(r)}
           <div class="it-project-tags">${(d.tech || []).slice(0, 3).map((x) => `<span class="it-tag">${esc(x)}</span>`).join("")}</div>
           <a class="btn btn-outline it-project-btn" href="project.html?id=${encodeURIComponent(r.slug)}"><span>${bn ? "বিস্তারিত দেখুন" : "View Details"}</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </article>`;
@@ -149,6 +156,7 @@
             <h3>${esc(p.title)}</h3>
             <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> ${esc(p.location)}</p>
             <p class="project-desc">${esc(p.desc)}</p>
+            ${priceHtml(first)}
             <div class="project-specs">${p.specs.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</div>
             ${p.features.length ? `<h4 class="project-features-title">Key Features</h4><ul class="project-features">${p.features.map((f) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i> ${esc(f)}</li>`).join("")}</ul>` : ""}
             <div class="project-actions"><a class="btn btn-outline" href="${href}">View Details</a><a class="btn btn-primary" href="index.html#contact">Inquire About This Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
@@ -162,6 +170,7 @@
           <h3>${esc(p.title)}</h3>
           <p class="project-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> ${esc(p.location)}</p>
           <p class="pcard-desc">${esc(p.desc)}</p>
+          ${priceHtml(r)}
           <ul class="pcard-meta">${p.specs.slice(0, 3).map(([k, v]) => `<li><span>${esc(k)}</span> ${esc(v)}</li>`).join("")}</ul>
           <a class="btn btn-outline pcard-btn" href="${href}">View Details <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
@@ -172,7 +181,7 @@
   function renderDetailGallery() {
     const id = new URLSearchParams(location.search).get("id");
     const page = location.pathname.split("/").pop();
-    const type = { "course.html": "COURSE", "product.html": "PRODUCT", "property.html": "PROPERTY" }[page];
+    const type = { "course.html": "COURSE", "product.html": "PRODUCT", "property.html": "PROPERTY", "project.html": "IT_PROJECT" }[page];
     const row = type && rows.find((r) => r.type === type && r.slug === id);
     // Items added in the app may not have every section filled in yet.
     document.querySelectorAll(".tr-layout > div:first-child > .tr-panel:not(.catalog-gallery):not(.catalog-desc)").forEach((panel) => {
@@ -189,6 +198,11 @@
         left.prepend(panel);
       }
     }
+    if (row && (type === "PROPERTY" || type === "IT_PROJECT") && row.price != null && !document.querySelector(".tr-layout .catalog-price")) {
+      const left = document.querySelector(".tr-layout > div:first-child");
+      if (left) left.insertAdjacentHTML("afterbegin", `<div class="tr-panel">${priceHtml(row)}</div>`);
+    }
+    if (type === "IT_PROJECT") return;
     const host = document.querySelector("main .tr-layout > div:first-child, #productRoot .tr-layout > div:first-child");
     if (!row || !host || host.querySelector(".catalog-gallery")) return;
     const list = type === "PRODUCT" ? urls(row) : urls(row).slice(1);
