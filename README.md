@@ -80,7 +80,50 @@ Changes appear on the next page load. Items can also be managed in the Admin App
 
 ## 🚀 Deploying
 
-The site is static, and `CNAME` points to `www.khoozo.com`. Push to the hosted branch; there's no build step. Full backend setup is in the [deploy guide](https://github.com/mahbub06ru4/khoozo_laravel/blob/main/docs/DEPLOY_DIGITALOCEAN.md).
+The site is static (no build step), so it can live on the **same DigitalOcean droplet** as the backend, with nginx serving these files and `khoozo_laravel` behind the same server:
+
+```mermaid
+flowchart LR
+    V["Visitor / app user"] --> NG["nginx on the droplet"]
+    NG -- "www.khoozo.com" --> W["/var/www/khoozo_website<br/>(these files)"]
+    NG -- "api.khoozo.com" --> L["khoozo_laravel"]
+    W -. "fetch /api/v1 (catalog, login, orders)" .-> L
+    APPS["User App / Admin App"] --> L
+```
+
+**On the droplet (one time):**
+
+```bash
+sudo git clone https://github.com/mahbub06ru4/khoozo_website.git /var/www/khoozo_website
+```
+
+Add `/etc/nginx/sites-available/khoozo-website` and enable it:
+
+```nginx
+server {
+    listen 80;
+    server_name khoozo.com www.khoozo.com;
+    root /var/www/khoozo_website;
+    index index.html;
+    location / { try_files $uri $uri/ =404; }
+}
+```
+
+```bash
+sudo ln -s /etc/nginx/sites-available/khoozo-website /etc/nginx/sites-enabled/ && sudo nginx -t && sudo systemctl reload nginx
+```
+
+```bash
+sudo certbot --nginx -d khoozo.com -d www.khoozo.com
+```
+
+Point the `khoozo.com` and `www` DNS records at the droplet, and add both `https://` addresses to **Authorized JavaScript origins** for the Web client in Google Cloud.
+
+**Updating:** `cd /var/www/khoozo_website && sudo git pull`. Content changes (items, prices, images, reviews) need no deploy at all: they are entered in `admin.html` or the Admin App and stored by the backend.
+
+**Alternative:** DigitalOcean App Platform → *Static Site* from this repo (free, auto-deploys on push). The `CNAME` file is only used by GitHub Pages.
+
+The whole system (apps, website, backend, roles, launch checklist) is mapped in [ARCHITECTURE.md](https://github.com/mahbub06ru4/khoozo_laravel/blob/main/docs/ARCHITECTURE.md); backend setup is in the [deploy guide](https://github.com/mahbub06ru4/khoozo_laravel/blob/main/docs/DEPLOY_DIGITALOCEAN.md).
 
 ---
 
