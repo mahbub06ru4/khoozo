@@ -990,3 +990,8 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
 .admin-form .field small { display: block; margin-top: 4px; color: var(--ink-soft); font-size: 0.78rem; }
 .catalog-price { margin: 8px 0 12px; font-size: 1.1rem; }
 .catalog-price s { color: var(--ink-soft); font-size: 0.85rem; }
+
+.auth-google { text-align: center; }
+.auth-google #googleButton { display: flex; justify-content: center; min-height: 44px; margin-bottom: 12px; }
+.auth-email { margin-top: 16px; text-align: left; }
+.auth-email small { display: block; margin-top: 4px; color: var(--ink-soft); }

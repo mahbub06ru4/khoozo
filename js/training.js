@@ -651,6 +651,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       s.prefilled = true;
       s.name = s.name || authUser.fullName || authUser.displayName || "";
       if (!s.phone && authUser.mobileNumber) s.phone = "0" + authUser.mobileNumber.slice(-10);
+      s.email = s.email || authUser.email || "";
     }
     if (!it.methods.includes(s.method)) s.method = it.methods[0];
     if (it.wallets && !it.wallets.includes(s.wallet)) s.wallet = it.wallets[0];
