@@ -130,6 +130,103 @@
     go(Math.min(slide, count - 1));
   }
 
+  /* ---------------- App showcase (Khoozo App) ----------------
+     Phone-frame slider with a caption per screenshot, plus the six-step
+     "What you can do with Khoozo" loop. Data: KHOOZO_APP_SHOWCASE. */
+  let showIdx = 0, showTimer = null;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function showcase() {
+    const roleKey = { req: "app.role.req", pro: "app.role.pro", all: "app.role.all" };
+    const roleText = { req: "Requester", pro: "Provider", all: "Everyone" };
+    return `<div class="app-showcase dt-showcase" id="appShowcase" role="region" aria-roledescription="carousel" aria-label="Khoozo app screenshots">
+      <div class="app-slides">${KHOOZO_APP_SHOWCASE.map((sl, i) => `
+        <figure class="app-slide${i === showIdx ? " is-active" : ""}" aria-hidden="${i !== showIdx}">
+          <div class="app-slide-media"><img src="${sl.src}" alt="Khoozo app — ${esc(t(sl.key + ".t", ""))}"${Math.abs(i - showIdx) > 1 ? ' loading="lazy"' : ""}></div>
+          <figcaption><em class="app-role app-role-${sl.role}">${esc(t(roleKey[sl.role], roleText[sl.role]))}</em><strong>${esc(t(sl.key + ".t", ""))}</strong><span>${esc(t(sl.key + ".d", ""))}</span>
+            <small class="dt-showcase-count">${i + 1} / ${KHOOZO_APP_SHOWCASE.length}</small></figcaption>
+        </figure>`).join("")}
+      </div>
+      <div class="app-slider-controls">
+        <button type="button" class="app-slider-btn" id="appPrev" aria-label="Previous screenshot"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <div class="app-slider-dots" id="appDots">${KHOOZO_APP_SHOWCASE.map((_, i) => `<button type="button" class="app-slider-dot${i === showIdx ? " is-active" : ""}" aria-label="Show screenshot ${i + 1}"></button>`).join("")}</div>
+        <button type="button" class="app-slider-btn" id="appNext" aria-label="Next screenshot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+      </div>
+    </div>`;
+  }
+
+  function cyclePanel() {
+    return `<div class="tr-panel">
+      <h2>${t("app.f.h", "What you can do with Khoozo")}</h2>
+      <p class="dp-muted">${t("app.cycle.lede", "")}</p>
+      <div class="app-cycle dt-cycle">${KHOOZO_APP_CYCLE.map((icon, i) => `
+        <article class="cycle-step">
+          <span class="cycle-num">${i + 1}</span>
+          <span class="service-icon"><i class="fa-solid ${icon}" aria-hidden="true"></i></span>
+          <h4>${t(`app.cycle.${i + 1}.t`, "")}</h4>
+          <p>${t(`app.cycle.${i + 1}.d`, "")}</p>
+        </article>`).join("")}
+      </div>
+      <ul class="app-highlights">${KHOOZO_APP_HIGHLIGHTS.map((icon, i) =>
+        `<li><i class="fa-solid ${icon}" aria-hidden="true"></i> <span>${t(`app.h.${i + 1}`, "")}</span></li>`).join("")}</ul>
+    </div>`;
+  }
+
+  function wireShowcase() {
+    clearInterval(showTimer);
+    showTimer = null;
+    const box = document.getElementById("appShowcase");
+    if (!box) return;
+    const slides = [...box.querySelectorAll(".app-slide")];
+    const dots = [...box.querySelectorAll(".app-slider-dot")];
+    function show(i, dir) {
+      const next = (i + slides.length) % slides.length;
+      if (next === showIdx) return;
+      const direction = dir || (next > showIdx ? 1 : -1);
+      const oldSlide = slides[showIdx], newSlide = slides[next];
+      /* Place the incoming slide on the entry side without a transition,
+         then animate it in, so the direction is always right. */
+      newSlide.style.transition = "none";
+      newSlide.style.setProperty("--pos", direction > 0 ? 1 : -1);
+      void newSlide.offsetWidth;
+      newSlide.style.transition = "";
+      oldSlide.classList.remove("is-active");
+      oldSlide.setAttribute("aria-hidden", "true");
+      oldSlide.style.setProperty("--pos", direction > 0 ? -1 : 1);
+      newSlide.classList.add("is-active");
+      newSlide.setAttribute("aria-hidden", "false");
+      newSlide.style.setProperty("--pos", 0);
+      const lazy = slides[(next + 1) % slides.length].querySelector("img");
+      if (lazy) lazy.loading = "eager";
+      showIdx = next;
+      dots.forEach((d, di) => d.classList.toggle("is-active", di === showIdx));
+    }
+    const stop = () => { clearInterval(showTimer); showTimer = null; };
+    const start = () => { if (!reduceMotion && !showTimer) showTimer = setInterval(() => show(showIdx + 1, 1), 4500); };
+    const restart = () => { stop(); start(); };
+    document.getElementById("appPrev").addEventListener("click", () => { show(showIdx - 1, -1); restart(); });
+    document.getElementById("appNext").addEventListener("click", () => { show(showIdx + 1, 1); restart(); });
+    dots.forEach((d, di) => d.addEventListener("click", () => { show(di); restart(); }));
+    box.addEventListener("mouseenter", stop);
+    box.addEventListener("mouseleave", start);
+    box.addEventListener("focusin", stop);
+    box.addEventListener("focusout", start);
+    let x = null;
+    box.addEventListener("touchstart", e => { x = e.touches[0].clientX; stop(); }, { passive: true });
+    box.addEventListener("touchend", e => {
+      if (x === null) return;
+      const dx = e.changedTouches[0].clientX - x;
+      if (Math.abs(dx) > 40) show(showIdx + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+      x = null;
+      start();
+    });
+    start();
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) { clearInterval(showTimer); showTimer = null; }
+    else if (document.getElementById("appShowcase")) wireShowcase();
+  });
+
   /* ---------------- project.html ---------------- */
   function renderIt() {
     const p = KHOOZO_IT_PROJECTS[id];
@@ -137,7 +234,7 @@
     const title = t(p.titleKey, p.titleKey);
     const desc = t(p.descKey, p.descKey);
     const images = GALLERY[p.gallery || id] || [];
-    setMeta(title, desc, images[0] && images[0].src);
+    setMeta(title, desc, p.showcase ? KHOOZO_APP_SHOWCASE[0].src : images[0] && images[0].src);
 
     const others = Object.keys(KHOOZO_IT_PROJECTS).filter(k => k !== id);
     root.innerHTML = `
@@ -154,6 +251,10 @@
         </div>
         <p>${esc(desc)}</p>
         <div class="tr-meta">${p.tech.map(x => `<span><i class="fa-solid ${x.includes("Flutter") ? "fa-mobile-screen-button" : "fa-code"}" aria-hidden="true"></i>${esc(x)}</span>`).join("")}</div>
+        ${p.playStore ? `<a class="store-badge dt-store" href="${p.playStore}" target="_blank" rel="noopener" aria-label="Get Khoozo on Google Play">
+          <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+          <span class="store-badge-text"><small>${t("app.getiton", "Get it on")}</small><strong>${t("app.googleplay", "Google Play")}</strong></span>
+        </a>` : ""}
       </div>
     </section>
     <section class="section dt-body">
@@ -161,8 +262,9 @@
         <div>
           <div class="tr-panel">
             <h2>${t("dt.screens", "Screenshots")}</h2>
-            ${gallery(images, p.web)}
+            ${p.showcase ? showcase() : gallery(images, p.web)}
           </div>
+          ${p.showcase ? cyclePanel() : ""}
           ${p.featureKeys ? `<div class="tr-panel">
             <h2>${t("it.modal.features", "Key Features")}</h2>
             <ul class="tr-checks">${p.featureKeys.map(k => `<li><i class="fa-solid fa-check" aria-hidden="true"></i>${esc(t(k, k))}</li>`).join("")}</ul>
@@ -189,7 +291,8 @@
         }).join("")}</div>
       </div>
     </section>`;
-    wireGallery(images.length);
+    if (p.showcase) wireShowcase();
+    else wireGallery(images.length);
     wireShare(title);
   }
 
@@ -246,8 +349,13 @@
   }
 
   const render = kind === "property" ? renderProperty : renderIt;
-  /* js/i18n.js calls this after switching language. */
-  window.khoozoOnLangChange = render;
+  /* js/i18n.js calls this after switching language; keep any hook another
+     script (auth.js, catalog.js) registered before us. */
+  const prevHook = window.khoozoOnLangChange;
+  window.khoozoOnLangChange = function () {
+    if (prevHook) prevHook();
+    render();
+  };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", render);
   else render();
 })();

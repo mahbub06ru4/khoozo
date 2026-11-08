@@ -93,3 +93,20 @@
   .dt-slide { height: 420px; padding: 14px; }
   .dt-hero-icon { width: 56px; height: 56px; font-size: 1.4rem; border-radius: 16px; }
 }
+
+/* ---------- Khoozo App: showcase + "What you can do" (project.html?id=khoozo) ---------- */
+.dt-store { margin-top: 22px; background: #fff; color: #0F172A; box-shadow: 0 10px 26px rgba(0,0,0,.25); }
+.dt-store:hover { color: #0F172A; }
+.dt-showcase .app-slide { gap: 36px; grid-template-columns: 0.9fr 1.1fr; }
+.dt-showcase .app-slide img { max-width: 270px; }
+.dt-showcase .app-slide figcaption strong { font-size: 1.35rem; }
+.dt-showcase-count { margin-top: 6px; font-family: var(--font-mono); font-size: .78rem; color: var(--ink-soft); }
+.dt-showcase .app-slider-dots { max-width: 300px; }
+.dt-cycle { grid-template-columns: repeat(2, 1fr); gap: 22px 18px; margin-top: 8px; }
+.dt-cycle .cycle-step { padding-top: 30px; }
+@media (max-width: 720px) {
+  .dt-showcase .app-slide { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+  .dt-showcase .app-slide figcaption { align-items: center; }
+  .dt-showcase .app-slide img { max-width: 230px; }
+  .dt-cycle { grid-template-columns: 1fr; }
+}

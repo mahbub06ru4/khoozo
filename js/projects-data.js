@@ -52,7 +52,9 @@ const KHOOZO_IT_PROJECTS = {
     titleKey: "it.proj.khoozo.title",
     descKey: "it.proj.khoozo.modal.desc",
     cardKey: "it.proj.khoozo.card.desc",
-    tech: ["NestJS", "PostgreSQL", "Flutter App"]
+    playStore: "https://play.google.com/store/apps/details?id=com.khoozo.app",
+    showcase: true,   // captioned app slider + "What you can do" (KHOOZO_APP_SHOWCASE)
+    tech: ["Flutter (Android & iOS)", "NestJS", "PostgreSQL", "Firebase push"]
   },
   dorkari: {
     icon: "fa-solid fa-mosque",
@@ -92,6 +94,25 @@ const KHOOZO_IT_PROJECTS = {
     tech: ["NestJS", "PostgreSQL", "Flutter App"]
   }
 };
+
+/* Khoozo App walkthrough on project.html?id=khoozo. Captions are the
+   app.s<n>.t / app.s<n>.d keys in js/i18n.js; role is req | pro | all. */
+const KHOOZO_APP_SHOWCASE = [
+  ["01-home", "all", 1], ["02-sign-up", "all", 21], ["03-browse-as-guest", "all", 22],
+  ["04-create-post", "req", 2], ["05-location", "req", 3], ["06-bidding-time", "req", 4],
+  ["07-my-posts", "req", 5], ["08-compare-offers", "req", 6], ["09-offer-accepted", "req", 7],
+  ["10-safety-checklist", "req", 8], ["11-contact-revealed", "req", 9], ["12-rate-helper", "req", 10],
+  ["13-explore", "pro", 11], ["14-category", "pro", 23], ["15-search-area", "pro", 24],
+  ["16-filters", "pro", 25], ["17-filter-budget", "pro", 12], ["18-offer-to-help", "pro", 13],
+  ["19-my-offers", "pro", 14], ["20-provider-reviews", "pro", 15], ["21-notifications", "all", 16],
+  ["22-dashboard", "all", 26], ["23-translate-post", "all", 27], ["24-edit-profile", "all", 28],
+  ["25-shop-travel", "all", 17], ["26-shop-real-estate", "all", 18], ["27-dark-mode", "all", 19],
+  ["28-bangla", "all", 20]
+].map(([file, role, n]) => ({ src: `assets/app/showcase/${file}.jpg`, role, key: `app.s${n}` }));
+
+/* The six steps of the "What you can do with Khoozo" loop (app.cycle.<n>.t/d). */
+const KHOOZO_APP_CYCLE = ["fa-bullhorn", "fa-user-shield", "fa-magnifying-glass-location", "fa-handshake-angle", "fa-shield-halved", "fa-rotate"];
+const KHOOZO_APP_HIGHLIGHTS = ["fa-language", "fa-moon", "fa-eye", "fa-repeat", "fa-user-group"];
 
 /* Real estate portfolio (English copy, as on the homepage). */
 const KHOOZO_PROPERTIES = {

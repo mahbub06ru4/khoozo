@@ -174,75 +174,96 @@ form?.addEventListener("submit", e => {
 });
 
 /* ---------------------------------------------------------------
-   8. Homepage app screenshot slider
+   8. Homepage promo banner slider
+   Cross-fades the banners with a slow zoom, autoplays with a progress
+   bar, and pauses on hover/focus or when the tab is hidden. Each banner
+   has a wide (desktop) and a tall (phone) image per language.
    --------------------------------------------------------------- */
-const appShowcase = document.getElementById("appShowcase");
-if (appShowcase) {
-  const slides = [...appShowcase.querySelectorAll(".app-slide")];
-  const dotsWrap = document.getElementById("appDots");
+const promo = document.getElementById("promoSlider");
+if (promo) {
+  const slides = [...promo.querySelectorAll(".promo-slide")];
+  const dotsWrap = document.getElementById("promoDots");
+  const bar = document.getElementById("promoBar");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const AUTOPLAY_MS = 4500;
+  const DURATION = 5500;
   let current = 0;
   let timer = null;
 
-  dotsWrap.innerHTML = slides.map((_, i) => `<button type="button" class="app-slider-dot" aria-label="Show screenshot ${i + 1}"></button>`).join("");
+  dotsWrap.innerHTML = slides.map((_, i) => `<button type="button" class="promo-dot${i ? "" : " is-active"}" aria-label="Show banner ${i + 1}"></button>`).join("");
   const dots = [...dotsWrap.children];
-  dots[0].classList.add("is-active"); /* show(0) below is a no-op for the starting slide */
 
-  function show(i, dir) {
-    const newCurrent = (i + slides.length) % slides.length;
-    if (newCurrent === current) return;
-    const direction = dir || (newCurrent > current ? 1 : -1);
-    const oldSlide = slides[current];
-    const newSlide = slides[newCurrent];
+  /* Banner text is baked into the images, so swap to the current language. */
+  function applyLang() {
+    const lang = document.documentElement.getAttribute("lang") === "bn" ? "bn" : "en";
+    slides.forEach(sl => {
+      const n = sl.dataset.slide;
+      sl.querySelector("source").srcset = `assets/promo/${n}-${lang}-tall.jpg`;
+      sl.querySelector("img").src = `assets/promo/${n}-${lang}-wide.jpg`;
+    });
+  }
+  new MutationObserver(applyLang).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  applyLang();
 
-    /* Position the incoming slide off to the entry side with no transition,
-       force a reflow, then animate it to centre — a reliable "FLIP" so the
-       slide direction is always correct regardless of this slide's history. */
-    newSlide.style.transition = "none";
-    newSlide.style.setProperty("--pos", direction > 0 ? 1 : -1);
-    void newSlide.offsetWidth;
-    newSlide.style.transition = "";
-
-    oldSlide.classList.remove("is-active");
-    oldSlide.setAttribute("aria-hidden", "true");
-    oldSlide.style.setProperty("--pos", direction > 0 ? -1 : 1);
-
-    newSlide.classList.add("is-active");
-    newSlide.setAttribute("aria-hidden", "false");
-    newSlide.style.setProperty("--pos", 0);
-
-    current = newCurrent;
-    dots.forEach((d, di) => d.classList.toggle("is-active", di === current));
+  function restartBar() {
+    if (reduceMotion) return;
+    bar.style.transition = "none";
+    bar.style.width = "0%";
+    void bar.offsetWidth;
+    bar.style.transition = `width ${DURATION}ms linear`;
+    bar.style.width = "100%";
   }
 
-  function stop() { clearInterval(timer); timer = null; }
+  function show(i) {
+    const next = (i + slides.length) % slides.length;
+    if (next === current) return;
+    slides[current].classList.remove("is-active");
+    slides[current].setAttribute("aria-hidden", "true");
+    slides[current].tabIndex = -1;
+    slides[next].classList.add("is-active");
+    slides[next].setAttribute("aria-hidden", "false");
+    slides[next].removeAttribute("tabindex");
+    current = next;
+    dots.forEach((d, di) => d.classList.toggle("is-active", di === current));
+    if (timer) restartBar();
+  }
+
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+    bar.style.transition = "none";
+    bar.style.width = "0%";
+  }
   function start() {
     if (reduceMotion || timer) return;
-    timer = setInterval(() => show(current + 1, 1), AUTOPLAY_MS);
+    timer = setInterval(() => show(current + 1), DURATION);
+    restartBar();
   }
   function restart() { stop(); start(); }
 
-  document.getElementById("appPrev").addEventListener("click", () => { show(current - 1, -1); restart(); });
-  document.getElementById("appNext").addEventListener("click", () => { show(current + 1, 1); restart(); });
+  document.getElementById("promoPrev").addEventListener("click", () => { show(current - 1); restart(); });
+  document.getElementById("promoNext").addEventListener("click", () => { show(current + 1); restart(); });
   dots.forEach((d, di) => d.addEventListener("click", () => { show(di); restart(); }));
-
-  appShowcase.addEventListener("mouseenter", stop);
-  appShowcase.addEventListener("mouseleave", start);
-  appShowcase.addEventListener("focusin", stop);
-  appShowcase.addEventListener("focusout", start);
+  promo.addEventListener("mouseenter", stop);
+  promo.addEventListener("mouseleave", start);
+  promo.addEventListener("focusin", stop);
+  promo.addEventListener("focusout", start);
+  promo.addEventListener("keydown", e => {
+    if (e.key === "ArrowLeft") { show(current - 1); restart(); }
+    if (e.key === "ArrowRight") { show(current + 1); restart(); }
+  });
   document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
 
-  let touchX = null;
-  appShowcase.addEventListener("touchstart", e => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
-  appShowcase.addEventListener("touchend", e => {
+  /* Swipe on touch screens; a swipe must not also follow the banner link. */
+  let touchX = null, swiped = false;
+  promo.addEventListener("touchstart", e => { touchX = e.touches[0].clientX; swiped = false; stop(); }, { passive: true });
+  promo.addEventListener("touchend", e => {
     if (touchX === null) return;
     const dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 40) { swiped = true; show(current + (dx < 0 ? 1 : -1)); }
     touchX = null;
     start();
   });
+  promo.addEventListener("click", e => { if (swiped && e.target.closest(".promo-slide")) { e.preventDefault(); swiped = false; } }, true);
 
-  show(0);
   start();
 }
