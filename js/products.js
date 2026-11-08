@@ -198,7 +198,7 @@ const KHOOZO_PRODUCTS = [
     id: "english-booster",
     icon: "fa-solid fa-comments",
     colors: ["#1e3a8a", "#06b6d4"],
-    pack: { price: 200, originalPrice: 500 },
+    pack: { price: 499, originalPrice: 1000 },
     combo: null,
     en: {
       title: "English Booster: Spoken English & IELTS",
