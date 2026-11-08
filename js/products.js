@@ -125,6 +125,75 @@ const KHOOZO_PRODUCTS = [
       audience: ["IELTS পরীক্ষার্থী (একাডেমিক ও জেনারেল)", "বিদেশে পড়তে যেতে চান এমন শিক্ষার্থী", "স্পোকেন ইংলিশ দরকার এমন চাকরিপ্রার্থী", "ইংরেজিতে আত্মবিশ্বাস বাড়াতে চান এমন যে কেউ"],
     },
   },
+  {
+    id: "kids-brain-booster",
+    icon: "fa-solid fa-brain",
+    colors: ["#0f766e", "#84cc16"],
+    pack: { price: 200, originalPrice: 500 },
+    combo: null,
+    en: {
+      title: "Kids Brain Booster",
+      tagline: "A fun offline puzzle game that grows logic, vocabulary and observation in children aged 6–12.",
+      desc: "Four brain games, school lessons from Play Group to Class 5 in English and Bangla, stars, badges and a parent report. No ads, no accounts, and no internet needed while playing.",
+      packSub: "Android app (APK) · lifetime use",
+      cardFacts: [["fa-solid fa-gamepad", "4 brain games + school lessons"], ["fa-solid fa-language", "English & Bangla"], ["fa-solid fa-wifi", "Works offline, no ads"]],
+      how3: "After payment we send you a Google Drive link to download the APK, on WhatsApp and email. Install it on any Android phone or tablet.",
+      pdfs: [],
+      app: ["Kids Brain Booster (Android)", "Matrix Master, Jumble Words, Picture Perception and Logic Lab, plus Learn & Play for Play Group to Class 5. Ollie the owl cheers your child on with confetti, hints and stars."],
+      stats: [
+        ["fa-solid fa-puzzle-piece", "2,000", "Brain-game questions in 4 games, 5 levels and 100 stages each"],
+        ["fa-solid fa-school", "2,922", "Learn & Play questions: Maths, English, Bangla and My World"],
+        ["fa-solid fa-language", "EN + বাং", "Play in English, Bangla or both together"],
+        ["fa-solid fa-wifi", "Offline", "Plays without internet: no ads, no accounts"],
+        ["fa-solid fa-star", "16", "Achievement badges, plus a daily challenge and day streak"],
+        ["fa-solid fa-user-shield", "Parents", "A parent area with accuracy, stars and a progress report"],
+      ],
+      features: [
+        ["fa-solid fa-table-cells", "Matrix Master", "Spot the rule in grids and sequences — non-verbal IQ practice."],
+        ["fa-solid fa-spell-check", "Jumble Words", "Unscramble letter tiles to build vocabulary and spelling."],
+        ["fa-solid fa-eye", "Picture Perception", "Count, compare and tell stories from picture scenes (PPDT style)."],
+        ["fa-solid fa-flask", "Logic Lab", "Number and letter series, analogies, clocks, directions and codes."],
+        ["fa-solid fa-book-open", "Learn & Play", "School-style Maths, English, Bangla and My World, Play Group to Class 5."],
+        ["fa-solid fa-calendar-day", "Daily Brain Challenge", "12 fresh mixed questions every day, plus Mistake Review."],
+        ["fa-solid fa-lightbulb", "Gentle hints", "\"Good try! Let's think again.\" Two hints, then the answer explained."],
+        ["fa-solid fa-chart-line", "Parent report", "Accuracy, first-try rate, points and stars behind a maths gate."],
+      ],
+      course: "",
+      courseMode: "",
+      audience: ["Children aged 6–12", "Parents who want screen time that teaches", "Kids preparing for school or cadet admission tests", "Schools and coaching centres"],
+    },
+    bn: {
+      title: "কিডস ব্রেইন বুস্টার",
+      tagline: "৬–১২ বছরের শিশুদের যুক্তি, শব্দভান্ডার ও পর্যবেক্ষণ বাড়ানোর মজার অফলাইন পাজল গেম।",
+      desc: "চারটি ব্রেইন গেম, প্লে গ্রুপ থেকে ক্লাস ৫ পর্যন্ত ইংরেজি ও বাংলায় স্কুলের পাঠ, স্টার, ব্যাজ আর প্যারেন্ট রিপোর্ট। কোনো বিজ্ঞাপন নেই, অ্যাকাউন্ট লাগে না, খেলতে ইন্টারনেটও লাগে না।",
+      packSub: "অ্যান্ড্রয়েড অ্যাপ (APK) · আজীবন ব্যবহার",
+      cardFacts: [["fa-solid fa-gamepad", "৪টি ব্রেইন গেম + স্কুলের পাঠ"], ["fa-solid fa-language", "ইংরেজি ও বাংলা"], ["fa-solid fa-wifi", "অফলাইনে চলে, বিজ্ঞাপন নেই"]],
+      how3: "পেমেন্টের পর হোয়াটসঅ্যাপ ও ইমেইলে APK ডাউনলোডের Google Drive লিংক পাঠানো হবে। যেকোনো অ্যান্ড্রয়েড ফোন বা ট্যাবে ইনস্টল করুন।",
+      pdfs: [],
+      app: ["কিডস ব্রেইন বুস্টার (অ্যান্ড্রয়েড)", "ম্যাট্রিক্স মাস্টার, জাম্বল ওয়ার্ডস, পিকচার পারসেপশন ও লজিক ল্যাব, সাথে প্লে গ্রুপ থেকে ক্লাস ৫-এর লার্ন অ্যান্ড প্লে। কনফেটি, হিন্ট আর স্টার দিয়ে উৎসাহ দেয় পেঁচা অলি।"],
+      stats: [
+        ["fa-solid fa-puzzle-piece", "২,০০০", "৪টি গেমে ব্রেইন গেমের প্রশ্ন, প্রতিটিতে ৫ লেভেল ও ১০০ স্টেজ"],
+        ["fa-solid fa-school", "২,৯২২", "লার্ন অ্যান্ড প্লে প্রশ্ন: গণিত, ইংরেজি, বাংলা ও আমার পৃথিবী"],
+        ["fa-solid fa-language", "EN + বাং", "ইংরেজি, বাংলা বা দুটো একসাথে"],
+        ["fa-solid fa-wifi", "অফলাইন", "খেলতে ইন্টারনেট লাগে না: বিজ্ঞাপন বা অ্যাকাউন্ট নেই"],
+        ["fa-solid fa-star", "১৬", "অর্জনের ব্যাজ, সাথে ডেইলি চ্যালেঞ্জ ও স্ট্রিক"],
+        ["fa-solid fa-user-shield", "অভিভাবক", "নির্ভুলতা, স্টার ও অগ্রগতিসহ প্যারেন্ট এরিয়া"],
+      ],
+      features: [
+        ["fa-solid fa-table-cells", "ম্যাট্রিক্স মাস্টার", "গ্রিড ও সিরিজে নিয়ম খুঁজে বের করা — নন-ভার্বাল IQ প্র্যাকটিস।"],
+        ["fa-solid fa-spell-check", "জাম্বল ওয়ার্ডস", "এলোমেলো অক্ষর সাজিয়ে শব্দভান্ডার ও বানান শেখা।"],
+        ["fa-solid fa-eye", "পিকচার পারসেপশন", "ছবির দৃশ্য থেকে গোনা, তুলনা ও গল্প বলা (PPDT ধাঁচে)।"],
+        ["fa-solid fa-flask", "লজিক ল্যাব", "সংখ্যা ও অক্ষরের সিরিজ, অ্যানালজি, ঘড়ি, দিক ও কোড।"],
+        ["fa-solid fa-book-open", "লার্ন অ্যান্ড প্লে", "প্লে গ্রুপ থেকে ক্লাস ৫: গণিত, ইংরেজি, বাংলা ও আমার পৃথিবী।"],
+        ["fa-solid fa-calendar-day", "ডেইলি ব্রেইন চ্যালেঞ্জ", "প্রতিদিন ১২টি নতুন প্রশ্ন, সাথে ভুলগুলো আবার দেখার সুযোগ।"],
+        ["fa-solid fa-lightbulb", "সহজ হিন্ট", "ভুল হলে উৎসাহ, দুটি হিন্ট, তারপর ব্যাখ্যাসহ উত্তর।"],
+        ["fa-solid fa-chart-line", "প্যারেন্ট রিপোর্ট", "নির্ভুলতা, প্রথম চেষ্টায় সঠিক, পয়েন্ট ও স্টার।"],
+      ],
+      course: "",
+      courseMode: "",
+      audience: ["৬–১২ বছরের শিশু", "যে অভিভাবকরা শেখার মতো স্ক্রিন টাইম চান", "স্কুল বা ক্যাডেট ভর্তি পরীক্ষার প্রস্তুতি নেওয়া শিশু", "স্কুল ও কোচিং সেন্টার"],
+    },
+  },
 ];
 
 const KHOOZO_PRODUCTS_I18N = {
@@ -135,7 +204,7 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.p": "Download practical PDF guides and a mobile practice app, or take the combo with a live course. Pay with bKash or card.",
     "dp.pdfs": "{n} PDF guides", "dp.app": "Mobile app", "dp.courseopt": "Optional live course",
     "dp.from": "From", "dp.view": "View details", "dp.back": "All digital products",
-    "dp.inside": "What's inside", "dp.pdfs.h": "PDF guides", "dp.app.h": "Mobile app",
+    "dp.inside": "What's inside", "dp.features": "Features kids love", "dp.pdfs.h": "PDF guides", "dp.app.h": "Mobile app",
     "dp.course.h": "Add the live course", "dp.course.p": "Take the combo and join live online classes with an instructor, recordings and a certificate.",
     "dp.course.link": "See the full course curriculum",
     "dp.weeks": "weeks", "dp.hours": "hours of live classes", "dp.cert": "Certificate on completion",
@@ -158,7 +227,7 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.p": "ব্যবহারিক PDF গাইড আর মোবাইল প্র্যাকটিস অ্যাপ ডাউনলোড করুন, অথবা লাইভ কোর্সসহ কম্বো নিন। বিকাশ বা কার্ডে পেমেন্ট।",
     "dp.pdfs": "{n}টি PDF গাইড", "dp.app": "মোবাইল অ্যাপ", "dp.courseopt": "চাইলে লাইভ কোর্স",
     "dp.from": "শুরু", "dp.view": "বিস্তারিত দেখুন", "dp.back": "সব ডিজিটাল পণ্য",
-    "dp.inside": "যা পাচ্ছেন", "dp.pdfs.h": "PDF গাইড", "dp.app.h": "মোবাইল অ্যাপ",
+    "dp.inside": "যা পাচ্ছেন", "dp.features": "শিশুদের প্রিয় ফিচার", "dp.pdfs.h": "PDF গাইড", "dp.app.h": "মোবাইল অ্যাপ",
     "dp.course.h": "লাইভ কোর্স যোগ করুন", "dp.course.p": "কম্বো নিন আর ইনস্ট্রাক্টরের সাথে অনলাইন লাইভ ক্লাসে যোগ দিন — রেকর্ডিং ও সার্টিফিকেটসহ।",
     "dp.course.link": "কোর্সের পূর্ণ কারিকুলাম দেখুন",
     "dp.weeks": "সপ্তাহ", "dp.hours": "ঘণ্টা লাইভ ক্লাস", "dp.cert": "কোর্স শেষে সার্টিফিকেট",
@@ -212,9 +281,10 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <div class="dp-card-body">
           <p>${esc(k.tagline)}</p>
           <ul class="dp-card-facts">
-            ${k.pdfs.length ? `<li><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>${t("dp.pdfs", { n: digits(k.pdfs.length) })}</li>` : ""}
-            ${k.app.length ? `<li><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</li>` : ""}
-            ${k.course ? `<li><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</li>` : ""}
+            ${(k.cardFacts || []).map(([ic, x]) => `<li><i class="${esc(ic)}" aria-hidden="true"></i>${esc(x)}</li>`).join("")}
+            ${k.cardFacts ? "" : k.pdfs.length ? `<li><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>${t("dp.pdfs", { n: digits(k.pdfs.length) })}</li>` : ""}
+            ${k.cardFacts ? "" : k.app.length ? `<li><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</li>` : ""}
+            ${k.cardFacts ? "" : k.course ? `<li><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</li>` : ""}
           </ul>
           <div class="dp-card-foot">
             <div><small>${t("dp.from")}</small><b>${taka(p.pack.price)}</b><s>${taka(p.pack.originalPrice)}</s></div>
@@ -278,6 +348,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
           ${k.app.length ? `<span><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</span>` : ""}
           ${k.course ? `<span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</span>` : ""}
         </div>
+        ${k.stats ? `<div class="dp-stats">${k.stats.map(([ic, n, x]) => `<div class="dp-stat"><i class="${esc(ic)}" aria-hidden="true"></i><b>${esc(n)}</b><span>${esc(x)}</span></div>`).join("")}</div>` : ""}
       </div>
     </section>
     <section class="section" style="padding-top:48px">
@@ -286,16 +357,19 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
 ${k.pdfs.length || k.app.length ? `
           <div class="tr-panel">
             <h2>${t("dp.inside")}</h2>
-            <h3 class="dp-sub"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> ${t("dp.pdfs.h")}</h3>
-            <ul class="tr-checks">${k.pdfs.map((x) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i>${esc(x)}</li>`).join("")}</ul>
+            ${k.pdfs.length ? `<h3 class="dp-sub"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> ${t("dp.pdfs.h")}</h3>
+            <ul class="tr-checks">${k.pdfs.map((x) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i>${esc(x)}</li>`).join("")}</ul>` : ""}
             <h3 class="dp-sub"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> ${t("dp.app.h")}</h3>
             <div class="dp-app" style="${grad(p)}">
               <span class="dp-app-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
               <div><b>${esc(k.app[0] || "")}</b><p>${esc(k.app[1] || "")}</p></div>
             </div>
+            ${k.features && k.features.length ? `<h3 class="dp-sub"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> ${t("dp.features")}</h3>
+            <div class="dp-features" style="${grad(p)}">${k.features.map(([ic, h, x]) => `<div class="dp-feature"><span><i class="${esc(ic)}" aria-hidden="true"></i></span><div><b>${esc(h)}</b><p>${esc(x)}</p></div></div>`).join("")}</div>` : ""}
           </div>
 ` : ""}
-          <div class="tr-panel${k.course ? "" : " is-hidden"}">
+${k.course && p.course ? `
+          <div class="tr-panel">
             <h2>${t("dp.course.h")}</h2>
             <p class="dp-muted">${t("dp.course.p")}</p>
             <div class="dp-course">
@@ -309,20 +383,21 @@ ${k.pdfs.length || k.app.length ? `
               ${course ? `<a class="tr-link" href="course.html?id=${course.id}">${t("dp.course.link")} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>` : ""}
             </div>
           </div>
+` : ""}
           <div class="tr-panel">
             <h2>${t("dp.for")}</h2>
             <ul class="tr-checks">${k.audience.map((x) => `<li><i class="fa-solid fa-user-check" aria-hidden="true"></i>${esc(x)}</li>`).join("")}</ul>
           </div>
           <div class="tr-panel">
             <h2>${t("dp.how")}</h2>
-            <ol class="dp-steps">${["dp.how1", "dp.how2", "dp.how3"].map((s, i) => `<li><span>${digits(i + 1)}</span>${t(s)}</li>`).join("")}</ol>
+            <ol class="dp-steps">${["dp.how1", "dp.how2", "dp.how3"].map((s, i) => `<li><span>${digits(i + 1)}</span>${s === "dp.how3" && k.how3 ? esc(k.how3) : t(s)}</li>`).join("")}</ol>
           </div>
         </div>
         <aside class="tr-panel tr-buy dp-buy">
           <div class="tr-buy-top">
             <h3 class="dp-buy-h">${t("dp.plan")}</h3>
             <div class="dp-plans" role="radiogroup">
-              ${option("pack", t("dp.pack"), t("dp.pack.sub"), p.pack)}
+              ${option("pack", t("dp.pack"), k.packSub ? esc(k.packSub) : t("dp.pack.sub"), p.pack)}
               ${p.combo ? option("combo", t("dp.combo"), t("dp.combo.sub"), p.combo, `<em class="dp-best">${t("dp.best")}${save > 0 ? " · " + t("dp.save", { amount: taka(save) }) : ""}</em>`) : ""}
             </div>
             <div class="tr-buy-price">
