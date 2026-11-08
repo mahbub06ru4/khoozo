@@ -70,7 +70,7 @@ Sign in as an admin and open `admin.html`:
 - **Items:** choose a category, then enter the text, price, category details and images.
 - **Reviews:** add real customer reviews, with their permission.
 
-Changes appear on the next page load. Items can also be managed in the Admin App, which covers the main fields, price and images.
+Changes appear on the next page load. This is the only place website content is managed; the Admin App is for post moderation only.
 
 ### ⚠️ Checkout before launch
 
@@ -119,7 +119,7 @@ sudo certbot --nginx -d khoozo.com -d www.khoozo.com
 
 Point the `khoozo.com` and `www` DNS records at the droplet, and add both `https://` addresses to **Authorized JavaScript origins** for the Web client in Google Cloud.
 
-**Updating:** `cd /var/www/khoozo_website && sudo git pull`. Content changes (items, prices, images, reviews) need no deploy at all: they are entered in `admin.html` or the Admin App and stored by the backend.
+**Updating:** `cd /var/www/khoozo_website && sudo git pull`. Content changes (items, prices, images, reviews) need no deploy at all: they are entered in `admin.html` and stored by the backend.
 
 **Alternative:** DigitalOcean App Platform → *Static Site* from this repo (free, auto-deploys on push). The `CNAME` file is only used by GitHub Pages.
 
