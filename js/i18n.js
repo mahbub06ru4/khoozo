@@ -15,6 +15,42 @@ const KHOOZO_I18N_DICT = {
     "navmega.it.title": "IT & Software Development",
     "navmega.training.title": "IT & Freelancing Training",
     "navbar.shop": "Shop",
+    "a11y.skip": "Skip to content",
+    "a11y.logo": "Khoozo logo",
+    "a11y.nav": "Primary navigation",
+    "a11y.fav": "Favorites",
+    "a11y.cart": "View cart",
+    "a11y.login": "Log in",
+    "a11y.menu.open": "Open menu",
+    "a11y.menu.close": "Close menu",
+    "a11y.theme.dark": "Switch to dark mode",
+    "a11y.theme.light": "Switch to light mode",
+    "a11y.lang": "Language",
+    "a11y.wa": "Chat on WhatsApp",
+    "a11y.msgr": "Chat on Messenger",
+    "a11y.call": "Call us",
+    "a11y.email": "Email us",
+    "a11y.top": "Back to top",
+    "a11y.play": "Get Khoozo on Google Play",
+    "a11y.promo": "Khoozo app",
+    "a11y.promo.prev": "Previous banner",
+    "a11y.promo.next": "Next banner",
+    "a11y.promo.dot": "Show banner {n}",
+    "a11y.review.prev": "Previous review",
+    "a11y.review.next": "Next review",
+    "promo.alt.1": "Khoozo app — post a task, get offers nearby",
+    "promo.alt.2": "Khoozo app — earn by helping people nearby",
+    "promo.alt.3": "Khoozo app — every post reviewed, numbers stay private",
+    "promo.alt.4": "Khoozo app — travel, real estate and more in one app",
+    "promo.alt.5": "Khoozo app — Bangla or English, light or dark",
+    "contact.err.name": "Please enter your name.",
+    "contact.err.email": "Please enter a valid email.",
+    "contact.err.service": "Please choose a topic.",
+    "contact.err.message": "Please write a short message.",
+    "contact.status": "Opening your email app… If nothing happens, email us directly at support@khoozo.com.",
+    "app.eyebrow": "Khoozo App",
+    "app.note": "Launching soon on the Play Store — the link above will go live with our first public release.",
+    "dt.eyebrow.it": "Khoozo IT",
     "navbar.app": "Khoozo App",
     "gate.app.kicker": "I need help, or I want to earn",
     "gate.app.p": "Post what you need, get offers from people nearby and hire the one you trust — or send offers and earn by helping others.",
@@ -33,15 +69,6 @@ const KHOOZO_I18N_DICT = {
     "gate.tile.app": "Practice apps",
     "gate.tile.sw": "Software",
     "gate.tile.course": "Live courses",
-    "how.h2": "How the Khoozo App works",
-    "how.p": "Three simple steps, whether you need a hand or want to earn by helping.",
-    "how.1.t": "Post what you need",
-    "how.1.d": "Pick a category, set your area and budget, and choose how long offers stay open. Our team reviews it before it goes live.",
-    "how.2.t": "Get offers nearby",
-    "how.2.d": "People near you send their price and a message. Compare offers, ratings and reviews side by side.",
-    "how.3.t": "Hire safely, then rate",
-    "how.3.d": "Accept with one tap. A safety checklist runs before contact details are shared, and both sides rate each other afterwards.",
-    "how.cta": "See all app features",
     "contact.opt.app": "Khoozo App",
     "contact.opt.shop": "Khoozo Shop / a digital product",
     "contact.opt.other": "Something else",
@@ -180,7 +207,7 @@ const KHOOZO_I18N_DICT = {
     "about.why.5": "Phone numbers stay private until you accept an offer",
     "about.why.6": "Simple, easy-to-use ordering",
     "about.biz.h": "Business information",
-    "about.biz.name": "Business name", "about.biz.type": "Business type", "about.biz.typeval": "E-commerce — digital products and online marketplace",
+    "about.biz.name": "Business name",
     "about.biz.license": "Trade license no.", "about.biz.phone": "Phone / WhatsApp", "about.biz.email": "Email", "about.biz.web": "Website",
     "about.biz.promise": "Trust, speed and quality — your satisfaction is our priority.",
 
@@ -447,6 +474,42 @@ const KHOOZO_I18N_DICT = {
     "navmega.it.title": "আইটি ও সফটওয়্যার ডেভেলপমেন্ট",
     "navmega.training.title": "আইটি ও ফ্রিল্যান্সিং ট্রেনিং",
     "navbar.shop": "শপ",
+    "a11y.skip": "মূল অংশে যান",
+    "a11y.logo": "খুঁজো লোগো",
+    "a11y.nav": "প্রধান মেনু",
+    "a11y.fav": "পছন্দের তালিকা",
+    "a11y.cart": "কার্ট দেখুন",
+    "a11y.login": "লগ ইন",
+    "a11y.menu.open": "মেনু খুলুন",
+    "a11y.menu.close": "মেনু বন্ধ করুন",
+    "a11y.theme.dark": "ডার্ক মোড চালু করুন",
+    "a11y.theme.light": "লাইট মোড চালু করুন",
+    "a11y.lang": "ভাষা",
+    "a11y.wa": "হোয়াটসঅ্যাপে কথা বলুন",
+    "a11y.msgr": "মেসেঞ্জারে কথা বলুন",
+    "a11y.call": "কল করুন",
+    "a11y.email": "ইমেইল করুন",
+    "a11y.top": "উপরে যান",
+    "a11y.play": "গুগল প্লে থেকে খুঁজো নিন",
+    "a11y.promo": "খুঁজো অ্যাপ",
+    "a11y.promo.prev": "আগের ব্যানার",
+    "a11y.promo.next": "পরের ব্যানার",
+    "a11y.promo.dot": "ব্যানার {n} দেখুন",
+    "a11y.review.prev": "আগের রিভিউ",
+    "a11y.review.next": "পরের রিভিউ",
+    "promo.alt.1": "খুঁজো অ্যাপ — কাজ পোস্ট করুন, কাছের অফার নিন",
+    "promo.alt.2": "খুঁজো অ্যাপ — কাজ করে দিন, আয় করুন",
+    "promo.alt.3": "খুঁজো অ্যাপ — প্রতিটি পোস্ট যাচাই, নম্বর থাকে গোপন",
+    "promo.alt.4": "খুঁজো অ্যাপ — ট্রাভেল, রিয়েল এস্টেট ও আরও, এক অ্যাপে",
+    "promo.alt.5": "খুঁজো অ্যাপ — বাংলা বা ইংরেজি, লাইট বা ডার্ক",
+    "contact.err.name": "অনুগ্রহ করে আপনার নাম লিখুন।",
+    "contact.err.email": "অনুগ্রহ করে সঠিক ইমেইল দিন।",
+    "contact.err.service": "অনুগ্রহ করে একটি বিষয় বেছে নিন।",
+    "contact.err.message": "অনুগ্রহ করে ছোট একটি বার্তা লিখুন।",
+    "contact.status": "আপনার ইমেইল অ্যাপ খুলছে… কিছু না হলে সরাসরি support@khoozo.com ঠিকানায় ইমেইল করুন।",
+    "app.eyebrow": "খুঁজো অ্যাপ",
+    "app.note": "শীঘ্রই প্লে স্টোরে আসছে — প্রথম পাবলিক রিলিজের সাথে ওপরের লিংকটি চালু হবে।",
+    "dt.eyebrow.it": "খুঁজো আইটি",
     "navbar.app": "খুঁজো অ্যাপ",
     "gate.app.kicker": "আমার সাহায্য দরকার, বা আমি আয় করতে চাই",
     "gate.app.p": "কী দরকার পোস্ট করুন, কাছের মানুষের অফার নিন, ভরসার জনকে বেছে নিন — অথবা অফার পাঠিয়ে অন্যকে সাহায্য করে আয় করুন।",
@@ -465,15 +528,6 @@ const KHOOZO_I18N_DICT = {
     "gate.tile.app": "প্র্যাকটিস অ্যাপ",
     "gate.tile.sw": "সফটওয়্যার",
     "gate.tile.course": "লাইভ কোর্স",
-    "how.h2": "খুঁজো অ্যাপ যেভাবে কাজ করে",
-    "how.p": "সাহায্য দরকার হোক বা সাহায্য করে আয় করতে চান — মাত্র তিনটি সহজ ধাপ।",
-    "how.1.t": "কী দরকার পোস্ট করুন",
-    "how.1.d": "ক্যাটাগরি বেছে নিন, এলাকা ও বাজেট দিন, অফার কতক্ষণ খোলা থাকবে ঠিক করুন। লাইভ হওয়ার আগে আমাদের টিম যাচাই করে।",
-    "how.2.t": "কাছ থেকে অফার নিন",
-    "how.2.d": "আশেপাশের মানুষ দাম ও বার্তা পাঠাবে। অফার, রেটিং ও রিভিউ পাশাপাশি তুলনা করুন।",
-    "how.3.t": "নিরাপদে হায়ার করুন, তারপর রেটিং দিন",
-    "how.3.d": "এক ট্যাপে গ্রহণ করুন। যোগাযোগের তথ্য দেওয়ার আগে নিরাপত্তা চেকলিস্ট চলে, আর কাজ শেষে দুই পক্ষই রেটিং দেয়।",
-    "how.cta": "অ্যাপের সব ফিচার দেখুন",
     "contact.opt.app": "খুঁজো অ্যাপ",
     "contact.opt.shop": "খুঁজো শপ / কোনো ডিজিটাল পণ্য",
     "contact.opt.other": "অন্য কিছু",
@@ -612,7 +666,7 @@ const KHOOZO_I18N_DICT = {
     "about.why.5": "অফার গ্রহণের আগ পর্যন্ত ফোন নম্বর গোপন থাকে",
     "about.why.6": "সহজ ও ব্যবহারবান্ধব অর্ডার ব্যবস্থা",
     "about.biz.h": "ব্যবসায়িক তথ্য",
-    "about.biz.name": "ব্যবসার নাম", "about.biz.type": "ব্যবসার ধরন", "about.biz.typeval": "ই-কমার্স — ডিজিটাল পণ্য ও অনলাইন মার্কেটপ্লেস",
+    "about.biz.name": "ব্যবসার নাম",
     "about.biz.license": "ট্রেড লাইসেন্স নং", "about.biz.phone": "ফোন / হোয়াটসঅ্যাপ", "about.biz.email": "ইমেইল", "about.biz.web": "ওয়েবসাইট",
     "about.biz.promise": "আস্থা, গতি ও মান — গ্রাহকের সন্তুষ্টিই আমাদের অগ্রাধিকার।",
 
@@ -889,6 +943,15 @@ const KHOOZO_I18N_DICT = {
       const key = el.getAttribute("data-i18n-placeholder");
       if (dict[key] != null) el.setAttribute("placeholder", dict[key]);
     });
+    /* Screen-reader labels and image descriptions follow the language too. */
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-aria");
+      if (dict[key] != null) el.setAttribute("aria-label", dict[key]);
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-alt");
+      if (dict[key] != null) el.setAttribute("alt", dict[key]);
+    });
 
     // Hero typing-text words rotate through a localized list too.
     const typingEl = document.getElementById("typingText");
@@ -903,6 +966,7 @@ const KHOOZO_I18N_DICT = {
 
     window.khoozoCurrentLang = lang;
     if (window.khoozoOnLangChange) window.khoozoOnLangChange();
+    if (window.khoozoRefreshLabels) window.khoozoRefreshLabels();
 
     document.documentElement.setAttribute("lang", lang === "bn" ? "bn" : "en");
     document.documentElement.classList.toggle("lang-bn", lang === "bn");
@@ -916,6 +980,14 @@ const KHOOZO_I18N_DICT = {
     localStorage.setItem(KEY, lang);
   }
   window.khoozoApplyLang = applyLang;
+  /* Look up a string in the current language, for text set from JS. */
+  window.khoozoT = function (key, fallback, vars) {
+    const lang = window.khoozoCurrentLang || "en";
+    let text = (KHOOZO_I18N_DICT[lang] && KHOOZO_I18N_DICT[lang][key]) || KHOOZO_I18N_DICT.en[key] || fallback;
+    const digits = function (v) { return lang === "bn" ? String(v).replace(/\d/g, function (d) { return "০১২৩৪৫৬৭৮৯"[d]; }) : String(v); };
+    if (vars) Object.keys(vars).forEach(function (k) { text = text.replace("{" + k + "}", digits(vars[k])); });
+    return text;
+  };
 
   document.addEventListener("DOMContentLoaded", function () {
     const saved = localStorage.getItem(KEY) === "bn" ? "bn" : "en";

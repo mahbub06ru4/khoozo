@@ -50,6 +50,9 @@ sections.forEach(s => spy.observe(s));
 /* ---------------------------------------------------------------
    4. Mobile burger menu
    --------------------------------------------------------------- */
+/* Strings this file sets itself, in the current language (js/i18n.js). */
+const tr = (key, fallback, vars) => (window.khoozoT ? window.khoozoT(key, fallback, vars) : fallback);
+
 const burger = document.getElementById("burger");
 const mainNav = document.getElementById("mainNav");
 
@@ -57,13 +60,13 @@ function closeMobileNav() {
   mainNav.classList.remove("is-open");
   burger.classList.remove("is-open");
   burger.setAttribute("aria-expanded", "false");
-  burger.setAttribute("aria-label", "Open menu");
+  burger.setAttribute("aria-label", tr("a11y.menu.open", "Open menu"));
 }
 burger.addEventListener("click", () => {
   const open = mainNav.classList.toggle("is-open");
   burger.classList.toggle("is-open", open);
   burger.setAttribute("aria-expanded", String(open));
-  burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  burger.setAttribute("aria-label", open ? tr("a11y.menu.close", "Close menu") : tr("a11y.menu.open", "Open menu"));
 });
 mainNav.addEventListener("click", e => { if (e.target.tagName === "A") closeMobileNav(); });
 document.addEventListener("keydown", e => {
@@ -86,7 +89,7 @@ function applyTheme(theme) {
   root.setAttribute("data-theme", theme);
   themeToggles.forEach(btn => {
     btn.setAttribute("aria-pressed", String(theme === "dark"));
-    btn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    btn.setAttribute("aria-label", theme === "dark" ? tr("a11y.theme.light", "Switch to light mode") : tr("a11y.theme.dark", "Switch to dark mode"));
   });
 }
 
@@ -94,6 +97,13 @@ function applyTheme(theme) {
    in-page toggle (saved below) switches to dark. */
 const savedTheme = localStorage.getItem(THEME_KEY);
 applyTheme(savedTheme === "dark" ? "dark" : "light");
+
+/* js/i18n.js calls this after a language switch so state-dependent labels follow. */
+window.khoozoRefreshLabels = () => {
+  applyTheme(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+  burger.setAttribute("aria-label", mainNav.classList.contains("is-open") ? tr("a11y.menu.close", "Close menu") : tr("a11y.menu.open", "Open menu"));
+  document.querySelectorAll(".promo-dot").forEach((d, i) => d.setAttribute("aria-label", tr("a11y.promo.dot", "Show banner {n}", { n: i + 1 })));
+};
 
 themeToggles.forEach(btn => btn.addEventListener("click", () => {
   const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -169,7 +179,7 @@ form?.addEventListener("submit", e => {
   const body = encodeURIComponent(bodyLines.join("\n"));
 
   window.location.href = `mailto:support@khoozo.com?subject=${subject}&body=${body}`;
-  statusEl.textContent = "Opening your email app… If nothing happens, email us directly at support@khoozo.com.";
+  statusEl.textContent = tr("contact.status", "Opening your email app… If nothing happens, email us directly at support@khoozo.com.");
   form.reset();
 });
 
@@ -189,7 +199,7 @@ if (promo) {
   let current = 0;
   let timer = null;
 
-  dotsWrap.innerHTML = slides.map((_, i) => `<button type="button" class="promo-dot${i ? "" : " is-active"}" aria-label="Show banner ${i + 1}"></button>`).join("");
+  dotsWrap.innerHTML = slides.map((_, i) => `<button type="button" class="promo-dot${i ? "" : " is-active"}" aria-label="${tr("a11y.promo.dot", "Show banner {n}", { n: i + 1 })}"></button>`).join("");
   const dots = [...dotsWrap.children];
 
   /* Banner text is baked into the images, so swap to the current language. */

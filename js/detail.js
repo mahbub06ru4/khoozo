@@ -244,7 +244,7 @@
         <div class="dt-hero-head">
           <span class="dt-hero-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
           <div>
-            <p class="eyebrow">Khoozo IT</p>
+            <p class="eyebrow">${p.showcase ? t("navbar.app", "Khoozo App") : t("dt.eyebrow.it", "Khoozo IT")}</p>
             <h1>${esc(title)}</h1>
           </div>
           ${window.KhoozoFav ? window.KhoozoFav.button("project:" + id, "dp-fav-inline") : ""}
