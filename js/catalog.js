@@ -85,6 +85,7 @@
       featureKeys: (d.features_en || []).map((_, i) => key("f" + i)),
       tech: d.tech || [],
       gallery: row.slug,
+      price: row.price, originalPrice: row.originalPrice,
     };
   }
 

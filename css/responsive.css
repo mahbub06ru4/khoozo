@@ -121,3 +121,9 @@
   .dp-card-foot { flex-wrap: wrap; align-items: center; }
   .dp-card-actions { width: 100%; justify-content: flex-start; }
 }
+
+/* Small phones: the header slogan wraps to two lines so the brand never
+   pushes into the cart / account icons. */
+@media (max-width: 480px) {
+  .site-header .brand-name em { white-space: normal; max-width: 15ch; line-height: 1.3; }
+}

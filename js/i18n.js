@@ -15,6 +15,7 @@ const KHOOZO_I18N_DICT = {
     "navmega.it.title": "IT & Software Development",
     "navmega.training.title": "IT & Freelancing Training",
     "navbar.shop": "Shop",
+    "contact.opt.custom": "Custom software for my business",
     "a11y.skip": "Skip to content",
     "a11y.logo": "Khoozo logo",
     "a11y.nav": "Primary navigation",
@@ -96,7 +97,7 @@ const KHOOZO_I18N_DICT = {
     "navbar.it": "IT",
     "navbar.realestate": "Real Estate",
     "navbar.travel": "Travel",
-    "brand.tagline": "For Your Each Solution",
+    "brand.tagline": "One Place for Every Solution",
 
     "hero.eyebrow": "Dhaka, Bangladesh · Khoozo App & Digital Shop",
     "hero.h1": "Get help nearby. Learn and grow online.",
@@ -189,7 +190,7 @@ const KHOOZO_I18N_DICT = {
     "app.h.5": "One account: post a task and offer help",
 
     "about.eyebrow": "About Khoozo",
-    "about.h2": "For Your Each Solution",
+    "about.h2": "One Place for Every Solution",
     "about.p1": "Khoozo is a Dhaka-based team building the Khoozo App — a local marketplace where people post tasks and get offers from others nearby — and the Khoozo Shop, where we sell practical digital products and software.",
     "about.p2": "Both work the same way: clear prices, honest descriptions, safe payment and a real person to talk to on WhatsApp whenever you need help.",
     "about.cta": "Talk to Us",
@@ -474,6 +475,7 @@ const KHOOZO_I18N_DICT = {
     "navmega.it.title": "আইটি ও সফটওয়্যার ডেভেলপমেন্ট",
     "navmega.training.title": "আইটি ও ফ্রিল্যান্সিং ট্রেনিং",
     "navbar.shop": "শপ",
+    "contact.opt.custom": "আমার ব্যবসার জন্য কাস্টম সফটওয়্যার",
     "a11y.skip": "মূল অংশে যান",
     "a11y.logo": "খুঁজো লোগো",
     "a11y.nav": "প্রধান মেনু",
@@ -555,7 +557,7 @@ const KHOOZO_I18N_DICT = {
     "navbar.realestate": "রিয়েল এস্টেট",
     "navbar.travel": "ট্রাভেল",
     "brand.name": "খুঁজো",
-    "brand.tagline": "আপনার প্রতিটি সমাধানের জন্য",
+    "brand.tagline": "সব সমাধান, এক জায়গায়",
 
     "hero.eyebrow": "ঢাকা, বাংলাদেশ · খুঁজো অ্যাপ ও ডিজিটাল শপ",
     "hero.h1": "কাছেই সাহায্য নিন। অনলাইনে শিখুন ও এগিয়ে যান।",
@@ -648,7 +650,7 @@ const KHOOZO_I18N_DICT = {
     "app.h.5": "একটি অ্যাকাউন্টে কাজ পোস্ট ও সাহায্যের প্রস্তাব দুটোই",
 
     "about.eyebrow": "খুঁজো সম্পর্কে",
-    "about.h2": "আপনার প্রতিটি সমাধানের জন্য",
+    "about.h2": "সব সমাধান, এক জায়গায়",
     "about.p1": "খুঁজো ঢাকাভিত্তিক একটি টিম। আমরা তৈরি করছি খুঁজো অ্যাপ — একটি লোকাল মার্কেটপ্লেস যেখানে মানুষ কাজ পোস্ট করে আশেপাশের মানুষের কাছ থেকে অফার পায় — আর খুঁজো শপ, যেখানে আমরা কাজের ডিজিটাল পণ্য ও সফটওয়্যার বিক্রি করি।",
     "about.p2": "দুটোই একই নিয়মে চলে: স্পষ্ট দাম, সৎ বিবরণ, নিরাপদ পেমেন্ট, আর দরকার হলেই হোয়াটসঅ্যাপে একজন সত্যিকারের মানুষের সাথে কথা বলার সুযোগ।",
     "about.cta": "আমাদের সাথে কথা বলুন",

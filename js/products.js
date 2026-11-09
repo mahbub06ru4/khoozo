@@ -269,8 +269,15 @@ const KHOOZO_PRODUCTS_I18N = {
   en: {
     "navbar.products": "Digital Products",
     "dp.eyebrow": "Khoozo Digital Products",
-    "dp.h": "Learn at your own pace — guides, apps and courses",
-    "dp.p": "Download practical PDF guides and a mobile practice app, or take the combo with a live course. Pay with bKash or card.",
+    "dp.h": "Guides, apps, software and courses",
+    "dp.p": "Download practical PDF guides and practice apps, get ready-made software for your business, or take a combo with a live course. Pay with bKash or card.",
+    "dp.tab.all": "All", "dp.tab.products": "Digital products", "dp.tab.software": "Software",
+    "dp.software": "Software", "dp.askprice": "Ask for price", "dp.freeapp": "Free app", "dp.price": "Price",
+    "dp.custom.badge": "Custom software", "dp.custom.h": "Need software made for you?",
+    "dp.custom.p": "We build any software, or customise our ready-made software to fit your needs and your business.",
+    "dp.custom.pt1": "Web, mobile and desktop apps", "dp.custom.pt2": "Changes to fit how you work", "dp.custom.pt3": "Free consultation and quote",
+    "dp.custom.wa": "Chat on WhatsApp", "dp.custom.quote": "Get a free quote",
+    "dp.custom.msg": "Hi Khoozo, I need custom software for my business.",
     "dp.pdfs": "{n} PDF guides", "dp.app": "Mobile app", "dp.courseopt": "Optional live course",
     "dp.from": "From", "dp.view": "View details", "dp.back": "All digital products",
     "dp.inside": "What's inside", "dp.features": "Features you'll love", "dp.pdfs.h": "PDF guides", "dp.app.h": "Mobile app",
@@ -292,8 +299,15 @@ const KHOOZO_PRODUCTS_I18N = {
   bn: {
     "navbar.products": "ডিজিটাল পণ্য",
     "dp.eyebrow": "খুঁজো ডিজিটাল পণ্য",
-    "dp.h": "নিজের গতিতে শিখুন — গাইড, অ্যাপ ও কোর্স",
-    "dp.p": "ব্যবহারিক PDF গাইড আর মোবাইল প্র্যাকটিস অ্যাপ ডাউনলোড করুন, অথবা লাইভ কোর্সসহ কম্বো নিন। বিকাশ বা কার্ডে পেমেন্ট।",
+    "dp.h": "গাইড, অ্যাপ, সফটওয়্যার ও কোর্স",
+    "dp.p": "কাজের PDF গাইড ও প্র্যাকটিস অ্যাপ ডাউনলোড করুন, ব্যবসার জন্য রেডিমেড সফটওয়্যার নিন, অথবা লাইভ কোর্সসহ কম্বো নিন। বিকাশ বা কার্ডে পেমেন্ট।",
+    "dp.tab.all": "সব", "dp.tab.products": "ডিজিটাল পণ্য", "dp.tab.software": "সফটওয়্যার",
+    "dp.software": "সফটওয়্যার", "dp.askprice": "দাম জানতে যোগাযোগ করুন", "dp.freeapp": "ফ্রি অ্যাপ", "dp.price": "দাম",
+    "dp.custom.badge": "কাস্টম সফটওয়্যার", "dp.custom.h": "আপনার জন্য আলাদা সফটওয়্যার দরকার?",
+    "dp.custom.p": "আমরা যেকোনো সফটওয়্যার তৈরি করি, অথবা আপনার প্রয়োজন ও ব্যবসা অনুযায়ী আমাদের রেডিমেড সফটওয়্যার কাস্টমাইজ করে দিই।",
+    "dp.custom.pt1": "ওয়েব, মোবাইল ও ডেস্কটপ অ্যাপ", "dp.custom.pt2": "আপনার কাজের ধরন অনুযায়ী পরিবর্তন", "dp.custom.pt3": "ফ্রি পরামর্শ ও কোটেশন",
+    "dp.custom.wa": "হোয়াটসঅ্যাপে কথা বলুন", "dp.custom.quote": "ফ্রি কোটেশন নিন",
+    "dp.custom.msg": "হ্যালো খুঁজো, আমার ব্যবসার জন্য কাস্টম সফটওয়্যার দরকার।",
     "dp.pdfs": "{n}টি PDF গাইড", "dp.app": "মোবাইল অ্যাপ", "dp.courseopt": "চাইলে লাইভ কোর্স",
     "dp.from": "শুরু", "dp.view": "বিস্তারিত দেখুন", "dp.back": "সব ডিজিটাল পণ্য",
     "dp.inside": "যা পাচ্ছেন", "dp.features": "যে ফিচারগুলো আপনার ভালো লাগবে", "dp.pdfs.h": "PDF গাইড", "dp.app.h": "মোবাইল অ্যাপ",
@@ -366,12 +380,100 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       </a>`;
   }
 
+  /* Software in the Shop: every IT project (KHOOZO_IT_PROJECTS from
+     js/projects-data.js, or the admin catalog's IT_PROJECT rows) gets a card
+     that opens its project page. A price shows when the admin sets one. */
+  const SOFTWARE_COLORS = [["#0F172A", "#1E40AF"], ["#7A1012", "#C01417"], ["#064E3B", "#0E7490"], ["#4C1D95", "#9D174D"], ["#1E293B", "#B45309"]];
+  const it = (key, fallback) => {
+    const dict = typeof KHOOZO_I18N_DICT !== "undefined" ? KHOOZO_I18N_DICT : null;
+    return (dict && ((dict[lang()] && dict[lang()][key]) || (dict.en && dict.en[key]))) || fallback || "";
+  };
+
+  function softwareCard([id, p], i) {
+    const [c1, c2] = SOFTWARE_COLORS[i % SOFTWARE_COLORS.length];
+    const title = it(p.titleKey, id);
+    const blurb = it(p.cardKey || p.descKey, "");
+    const price = p.playStore ? `<b class="dp-card-free">${t("dp.freeapp")}</b>`
+      : p.price != null ? `<small>${t("dp.price")}</small><b>${taka(p.price)}</b>${p.originalPrice > p.price ? `<s>${taka(p.originalPrice)}</s>` : ""}`
+      : `<b class="dp-card-ask">${t("dp.askprice")}</b>`;
+    return `
+      <a class="dp-card dp-card-software" href="project.html?id=${encodeURIComponent(id)}" style="--dp1:${c1};--dp2:${c2}">
+        <div class="dp-card-head">
+          <span class="dp-card-icon"><i class="${esc(p.icon || "fa-solid fa-laptop-code")}" aria-hidden="true"></i></span>
+          ${favBtn("project:" + id)}
+          <span class="dp-card-off">${t("dp.software")}</span>
+          <h3>${esc(title)}</h3>
+        </div>
+        <div class="dp-card-body">
+          <p>${esc(blurb)}</p>
+          <ul class="dp-card-facts">${(p.tech || []).slice(0, 3).map((x) =>
+            `<li><i class="fa-solid ${/flutter|app/i.test(x) ? "fa-mobile-screen-button" : "fa-code"}" aria-hidden="true"></i>${esc(x)}</li>`).join("")}</ul>
+          <div class="dp-card-foot">
+            <div>${price}</div>
+            <div class="dp-card-actions"><span class="tr-link">${t("dp.view")} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
+          </div>
+        </div>
+      </a>`;
+  }
+
+  /* Closing card of the software list: we build or customise software on request. */
+  function customCard() {
+    const wa = `https://wa.me/8801818120900?text=${encodeURIComponent(t("dp.custom.msg"))}`;
+    return `
+      <div class="dp-card dp-card-custom">
+        <div class="dp-card-head">
+          <span class="dp-card-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span>
+          <span class="dp-card-off">${t("dp.custom.badge")}</span>
+          <h3>${t("dp.custom.h")}</h3>
+        </div>
+        <div class="dp-card-body">
+          <p>${t("dp.custom.p")}</p>
+          <ul class="dp-card-facts">
+            <li><i class="fa-solid fa-laptop-code" aria-hidden="true"></i>${t("dp.custom.pt1")}</li>
+            <li><i class="fa-solid fa-sliders" aria-hidden="true"></i>${t("dp.custom.pt2")}</li>
+            <li><i class="fa-solid fa-comments" aria-hidden="true"></i>${t("dp.custom.pt3")}</li>
+          </ul>
+          <div class="dp-custom-actions">
+            <a class="btn btn-primary btn-sm" href="${wa}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> ${t("dp.custom.wa")}</a>
+            <a class="btn btn-outline btn-sm" href="#contact" data-custom-quote>${t("dp.custom.quote")}</a>
+          </div>
+        </div>
+      </div>`;
+  }
+
   /* ---------------- index.html#products ---------------- */
+  let shopTab = "all";
   function renderGrid() {
     const grid = document.getElementById("productGrid");
     if (!grid) return;
-    grid.innerHTML = KHOOZO_PRODUCTS.map(card).join("");
+    const software = typeof KHOOZO_IT_PROJECTS !== "undefined" ? Object.entries(KHOOZO_IT_PROJECTS) : [];
+    let tabs = document.getElementById("shopTabs");
+    if (!tabs && software.length) {
+      tabs = document.createElement("div");
+      tabs.id = "shopTabs";
+      tabs.className = "dp-tabs";
+      tabs.setAttribute("role", "tablist");
+      grid.before(tabs);
+      tabs.addEventListener("click", (e) => {
+        const b = e.target.closest("[data-shop-tab]");
+        if (!b) return;
+        shopTab = b.getAttribute("data-shop-tab");
+        renderGrid();
+      });
+    }
+    if (tabs) {
+      tabs.innerHTML = [["all", KHOOZO_PRODUCTS.length + software.length], ["products", KHOOZO_PRODUCTS.length], ["software", software.length]]
+        .map(([id, n]) => `<button type="button" role="tab" class="dp-tab${shopTab === id ? " is-active" : ""}" aria-selected="${shopTab === id}" data-shop-tab="${id}">${t("dp.tab." + id)} <span>${digits(n)}</span></button>`).join("");
+    }
+    grid.innerHTML = (shopTab !== "software" ? KHOOZO_PRODUCTS.map(card).join("") : "")
+      + (shopTab !== "products" ? software.map(softwareCard).join("") + customCard() : "");
+    /* "Get a free quote" pre-selects Custom software in the contact form. */
+    grid.querySelectorAll("[data-custom-quote]").forEach((a) => a.addEventListener("click", () => {
+      const select = document.getElementById("f-service");
+      if (select) { select.value = "Custom software"; select.dispatchEvent(new Event("change")); }
+    }));
     if (window.KhoozoCart) window.KhoozoCart.wireAddButtons(grid);
+    if (window.KhoozoFav) window.KhoozoFav.sync();
   }
 
   /* ---------------- product.html ---------------- */
