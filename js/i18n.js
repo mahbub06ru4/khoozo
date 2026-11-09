@@ -189,7 +189,7 @@ const KHOOZO_I18N_DICT = {
     "app.h.5": "One account: post a task and offer help",
 
     "about.eyebrow": "About Khoozo",
-    "about.h2": "Built in Dhaka to make everyday life easier.",
+    "about.h2": "For Your Each Solution",
     "about.p1": "Khoozo is a Dhaka-based team building the Khoozo App — a local marketplace where people post tasks and get offers from others nearby — and the Khoozo Shop, where we sell practical digital products and software.",
     "about.p2": "Both work the same way: clear prices, honest descriptions, safe payment and a real person to talk to on WhatsApp whenever you need help.",
     "about.cta": "Talk to Us",
@@ -648,7 +648,7 @@ const KHOOZO_I18N_DICT = {
     "app.h.5": "একটি অ্যাকাউন্টে কাজ পোস্ট ও সাহায্যের প্রস্তাব দুটোই",
 
     "about.eyebrow": "খুঁজো সম্পর্কে",
-    "about.h2": "দৈনন্দিন জীবন সহজ করতে, ঢাকায় তৈরি।",
+    "about.h2": "আপনার প্রতিটি সমাধানের জন্য",
     "about.p1": "খুঁজো ঢাকাভিত্তিক একটি টিম। আমরা তৈরি করছি খুঁজো অ্যাপ — একটি লোকাল মার্কেটপ্লেস যেখানে মানুষ কাজ পোস্ট করে আশেপাশের মানুষের কাছ থেকে অফার পায় — আর খুঁজো শপ, যেখানে আমরা কাজের ডিজিটাল পণ্য ও সফটওয়্যার বিক্রি করি।",
     "about.p2": "দুটোই একই নিয়মে চলে: স্পষ্ট দাম, সৎ বিবরণ, নিরাপদ পেমেন্ট, আর দরকার হলেই হোয়াটসঅ্যাপে একজন সত্যিকারের মানুষের সাথে কথা বলার সুযোগ।",
     "about.cta": "আমাদের সাথে কথা বলুন",
