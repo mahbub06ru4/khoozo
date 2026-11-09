@@ -1063,3 +1063,71 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
 .about-promise { margin: 16px 0 0; padding: 12px 14px; border-radius: 12px; background: color-mix(in srgb, var(--red) 8%, transparent); color: var(--ink); font-weight: 600; font-size: .92rem; }
 .about-promise i { color: var(--red); margin-right: 4px; }
 @media (max-width: 860px) { .about-extra { grid-template-columns: 1fr; } }
+
+/* ================================================================
+   HOME: two clear choices (Khoozo App / Khoozo Shop) + "How it works"
+   ================================================================ */
+.hero-gates { padding: 48px 0 72px; }
+.gates-head { max-width: 760px; margin: 0 auto 36px; text-align: center; position: relative; z-index: 1; }
+.gates-head h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 700; }
+.gates-head .lede { margin: 16px auto 0; max-width: 60ch; font-size: 1.05rem; }
+.gate-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.gate {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 10px;
+  min-height: 420px; border-radius: var(--radius-lg); border: 1px solid var(--border);
+  background: var(--surface); box-shadow: var(--shadow-md);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.gate:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.gate-app { background: radial-gradient(circle at 100% 0%, rgba(158,27,27,.10), transparent 55%), var(--surface); }
+.gate-shop { background: radial-gradient(circle at 100% 0%, rgba(30,41,59,.10), transparent 55%), var(--surface); }
+.gate-body { min-width: 0; padding: 30px 8px 30px 30px; display: flex; flex-direction: column; }
+.gate-icon {
+  width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 1.3rem; color: #fff;
+  background: linear-gradient(135deg, var(--red), var(--orange)); box-shadow: 0 10px 22px rgba(158,27,27,.25);
+}
+.gate-shop .gate-icon { background: linear-gradient(135deg, var(--navy), var(--navy-deep)); box-shadow: 0 10px 22px rgba(15,23,42,.25); }
+.gate-kicker { margin: 16px 0 4px; font-family: var(--font-mono); font-size: .68rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--orange-deep); }
+.gate h2 { font-size: 1.75rem; margin-bottom: 8px; }
+.gate-body > p { font-size: .95rem; }
+.gate-points { display: grid; gap: 8px; margin: 16px 0 22px; }
+.gate-points li { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; color: var(--ink); }
+.gate-points i { width: 18px; color: var(--red); }
+[data-theme="dark"] .gate-points i { color: var(--orange); }
+.gate-actions { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.gate-actions .btn { padding: 12px 20px; }
+.gate-media { position: relative; }
+.gate-phone {
+  position: absolute; right: 16px; top: 36px; width: 138px; aspect-ratio: 720 / 1560; object-fit: cover; object-position: top;
+  border-radius: 26px; border: 6px solid #0b0d12; background: #0b0d12; box-shadow: var(--shadow-lg); transform: rotate(4deg);
+}
+.gate-phone-back { right: 82px; top: 76px; width: 112px; transform: rotate(-7deg); opacity: .95; }
+.gate-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: center; padding: 30px 22px 30px 0; }
+.gate-tiles span {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center;
+  aspect-ratio: 1; border-radius: 18px; background: var(--tint); border: 1px solid var(--border); color: var(--ink);
+}
+.gate-tiles i { font-size: 1.6rem; color: var(--navy); }
+[data-theme="dark"] .gate-tiles i { color: var(--orange); }
+.gate-tiles b { font-size: .8rem; font-weight: 700; }
+
+.section-head-center { margin-left: auto; margin-right: auto; text-align: center; }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.how-cta { text-align: center; }
+
+@media (max-width: 980px) {
+  .gate-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .hero-gates { padding: 28px 0 52px; }
+  .gate { grid-template-columns: 1fr; min-height: 0; }
+  .gate-body { padding: 24px 22px 8px; }
+  .gate-media { height: 250px; }
+  .gate-phone { right: 50%; transform: translateX(62%) rotate(4deg); top: 10px; width: 130px; }
+  .gate-phone-back { right: 50%; transform: translateX(-18%) rotate(-7deg); top: 34px; width: 116px; }
+  .gate-tiles { padding: 8px 22px 24px; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .gate-tiles span { aspect-ratio: auto; padding: 12px 4px; }
+  .gate-tiles i { font-size: 1.2rem; }
+  .gate-tiles b { font-size: .68rem; }
+  .how-grid { grid-template-columns: 1fr; }
+}

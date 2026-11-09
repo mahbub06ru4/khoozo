@@ -168,8 +168,8 @@ form?.addEventListener("submit", e => {
   ].filter(Boolean);
   const body = encodeURIComponent(bodyLines.join("\n"));
 
-  window.location.href = `mailto:support.khoozo@gmail.com?subject=${subject}&body=${body}`;
-  statusEl.textContent = "Opening your email app… If nothing happens, email us directly at support.khoozo@gmail.com.";
+  window.location.href = `mailto:support@khoozo.com?subject=${subject}&body=${body}`;
+  statusEl.textContent = "Opening your email app… If nothing happens, email us directly at support@khoozo.com.";
   form.reset();
 });
 

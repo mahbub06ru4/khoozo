@@ -1,4 +1,4 @@
-/* "Our Services" mega menu and the Home review slider. */
+/* Menu (mega menu where present, active link) and the Home review slider. */
 (function () {
   const group = document.querySelector(".nav-group");
   if (group) {
@@ -11,13 +11,15 @@
     document.addEventListener("click", (e) => { if (!group.contains(e.target)) setOpen(false); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
     group.querySelectorAll(".mega-item").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+  }
 
-    const page = location.pathname.split("/").pop();
-    const active = { "training.html": ".mega-item[href='training.html']", "course.html": ".mega-item[href='training.html']", "it.html": ".mega-item[href='it.html']", "project.html": ".mega-item[href='it.html']", "realestate.html": ".mega-item[href='realestate.html']", "property.html": ".mega-item[href='realestate.html']", "travel.html": ".mega-item[href='travel.html']", "product.html": "[data-nav-shop]", "cart.html": "[data-nav-shop]", "favorites.html": "[data-nav-shop]" }[page];
-    if (active) {
-      const el = document.querySelector(".nav " + active);
-      if (el) el.classList.add("is-active");
-    }
+  /* Highlight the menu item for pages that don't use the homepage scrollspy. */
+  const page = location.pathname.split("/").pop();
+  const active = { "product.html": "[data-nav-shop]", "cart.html": "[data-nav-shop]", "favorites.html": "[data-nav-shop]" }[page]
+    || (page === "project.html" && new URLSearchParams(location.search).get("id") === "khoozo" ? "[data-nav-app]" : null);
+  if (active) {
+    const el = document.querySelector(".nav " + active);
+    if (el) el.classList.add("is-active");
   }
 
   const slider = document.getElementById("reviewSlider");
