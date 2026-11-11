@@ -226,3 +226,16 @@
 .dp-card-custom:hover { border-color: var(--red); }
 .dp-custom-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid var(--border); }
 .dp-custom-actions .btn { padding: 10px 16px; font-size: .88rem; }
+
+/* ---------- product cover on cards + page preview gallery ---------- */
+.dp-card-head.has-cover { background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,.05) 38%, rgba(15,23,42,.92) 100%), var(--cover) center 18% / cover no-repeat, linear-gradient(135deg, var(--dp1), var(--dp2)); min-height: 230px; display: flex; flex-direction: column; }
+.dp-card-head.has-cover h3 { margin-top: auto; text-shadow: 0 2px 10px rgba(0,0,0,.4); }
+.dp-preview-main { margin: 0; border-radius: var(--radius); overflow: hidden; background: #E2E8F0; border: 1px solid var(--border); }
+.dp-preview-main img { display: block; width: 100%; max-height: 640px; object-fit: contain; background: #F1F5F9; }
+.dp-preview-main figcaption { padding: 10px 14px; font-size: .88rem; font-weight: 600; color: var(--ink); background: var(--surface); border-top: 1px solid var(--border); }
+.dp-preview-hint { margin: 10px 0 8px; font-size: .82rem; }
+.dp-preview-thumbs.catalog-gallery { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 8px; }
+.dp-preview-thumbs button { padding: 0; border: 2px solid transparent; border-radius: 8px; overflow: hidden; background: #F1F5F9; cursor: pointer; opacity: .7; transition: opacity .2s, border-color .2s; }
+.dp-preview-thumbs button:hover { opacity: 1; }
+.dp-preview-thumbs button.is-active { border-color: var(--red); opacity: 1; }
+.dp-preview-thumbs.catalog-gallery img { aspect-ratio: 3 / 4; object-fit: cover; object-position: top; border-radius: 0; }

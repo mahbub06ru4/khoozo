@@ -263,6 +263,322 @@ const KHOOZO_PRODUCTS = [
       audience: ["বিদেশে পড়াশোনা বা চাকরির জন্য IELTS পরীক্ষার্থী", "স্পোকেন ইংলিশ উন্নত করতে চান এমন শিক্ষার্থী ও চাকরিপ্রার্থী", "যারা বাংলায় ব্যাখ্যা চান", "ইন্টারনেট ছাড়াই ইংরেজি প্র্যাকটিস করতে চান যারা"],
     },
   },
+  {
+    "id": "ats-cv-vault",
+    "icon": "fa-solid fa-file-lines",
+    "colors": [
+      "#0F1E3A",
+      "#1E3A5F"
+    ],
+    "cover": "assets/shop/ats-cv/cover.jpg",
+    "gallery": [
+      {
+        "src": "assets/shop/ats-cv/01-senior-professional-sample.jpg",
+        "en": "Sample CV — Senior professional",
+        "bn": "নমুনা সিভি — সিনিয়র প্রফেশনাল"
+      },
+      {
+        "src": "assets/shop/ats-cv/02-fresh-graduate-sample.jpg",
+        "en": "Sample CV — Fresh graduate",
+        "bn": "নমুনা সিভি — ফ্রেশ গ্র্যাজুয়েট"
+      },
+      {
+        "src": "assets/shop/ats-cv/03-international-remote-sample.jpg",
+        "en": "Sample CV — International / remote",
+        "bn": "নমুনা সিভি — আন্তর্জাতিক / রিমোট"
+      },
+      {
+        "src": "assets/shop/ats-cv/04-business-graduate-template.jpg",
+        "en": "Blank template — Business graduate",
+        "bn": "ফাঁকা টেমপ্লেট — বিজনেস গ্র্যাজুয়েট"
+      },
+      {
+        "src": "assets/shop/ats-cv/05-mid-level-template.jpg",
+        "en": "Blank template — Mid-level professional",
+        "bn": "ফাঁকা টেমপ্লেট — মিড-লেভেল প্রফেশনাল"
+      },
+      {
+        "src": "assets/shop/ats-cv/06-bangladesh-cover-letter.jpg",
+        "en": "Cover letter — Bangladesh",
+        "bn": "কভার লেটার — বাংলাদেশ"
+      },
+      {
+        "src": "assets/shop/ats-cv/07-linkedin-outreach.jpg",
+        "en": "LinkedIn outreach templates",
+        "bn": "লিংকডইন আউটরিচ টেমপ্লেট"
+      },
+      {
+        "src": "assets/shop/ats-cv/08-ats-master-guide.jpg",
+        "en": "ATS Master Guide",
+        "bn": "ATS মাস্টার গাইড"
+      },
+      {
+        "src": "assets/shop/ats-cv/09-achievement-bullets.jpg",
+        "en": "Achievement Bullet Library",
+        "bn": "অ্যাচিভমেন্ট বুলেট লাইব্রেরি"
+      },
+      {
+        "src": "assets/shop/ats-cv/10-customization-workbook.jpg",
+        "en": "CV Customization Workbook",
+        "bn": "সিভি কাস্টমাইজেশন ওয়ার্কবুক"
+      },
+      {
+        "src": "assets/shop/ats-cv/11-interview-guide.jpg",
+        "en": "Interview Preparation Guide",
+        "bn": "ইন্টারভিউ প্রস্তুতি গাইড"
+      },
+      {
+        "src": "assets/shop/ats-cv/12-ats-checklist.jpg",
+        "en": "ATS Compatibility Checklist",
+        "bn": "ATS কম্প্যাটিবিলিটি চেকলিস্ট"
+      }
+    ],
+    "pack": {
+      "price": 200,
+      "originalPrice": 500
+    },
+    "combo": null,
+    "en": {
+      "title": "ATS CV & Career Success Vault",
+      "tagline": "42 ready-to-use files: ATS-friendly CV templates, sample CVs, cover letters and career guides — for jobs in Bangladesh and abroad.",
+      "desc": "Everything you need for a CV that gets past applicant tracking systems and impresses recruiters: 8 editable Word CV templates, 8 filled-in sample CVs, cover letters for Bangladesh and international jobs, LinkedIn and email templates, and step-by-step career guides.",
+      "packSub": "42 files · Word, PDF & Excel · lifetime use",
+      "heroMeta": [
+        [
+          "fa-solid fa-folder-open",
+          "42 files"
+        ],
+        [
+          "fa-solid fa-file-word",
+          "Word, PDF & Excel"
+        ],
+        [
+          "fa-solid fa-infinity",
+          "Lifetime use"
+        ]
+      ],
+      "cardFacts": [
+        [
+          "fa-solid fa-file-word",
+          "8 ATS-friendly Word CV templates"
+        ],
+        [
+          "fa-solid fa-user-check",
+          "8 filled-in sample CVs"
+        ],
+        [
+          "fa-solid fa-envelope-open-text",
+          "Cover letters, LinkedIn & email templates"
+        ]
+      ],
+      "how3": "After payment we send you a Google Drive link to download the full pack (ZIP) on WhatsApp and email. Open the files in Microsoft Word, Google Docs or any PDF reader.",
+      "stats": [
+        [
+          "fa-solid fa-folder-open",
+          "42",
+          "Ready-to-use files in one organised pack"
+        ],
+        [
+          "fa-solid fa-file-word",
+          "8",
+          "Blank CV templates, from internship to senior level"
+        ],
+        [
+          "fa-solid fa-user-check",
+          "8",
+          "Filled-in sample CVs to learn from"
+        ],
+        [
+          "fa-solid fa-envelope-open-text",
+          "4",
+          "Cover letter, LinkedIn and email template files"
+        ],
+        [
+          "fa-solid fa-list-check",
+          "180",
+          "Achievement bullets across 15 industries"
+        ],
+        [
+          "fa-solid fa-robot",
+          "ATS",
+          "Formatting that applicant tracking systems can read"
+        ]
+      ],
+      "pdfsTitle": "Files in the pack",
+      "pdfs": [
+        "8 blank CV templates (Word): fresh graduate, internship, business graduate, entry-level technical, mid-level, senior, career transition and international / remote",
+        "8 filled-in sample CVs (Word, with PDF previews)",
+        "Cover letters for Bangladesh and international jobs",
+        "LinkedIn outreach and professional email templates",
+        "ATS Master Guide and ATS Compatibility Checklist",
+        "Achievement Bullet, Action Verbs and Professional Summary libraries",
+        "CV Customization Workbook",
+        "Interview Preparation Guide and LinkedIn Optimization Guide",
+        "Job Application Tracker (Excel)"
+      ],
+      "app": [],
+      "features": [
+        [
+          "fa-solid fa-robot",
+          "ATS-friendly design",
+          "Clean single-column layouts, standard headings and fonts that applicant tracking systems read correctly."
+        ],
+        [
+          "fa-solid fa-pen-to-square",
+          "Easy to edit",
+          "Replace the [BRACKETS] with your details in Word or Google Docs — no design skills needed."
+        ],
+        [
+          "fa-solid fa-earth-asia",
+          "Bangladesh & abroad",
+          "Templates and cover letters for local employers and for international or remote roles."
+        ],
+        [
+          "fa-solid fa-graduation-cap",
+          "Every career stage",
+          "From internships and fresh graduates to senior professionals and career changers."
+        ],
+        [
+          "fa-solid fa-lightbulb",
+          "Stronger content",
+          "180 achievement bullets, action verbs and summaries show you what good looks like."
+        ],
+        [
+          "fa-solid fa-briefcase",
+          "Beyond the CV",
+          "Interview preparation, LinkedIn optimisation and a tracker for your applications."
+        ]
+      ],
+      "course": "",
+      "courseMode": "",
+      "audience": [
+        "Fresh graduates and students applying for their first job",
+        "Professionals aiming for a better role",
+        "Job seekers applying abroad or for remote jobs",
+        "Anyone whose CV isn't getting interview calls"
+      ]
+    },
+    "bn": {
+      "title": "ATS সিভি ও ক্যারিয়ার সাকসেস ভল্ট",
+      "tagline": "৪২টি রেডি-টু-ইউজ ফাইল: ATS-ফ্রেন্ডলি সিভি টেমপ্লেট, নমুনা সিভি, কভার লেটার ও ক্যারিয়ার গাইড — দেশে ও বিদেশে চাকরির জন্য।",
+      "desc": "এমন সিভি তৈরির জন্য যা লাগে সব, যা অ্যাপ্লিকেন্ট ট্র্যাকিং সিস্টেম পার হয়ে রিক্রুটারের নজর কাড়ে: ৮টি এডিটযোগ্য ওয়ার্ড সিভি টেমপ্লেট, ৮টি পূরণ করা নমুনা সিভি, বাংলাদেশ ও বিদেশের চাকরির কভার লেটার, লিংকডইন ও ইমেইল টেমপ্লেট, আর ধাপে ধাপে ক্যারিয়ার গাইড।",
+      "packSub": "৪২টি ফাইল · ওয়ার্ড, PDF ও এক্সেল · আজীবন ব্যবহার",
+      "heroMeta": [
+        [
+          "fa-solid fa-folder-open",
+          "৪২টি ফাইল"
+        ],
+        [
+          "fa-solid fa-file-word",
+          "ওয়ার্ড, PDF ও এক্সেল"
+        ],
+        [
+          "fa-solid fa-infinity",
+          "আজীবন ব্যবহার"
+        ]
+      ],
+      "cardFacts": [
+        [
+          "fa-solid fa-file-word",
+          "৮টি ATS-ফ্রেন্ডলি ওয়ার্ড সিভি টেমপ্লেট"
+        ],
+        [
+          "fa-solid fa-user-check",
+          "৮টি পূরণ করা নমুনা সিভি"
+        ],
+        [
+          "fa-solid fa-envelope-open-text",
+          "কভার লেটার, লিংকডইন ও ইমেইল টেমপ্লেট"
+        ]
+      ],
+      "how3": "পেমেন্টের পর হোয়াটসঅ্যাপ ও ইমেইলে পুরো প্যাক (ZIP) ডাউনলোডের Google Drive লিংক পাঠানো হবে। ফাইলগুলো Microsoft Word, Google Docs বা যেকোনো PDF রিডারে খুলুন।",
+      "stats": [
+        [
+          "fa-solid fa-folder-open",
+          "৪২",
+          "একটি গোছানো প্যাকে রেডি-টু-ইউজ ফাইল"
+        ],
+        [
+          "fa-solid fa-file-word",
+          "৮",
+          "ইন্টার্নশিপ থেকে সিনিয়র লেভেল পর্যন্ত ফাঁকা সিভি টেমপ্লেট"
+        ],
+        [
+          "fa-solid fa-user-check",
+          "৮",
+          "দেখে শেখার জন্য পূরণ করা নমুনা সিভি"
+        ],
+        [
+          "fa-solid fa-envelope-open-text",
+          "৪",
+          "কভার লেটার, লিংকডইন ও ইমেইল টেমপ্লেট ফাইল"
+        ],
+        [
+          "fa-solid fa-list-check",
+          "১৮০",
+          "১৫টি ইন্ডাস্ট্রির অ্যাচিভমেন্ট বুলেট"
+        ],
+        [
+          "fa-solid fa-robot",
+          "ATS",
+          "অ্যাপ্লিকেন্ট ট্র্যাকিং সিস্টেম পড়তে পারে এমন ফরম্যাট"
+        ]
+      ],
+      "pdfsTitle": "প্যাকে যে ফাইলগুলো আছে",
+      "pdfs": [
+        "৮টি ফাঁকা সিভি টেমপ্লেট (ওয়ার্ড): ফ্রেশ গ্র্যাজুয়েট, ইন্টার্নশিপ, বিজনেস গ্র্যাজুয়েট, এন্ট্রি-লেভেল টেকনিক্যাল, মিড-লেভেল, সিনিয়র, ক্যারিয়ার পরিবর্তন ও আন্তর্জাতিক / রিমোট",
+        "৮টি পূরণ করা নমুনা সিভি (ওয়ার্ড, PDF প্রিভিউসহ)",
+        "বাংলাদেশ ও আন্তর্জাতিক চাকরির কভার লেটার",
+        "লিংকডইন আউটরিচ ও প্রফেশনাল ইমেইল টেমপ্লেট",
+        "ATS মাস্টার গাইড ও ATS কম্প্যাটিবিলিটি চেকলিস্ট",
+        "অ্যাচিভমেন্ট বুলেট, অ্যাকশন ভার্ব ও প্রফেশনাল সামারি লাইব্রেরি",
+        "সিভি কাস্টমাইজেশন ওয়ার্কবুক",
+        "ইন্টারভিউ প্রস্তুতি গাইড ও লিংকডইন অপটিমাইজেশন গাইড",
+        "জব অ্যাপ্লিকেশন ট্র্যাকার (এক্সেল)"
+      ],
+      "app": [],
+      "features": [
+        [
+          "fa-solid fa-robot",
+          "ATS-ফ্রেন্ডলি ডিজাইন",
+          "এক কলামের পরিষ্কার লেআউট, স্ট্যান্ডার্ড হেডিং ও ফন্ট, যা অ্যাপ্লিকেন্ট ট্র্যাকিং সিস্টেম সঠিকভাবে পড়ে।"
+        ],
+        [
+          "fa-solid fa-pen-to-square",
+          "সহজে এডিট",
+          "ওয়ার্ড বা Google Docs-এ [ব্র্যাকেট] এর জায়গায় নিজের তথ্য বসান — ডিজাইন জানার দরকার নেই।"
+        ],
+        [
+          "fa-solid fa-earth-asia",
+          "দেশে ও বিদেশে",
+          "দেশের প্রতিষ্ঠান আর আন্তর্জাতিক বা রিমোট চাকরির জন্য টেমপ্লেট ও কভার লেটার।"
+        ],
+        [
+          "fa-solid fa-graduation-cap",
+          "ক্যারিয়ারের প্রতিটি ধাপে",
+          "ইন্টার্নশিপ ও ফ্রেশ গ্র্যাজুয়েট থেকে সিনিয়র প্রফেশনাল ও ক্যারিয়ার পরিবর্তনকারী পর্যন্ত।"
+        ],
+        [
+          "fa-solid fa-lightbulb",
+          "আরও শক্তিশালী লেখা",
+          "১৮০টি অ্যাচিভমেন্ট বুলেট, অ্যাকশন ভার্ব ও সামারি দেখায় ভালো সিভি কেমন হয়।"
+        ],
+        [
+          "fa-solid fa-briefcase",
+          "সিভির বাইরেও",
+          "ইন্টারভিউ প্রস্তুতি, লিংকডইন অপটিমাইজেশন আর আবেদন সামলানোর ট্র্যাকার।"
+        ]
+      ],
+      "course": "",
+      "courseMode": "",
+      "audience": [
+        "প্রথম চাকরির জন্য আবেদন করা ফ্রেশ গ্র্যাজুয়েট ও শিক্ষার্থী",
+        "আরও ভালো পদে যেতে চান এমন প্রফেশনাল",
+        "বিদেশে বা রিমোট চাকরিতে আবেদনকারী",
+        "যাদের সিভিতে ইন্টারভিউ কল আসছে না"
+      ]
+    }
+  },
 ];
 
 const KHOOZO_PRODUCTS_I18N = {
@@ -280,7 +596,7 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.custom.msg": "Hi Khoozo, I need custom software for my business.",
     "dp.pdfs": "{n} PDF guides", "dp.app": "Mobile app", "dp.courseopt": "Optional live course",
     "dp.from": "From", "dp.view": "View details", "dp.back": "All digital products",
-    "dp.inside": "What's inside", "dp.features": "Features you'll love", "dp.pdfs.h": "PDF guides", "dp.app.h": "Mobile app",
+    "dp.inside": "What's inside", "dp.preview": "Preview", "dp.preview.hint": "Tap a page to see it larger", "dp.features": "Features you'll love", "dp.pdfs.h": "PDF guides", "dp.app.h": "Mobile app",
     "dp.course.h": "Add the live course", "dp.course.p": "Take the combo and join live online classes with an instructor, recordings and a certificate.",
     "dp.course.link": "See the full course curriculum",
     "dp.weeks": "weeks", "dp.hours": "hours of live classes", "dp.cert": "Certificate on completion",
@@ -310,7 +626,7 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.custom.msg": "হ্যালো খুঁজো, আমার ব্যবসার জন্য কাস্টম সফটওয়্যার দরকার।",
     "dp.pdfs": "{n}টি PDF গাইড", "dp.app": "মোবাইল অ্যাপ", "dp.courseopt": "চাইলে লাইভ কোর্স",
     "dp.from": "শুরু", "dp.view": "বিস্তারিত দেখুন", "dp.back": "সব ডিজিটাল পণ্য",
-    "dp.inside": "যা পাচ্ছেন", "dp.features": "যে ফিচারগুলো আপনার ভালো লাগবে", "dp.pdfs.h": "PDF গাইড", "dp.app.h": "মোবাইল অ্যাপ",
+    "dp.inside": "যা পাচ্ছেন", "dp.preview": "প্রিভিউ", "dp.preview.hint": "বড় করে দেখতে পাতায় ট্যাপ করুন", "dp.features": "যে ফিচারগুলো আপনার ভালো লাগবে", "dp.pdfs.h": "PDF গাইড", "dp.app.h": "মোবাইল অ্যাপ",
     "dp.course.h": "লাইভ কোর্স যোগ করুন", "dp.course.p": "কম্বো নিন আর ইনস্ট্রাক্টরের সাথে অনলাইন লাইভ ক্লাসে যোগ দিন — রেকর্ডিং ও সার্টিফিকেটসহ।",
     "dp.course.link": "কোর্সের পূর্ণ কারিকুলাম দেখুন",
     "dp.weeks": "সপ্তাহ", "dp.hours": "ঘণ্টা লাইভ ক্লাস", "dp.cert": "কোর্স শেষে সার্টিফিকেট",
@@ -355,7 +671,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     const k = p[lang()];
     return `
       <a class="dp-card" href="product.html?id=${p.id}" style="${grad(p)}">
-        <div class="dp-card-head">
+        <div class="dp-card-head${p.cover ? " has-cover" : ""}"${p.cover ? ` style="--cover:url('${new URL(p.cover, location.href).href}')"` : ""}>
           <span class="dp-card-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
           ${favBtn(p.id)}
           <span class="dp-card-off">${digits(offPct(p.pack))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>
@@ -441,6 +757,8 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       </div>`;
   }
 
+  /* (The cover URL is made absolute: a relative url() inside a CSS variable
+     would resolve against css/products.css, not the page.) */
   /* ---------------- index.html#products ---------------- */
   let shopTab = "all";
   function renderGrid() {
@@ -474,6 +792,23 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     }));
     if (window.KhoozoCart) window.KhoozoCart.wireAddButtons(grid);
     if (window.KhoozoFav) window.KhoozoFav.sync();
+  }
+
+  /* Page previews: a large viewer plus thumbnails. Works with the built-in
+     gallery ({src, en, bn}) and with plain image URLs from the admin catalog.
+     The inner .catalog-gallery class stops catalog.js adding a second strip. */
+  function preview(p) {
+    const items = (p.gallery || []).map((g) => (typeof g === "string" ? { src: g } : g));
+    if (p.cover) items.unshift({ src: p.cover, en: p.en.title, bn: p.bn.title });
+    if (!items.length) return "";
+    const cap = (g) => esc(g[lang()] || g.en || "");
+    return `<div class="tr-panel dp-preview">
+      <h2>${t("dp.preview")}</h2>
+      <figure class="dp-preview-main"><img id="dpPreviewImg" src="${esc(items[0].src)}" alt="${cap(items[0])}"><figcaption id="dpPreviewCap">${cap(items[0])}</figcaption></figure>
+      <p class="dp-muted dp-preview-hint">${t("dp.preview.hint")}</p>
+      <div class="catalog-gallery dp-preview-thumbs">${items.map((g, i) =>
+        `<button type="button" class="${i ? "" : "is-active"}" data-preview="${esc(g.src)}" data-caption="${cap(g)}" aria-label="${cap(g)}"><img src="${esc(g.src)}" alt="" loading="lazy"></button>`).join("")}</div>
+    </div>`;
   }
 
   /* ---------------- product.html ---------------- */
@@ -515,9 +850,10 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         </div>
         <p>${esc(k.desc)}</p>
         <div class="tr-meta">
+          ${k.heroMeta ? k.heroMeta.map(([ic, x]) => `<span><i class="${esc(ic)}" aria-hidden="true"></i>${esc(x)}</span>`).join("") : `
           ${k.pdfs.length ? `<span><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>${t("dp.pdfs", { n: digits(k.pdfs.length) })}</span>` : ""}
           ${k.app.length ? `<span><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>${t("dp.app")}</span>` : ""}
-          ${k.course ? `<span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</span>` : ""}
+          ${k.course ? `<span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</span>` : ""}`}
         </div>
         ${k.stats ? `<div class="dp-stats">${k.stats.map(([ic, n, x]) => `<div class="dp-stat"><i class="${esc(ic)}" aria-hidden="true"></i><b>${esc(n)}</b><span>${esc(x)}</span></div>`).join("")}</div>` : ""}
       </div>
@@ -525,16 +861,17 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     <section class="section" style="padding-top:48px">
       <div class="container tr-layout dp-layout">
         <div>
+${preview(p)}
 ${k.pdfs.length || k.app.length ? `
           <div class="tr-panel">
             <h2>${t("dp.inside")}</h2>
-            ${k.pdfs.length ? `<h3 class="dp-sub"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> ${t("dp.pdfs.h")}</h3>
+            ${k.pdfs.length ? `<h3 class="dp-sub"><i class="fa-solid ${k.pdfsTitle ? "fa-folder-open" : "fa-file-pdf"}" aria-hidden="true"></i> ${k.pdfsTitle ? esc(k.pdfsTitle) : t("dp.pdfs.h")}</h3>
             <ul class="tr-checks">${k.pdfs.map((x) => `<li><i class="fa-solid fa-check" aria-hidden="true"></i>${esc(x)}</li>`).join("")}</ul>` : ""}
-            <h3 class="dp-sub"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> ${t("dp.app.h")}</h3>
+            ${k.app.length ? `<h3 class="dp-sub"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> ${t("dp.app.h")}</h3>
             <div class="dp-app" style="${grad(p)}">
               <span class="dp-app-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
               <div><b>${esc(k.app[0] || "")}</b><p>${esc(k.app[1] || "")}</p></div>
-            </div>
+            </div>` : ""}
             ${k.features && k.features.length ? `<h3 class="dp-sub"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> ${t("dp.features")}</h3>
             <div class="dp-features" style="${grad(p)}">${k.features.map(([ic, h, x]) => `<div class="dp-feature"><span><i class="${esc(ic)}" aria-hidden="true"></i></span><div><b>${esc(h)}</b><p>${esc(x)}</p></div></div>`).join("")}</div>` : ""}
           </div>
@@ -603,6 +940,15 @@ ${k.course && p.course ? `
       </div>
     </section>`;
 
+    root.querySelectorAll("[data-preview]").forEach((b) =>
+      b.addEventListener("click", () => {
+        const img = document.getElementById("dpPreviewImg");
+        img.src = b.getAttribute("data-preview");
+        img.alt = b.getAttribute("data-caption");
+        document.getElementById("dpPreviewCap").textContent = b.getAttribute("data-caption");
+        root.querySelectorAll("[data-preview]").forEach((x) => x.classList.toggle("is-active", x === b));
+      }),
+    );
     root.querySelectorAll("[data-plan]").forEach((b) =>
       b.addEventListener("click", () => {
         plan = b.getAttribute("data-plan");
