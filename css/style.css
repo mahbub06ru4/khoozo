@@ -1133,3 +1133,41 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
   .gate-tiles i { font-size: 1.2rem; }
   .gate-tiles b { font-size: .68rem; }
 }
+
+
+/* ================================================================
+   REVIEW POP-UP (js/review-toast.js) — real reviews only
+   ================================================================ */
+.review-toast {
+  position: fixed; left: 18px; bottom: 18px; z-index: 900; width: min(360px, calc(100vw - 36px));
+  display: flex; align-items: flex-start; gap: 12px; padding: 14px 40px 14px 14px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--border); border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.22);
+  opacity: 0; visibility: hidden; transform: translateY(16px);
+  transition: opacity .35s var(--ease), transform .35s var(--ease), visibility .35s;
+}
+.review-toast.is-open { opacity: 1; visibility: visible; transform: none; }
+.review-toast-avatar {
+  flex: 0 0 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--red), var(--orange)); color: #fff; font-weight: 800; font-size: 1.05rem;
+}
+.review-toast-body { min-width: 0; }
+.review-toast-body p { margin: 0; }
+.review-toast-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: .92rem; color: var(--ink); }
+.review-toast-stars { color: #F59E0B; font-size: .72rem; display: inline-flex; gap: 1px; }
+.review-toast-text { margin-top: 4px !important; font-size: .88rem; line-height: 1.45; color: var(--ink); }
+.review-toast-meta { margin-top: 6px !important; font-size: .76rem; color: var(--ink-soft); }
+.review-toast-meta .fa-facebook-f { color: #1877F2; }
+.review-toast-meta .fa-whatsapp { color: #25D366; }
+.review-toast-link { display: inline-block; margin-top: 6px; font-size: .78rem; font-weight: 700; }
+.review-toast-close {
+  position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--tint); color: var(--ink-soft); display: grid; place-items: center;
+}
+.review-toast-close:hover { color: var(--ink); }
+@media (max-width: 640px) {
+  .review-toast { left: 12px; bottom: 12px; width: calc(100vw - 96px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .review-toast { transition: none; transform: none; }
+}

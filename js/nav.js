@@ -23,7 +23,11 @@
   }
 
   const slider = document.getElementById("reviewSlider");
-  if (!slider) return;
+  /* Real reviews from js/reviews-data.js come first; the admin app's reviews
+     are added when the API answers. Pages with the review pop-up
+     (<body data-review-toast>) use the same list (js/review-toast.js). */
+  const builtin = typeof KHOOZO_REVIEWS !== "undefined" ? KHOOZO_REVIEWS : [];
+  if (!slider && !document.body.hasAttribute("data-review-toast")) return;
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
   const port = isLocal ? sessionStorage.getItem("khoozo_api_port") || "3200" : "";
@@ -47,19 +51,27 @@
     }).join("");
   }
 
-  new MutationObserver(() => { if (reviews.length) drawSlides(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  if (slider) new MutationObserver(() => { if (reviews.length) drawSlides(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+  /* Shows the section (only once there is at least one real review) and
+     hands the list to the pop-up. */
+  function publish(list) {
+    reviews = list.filter((r) => r && r.customerName && r.rating);
+    if (!reviews.length) return;
+    /* Kept on window too: the pop-up script may load after this runs. */
+    window.khoozoReviewList = reviews;
+    document.dispatchEvent(new CustomEvent("khoozo:reviews", { detail: reviews }));
+    if (!slider || started) return;
+    started = true;
+    drawSlides();
+    document.getElementById("reviews").hidden = false;
+    startSlider();
+  }
 
   fetch(api, { headers: { Accept: "application/json" } })
     .then((res) => (res.ok ? res.json() : []))
-    .then((list) => {
-      reviews = list;
-      if (!reviews.length || started) return;
-      started = true;
-      drawSlides();
-      document.getElementById("reviews").hidden = false;
-      startSlider();
-    })
-    .catch(() => { /* the section stays hidden */ });
+    .then((list) => publish(builtin.concat(Array.isArray(list) ? list : [])))
+    .catch(() => publish(builtin));
 
   function startSlider() {
   const track = slider.querySelector(".review-track");
