@@ -1136,7 +1136,7 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
 
 
 /* ================================================================
-   REVIEW POP-UP (js/review-toast.js) — real reviews only
+   REVIEW / PURCHASE POP-UP (js/review-toast.js) — real data only
    ================================================================ */
 .review-toast {
   position: fixed; left: 18px; bottom: 18px; z-index: 900; width: min(360px, calc(100vw - 36px));
@@ -1159,6 +1159,10 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
 .review-toast-meta { margin-top: 6px !important; font-size: .76rem; color: var(--ink-soft); }
 .review-toast-meta .fa-facebook-f { color: #1877F2; }
 .review-toast-meta .fa-whatsapp { color: #25D366; }
+.review-toast-avatar.is-purchase { background: linear-gradient(135deg, #16A34A, #0EA5E9); font-size: 1rem; }
+.review-toast-text.is-purchase { margin-top: 2px !important; }
+.review-toast-text.is-purchase a { font-weight: 700; }
+.review-toast-verified { color: #16A34A; font-weight: 600; }
 .review-toast-link { display: inline-block; margin-top: 6px; font-size: .78rem; font-weight: 700; }
 .review-toast-close {
   position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border-radius: 50%; border: 0; cursor: pointer;
