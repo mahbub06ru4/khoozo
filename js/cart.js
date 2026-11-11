@@ -112,7 +112,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         if (!p) return null;
         const plan = it.plan === "combo" ? "combo" : "pack";
         const o = p[plan];
-        return { id: p.id, plan, qty: it.qty, unitPrice: o.price, unitOriginal: o.originalPrice, lineTotal: o.price * it.qty, product: p };
+        return { id: p.id, plan, qty: it.qty, unitPrice: o.price, unitOriginal: o.originalPrice || o.price, lineTotal: o.price * it.qty, product: p };
       })
       .filter(Boolean);
   }

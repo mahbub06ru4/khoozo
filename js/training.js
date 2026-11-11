@@ -430,7 +430,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       const plan = planId === "combo" ? "combo" : "pack";
       return {
         kind: "product", id: p.id, plan, icon: p.icon, colors: p.colors,
-        price: p[plan].price, originalPrice: p[plan].originalPrice,
+        price: p[plan].price, originalPrice: p[plan].originalPrice || p[plan].price,
         title: (l) => `${p[l].title} — ${PLAN_LABEL[plan][l]}`, name: (l) => p[l].title, planName: (l) => PLAN_LABEL[plan][l],
         back: `product.html?id=${p.id}&plan=${plan}`, retry: `pay.html?product=${p.id}&plan=${plan}`, list: "index.html#products",
         methods: ["manual", "bkash", "card"], wallets: ["bKash"], merchant: "Khoozo Digital",
@@ -699,8 +699,8 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
           ? `<div class="pay-summary-media is-product" style="--dp1:${it.colors[0]};--dp2:${it.colors[1]}"><i class="${it.icon}"></i><strong>${esc(it.name(lang()))}<span class="pay-summary-plan">${esc(it.planName(lang()))}</span></strong></div>`
           : `<div class="pay-summary-media"><img src="${it.image}" alt=""><strong>${esc(it.title(lang()))}</strong></div>`}
         <div class="pay-lines">
-          <div class="pay-line"><span>${it.kind === "product" || it.kind === "cart" ? t("pay.price") : t("pay.fee")}</span><span style="text-decoration:line-through">${taka(it.originalPrice)}</span></div>
-          <div class="pay-line discount"><span>${tk(it, "pay.discount")}</span><span>– ${taka(it.originalPrice - it.price)}</span></div>
+          ${it.originalPrice > it.price ? `<div class="pay-line"><span>${it.kind === "product" || it.kind === "cart" ? t("pay.price") : t("pay.fee")}</span><span style="text-decoration:line-through">${taka(it.originalPrice)}</span></div>
+          <div class="pay-line discount"><span>${tk(it, "pay.discount")}</span><span>– ${taka(it.originalPrice - it.price)}</span></div>` : ""}
           <div class="pay-total"><span style="font-weight:700">${t("pay.total")}</span><b>${taka(it.price)}</b></div>
           <label class="pay-agree"><input type="checkbox" data-field="agree"${s.agree ? " checked" : ""}><span>${tk(it, "pay.agree")}${err("agree")}</span></label>
           ${s.serverError ? `<p class="pay-err">${esc(s.serverError)}</p>` : ""}

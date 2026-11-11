@@ -579,6 +579,124 @@ const KHOOZO_PRODUCTS = [
       ]
     }
   },
+  {
+    id: "fcommerce-business-toolkit",
+    icon: "fa-solid fa-store",
+    colors: ["#0B3B2E", "#0F5132"],
+    cover: "assets/shop/fc-toolkit/cover.jpg",
+    gallery: [
+      { src: "assets/shop/fc-toolkit/01-tracker-dashboard.jpg", en: "Order & Inventory Tracker — dashboard (sample data)", bn: "অর্ডার ও ইনভেন্টরি ট্র্যাকার — ড্যাশবোর্ড (নমুনা ডেটা)" },
+      { src: "assets/shop/fc-toolkit/02-tracker-orders.jpg", en: "Tracker — Orders sheet", bn: "ট্র্যাকার — অর্ডার শিট" },
+      { src: "assets/shop/fc-toolkit/03-tracker-products.jpg", en: "Tracker — Products & stock sheet", bn: "ট্র্যাকার — পণ্য ও স্টক শিট" },
+      { src: "assets/shop/fc-toolkit/04-social-square.jpg", en: "Social media — square posts (1080×1080)", bn: "সোশ্যাল মিডিয়া — স্কয়ার পোস্ট (১০৮০×১০৮০)" },
+      { src: "assets/shop/fc-toolkit/05-social-portrait.jpg", en: "Social media — portrait posts (1080×1350)", bn: "সোশ্যাল মিডিয়া — পোর্ট্রেট পোস্ট (১০৮০×১৩৫০)" },
+      { src: "assets/shop/fc-toolkit/06-social-story.jpg", en: "Social media — story / reel covers (1080×1920)", bn: "সোশ্যাল মিডিয়া — স্টোরি / রিল কভার (১০৮০×১৯২০)" },
+      { src: "assets/shop/fc-toolkit/07-social-landscape.jpg", en: "Social media — Facebook landscape posts (1200×630)", bn: "সোশ্যাল মিডিয়া — ফেসবুক ল্যান্ডস্কেপ পোস্ট (১২০০×৬৩০)" },
+      { src: "assets/shop/fc-toolkit/08-social-page-cover.jpg", en: "Social media — Facebook page covers (1640×624)", bn: "সোশ্যাল মিডিয়া — ফেসবুক পেজ কভার (১৬৪০×৬২৪)" },
+      { src: "assets/shop/fc-toolkit/09-appointment-letter.jpg", en: "Appointment letter (Word)", bn: "নিয়োগপত্র (ওয়ার্ড)" },
+      { src: "assets/shop/fc-toolkit/10-mutual-nda.jpg", en: "Mutual NDA (Word)", bn: "মিউচুয়াল NDA (ওয়ার্ড)" },
+      { src: "assets/shop/fc-toolkit/11-freelance-agreement.jpg", en: "Freelance service agreement (Word)", bn: "ফ্রিল্যান্স সার্ভিস চুক্তি (ওয়ার্ড)" },
+      { src: "assets/shop/fc-toolkit/12-invoice-generator.jpg", en: "Invoice generator (Excel)", bn: "ইনভয়েস জেনারেটর (এক্সেল)" },
+    ],
+    pack: { price: 200 },
+    combo: null,
+    en: {
+      title: "F-Commerce & Small Business Toolkits",
+      tagline: "3 toolkits in one pack: an order & inventory tracker, 46 Bangla & English social media designs, and business legal & HR templates.",
+      desc: "Run your Facebook / Instagram shop and small business with ready-made files: an Excel tracker for orders, stock, couriers, COD and profit in Taka; 46 editable social media designs for sales, Eid and Pohela Boishakh; and editable appointment letter, NDA, freelance agreement and invoice templates.",
+      packSub: "3 toolkits · Excel, PowerPoint & Word · lifetime use",
+      heroMeta: [["fa-solid fa-layer-group", "3 toolkits"], ["fa-solid fa-file-excel", "Excel, PowerPoint & Word"], ["fa-solid fa-infinity", "Lifetime use"]],
+      cardFacts: [
+        ["fa-solid fa-chart-line", "Order, stock & profit tracker (Excel)"],
+        ["fa-solid fa-hashtag", "46 Bangla & English social media designs"],
+        ["fa-solid fa-file-signature", "Appointment letter, NDA, agreement & invoice"],
+      ],
+      how3: "After payment we send you a Google Drive link to download the three toolkits (ZIP) on WhatsApp and email. Open them in Microsoft Excel, PowerPoint and Word, or in Google Sheets, Slides and Docs.",
+      stats: [
+        ["fa-solid fa-layer-group", "3", "Toolkits in one pack"],
+        ["fa-solid fa-table", "7", "Sheets in the order & inventory tracker"],
+        ["fa-solid fa-hashtag", "46", "Editable social media designs"],
+        ["fa-solid fa-ruler-combined", "5", "Post, story and cover sizes, set to exact pixels"],
+        ["fa-solid fa-file-signature", "4", "Business, legal & HR templates"],
+        ["fa-solid fa-language", "BN + EN", "Bangla and English versions"],
+      ],
+      pdfsTitle: "What's in the three toolkits",
+      pdfs: [
+        "F-Commerce Order & Inventory Tracker (Excel / Google Sheets): orders, stock, customers, couriers, COD, returns and net profit in Taka, with a dashboard and charts",
+        "Low-stock alerts, courier performance, repeat-customer and return-risk flags",
+        "Social Media Template Pack: 46 editable PowerPoint designs — sale, Eid, Pohela Boishakh, product showcase and free delivery, in Bangla and English",
+        "Sizes: square post, portrait post, story / reel cover, Facebook landscape post and Facebook page cover, plus PNG previews of every design",
+        "Business Legal & HR Kit (Word): appointment letter, mutual NDA, freelance service agreement with schedules, and a how-to guide",
+        "Invoice generator (Excel): VAT, discount, advance, amount in words in Taka, PAID/DUE/OVERDUE status and an invoice log",
+        "The legal templates are general templates, not legal advice — have a lawyer review them before anyone signs",
+      ],
+      app: [],
+      features: [
+        ["fa-solid fa-truck-fast", "Made for F-Commerce", "Track Pathao, Steadfast, RedX and other courier orders, COD and returns, and see your real profit."],
+        ["fa-solid fa-calculator", "Automatic sums", "Type an order and the tracker works out totals, charges, profit and stock for you."],
+        ["fa-solid fa-palette", "Ready-made designs", "Change the shop name, offer, price and photo, then export a PNG for Facebook or Instagram."],
+        ["fa-solid fa-language", "Bangla & English", "Social posts in both languages and a Bangla quick guide for the tracker."],
+        ["fa-solid fa-file-signature", "Business paperwork", "Editable letters, agreements and invoices for hiring staff and working with clients."],
+        ["fa-solid fa-laptop", "Free tools work too", "Works in Excel, PowerPoint and Word, or free in Google Sheets, Slides and Docs."],
+      ],
+      course: "",
+      courseMode: "",
+      audience: [
+        "Facebook and Instagram shop owners",
+        "Small businesses, startups and agencies",
+        "Freelancers who need agreements and invoices",
+        "Anyone who wants to post better offers on social media",
+      ],
+    },
+    bn: {
+      title: "এফ-কমার্স ও স্মল বিজনেস টুলকিট",
+      tagline: "এক প্যাকে ৩টি টুলকিট: অর্ডার ও ইনভেন্টরি ট্র্যাকার, বাংলা ও ইংরেজিতে ৪৬টি সোশ্যাল মিডিয়া ডিজাইন, আর বিজনেস লিগ্যাল ও এইচআর টেমপ্লেট।",
+      desc: "রেডিমেড ফাইল দিয়ে আপনার ফেসবুক / ইনস্টাগ্রাম শপ ও ছোট ব্যবসা চালান: টাকায় অর্ডার, স্টক, কুরিয়ার, COD ও প্রফিট হিসাবের এক্সেল ট্র্যাকার; সেল, ঈদ ও পহেলা বৈশাখের ৪৬টি এডিটযোগ্য সোশ্যাল মিডিয়া ডিজাইন; আর এডিটযোগ্য নিয়োগপত্র, NDA, ফ্রিল্যান্স চুক্তি ও ইনভয়েস টেমপ্লেট।",
+      packSub: "৩টি টুলকিট · এক্সেল, পাওয়ারপয়েন্ট ও ওয়ার্ড · আজীবন ব্যবহার",
+      heroMeta: [["fa-solid fa-layer-group", "৩টি টুলকিট"], ["fa-solid fa-file-excel", "এক্সেল, পাওয়ারপয়েন্ট ও ওয়ার্ড"], ["fa-solid fa-infinity", "আজীবন ব্যবহার"]],
+      cardFacts: [
+        ["fa-solid fa-chart-line", "অর্ডার, স্টক ও প্রফিট ট্র্যাকার (এক্সেল)"],
+        ["fa-solid fa-hashtag", "বাংলা ও ইংরেজিতে ৪৬টি সোশ্যাল মিডিয়া ডিজাইন"],
+        ["fa-solid fa-file-signature", "নিয়োগপত্র, NDA, চুক্তি ও ইনভয়েস"],
+      ],
+      how3: "পেমেন্টের পর হোয়াটসঅ্যাপ ও ইমেইলে তিনটি টুলকিট (ZIP) ডাউনলোডের Google Drive লিংক পাঠানো হবে। Microsoft Excel, PowerPoint ও Word, অথবা Google Sheets, Slides ও Docs-এ খুলুন।",
+      stats: [
+        ["fa-solid fa-layer-group", "৩", "এক প্যাকে টুলকিট"],
+        ["fa-solid fa-table", "৭", "অর্ডার ও ইনভেন্টরি ট্র্যাকারের শিট"],
+        ["fa-solid fa-hashtag", "৪৬", "এডিটযোগ্য সোশ্যাল মিডিয়া ডিজাইন"],
+        ["fa-solid fa-ruler-combined", "৫", "পোস্ট, স্টোরি ও কভারের সঠিক পিক্সেল সাইজ"],
+        ["fa-solid fa-file-signature", "৪", "বিজনেস, লিগ্যাল ও এইচআর টেমপ্লেট"],
+        ["fa-solid fa-language", "বাং + EN", "বাংলা ও ইংরেজি ভার্সন"],
+      ],
+      pdfsTitle: "তিনটি টুলকিটে যা আছে",
+      pdfs: [
+        "এফ-কমার্স অর্ডার ও ইনভেন্টরি ট্র্যাকার (এক্সেল / Google Sheets): টাকায় অর্ডার, স্টক, কাস্টমার, কুরিয়ার, COD, রিটার্ন ও নেট প্রফিট, ড্যাশবোর্ড ও চার্টসহ",
+        "লো-স্টক অ্যালার্ট, কুরিয়ার পারফরম্যান্স, রিপিট কাস্টমার ও রিটার্ন-ঝুঁকির চিহ্ন",
+        "সোশ্যাল মিডিয়া টেমপ্লেট প্যাক: ৪৬টি এডিটযোগ্য পাওয়ারপয়েন্ট ডিজাইন — সেল, ঈদ, পহেলা বৈশাখ, প্রোডাক্ট শোকেস ও ফ্রি ডেলিভারি, বাংলা ও ইংরেজিতে",
+        "সাইজ: স্কয়ার পোস্ট, পোর্ট্রেট পোস্ট, স্টোরি / রিল কভার, ফেসবুক ল্যান্ডস্কেপ পোস্ট ও ফেসবুক পেজ কভার, প্রতিটি ডিজাইনের PNG প্রিভিউসহ",
+        "বিজনেস লিগ্যাল ও এইচআর কিট (ওয়ার্ড): নিয়োগপত্র, মিউচুয়াল NDA, শিডিউলসহ ফ্রিল্যান্স সার্ভিস চুক্তি, আর ব্যবহারের গাইড",
+        "ইনভয়েস জেনারেটর (এক্সেল): ভ্যাট, ডিসকাউন্ট, অ্যাডভান্স, কথায় টাকার অঙ্ক, PAID/DUE/OVERDUE স্ট্যাটাস ও ইনভয়েস লগ",
+        "লিগ্যাল টেমপ্লেটগুলো সাধারণ টেমপ্লেট, আইনি পরামর্শ নয় — সই করার আগে আইনজীবীকে দিয়ে দেখিয়ে নিন",
+      ],
+      app: [],
+      features: [
+        ["fa-solid fa-truck-fast", "এফ-কমার্সের জন্য তৈরি", "Pathao, Steadfast, RedX সহ অন্যান্য কুরিয়ারের অর্ডার, COD ও রিটার্ন ট্র্যাক করুন, আসল প্রফিট দেখুন।"],
+        ["fa-solid fa-calculator", "অটোমেটিক হিসাব", "অর্ডার লিখলেই ট্র্যাকার মোট টাকা, চার্জ, প্রফিট ও স্টক হিসাব করে দেয়।"],
+        ["fa-solid fa-palette", "রেডিমেড ডিজাইন", "শপের নাম, অফার, দাম ও ছবি বদলে PNG এক্সপোর্ট করে ফেসবুক বা ইনস্টাগ্রামে দিন।"],
+        ["fa-solid fa-language", "বাংলা ও ইংরেজি", "দুই ভাষাতেই সোশ্যাল পোস্ট, আর ট্র্যাকারের বাংলা কুইক গাইড।"],
+        ["fa-solid fa-file-signature", "ব্যবসার কাগজপত্র", "কর্মী নিয়োগ ও ক্লায়েন্টের সাথে কাজের জন্য এডিটযোগ্য চিঠি, চুক্তি ও ইনভয়েস।"],
+        ["fa-solid fa-laptop", "ফ্রি টুলেও চলে", "এক্সেল, পাওয়ারপয়েন্ট ও ওয়ার্ডে, অথবা বিনামূল্যে Google Sheets, Slides ও Docs-এ চলে।"],
+      ],
+      course: "",
+      courseMode: "",
+      audience: [
+        "ফেসবুক ও ইনস্টাগ্রাম শপের মালিক",
+        "ছোট ব্যবসা, স্টার্টআপ ও এজেন্সি",
+        "চুক্তি ও ইনভয়েস দরকার এমন ফ্রিল্যান্সার",
+        "সোশ্যাল মিডিয়ায় আরও সুন্দর অফার পোস্ট করতে চান যারা",
+      ],
+    },
+  },
 ];
 
 const KHOOZO_PRODUCTS_I18N = {
@@ -664,6 +782,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   const product = (id) => KHOOZO_PRODUCTS.find((p) => p.id === id);
   const grad = (p) => `--dp1:${p.colors[0]};--dp2:${p.colors[1]}`;
   const offPct = (o) => Math.round((1 - o.price / o.originalPrice) * 100);
+  const hasOff = (o) => o && o.originalPrice > o.price;
 
   const favBtn = (id, extra) => (window.KhoozoFav ? window.KhoozoFav.button(id, extra) : "");
 
@@ -674,7 +793,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <div class="dp-card-head${p.cover ? " has-cover" : ""}"${p.cover ? ` style="--cover:url('${new URL(p.cover, location.href).href}')"` : ""}>
           <span class="dp-card-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
           ${favBtn(p.id)}
-          <span class="dp-card-off">${digits(offPct(p.pack))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>
+          ${hasOff(p.pack) ? `<span class="dp-card-off">${digits(offPct(p.pack))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>` : ""}
           <h3>${esc(k.title)}</h3>
         </div>
         <div class="dp-card-body">
@@ -686,7 +805,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
             ${k.cardFacts ? "" : k.course ? `<li><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</li>` : ""}
           </ul>
           <div class="dp-card-foot">
-            <div><small>${t("dp.from")}</small><b>${taka(p.pack.price)}</b><s>${taka(p.pack.originalPrice)}</s></div>
+            <div><small>${t("dp.from")}</small><b>${taka(p.pack.price)}</b>${hasOff(p.pack) ? `<s>${taka(p.pack.originalPrice)}</s>` : ""}</div>
             <div class="dp-card-actions">
               <button type="button" class="dp-add-btn" data-add-to-cart="${p.id}" data-cart-plan="pack" title="${t("cart.addtocart")}" aria-label="${t("cart.addtocart")}"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button>
               <span class="tr-link">${t("dp.view")} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
@@ -836,7 +955,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       <button type="button" class="dp-plan${plan === id ? " is-active" : ""}" data-plan="${id}" role="radio" aria-checked="${plan === id}">
         <span class="radio"></span>
         <span class="dp-plan-text"><b>${title}</b><small>${sub}</small>${extra || ""}</span>
-        <span class="dp-plan-price"><b>${taka(o.price)}</b><s>${taka(o.originalPrice)}</s></span>
+        <span class="dp-plan-price"><b>${taka(o.price)}</b>${hasOff(o) ? `<s>${taka(o.originalPrice)}</s>` : ""}</span>
       </button>`;
     const chosen = p[plan];
 
@@ -910,8 +1029,8 @@ ${k.course && p.course ? `
             </div>
             <div class="tr-buy-price">
               <span class="tr-price">${taka(chosen.price)}</span>
-              <span class="tr-price-old" style="margin:0 0 6px">${taka(chosen.originalPrice)}</span>
-              <span class="tr-off">${digits(offPct(chosen))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>
+              ${hasOff(chosen) ? `<span class="tr-price-old" style="margin:0 0 6px">${taka(chosen.originalPrice)}</span>
+              <span class="tr-off">${digits(offPct(chosen))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>` : ""}
             </div>
             <p class="tr-note">${t("dp.onetime")}</p>
             <div class="dp-qty">
