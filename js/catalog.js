@@ -43,7 +43,8 @@
       id: row.slug,
       icon: row.icon || "fa-solid fa-box-open",
       image: urls(row)[0] || null,
-      gallery: urls(row),
+      // Uploaded images win; otherwise keep the gallery that ships with the website.
+      gallery: urls(row).length ? urls(row) : d.gallery || [],
       pack: { price: row.price, originalPrice: row.originalPrice || row.price },
       combo: row.comboPrice != null ? { price: row.comboPrice, originalPrice: row.comboOriginalPrice || row.comboPrice } : null,
       en: withLists(copyFor(row, "en")),
