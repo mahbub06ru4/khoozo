@@ -813,6 +813,7 @@ const KHOOZO_PRODUCTS = [
   },
   {
     id: "school-management-software",
+    software: true, // listed under the Shop's Software tab
     icon: "fa-solid fa-school",
     colors: ["#312e81", "#0f766e"],
     cover: "assets/shop/school-management/cover.jpg",
@@ -1129,12 +1130,14 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         renderGrid();
       });
     }
+    const digital = KHOOZO_PRODUCTS.filter((p) => !p.software);
+    const swProducts = KHOOZO_PRODUCTS.filter((p) => p.software);
     if (tabs) {
-      tabs.innerHTML = [["all", KHOOZO_PRODUCTS.length + software.length], ["products", KHOOZO_PRODUCTS.length], ["software", software.length]]
+      tabs.innerHTML = [["all", KHOOZO_PRODUCTS.length + software.length], ["products", digital.length], ["software", swProducts.length + software.length]]
         .map(([id, n]) => `<button type="button" role="tab" class="dp-tab${shopTab === id ? " is-active" : ""}" aria-selected="${shopTab === id}" data-shop-tab="${id}">${t("dp.tab." + id)} <span>${digits(n)}</span></button>`).join("");
     }
-    grid.innerHTML = (shopTab !== "software" ? KHOOZO_PRODUCTS.map(card).join("") : "")
-      + (shopTab !== "products" ? software.map(softwareCard).join("") + customCard() : "");
+    grid.innerHTML = (shopTab !== "software" ? digital.map(card).join("") : "")
+      + (shopTab !== "products" ? swProducts.map(card).join("") + software.map(softwareCard).join("") + customCard() : "");
     /* "Get a free quote" pre-selects Custom software in the contact form. */
     grid.querySelectorAll("[data-custom-quote]").forEach((a) => a.addEventListener("click", () => {
       const select = document.getElementById("f-service");
@@ -1178,7 +1181,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     // Combo saving against buying the pack and the course separately; only shown when the course is also sold on its own.
     const save = course && p.combo ? p.pack.price + course.price - p.combo.price : 0;
     if (!p.combo) plan = "pack";
-    document.title = `${k.title} | Khoozo Digital Products`;
+    document.title = `${k.title} | Khoozo ${p.software ? "Software" : "Digital Products"}`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", k.tagline);
 
@@ -1196,7 +1199,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <a class="tr-back" href="index.html#products"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> ${t("dp.back")}</a>
         <div class="dp-hero-head">
           <span class="dp-hero-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
-          <div><p class="eyebrow">${t("dp.eyebrow")}</p><h1>${esc(k.title)}</h1></div>
+          <div><p class="eyebrow">${p.software ? "Khoozo " + t("dp.software") : t("dp.eyebrow")}</p><h1>${esc(k.title)}</h1></div>
         </div>
         <p>${esc(k.desc)}</p>
         <div class="tr-meta">
