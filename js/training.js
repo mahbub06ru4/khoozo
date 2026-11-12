@@ -17,8 +17,7 @@ const KHOOZO_PAY = {
   manual: {
     whatsapp: "8801818120900", // country code, no "+" or spaces
     wallets: [
-      { id: "bKash", number: "01818120900", type: "Personal", color: "#e2136e" },
-      { id: "Nagad", number: "01818120900", type: "Personal", color: "#ec1c24" },
+      { id: "bKash", number: "01719023054", type: "Personal", color: "#e2136e" },
     ],
   },
 };
@@ -268,7 +267,7 @@ const KHOOZO_TRAINING_I18N = {
     "tr.courses.h": "Courses", "tr.courses.p": "New batches starting soon — limited seats.",
     "tr.back": "All courses", "tr.learn": "What you'll learn", "tr.curriculum": "Curriculum",
     "tr.tools": "Tools you'll use", "tr.includes": "This course includes", "tr.buy": "Buy now",
-    "tr.onetime": "One-time payment · VAT inclusive", "tr.paywith": "Pay with bKash, Nagad or card",
+    "tr.onetime": "One-time payment · VAT inclusive", "tr.paywith": "Pay with bKash (Send Money)",
     "tr.details": "View details", "tr.weeks": "weeks", "tr.hours": "hours", "tr.starts": "Starts", "tr.seats": "seats",
     "tr.topics": "topics", "tr.off": "off", "tr.notfound": "Course not found",
     "pay.eyebrow": "Secure checkout", "pay.h1": "Complete your enrolment",
@@ -320,7 +319,7 @@ const KHOOZO_TRAINING_I18N = {
     "tr.courses.h": "কোর্সসমূহ", "tr.courses.p": "নতুন ব্যাচ শীঘ্রই শুরু — সিট সীমিত।",
     "tr.back": "সব কোর্স", "tr.learn": "যা শিখবেন", "tr.curriculum": "কারিকুলাম",
     "tr.tools": "যে টুলস ব্যবহার করবেন", "tr.includes": "এই কোর্সে যা পাচ্ছেন", "tr.buy": "এখনই কিনুন",
-    "tr.onetime": "এককালীন পেমেন্ট · ভ্যাটসহ", "tr.paywith": "বিকাশ, নগদ বা কার্ডে পেমেন্ট",
+    "tr.onetime": "এককালীন পেমেন্ট · ভ্যাটসহ", "tr.paywith": "বিকাশে পেমেন্ট (সেন্ড মানি)",
     "tr.details": "বিস্তারিত দেখুন", "tr.weeks": "সপ্তাহ", "tr.hours": "ঘণ্টা", "tr.starts": "শুরু", "tr.seats": "সিট",
     "tr.topics": "টপিক", "tr.off": "ছাড়", "tr.notfound": "কোর্সটি পাওয়া যায়নি",
     "pay.eyebrow": "নিরাপদ চেকআউট", "pay.h1": "এনরোলমেন্ট সম্পন্ন করুন",
@@ -419,21 +418,21 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       title: summary, name: summary, planName: () => "",
       icon: "fa-solid fa-cart-shopping", colors: ["#7f1d1d", "#9E1B1B"],
       back: "cart.html", retry: "pay.html?cart=1", list: "index.html#products",
-      methods: ["manual", "bkash", "card"], wallets: ["bKash"], merchant: "Khoozo Digital",
+      methods: ["manual"], wallets: ["bKash"], merchant: "Khoozo Digital",
     };
   }
 
   function itemFor(courseId, productId, planId) {
     if (productId) {
       const p = typeof KHOOZO_PRODUCTS !== "undefined" ? KHOOZO_PRODUCTS.find((x) => x.id === productId) : null;
-      if (!p) return null;
+      if (!p || p.software || p.landshare) return null; // contact-only items have no online payment
       const plan = planId === "combo" ? "combo" : "pack";
       return {
         kind: "product", id: p.id, plan, icon: p.icon, colors: p.colors,
         price: p[plan].price, originalPrice: p[plan].originalPrice || p[plan].price,
         title: (l) => `${p[l].title} — ${PLAN_LABEL[plan][l]}`, name: (l) => p[l].title, planName: (l) => PLAN_LABEL[plan][l],
         back: `product.html?id=${p.id}&plan=${plan}`, retry: `pay.html?product=${p.id}&plan=${plan}`, list: "index.html#products",
-        methods: ["manual", "bkash", "card"], wallets: ["bKash"], merchant: "Khoozo Digital",
+        methods: ["manual"], wallets: ["bKash"], merchant: "Khoozo Digital",
       };
     }
     const c = course(courseId);
@@ -442,7 +441,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       kind: "course", id: c.id, image: c.image, price: c.price, originalPrice: c.originalPrice,
       title: (l) => c[l].title,
       back: `course.html?id=${c.id}`, retry: `pay.html?course=${c.id}`, list: "training.html",
-      methods: ["manual", "bkash", "nagad", "card"], wallets: null, merchant: "Khoozo Training",
+      methods: ["manual"], wallets: ["bKash"], merchant: "Khoozo Training",
     };
   }
   const itemFromParams = () => (params.get("cart") === "1" ? itemForCart() : itemFor(params.get("course"), params.get("product"), params.get("plan")));
@@ -590,7 +589,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
               ${window.KhoozoFav ? window.KhoozoFav.button("course:" + c.id, "dp-fav-inline") : ""}
             </div>
             <p class="tr-secure"><i class="fa-solid fa-shield-halved"></i> ${t("tr.paywith")}</p>
-            <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span><span style="color:#ec1c24">Nagad</span><span style="color:#1a1f71">VISA</span><span style="color:#eb001b">Mastercard</span></div>
+            <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span></div>
           </div>
           <div class="tr-includes">
             <h4>${t("tr.includes")}</h4>
@@ -663,7 +662,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
       </label>`;
     const methods = it.methods.map((m) => `
       <button type="button" class="pay-method${s.method === m ? " is-active" : ""}" data-method="${m}" role="radio" aria-checked="${s.method === m}">
-        <span class="radio"></span><b>${m === "manual" ? '<i class="fa-brands fa-whatsapp"></i> Send Money' : m === "card" ? "Card" : METHOD_LABEL[m].en}</b><small>${t("pay." + m + ".sub")}</small>
+        <span class="radio"></span><b>${m === "manual" ? 'bKash · Send Money' : m === "card" ? "Card" : METHOD_LABEL[m].en}</b><small>${t("pay." + m + ".sub")}</small>
       </button>`).join("");
     const isManual = s.method === "manual";
 

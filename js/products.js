@@ -929,6 +929,141 @@ const KHOOZO_PRODUCTS = [
       ],
     },
   },
+  {
+    id: "uttara-diabari-land-share",
+    landshare: true, // listed under the Shop's Land Share tab — contact only, no online payment
+    icon: "fa-solid fa-city",
+    colors: ["#0B3D3A", "#115E59"],
+    cover: "assets/landshare/uttara-17/cover.jpg",
+    gallery: [
+      { src: "assets/landshare/uttara-17/07-location-map.jpg", en: "Project location — Sector 17, Uttara (Diabari)", bn: "প্রকল্পের লোকেশন — সেক্টর ১৭, উত্তরা (দিয়াবাড়ি)" },
+      { src: "assets/landshare/uttara-17/01-site-layout.jpg", en: "Proposed site layout (draft drawing, July 2026)", bn: "প্রস্তাবিত সাইট লেআউট (খসড়া নকশা, জুলাই ২০২৬)" },
+      { src: "assets/landshare/uttara-17/04-typical-floor.jpg", en: "Proposed typical floor plan (draft)", bn: "প্রস্তাবিত টিপিক্যাল ফ্লোর প্ল্যান (খসড়া)" },
+      { src: "assets/landshare/uttara-17/05-typical-floor-furniture.jpg", en: "Typical floor with furniture layout (draft)", bn: "ফার্নিচারসহ টিপিক্যাল ফ্লোর লেআউট (খসড়া)" },
+      { src: "assets/landshare/uttara-17/02-basement-parking.jpg", en: "Basement parking plan (draft)", bn: "বেসমেন্ট পার্কিং প্ল্যান (খসড়া)" },
+      { src: "assets/landshare/uttara-17/03-ground-floor.jpg", en: "Ground floor plan (draft)", bn: "গ্রাউন্ড ফ্লোর প্ল্যান (খসড়া)" },
+      { src: "assets/landshare/uttara-17/06-roof-floor.jpg", en: "Roof plan with community space and garden (draft)", bn: "কমিউনিটি স্পেস ও বাগানসহ রুফ প্ল্যান (খসড়া)" },
+    ],
+    map: "https://www.google.com/maps?q=23.850778,90.376696",
+    pack: { price: 1650000 },
+    combo: null,
+    en: {
+      title: "Land Share & Apartment Project, Uttara Diabari",
+      tagline: "Own a share of land and a modern ~1,120 sq ft apartment in Sector 17, Uttara — walking distance from Metro Rail South Station.",
+      desc: "Want to own your own flat in one of Dhaka's fastest-growing areas, or looking for a sound real estate investment for the future? This joint land-share project is on a 20.36-katha plot on a 20 ft road in Sector 17, Uttara (Diabari), west of the BGMEA building and near Santa Mariam and World University. A B+G+M+12 residential building with lake-side views and modern amenities is planned, subject to RAJUK approval.",
+      heroMeta: [["fa-solid fa-location-dot", "Sector 17, Uttara, Dhaka"], ["fa-solid fa-train-subway", "Near Metro Rail South Station"], ["fa-regular fa-calendar", "Registration open since 15 Sep 2026"]],
+      cardFacts: [
+        ["fa-solid fa-location-dot", "Sector 17, Uttara — near Metro South Station"],
+        ["fa-solid fa-building", "B+G+M+12 building (subject to RAJUK approval)"],
+        ["fa-solid fa-house", "~1,120 sq ft · 3 bed · 3 bath · 3 balcony"],
+      ],
+      stats: [
+        ["fa-solid fa-ruler-combined", "20.36 katha", "Total land (14,659 sq ft, excluding road)"],
+        ["fa-solid fa-building", "B+G+M+12", "Planned building, subject to RAJUK approval"],
+        ["fa-solid fa-house", "~1,120 sq ft", "Each flat: 3 bed, 3 bath, 3 balcony"],
+        ["fa-solid fa-sack-dollar", "৳16,50,000", "Land value per share"],
+        ["fa-solid fa-trowel-bricks", "~৳28 lakh", "Estimated construction cost per share"],
+        ["fa-solid fa-hourglass-half", "3–4 years", "Expected construction and handover"],
+      ],
+      pdfsTitle: "Project details",
+      pdfs: [
+        "Location: 20 ft road, west of the BGMEA office, near Santa Mariam and World University and the 17 Park BCS project, Sector 17, Uttara, Dhaka-1230",
+        "Getting there: walking distance or a short auto-rickshaw ride from Metro Rail South Station",
+        "Land: 20.36 katha (14,659 sq ft, excluding road)",
+        "Building plan: B+G+M+12 (12 storeys), subject to RAJUK plan approval",
+        "Units: 11 per floor across a 3-building condominium — 132 shares / flats in total",
+        "Each flat: about 1,120 sq ft with 3 bedrooms, 3 bathrooms, 3 balconies, drawing, dining and kitchen",
+        "Flat allocation: by lottery",
+        "Land value per share: ৳16,50,000, including registration, mutation and other development costs",
+        "Construction cost: about ৳28 lakh per share (around ৳2,500 per sq ft), plus a 10% consultancy charge on the construction cost",
+        "Expected duration: about 3–4 years to construction and handover",
+        "Registration: open since 15 September 2026",
+        "If RAJUK approves 12 storeys, units per floor may drop from 11 to 10 with bigger flats — extra flat sales would then benefit all shareholders",
+        "The drawings shown are draft proposals; the final design, size and number of floors depend on RAJUK approval",
+      ],
+      app: [],
+      features: [
+        ["fa-solid fa-water", "Lake view", "Lake-side setting with open views."],
+        ["fa-solid fa-mosque", "Prayer space", "A dedicated prayer hall in the building."],
+        ["fa-solid fa-children", "Kids zone", "A safe play area for children."],
+        ["fa-solid fa-fire-burner", "BBQ corner", "An outdoor BBQ corner for families and friends."],
+        ["fa-solid fa-people-roof", "Community hall", "For events, meetings and get-togethers."],
+        ["fa-solid fa-dumbbell", "Gym & badminton", "A gym and a badminton court on site."],
+        ["fa-solid fa-leaf", "Green surroundings", "Planned greenery and a pleasant, calm environment."],
+      ],
+      how: [
+        "Call or WhatsApp us on 01818-120900 for the full details, documents and a site visit.",
+        "Visit the site in Sector 17, Uttara and check the land papers with your own lawyer if you wish.",
+        "Register your share — registration has been open since 15 September 2026 — and we explain every payment step in writing.",
+      ],
+      course: "",
+      courseMode: "",
+      audience: [
+        "Families who want their own flat in Uttara",
+        "People looking for a long-term real estate investment",
+        "Expatriate Bangladeshis buying property at home",
+        "Anyone who wants to live close to the metro rail",
+      ],
+    },
+    bn: {
+      title: "উত্তরা দিয়াবাড়িতে জমির শেয়ার ও অ্যাপার্টমেন্ট প্রকল্প",
+      tagline: "উত্তরা সেক্টর ১৭-এ জমির শেয়ার ও প্রায় ১,১২০ বর্গফুটের আধুনিক অ্যাপার্টমেন্টের মালিক হোন — মেট্রোরেল সাউথ স্টেশন থেকে হাঁটা দূরত্বে।",
+      desc: "আপনি কি ঢাকার অন্যতম সম্ভাবনাময় এলাকায় নিজের ফ্ল্যাটের মালিক হতে চান? অথবা ভবিষ্যতের জন্য একটি নির্ভরযোগ্য রিয়েল এস্টেট বিনিয়োগ খুঁজছেন? উত্তরা সেক্টর ১৭ (দিয়াবাড়ি)-তে ২০ ফুট রাস্তার পাশে, BGMEA ভবনের পশ্চিমে এবং Santa Mariam ও World University-এর কাছে ২০.৩৬ কাঠা জমির ওপর এই যৌথ ল্যান্ড শেয়ার প্রকল্প। লেক ভিউ ও আধুনিক সুযোগ-সুবিধাসহ B+G+M+12 আবাসিক ভবনের পরিকল্পনা রয়েছে (রাজউক অনুমোদন সাপেক্ষে)।",
+      heroMeta: [["fa-solid fa-location-dot", "সেক্টর ১৭, উত্তরা, ঢাকা"], ["fa-solid fa-train-subway", "মেট্রোরেল সাউথ স্টেশনের কাছে"], ["fa-regular fa-calendar", "রেজিস্ট্রেশন চলছে (শুরু ১৫ সেপ্টেম্বর ২০২৬)"]],
+      cardFacts: [
+        ["fa-solid fa-location-dot", "সেক্টর ১৭, উত্তরা — মেট্রো সাউথ স্টেশনের কাছে"],
+        ["fa-solid fa-building", "B+G+M+12 ভবন (রাজউক অনুমোদন সাপেক্ষে)"],
+        ["fa-solid fa-house", "প্রায় ১,১২০ বর্গফুট · ৩ বেড · ৩ বাথ · ৩ বারান্দা"],
+      ],
+      stats: [
+        ["fa-solid fa-ruler-combined", "২০.৩৬ কাঠা", "মোট জমি (১৪,৬৫৯ বর্গফুট, রাস্তা বাদে)"],
+        ["fa-solid fa-building", "B+G+M+12", "পরিকল্পিত ভবন, রাজউক অনুমোদন সাপেক্ষে"],
+        ["fa-solid fa-house", "~১,১২০ বর্গফুট", "প্রতিটি ফ্ল্যাট: ৩ বেড, ৩ বাথ, ৩ বারান্দা"],
+        ["fa-solid fa-sack-dollar", "৳১৬,৫০,০০০", "প্রতি শেয়ারের জমির মূল্য"],
+        ["fa-solid fa-trowel-bricks", "~৳২৮ লাখ", "প্রতি শেয়ারে আনুমানিক নির্মাণ ব্যয়"],
+        ["fa-solid fa-hourglass-half", "৩–৪ বছর", "সম্ভাব্য নির্মাণ ও হস্তান্তরের সময়"],
+      ],
+      pdfsTitle: "প্রকল্পের বিস্তারিত",
+      pdfs: [
+        "লোকেশন: ২০ ফুট রাস্তা, BGMEA অফিসের পশ্চিম পাশে, Santa Mariam ও World University এবং ১৭ পার্ক BCS প্রকল্পের কাছে, সেক্টর ১৭, উত্তরা, ঢাকা-১২৩০",
+        "যাতায়াত: মেট্রোরেল সাউথ স্টেশন থেকে হাঁটা দূরত্ব বা অল্প অটোরিকশা পথ",
+        "জমি: ২০.৩৬ কাঠা (১৪,৬৫৯ বর্গফুট, রাস্তা বাদে)",
+        "ভবনের পরিকল্পনা: B+G+M+12 (১২ তলা), রাজউকের নকশা অনুমোদন সাপেক্ষে",
+        "ইউনিট: ৩ ভবনের কন্ডোমিনিয়ামে প্রতি তলায় ১১টি — মোট ১৩২টি শেয়ার / ফ্ল্যাট",
+        "প্রতিটি ফ্ল্যাট: প্রায় ১,১২০ বর্গফুট — ৩টি বেডরুম, ৩টি বাথরুম, ৩টি বারান্দা, ড্রয়িং, ডাইনিং ও কিচেন",
+        "ফ্ল্যাট বণ্টন: লটারির মাধ্যমে",
+        "প্রতি শেয়ারের জমির মূল্য: ১৬,৫০,০০০ টাকা — রেজিস্ট্রেশন, নামজারি ও অন্যান্য উন্নয়ন খরচসহ",
+        "নির্মাণ ব্যয়: প্রতি শেয়ারে প্রায় ২৮ লাখ টাকা (প্রতি বর্গফুট প্রায় ২,৫০০ টাকা), সাথে নির্মাণ ব্যয়ের ওপর ১০% কনসালটেন্সি চার্জ",
+        "সম্ভাব্য সময়: নির্মাণ ও হস্তান্তরে প্রায় ৩–৪ বছর",
+        "রেজিস্ট্রেশন: ১৫ সেপ্টেম্বর ২০২৬ থেকে চলছে",
+        "রাজউক ১২ তলার অনুমোদন দিলে প্রতি তলায় ১১টির বদলে ১০টি ইউনিট ও বড় ফ্ল্যাট হতে পারে — অতিরিক্ত ফ্ল্যাট বিক্রির লাভ সব শেয়ারহোল্ডার পাবেন",
+        "দেখানো নকশাগুলো খসড়া প্রস্তাব; চূড়ান্ত ডিজাইন, আয়তন ও তলার সংখ্যা রাজউক অনুমোদনের ওপর নির্ভর করবে",
+      ],
+      app: [],
+      features: [
+        ["fa-solid fa-water", "লেক ভিউ", "লেকের পাশে খোলামেলা পরিবেশ।"],
+        ["fa-solid fa-mosque", "নামাজের স্থান", "ভবনে আলাদা নামাজের জায়গা।"],
+        ["fa-solid fa-children", "কিডস জোন", "শিশুদের জন্য নিরাপদ খেলার জায়গা।"],
+        ["fa-solid fa-fire-burner", "BBQ কর্নার", "পরিবার ও বন্ধুদের জন্য বারবিকিউ কর্নার।"],
+        ["fa-solid fa-people-roof", "কমিউনিটি হল", "অনুষ্ঠান, মিটিং ও আড্ডার জন্য।"],
+        ["fa-solid fa-dumbbell", "জিম ও ব্যাডমিন্টন", "জিম ও ব্যাডমিন্টন কোর্ট।"],
+        ["fa-solid fa-leaf", "সবুজ পরিবেশ", "পরিকল্পিত সবুজায়ন ও মনোরম, শান্ত পরিবেশ।"],
+      ],
+      how: [
+        "বিস্তারিত তথ্য, কাগজপত্র ও সাইট ভিজিটের জন্য 01818-120900 নম্বরে কল বা হোয়াটসঅ্যাপ করুন।",
+        "উত্তরা সেক্টর ১৭-এ সাইট দেখে নিন; চাইলে নিজের আইনজীবী দিয়ে জমির কাগজপত্র যাচাই করুন।",
+        "শেয়ার রেজিস্ট্রেশন করুন (১৫ সেপ্টেম্বর ২০২৬ থেকে চলছে); প্রতিটি পেমেন্টের ধাপ লিখিতভাবে জানানো হবে।",
+      ],
+      course: "",
+      courseMode: "",
+      audience: [
+        "উত্তরায় নিজের ফ্ল্যাট চান এমন পরিবার",
+        "দীর্ঘমেয়াদি রিয়েল এস্টেট বিনিয়োগ খুঁজছেন যারা",
+        "দেশে সম্পত্তি কিনতে চান এমন প্রবাসী বাংলাদেশি",
+        "মেট্রোরেলের কাছে থাকতে চান যারা",
+      ],
+    },
+  },
 ];
 
 const KHOOZO_PRODUCTS_I18N = {
@@ -936,8 +1071,15 @@ const KHOOZO_PRODUCTS_I18N = {
     "navbar.products": "Digital Products",
     "dp.eyebrow": "Khoozo Digital Products",
     "dp.h": "Guides, apps, software and courses",
-    "dp.p": "Download practical PDF guides and practice apps, get ready-made software for your business, or take a combo with a live course. Pay with bKash or card.",
-    "dp.tab.all": "All", "dp.tab.products": "Digital products", "dp.tab.software": "Software",
+    "dp.p": "Download practical PDF guides and practice apps, get ready-made software for your business, or invest in a land share. Digital products are paid with bKash; for software and land share, contact us directly.",
+    "dp.tab.all": "All", "dp.tab.products": "Digital products", "dp.tab.software": "Software", "dp.tab.landshare": "Land Share",
+    "dp.landshare": "Land Share", "dp.pershare": "Land value per share", "dp.contact.h": "Talk to us directly",
+    "dp.contact.p": "No online payment for this item. Call or WhatsApp us for prices, a demo or a visit, and the next steps.",
+    "dp.contact.p.ls": "No online payment for land share. Call or WhatsApp us for the papers, a site visit and the registration steps.",
+    "dp.contact.wa": "Chat on WhatsApp", "dp.contact.call": "Call 01818-120900", "dp.contact.map": "Open in Google Maps", "dp.contact.ask": "Contact us",
+    "dp.contact.msg": "Hi Khoozo, I'm interested in \"{title}\".",
+    "dp.c.how1": "Call or WhatsApp us — we'll answer your questions and show you a demo.", "dp.c.how2": "We agree the price, setup and any changes you need.",
+    "dp.ls.note": "Building plan subject to RAJUK approval. Figures are estimates and may change.",
     "dp.software": "Software", "dp.askprice": "Ask for price", "dp.freeapp": "Free app", "dp.price": "Price",
     "dp.custom.badge": "Custom software", "dp.custom.h": "Need software made for you?",
     "dp.custom.p": "We build any software, or customise our ready-made software to fit your needs and your business.",
@@ -951,14 +1093,14 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.course.link": "See the full course curriculum",
     "dp.weeks": "weeks", "dp.hours": "hours of live classes", "dp.cert": "Certificate on completion",
     "dp.for": "Who it's for", "dp.how": "How you'll receive it",
-    "dp.how1": "Choose the pack or the combo and pay with bKash or card.",
+    "dp.how1": "Choose the pack or the combo and pay with bKash (Send Money).",
     "dp.how2": "We confirm your payment, usually within 1 hour.",
     "dp.how3": "You get the PDF download links and the app on WhatsApp and email. Combo buyers also get the class schedule.",
     "dp.plan": "Choose your package",
     "dp.pack": "Digital pack", "dp.pack.sub": "PDF guides + mobile app",
     "dp.combo": "Combo with live course", "dp.combo.sub": "PDF guides + mobile app + live course",
     "dp.best": "Best value", "dp.save": "Save {amount}",
-    "dp.buy": "Buy now", "dp.paywith": "Pay with bKash or card", "dp.onetime": "One-time payment · lifetime access to the files",
+    "dp.buy": "Buy now", "dp.paywith": "Pay with bKash (Send Money)", "dp.onetime": "One-time payment · lifetime access to the files",
     "dp.more": "More digital products", "dp.notfound": "Product not found",
     "cart.addtocart": "Add to Cart", "cart.qty": "Qty",
   },
@@ -966,8 +1108,15 @@ const KHOOZO_PRODUCTS_I18N = {
     "navbar.products": "ডিজিটাল পণ্য",
     "dp.eyebrow": "খুঁজো ডিজিটাল পণ্য",
     "dp.h": "গাইড, অ্যাপ, সফটওয়্যার ও কোর্স",
-    "dp.p": "কাজের PDF গাইড ও প্র্যাকটিস অ্যাপ ডাউনলোড করুন, ব্যবসার জন্য রেডিমেড সফটওয়্যার নিন, অথবা লাইভ কোর্সসহ কম্বো নিন। বিকাশ বা কার্ডে পেমেন্ট।",
-    "dp.tab.all": "সব", "dp.tab.products": "ডিজিটাল পণ্য", "dp.tab.software": "সফটওয়্যার",
+    "dp.p": "কাজের PDF গাইড ও প্র্যাকটিস অ্যাপ ডাউনলোড করুন, ব্যবসার জন্য রেডিমেড সফটওয়্যার নিন, অথবা লাইভ কোর্সসহ কম্বো নিন। ডিজিটাল পণ্যের পেমেন্ট বিকাশে; সফটওয়্যার ও ল্যান্ড শেয়ারের জন্য সরাসরি যোগাযোগ করুন।",
+    "dp.tab.all": "সব", "dp.tab.products": "ডিজিটাল পণ্য", "dp.tab.software": "সফটওয়্যার", "dp.tab.landshare": "ল্যান্ড শেয়ার",
+    "dp.landshare": "ল্যান্ড শেয়ার", "dp.pershare": "প্রতি শেয়ারের জমির মূল্য", "dp.contact.h": "সরাসরি যোগাযোগ করুন",
+    "dp.contact.p": "এই আইটেমের জন্য অনলাইন পেমেন্ট নেই। দাম, ডেমো বা ভিজিট ও পরের ধাপের জন্য কল বা হোয়াটসঅ্যাপ করুন।",
+    "dp.contact.p.ls": "ল্যান্ড শেয়ারের জন্য অনলাইন পেমেন্ট নেই। কাগজপত্র, সাইট ভিজিট ও রেজিস্ট্রেশনের ধাপ জানতে কল বা হোয়াটসঅ্যাপ করুন।",
+    "dp.contact.wa": "হোয়াটসঅ্যাপে কথা বলুন", "dp.contact.call": "কল করুন 01818-120900", "dp.contact.map": "Google Maps-এ দেখুন", "dp.contact.ask": "যোগাযোগ করুন",
+    "dp.contact.msg": "হ্যালো Khoozo, আমি \"{title}\" সম্পর্কে জানতে চাই।",
+    "dp.c.how1": "কল বা হোয়াটসঅ্যাপ করুন — আপনার প্রশ্নের উত্তর দেব ও ডেমো দেখাব।", "dp.c.how2": "দাম, সেটআপ ও দরকারি পরিবর্তন নিয়ে একমত হব।",
+    "dp.ls.note": "ভবনের নকশা রাজউক অনুমোদন সাপেক্ষে। দেওয়া হিসাবগুলো আনুমানিক, পরিবর্তন হতে পারে।",
     "dp.software": "সফটওয়্যার", "dp.askprice": "দাম জানতে যোগাযোগ করুন", "dp.freeapp": "ফ্রি অ্যাপ", "dp.price": "দাম",
     "dp.custom.badge": "কাস্টম সফটওয়্যার", "dp.custom.h": "আপনার জন্য আলাদা সফটওয়্যার দরকার?",
     "dp.custom.p": "আমরা যেকোনো সফটওয়্যার তৈরি করি, অথবা আপনার প্রয়োজন ও ব্যবসা অনুযায়ী আমাদের রেডিমেড সফটওয়্যার কাস্টমাইজ করে দিই।",
@@ -981,14 +1130,14 @@ const KHOOZO_PRODUCTS_I18N = {
     "dp.course.link": "কোর্সের পূর্ণ কারিকুলাম দেখুন",
     "dp.weeks": "সপ্তাহ", "dp.hours": "ঘণ্টা লাইভ ক্লাস", "dp.cert": "কোর্স শেষে সার্টিফিকেট",
     "dp.for": "কাদের জন্য", "dp.how": "যেভাবে পাবেন",
-    "dp.how1": "প্যাক বা কম্বো বেছে নিয়ে বিকাশ বা কার্ডে পেমেন্ট করুন।",
+    "dp.how1": "প্যাক বা কম্বো বেছে নিয়ে বিকাশে (সেন্ড মানি) পেমেন্ট করুন।",
     "dp.how2": "আমরা পেমেন্ট নিশ্চিত করব, সাধারণত ১ ঘণ্টার মধ্যে।",
     "dp.how3": "হোয়াটসঅ্যাপ ও ইমেইলে PDF ডাউনলোড লিংক ও অ্যাপ পাবেন। কম্বো নিলে ক্লাসের সময়সূচিও পাবেন।",
     "dp.plan": "প্যাকেজ বেছে নিন",
     "dp.pack": "ডিজিটাল প্যাক", "dp.pack.sub": "PDF গাইড + মোবাইল অ্যাপ",
     "dp.combo": "লাইভ কোর্সসহ কম্বো", "dp.combo.sub": "PDF গাইড + মোবাইল অ্যাপ + লাইভ কোর্স",
     "dp.best": "সেরা ভ্যালু", "dp.save": "{amount} সাশ্রয়",
-    "dp.buy": "এখনই কিনুন", "dp.paywith": "বিকাশ বা কার্ডে পেমেন্ট", "dp.onetime": "এককালীন পেমেন্ট · ফাইলগুলো আজীবন আপনার",
+    "dp.buy": "এখনই কিনুন", "dp.paywith": "বিকাশে পেমেন্ট (সেন্ড মানি)", "dp.onetime": "এককালীন পেমেন্ট · ফাইলগুলো আজীবন আপনার",
     "dp.more": "আরও ডিজিটাল পণ্য", "dp.notfound": "পণ্যটি পাওয়া যায়নি",
     "cart.addtocart": "কার্টে যোগ করুন", "cart.qty": "পরিমাণ",
   },
@@ -1015,6 +1164,10 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
   const grad = (p) => `--dp1:${p.colors[0]};--dp2:${p.colors[1]}`;
   const offPct = (o) => Math.round((1 - o.price / o.originalPrice) * 100);
   const hasOff = (o) => o && o.originalPrice > o.price;
+  /* Software and land share are contact-only: no cart, no online payment. */
+  const contactOnly = (p) => !!(p && (p.software || p.landshare));
+  const WA = "8801818120900";
+  const waLink = (p) => `https://wa.me/${WA}?text=${encodeURIComponent(t("dp.contact.msg", { title: p[lang()].title }) + " " + new URL("product.html?id=" + p.id, location.href).href)}`;
 
   const favBtn = (id, extra) => (window.KhoozoFav ? window.KhoozoFav.button(id, extra) : "");
 
@@ -1025,7 +1178,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <div class="dp-card-head${p.cover ? " has-cover" : ""}"${p.cover ? ` style="--cover:url('${new URL(p.cover, location.href).href}')"` : ""}>
           <span class="dp-card-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
           ${favBtn(p.id)}
-          ${hasOff(p.pack) ? `<span class="dp-card-off">${digits(offPct(p.pack))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>` : ""}
+          ${p.landshare ? `<span class="dp-card-off">${t("dp.landshare")}</span>` : hasOff(p.pack) ? `<span class="dp-card-off">${digits(offPct(p.pack))}% ${lang() === "bn" ? "ছাড়" : "off"}</span>` : ""}
           <h3>${esc(k.title)}</h3>
         </div>
         <div class="dp-card-body">
@@ -1037,9 +1190,9 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
             ${k.cardFacts ? "" : k.course ? `<li><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>${t("dp.courseopt")}</li>` : ""}
           </ul>
           <div class="dp-card-foot">
-            <div><small>${t("dp.from")}</small><b>${taka(p.pack.price)}</b>${hasOff(p.pack) ? `<s>${taka(p.pack.originalPrice)}</s>` : ""}</div>
+            <div><small>${p.landshare ? t("dp.pershare") : contactOnly(p) ? t("dp.price") : t("dp.from")}</small><b>${taka(p.pack.price)}</b>${hasOff(p.pack) ? `<s>${taka(p.pack.originalPrice)}</s>` : ""}</div>
             <div class="dp-card-actions">
-              <button type="button" class="dp-add-btn" data-add-to-cart="${p.id}" data-cart-plan="pack" title="${t("cart.addtocart")}" aria-label="${t("cart.addtocart")}"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button>
+              ${contactOnly(p) ? "" : `<button type="button" class="dp-add-btn" data-add-to-cart="${p.id}" data-cart-plan="pack" title="${t("cart.addtocart")}" aria-label="${t("cart.addtocart")}"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button>`}
               <span class="tr-link">${t("dp.view")} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
             </div>
           </div>
@@ -1130,14 +1283,18 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         renderGrid();
       });
     }
-    const digital = KHOOZO_PRODUCTS.filter((p) => !p.software);
+    const digital = KHOOZO_PRODUCTS.filter((p) => !contactOnly(p));
     const swProducts = KHOOZO_PRODUCTS.filter((p) => p.software);
+    const land = KHOOZO_PRODUCTS.filter((p) => p.landshare);
     if (tabs) {
-      tabs.innerHTML = [["all", KHOOZO_PRODUCTS.length + software.length], ["products", digital.length], ["software", swProducts.length + software.length]]
+      tabs.innerHTML = [["all", KHOOZO_PRODUCTS.length + software.length], ["products", digital.length], ["software", swProducts.length + software.length], ["landshare", land.length]]
+        .filter(([id, n]) => n || id === "all")
         .map(([id, n]) => `<button type="button" role="tab" class="dp-tab${shopTab === id ? " is-active" : ""}" aria-selected="${shopTab === id}" data-shop-tab="${id}">${t("dp.tab." + id)} <span>${digits(n)}</span></button>`).join("");
     }
-    grid.innerHTML = (shopTab !== "software" ? digital.map(card).join("") : "")
-      + (shopTab !== "products" ? swProducts.map(card).join("") + software.map(softwareCard).join("") + customCard() : "");
+    const show = (tab) => shopTab === "all" || shopTab === tab;
+    grid.innerHTML = (show("products") ? digital.map(card).join("") : "")
+      + (show("landshare") ? land.map(card).join("") : "")
+      + (show("software") ? swProducts.map(card).join("") + software.map(softwareCard).join("") + customCard() : "");
     /* "Get a free quote" pre-selects Custom software in the contact form. */
     grid.querySelectorAll("[data-custom-quote]").forEach((a) => a.addEventListener("click", () => {
       const select = document.getElementById("f-service");
@@ -1164,6 +1321,28 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     </div>`;
   }
 
+  /* Right-hand panel for contact-only items (software, land share). */
+  function contactPanel(p) {
+    return `<aside class="tr-panel tr-buy dp-buy dp-contact">
+          <div class="tr-buy-top">
+            <h3 class="dp-buy-h">${t("dp.contact.h")}</h3>
+            <div class="tr-buy-price">
+              <span class="tr-price">${taka(p.pack.price)}</span>
+              ${hasOff(p.pack) ? `<span class="tr-price-old" style="margin:0 0 6px">${taka(p.pack.originalPrice)}</span>` : ""}
+            </div>
+            <p class="tr-note">${p.landshare ? t("dp.pershare") : t("dp.price")}</p>
+            <p class="dp-muted" style="margin:10px 0 14px">${t(p.landshare ? "dp.contact.p.ls" : "dp.contact.p")}</p>
+            <div class="dp-buy-actions">
+              <a class="btn btn-primary" href="${waLink(p)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> ${t("dp.contact.wa")}</a>
+              <a class="btn btn-outline" href="tel:+8801818120900"><i class="fa-solid fa-phone" aria-hidden="true"></i> ${t("dp.contact.call")}</a>
+              ${p.map ? `<a class="btn btn-outline" href="${esc(p.map)}" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> ${t("dp.contact.map")}</a>` : ""}
+              ${favBtn(p.id, "dp-fav-inline")}
+            </div>
+            ${p.landshare ? `<p class="tr-secure"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> ${t("dp.ls.note")}</p>` : ""}
+          </div>
+        </aside>`;
+  }
+
   /* ---------------- product.html ---------------- */
   let plan = params.get("plan") === "combo" ? "combo" : "pack";
 
@@ -1181,7 +1360,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
     // Combo saving against buying the pack and the course separately; only shown when the course is also sold on its own.
     const save = course && p.combo ? p.pack.price + course.price - p.combo.price : 0;
     if (!p.combo) plan = "pack";
-    document.title = `${k.title} | Khoozo ${p.software ? "Software" : "Digital Products"}`;
+    document.title = `${k.title} | Khoozo ${p.software ? "Software" : p.landshare ? "Land Share" : "Digital Products"}`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", k.tagline);
 
@@ -1199,7 +1378,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
         <a class="tr-back" href="index.html#products"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> ${t("dp.back")}</a>
         <div class="dp-hero-head">
           <span class="dp-hero-icon"><i class="${p.icon}" aria-hidden="true"></i></span>
-          <div><p class="eyebrow">${p.software ? "Khoozo " + t("dp.software") : t("dp.eyebrow")}</p><h1>${esc(k.title)}</h1></div>
+          <div><p class="eyebrow">${p.software ? "Khoozo " + t("dp.software") : p.landshare ? "Khoozo " + t("dp.landshare") : t("dp.eyebrow")}</p><h1>${esc(k.title)}</h1></div>
         </div>
         <p>${esc(k.desc)}</p>
         <div class="tr-meta">
@@ -1251,10 +1430,10 @@ ${k.course && p.course ? `
           </div>
           <div class="tr-panel">
             <h2>${t("dp.how")}</h2>
-            <ol class="dp-steps">${["dp.how1", "dp.how2", "dp.how3"].map((s, i) => `<li><span>${digits(i + 1)}</span>${s === "dp.how3" && k.how3 ? esc(k.how3) : t(s)}</li>`).join("")}</ol>
+            <ol class="dp-steps">${(k.how ? k.how.map(esc) : (contactOnly(p) ? ["dp.c.how1", "dp.c.how2", "dp.how3"] : ["dp.how1", "dp.how2", "dp.how3"]).map((s) => (s === "dp.how3" && k.how3 ? esc(k.how3) : t(s)))).map((x, i) => `<li><span>${digits(i + 1)}</span>${x}</li>`).join("")}</ol>
           </div>
         </div>
-        <aside class="tr-panel tr-buy dp-buy">
+        ${contactOnly(p) ? contactPanel(p) : `<aside class="tr-panel tr-buy dp-buy">
           <div class="tr-buy-top">
             <h3 class="dp-buy-h">${t("dp.plan")}</h3>
             <div class="dp-plans" role="radiogroup">
@@ -1281,15 +1460,15 @@ ${k.course && p.course ? `
               ${favBtn(p.id, "dp-fav-inline")}
             </div>
             <p class="tr-secure"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> ${t("dp.paywith")}</p>
-            <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span><span style="color:#ec1c24">Nagad</span><span style="color:#1a1f71">VISA</span><span style="color:#eb001b">Mastercard</span></div>
+            <div class="tr-pay-logos"><span style="color:#e2136e">bKash</span></div>
           </div>
-        </aside>
+        </aside>`}
       </div>
     </section>
     <section class="section section-tint">
       <div class="container">
         <h2 class="dp-more-h">${t("dp.more")}</h2>
-        <div class="dp-grid">${KHOOZO_PRODUCTS.filter((x) => x.id !== p.id).map(card).join("")}</div>
+        <div class="dp-grid">${KHOOZO_PRODUCTS.filter((x) => x.id !== p.id && (!x.landshare || p.landshare)).map(card).join("")}</div>
       </div>
     </section>`;
 

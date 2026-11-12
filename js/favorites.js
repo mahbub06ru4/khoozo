@@ -52,7 +52,7 @@
     }
     if (kind === "product" && typeof KHOOZO_PRODUCTS !== "undefined") {
       const p = KHOOZO_PRODUCTS.find((x) => x.id === id);
-      return p && { kind, title: p[l].title, desc: p[l].tagline, iconClass: p.icon, price: p.pack.price, href: `product.html?id=${id}`, cart: [id, "pack"] };
+      return p && { kind, title: p[l].title, desc: p[l].tagline, iconClass: p.icon, price: p.pack.price, href: `product.html?id=${id}`, cart: p.software || p.landshare ? null : [id, "pack"] };
     }
     return null;
   }

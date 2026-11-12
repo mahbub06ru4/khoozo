@@ -4,7 +4,7 @@
    cart lives in localStorage on the customer's own device — there is
    no server, so there is nothing to see from the business side until
    checkout, where js/training.js turns it into an order (manual
-   bKash/Nagad "Send Money" + WhatsApp confirmation, same as a single
+   bKash "Send Money" + WhatsApp confirmation, same as a single
    product purchase).
      Any page            → cart badge (".cart-badge") + "Add to Cart"
                             buttons (any [data-add-to-cart] element)
@@ -109,7 +109,7 @@ if (typeof KHOOZO_I18N_DICT !== "undefined") {
           return { id: c.id, plan: "course", qty: it.qty, unitPrice: c.price, unitOriginal: c.originalPrice, lineTotal: c.price * it.qty, product };
         }
         const p = typeof KHOOZO_PRODUCTS !== "undefined" ? KHOOZO_PRODUCTS.find((x) => x.id === it.id) : null;
-        if (!p) return null;
+        if (!p || p.software || p.landshare) return null; // contact-only, never paid online
         const plan = it.plan === "combo" ? "combo" : "pack";
         const o = p[plan];
         return { id: p.id, plan, qty: it.qty, unitPrice: o.price, unitOriginal: o.originalPrice || o.price, lineTotal: o.price * it.qty, product: p };
