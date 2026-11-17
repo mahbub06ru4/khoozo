@@ -1175,3 +1175,8 @@ a.contact-card:hover { border-color: var(--red); transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) {
   .review-toast { transition: none; transform: none; }
 }
+
+/* Links to separate Khoozo sites (Top News, Blog): small monospace pills, set apart from the main menu */
+.nav a.nav-ext { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .72rem; font-weight: 600; letter-spacing: .03em; color: #B45309; background: rgba(245, 158, 11, .10); border: 1px dashed rgba(180, 83, 9, .45); border-radius: 999px; padding: 3px 10px; }
+.nav a.nav-ext::after { content: "↗"; margin-left: 4px; }
+.nav a.nav-ext:hover { color: #fff; background: #B45309; border-style: solid; }
